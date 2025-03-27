@@ -1,0 +1,12 @@
+beautifulsoup4>=4.12.3
+certifi>=2024.8.30
+charset-normalizer>=3.4.0
+mysql-connector-python>=9.1.0
+numpy>=2.1.0
+pandas>=2.2.0
+python-dateutil>=2.9.0
+pytz>=2024.2
+requests>=2.32.0
+selenium>=4.27.0
+soupsieve>=2.6
+urllib3>=2.2.0
