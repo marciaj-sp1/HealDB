@@ -4,4 +4,5 @@ config.py
 data/
 *.csv
 *.json
+tests/
 
