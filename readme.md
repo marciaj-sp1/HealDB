@@ -9,94 +9,145 @@ interoperability, with a focus on integrating multiple data sources.
 ---
 
 ## **Project Structure**
-
 ```plaintext
 C:\project
 └── healdb
-   ├── data
-   │   ├── input                     # Input data files
-   │   │   ├── bulas
-   │   │   │   ├── categorias
-   │   │   │   │   ├── biologico
-   │   │   │   │   ├── dinamizado
-   │   │   │   │   ├── especifico
-   │   │   │   │   ├── fitoterapico
-   │   │   │   │   ├── generico
-   │   │   │   │   ├── novo
-   │   │   │   │   ├── prod_tp
-   │   │   │   │   ├── radiofarmaco
-   │   │   │   │   ├── similar
-   │   │   ├── CID-10-CAPITULOS.csv
-   │   │   ├── CID-10-CATEGORIAS.csv
-   │   │   ├── CID-10-GRUPOS.csv
-   │   │   ├── CID-10-SUBCATEGORIAS.csv
-   │   │   ├── consulta_medicamento_anvisa.csv
-   │   │   ├── DADOS_ABERTOS_MEDICAMENTOS.csv
-   │   │   ├── input_active_ing_translate_meta
-   │   │   ├── lista_dcb.xlsx
-   │   ├── output                    # Output data files
-   │   │     ├── downloadBulas # folder to save downloaded drug leaflets from Anvisa Portal
-   │   │     ├── output_active_ing_translate_meta.csv
-   │   │     ├── interoperability
-   │   │     │   ├── iucn_conservation_active_ing_data.json
-   │   │     │   ├── iucn_conservation_dcb_data.json   
-   │   │     ├── ontology
-   │   │     │   ├── healdb_ontology.ttl # Turtle file containing the ontology generated from HealDB DDLs  
-├── doc
-   ├── logs
-   ├── tests
-   ├── src
-   │   ├── ontology # Scripts related to creating an ontology using DDLs from the HealDB database
-   │   │   ├── __init__.py
-   │   │   ├── main_ontology.py
-   │   │   ├── create_ontology.py
-   │   ├── interoperability # Scripts related to interoperability with other data sources
-   │   │   ├── __init__.py
-   │   │   ├── main_interoperability.py
-   │   │   ├── import_dcb_data.py
-   │   │   ├── iucn_conservation_status_PM
-   │   │   ├── populate_external_ids_types.py
-   │   │   ├── external_ids_insert.py
-   │   │   ├── link_cas_to_active_ing.py
-   │   │   ├── link_rxcui_to_active_ing.py
-   │   │   ├── link_rxcui_related_ids_to_active_ing.py
-   │   │   ├── link_wikidata_ids_to_stg.py
-   │   │   ├── link_kegg_related_ids_to_active_ing.py
-   │   │   ├── fill_missing_external_ids.py
-   │   ├── nlp_extraction  # Scripts related to NLP and extractions
-   │   │   ├── __init__.py
-   │   │   ├── main_nlp_extraction.py
-   │   │   ├── extract_leaflet_sections.py
-   │   │   ├── translate_leaflet_indication.py
-   │   │   ├── extract_diseases_from_indications.py
-   │   │   ├── process_disease_data_json.py
-   │   │   ├── link_medications_with_diseases.py
-   │   ├── translation  # Translation from portuguese to english and vice-versa
-   │   │   ├── __init__.py 
-   │   │   ├── main_translation.py
-   │   │   ├── translate_active_ingredients.py
-   │   │   ├── translate_active_ingredients_meta.ipynb # Script developed in Google Colab
-   │   │   ├── import_translated_active_ingredients_meta.py
-   │   │   ├── translate_drug_interactions.py
-   │   │   ├── translate_food_interactions.py
-   │   │   ├── validate_translation_and_link_active_ing.py
-   │   ├── repositories # Creation of repositories
-   │   │   ├── __init__.py 
-   │   │   ├── main_repository.py
-   │   │   ├── create_activeingr_repository.py
-   │   │   ├── create_diseases_repository.py
-   │   │   ├── create_drugbank_repository.py
-   │   │   ├── create_leaflets_repository.py
-   │   │   ├── create_medications_repository.py
-   │   │   ├── create_symptoms_repository.py
-   │   │   ├── drugbank_inserts.py
-   │   ├── webcrawler  # Web crawling and scraping for ANVISA's electronic leaflet system
-   │   │   ├── main_webcralwer.py
-   │   │   ├── webcrawler_leaflet.py
-   ├── requirements.txt
-   ├── config.py
-   ├── db_utils.py
-   ├── main.py
+    ├── data
+    │   ├── input
+    │   │   ├── bulas
+    │   │   │   └── categorias
+    │   │   │       ├── biologico
+    │   │   │       ├── dinamizado
+    │   │   │       ├── especifico
+    │   │   │       ├── fitoterapico
+    │   │   │       ├── generico
+    │   │   │       ├── novo
+    │   │   │       ├── prod_tp
+    │   │   │       ├── radiofarmaco
+    │   │   │       ├── similar
+    │   │   ├── CID-10-CAPITULOS.csv
+    │   │   ├── CID-10-CATEGORIAS.csv
+    │   │   ├── CID-10-GRUPOS.csv
+    │   │   ├── CID-10-SUBCATEGORIAS.csv
+    │   │   ├── consulta_medicamento_anvisa.csv
+    │   │   ├── DADOS_ABERTOS_MEDICAMENTOS.csv
+    │   │   ├── input_active_ing_translate_meta
+    │   │   ├── lista_dcb.xlsx
+    │   │   ├── ddls
+    │   │   │   └── healdb_hd_active_ingredient.sql          # DDLs das tabelas do HealDB
+    │   │   │   └── healdb_hd_active_ingredient_ext_id.sql
+    │   │   │   └── healdb_hd_company.sql 
+    │   │   │   └── healdb_hd_drug_interaction.sql
+    │   │   │   └── healdb_hd_icd_category.sql
+    │   │   │   └── healdb_hd_icd_group.sql
+    │   │   │   └── healdb_hd_icd_subcategory.sql
+    │   │   │   └── healdb_hd_medication.sql
+    │   │   │   └── healdb_hd_medication_active_ingredient.sql
+    │   │   │   └── healdb_hd_medication_disease.sql
+    │   │   │   └── healdb_hd_medication_drug_leaflet.sql
+    │   │   │   └── healdb_hd_regulatory_category.sql
+    │   │   │   └── healdb_hd_symptom.sql
+    │   │   │   └── healdb_hd_therapeutic_class.sql
+    │   │   │   └── healdb_hd_type_ext_id.sql
+    │   │   ├── ontologies
+    │   │   │   └── chebi.owl           # Ontologia do CHEBI
+    │
+    │   ├── output
+    │   │   ├── downloadBulas
+    │   │   ├── translation
+    │   │   │   ├── output_active_ing_translate_meta.csv
+    │   │   ├── interoperability
+    │   │   │   ├── chebi
+    │   │   │   │   └── chebi_attributes_active_ing.csv
+    │   │   │   ├── pubchem
+    │   │   │   │   └── pubchem_reference_detailed.json
+    │   │   │   ├── iucn
+    │   │   │   │   ├── iucn_conservation_healdb_data.json
+    │   │   │   │   ├── iucn_conservation_dcb_data.json
+    │   │   ├── rdf_schema
+    │   │   │   └── healdb.ttl
+    │   │   │   └── healdb_complete.ttl
+    │
+    ├── doc
+    ├── logs
+    ├── tests
+    ├── src
+    │   ├── rdf_schema
+    │   │   ├── __init__.py
+    │   │   ├── main_rdf_schema.py
+    │   │   ├── create_healdb_rdf_schema.py         # gera healdb_complete.ttl
+    │   │   ├── create_mini_healdb_rdf_schema.py    # gera healdb.ttl com instâncias
+    │
+    │   ├── interoperability
+    │   │   ├── __init__.py
+    │   │   ├── main_interoperability.py    
+    │   │   ├── linking
+    │   │   │   ├── __init__.py
+    │   │   │   ├── import_dcb_data.py
+    │   │   │   ├── populate_external_ids_types.py
+    │   │   │   ├── external_ids_insert.py
+    │   │   │   ├── link_cas_to_active_ing.py
+    │   │   │   ├── link_rxcui_to_active_ing.py
+    │   │   │   ├── link_rxcui_related_ids_to_active_ing.py
+    │   │   │   ├── link_wikidata_ids_to_wrk_table.py
+    │   │   │   ├── link_kegg_related_ids_to_active_ing.py
+    │   │   │   ├── fill_missing_external_ids.py
+    │   │
+    │   │   ├── usecases
+    │   │   │   ├── chebi
+    │   │   │   │   └── query_sparql_chebi.txt
+    │   │   │   ├── pubchem
+    │   │   │   │   ├── __init__.py
+    │   │   │   │   └── export_pubchem_ref_details.py
+    │   │   │   ├── iucn_r 
+    │   │   │   │   ├── export_iucn_conservation_status_r.R
+    │   │   │   ├── rxnorm
+    │   │   │   │   ├── __init__.py
+    │   │   │   │   └── usecase_rxnorm_publications.py
+    │   │   │   ├── atc
+    │   │   │   │   ├── __init__.py
+    │   │   │   │   └── atc_xxxx.py    │
+    │   │   │   ├── unii_code
+    │   │   │   │   ├── __init__.py
+    │   │   │   │   └── atc_xxxx.py    │
+    │   ├── nlp_extraction
+    │   │   ├── __init__.py
+    │   │   ├── main_nlp_extraction.py
+    │   │   ├── extract_leaflet_sections.py
+    │   │   ├── translate_leaflet_indication.py
+    │   │   ├── extract_diseases_from_indications.py
+    │   │   ├── process_disease_data_json.py
+    │   │   ├── link_medications_with_diseases.py
+    │
+    │   ├── repositories
+    │   │   ├── __init__.py
+    │   │   ├── main_repository.py
+    │   │   ├── create_activeingr_repository.py
+    │   │   ├── create_diseases_repository.py
+    │   │   ├── create_drugbank_repository.py
+    │   │   ├── create_leaflets_repository.py
+    │   │   ├── create_medications_repository.py
+    │   │   ├── create_symptoms_repository.py
+    │   │   ├── drugbank_inserts.py
+    │
+    │   ├── translation
+    │   │   ├── __init__.py
+    │   │   ├── main_translation.py
+    │   │   ├── translate_active_ingredients.py
+    │   │   ├── translate_active_ingredients_meta.ipynb
+    │   │   ├── import_translated_active_ingredients_meta.py
+    │   │   ├── translate_drug_interactions.py
+    │   │   ├── translate_food_interactions.py
+    │   │   ├── validate_translation_and_link_active_ing.py
+    │
+    │   ├── webcrawler
+    │   │   ├── main_webcralwer.py
+    │   │   ├── webcrawler_leaflet.py
+    │
+    ├── requirements.txt
+    ├── config.py
+    ├── db_utils.py
+    ├── main.py
 ```
 
 ## Key Features
@@ -107,8 +158,9 @@ C:\project
 3. Repository Management: Automates the creation and population of repositories for HealDB.
 4. Translation: Enables translation of data for interoperability.
 5. NLP Extraction: Uses Natural Language Processing to extract diseases, symptoms, leaflets, interactions, and more.
-6. Interoperability: Enables integration with external health and biomedical data sources and ontologies by connecting HealDB to standardized external identifiers.
-
+6. Interoperability:
+   * Linking: Associates active ingredients with standardized external identifiers (e.g., RxCUI, CAS, KEGG, PubChem, Wikidata).
+   * Use Cases: Demonstrates how external identifiers can be used to extract insights from biomedical ontologies and data sources (e.g., ChEBI, IUCN, PubChem).
 ## How to Run
 ### Requirements
 1. Install Python 3.9+.
@@ -121,16 +173,23 @@ C:\project
    ```bash python main.py ```
 
 ## Inputs
-The data/input folder contains all input data files necessary for the project. Key files include:
+The `data/input` folder contains all input data files required for processing, translation, and interoperability tasks. 
+Key components include:
 
-   - Bulas: Subfolders for various categories of drug leaflets.
-   - CID-10: Files related to International Classification of Diseases.
+   - **CID-10 files**: International Classification of Diseases (chapters, categories, groups, subcategories).
    - DADOS_ABERTOS_MEDICAMENTOS.csv: Publicly available data on medications.
-   - consulta_medicamento_anvisa.csv: A comprehensive list of medications and their details obtained from ANVISA.
-   - drugbank_file.xml: DrugBank database file.
+   - consulta_medicamento_anvisa.csv: Comprehensive list of medications and their attributes obtained from ANVISA.
+   - drugbank_file.xml: DrugBank XML file containing structured biomedical data.
    - Arquivo_sintomas.xlsx: List of symptoms from the Bireme/MeSH vocabulary. 
-   - input_active_ing_translate_meta: A dataset of active ingredients in Portuguese, prepared for use in ML Meta processing.
+   - input_active_ing_translate_meta: Dataset of active ingredients in Portuguese, used for translation with 
+     Meta´s SeamlessM4T model.
    - lista_dcb.xlsx: List of Brazilian Common Denominations (DCB).
+
+- ###  Subfolders
+
+     - **`bulas/`**: Drug leaflet files organized by regulatory category (e.g., generic, herbal medicine).
+     - **`ddls/`**: : SQL DDL files representing HealDB table structures, used to generate the RDF schema.
+     - **`ontologies/`**: External biomedial ontologies used in interoperability (e.g. `chebi.owl`).
 
 These files serve as the foundational datasets for web crawling, natural language processing, and interoperability tasks.
 ## Usage
@@ -345,6 +404,8 @@ This enables interoperability with other health data sources, ontologies, and bi
     ```bash
     python src/interoperability/main_interoperability.py
     ```
+### Linking
+
 - **`import_dcb_data.py`**  
 
   - Purpose: Imports and processes DCB (Denominações Comuns Brasileiras) data into the HealDB database.
@@ -352,17 +413,6 @@ This enables interoperability with other health data sources, ontologies, and bi
     - Loads DCB data from an Excel file.
     - Maps and inserts DCB classifications and descriptions.
     - Populates the DCB list with details such as DCB numbers, names, CAS numbers, and classification history.
-
-
-- **`iucn_conservation_status_PM.py`**  
-
-  - Purpose: Fetches plant-related active ingredients and DCB names from the database, processes them using the IUCN API to gather conservation status, threats, and distribution data, and saves the results in JSON format.
-  - Key Processes:
-    - Retrieves active ingredients and DCB names classified as "PM" (plant-based).
-    - Cleans and processes names for querying the IUCN API.
-    - Collects conservation status, threats, and country distribution.
-    - Summarizes and saves results as JSON files for active ingredients and DCB data.
- 
 
 - **`populate_external_ids_types.py`**  
 
@@ -409,16 +459,16 @@ This enables interoperability with other health data sources, ontologies, and bi
     - Inserts valid related identifiers into the external ID table, marking “RXNORM” as the source.
 
 
-- **`link_wikidata_ids_to_wrk_table`**  
-- Purpose: Retrieves external identifiers from Wikidata using RxCUI as input and stores the results in a working table.
-- Key Processes:
-  - Fetches all RxCUI values linked to active ingredients in HealDB.
-  - Queries the Wikidata SPARQL endpoint in batches to retrieve identifiers like CAS, DrugBank, PubChem, ChEBI, SNOMED CT, ATC, UNII, and KEGG.
-  - Inserts the results into the working table ```hd_wrk_wikidata_ext_id```, including the Wikidata entity URL.
+- **`link_wikidata_ids_to_wrk_table`**
+  - Purpose: Retrieves external identifiers from Wikidata using RxCUI as input and stores the results in a working table.
+  - Key Processes:
+    - Fetches all RxCUI values linked to active ingredients in HealDB.
+    - Queries the Wikidata SPARQL endpoint in batches to retrieve identifiers like CAS, DrugBank, PubChem, ChEBI, SNOMED CT, ATC, UNII, and KEGG.
+    - Inserts the results into the working table ```hd_wrk_wikidata_ext_id```, including the Wikidata entity URL.
 
 
 - **`link_kegg_related_ids_to_active_ing`**  
-- Purpose: Links KEGG Compound IDs (from Wikidata) to active ingredients in HealDB and uses them to retrieve PubChem and ChEBI identifiers (via KEGG API) and associate them with the same active ingredients. 
+  - Purpose: Links KEGG Compound IDs (from Wikidata) to active ingredients in HealDB and uses them to retrieve PubChem and ChEBI identifiers (via KEGG API) and associate them with the same active ingredients. 
   - Key Processes: 
     - Clears existing KEGG-related identifiers from the external ID table to avoid duplication.
     - Retrieves KEGG Compound IDs previously linked via Wikidata in the working table and maps them to active ingredients.
@@ -428,27 +478,77 @@ This enables interoperability with other health data sources, ontologies, and bi
   
 
 - **`fill_missing_external_ids`**  
-- Purpose: Fills in missing external identifiers (CAS, ATC, SNOMEDCT, UNII_CODE, CHEBI) for active ingredients in HealDB by using RxCUI matches from the Wikidata working table.
-- Key Processes:
-  - Identifies active ingredients that have a mapped RxCUI but are missing specific external IDs.
-  - Searches the ```hd_wrk_wikidata_ext_id``` working table for ATC, SNOMEDCT, UNII, and CHEBI codes linked to those RxCUIs.
-  - Inserts only identifiers not already present in the hd_active_ingredient_ext_id table.
-  - Chooses one CAS number per active ingredient when there are multiple options.
+  - Purpose: Fills in missing external identifiers (CAS, ATC, SNOMEDCT, UNII_CODE, CHEBI, PUBCHEM_CID) for active ingredients in HealDB by using RxCUI matches from the Wikidata working table.
+  - Key Processes:
+    - Identifies active ingredients that have a mapped RxCUI but are missing specific external IDs.
+    - Searches the ```hd_wrk_wikidata_ext_id``` working table for ATC, SNOMEDCT, UNII_CODE, CHEBI and PUBCHEM_CID codes linked to those RxCUIs.
+    - Inserts only identifiers not already present in the hd_active_ingredient_ext_id table.
+    - Chooses one CAS number per active ingredient when there are multiple options.
 
-## **Ontology**  (*ongoing experiment*)
-Scripts related to creating an ontology using DDLs from the HealDB database.
+### Use Cases
 
-- **`main_ontology.py`**  
-  - Purpose: Central script for creating the HealDB Ontology.
+- **`chebi/query_sparql_chebi.txt`**
+  - Purpose: Demonstrates semantic interoperability between HealDB and ChEBI using SPARQL queries.
+  - Key Processes:
+    - Joins graphs from HealDB and ChEBI in Apache Jena Fuseki.
+    - Retrieves chemical attributes like formula, mass, SMILES, InChI, and InChIKey.
+    - Links ingredients via owl:sameAs to extract structured ontology data in ChEBI.
+
+- **`pubchem/export_pubchem_ref_details.py`**
+  - Purpose: Extracts PubMed references linked to PubChem CIDs of antidepressant ingredients.
+  - Key Processes:
+    - Filters active ingredients by therapeutic class and maps them to PubChem CIDs.
+    - Calls _Entrez API_ to retrieve related PMIDs and publication metadata.
+    - Exports up to 3 references per ingredient to JSON.
+
+- **`iucn/export_iucn_detailed_conservation.py`**
+  - Purpose: Retrieves conservation and threat data for plant-based ingredients using the IUCN API.
+  - Key Processes:
+    - Retrieves active ingredients and DCB names classified as "PM" (plant-based).
+    - Normalizes scientific names and queries IUCN Red List API.
+    - Collects conservation status, threats, and geographic distribution.
+    - Summarizes and saves results as JSON files for active ingredients and DCB data.
+
+- **`rxnorm/rxnorm_xxxx.py`**
+  - Purpose: Placeholder for future queries linking RXCUI to normalized health concept.
+  - Key Processes:
+
+- **`atc/atc_xxxx.py`**
+  - Purpose: Placeholder for future queries linking ATC codes to therapeutic classifications.
+  - Key Processes:
+
+- **`unii_code/unii_xxxx.py`**
+  - Purpose: Placeholder for future queries exploring UNII relationships.
+  - Key Processes:
+
+## **RDF Schema**
+Scripts that convert the relational structure of HealDB — based on the DDLs 
+of its database tables — into an RDF schema saved in Turtle (.ttl) format.
+
+- **`main_rdf_schema.py`**  
+  - Purpose: Central script for orchestrating the RDF schema generation pipeline.
   - **Usage:**  
     ```bash
-    python src/ontology/main_ontology.py
+    python src/interoperability/rdf_schema/main_rdf_schema.py
     ```
 
-- **`create_ontology.py`** 
-  - Purpose: Converts HealDB DDLs into a Turtle (.ttl) file representing the ontology. 
+- **`create_mini_healdb_rdf_schema.py`**
+  - Purpose: Generates a simplified RDF schema (`healdb.ttl`) that includes classes and all 
+  instances from the HealDB tables of active ingredients, their external identifiers, and their types, offering a
+  minimal but complete in content representation of the HealDB database.
+  - Key Processes:
+    - Connects to the MySQL HealDB instance.
+    - Extracts all data from three core tables: `hd_active_ingredient`, `hd_active_ingredient_ext_id`, 
+    and `hd_type_ext_id`.
+    - Converts table structures and full content into RDF triples with classes and individuals.
+    - Defines basic RDF classes and datatype and object properties.
+    - Generates and saves the output as `healdb.ttl`, used in interoperability use cases and SPARQL queries.
+  
+- **`create_healdb_rdf_schema.py`** 
+  - Purpose: Converts the DDL files of HealDB's relational database into a complete RDF schema written in 
+  Turtle (.ttl) format. 
   - Key Processes: 
-    - Reads DDL´s sql files from the folder defined by PATHS["ontology_ddl"].
+    - Reads DDL´s sql files from the folder defined by PATHS["healdb_ddls"].
     - Parses CREATE TABLE statements to extract:
       - Columns and their data types.
       - Foreign keys and their referenced tables.
@@ -457,18 +557,21 @@ Scripts related to creating an ontology using DDLs from the HealDB database.
         - Columns → owl:DatatypeProperty
         - Foreign keys → owl:ObjectProperty
       - Automatically generates labels for classes and properties based on naming patterns (e.g., id_ → hasID_, nm_ → hasName_).
-      - Writes the ontology to a file: ```healdb_ontology.ttl``` in the directory defined by PATHS["output_onto_dir"].
-
+      - Writes the ontology to a file: ```healdb_complete.ttl``` in the directory defined by PATHS["output_rdf_schema"].
+      - Note: This script generates only the RDF schema (classes and properties), without populating it with data from 
+      the tables. Future steps may use this structure to instantiate individuals.
 
 ## **Config**
 Ensure `config.py` contains accurate paths and API tokens for the required resources.
 Defines file paths, API credentials, and project settings for managing data inputs, outputs, and integrations. Includes configurations for:
 
-- Input/output directories (e.g., drug leaflets, ICD files, DrugBank XML).
-- API credentials and endpoints for OpenAI, AWS, and IUCN.
+- Input/output directories (e.g., drug leaflets, ICD files, DrugBank XML, RDF Schema).
+- API credentials and endpoints for OpenAI, AWS, IUCN and RxNorm.
 - Web scraping settings, including browser preferences and download directories.
-- Category mappings for drug types and conservation statuses.
+- Category mappings for leaflet types and conservation statuses.
 - External ID URLs for health-related data sources (e.g., RxNorm, KEGG, Wikidata).
+- API endpoints used in interoperability use cases to fetch biomedical and environmental data.
+- Namespaces used in RDF schema generation and external ontologies.
 
 Ensure all values are adjusted to match your environment and secure sensitive information like API keys.
 
@@ -477,13 +580,20 @@ Ensure all values are adjusted to match your environment and secure sensitive in
 
 1. Drug leaflets from Anvisa (data/output/downloadBulas):
    - Folder containing the downloaded drug leaflets from the Anvisa Portal. 
-2. Conservation Data (data/output/interoperability):
-   - iucn_conservation_active_ing_data.json: Conservation data for active ingredients.
-   - iucn_conservation_dcb_data.json: Conservation data for DCB names.
+2. Interoperability Data (data/output/interoperability):
+   - Output folder for the use cases involving external data integration. Includes results from:
+     - ChEBI: Chemical attributes of ingredients via SPARQL query.
+     - PubChem: Scientific publications retrieved for active ingredients.
+     - IUCN: Conservation status and threats for plant-based ingredients.
+       - `iucn_conservation_active_ing_data.json`: Conservation data for active ingredients.
+       - `iucn_conservation_dcb_data.json`: Conservation data for DCB names.
+     - RxNorm, ATC, UNII_CODE: (in progress)
 3. Translation of active ingredients: 
    - output_active_ing_translate_meta.csv: File containing the translation of active ingredients using the Meta model.
-4. Ontology (data/output/ontology):
-   - create_ontology.ttl: Turtle file containing the ontology created using DDL´s from the HealDB database.
+4. RDF Schema (data/output/rdf_schema):
+   - healdb.ttl: Simplified RDF schema including all data from three tables (active ingredients, external identifiers, 
+     and types).
+   - healdb_complete.ttl: Complete RDF schema structure generated from the full HealDB DDLs (no data instantiation).
 
 ## Contributing
 Contributions are welcome! To contribute:

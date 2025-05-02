@@ -24,7 +24,19 @@ C:\project
     │   │   ├── ddls
     │   │   │   └── healdb_hd_active_ingredient.sql          # DDLs das tabelas do HealDB
     │   │   │   └── healdb_hd_active_ingredient_ext_id.sql
-    │   │   │   └── healdb_hd_company.sql ....
+    │   │   │   └── healdb_hd_company.sql 
+    │   │   │   └── healdb_hd_drug_interaction.sql
+    │   │   │   └── healdb_hd_icd_category.sql
+    │   │   │   └── healdb_hd_icd_group.sql
+    │   │   │   └── healdb_hd_icd_subcategory.sql
+    │   │   │   └── healdb_hd_medication.sql
+    │   │   │   └── healdb_hd_medication_active_ingredient.sql
+    │   │   │   └── healdb_hd_medication_disease.sql
+    │   │   │   └── healdb_hd_medication_drug_leaflet.sql
+    │   │   │   └── healdb_hd_regulatory_category.sql
+    │   │   │   └── healdb_hd_symptom.sql
+    │   │   │   └── healdb_hd_therapeutic_class.sql
+    │   │   │   └── healdb_hd_type_ext_id.sql
     │   │   ├── ontologies
     │   │   │   └── chebi.owl           # Ontologia do CHEBI
     │
