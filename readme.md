@@ -548,22 +548,21 @@ of its database tables — into an RDF schema saved in Turtle (.ttl) format.
   - Purpose: Converts the DDL files of HealDB's relational database into a complete RDF schema written in 
   Turtle (.ttl) format. 
   - Key Processes: 
-    - Reads DDL´s sql files from the folder defined by PATHS["healdb_ddls"].
-    - Parses CREATE TABLE statements to extract:
-      - Columns and their data types.
-      - Foreign keys and their referenced tables.
-      - Maps SQL elements to OWL constructs:
-        - Tables → owl:Class
-        - Columns → owl:DatatypeProperty
-        - Foreign keys → owl:ObjectProperty
-      - Automatically generates labels for classes and properties based on naming patterns (e.g., id_ → hasID_, nm_ → hasName_).
-      - Writes the ontology to a file: ```healdb_complete.ttl``` in the directory defined by PATHS["output_rdf_schema"].
-      - Note: This script generates only the RDF schema (classes and properties), without populating it with data from 
-      the tables. Future steps may use this structure to instantiate individuals.
+    - Reads DDL´s sql files from the folder defined by PATHS ```["healdb_ddls"]```.
+    - Parses CREATE TABLE statements to extract columns, data types, and foreign keys. 
+    - Maps SQL elements to OWL constructs:
+      - Tables → ```owl:Class```
+      - Columns → ```owl:DatatypeProperty```
+      - Foreign keys → ```owl:ObjectProperty```
+    - Automatically generates labels for classes and properties based on naming patterns (e.g., id_ → hasID_, nm_ → hasName_).
+    - Writes the ontology to a file: ```healdb_complete.ttl``` in the directory defined by PATHS["output_rdf_schema"].
+    - **Note:** This script generates only the RDF schema (classes and properties), without populating it with data from 
+    the tables. Future steps may use this structure to instantiate individuals.
 
 ## **Config**
 Ensure `config.py` contains accurate paths and API tokens for the required resources.
-Defines file paths, API credentials, and project settings for managing data inputs, outputs, and integrations. Includes configurations for:
+Defines file paths, API credentials, and project settings for managing data inputs, outputs, and integrations. 
+Includes configurations for:
 
 - Input/output directories (e.g., drug leaflets, ICD files, DrugBank XML, RDF Schema).
 - API credentials and endpoints for OpenAI, AWS, IUCN and RxNorm.
