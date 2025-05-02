@@ -10,3 +10,6 @@ requests>=2.32.0
 selenium>=4.27.0
 soupsieve>=2.6
 urllib3>=2.2.0
+rdflib>=6.3.2
+SPARQLWrapper>=1.8.5
+boto3>=1.34.80
