@@ -165,12 +165,17 @@ C:\project
 ### Requirements
 1. Install Python 3.9+.
 2. Install required libraries from requirements.txt:
-```bash pip install -r requirements.txt```
+  ```bash
+  pip install -r requirements.txt
+  ```
+
 
 ### Running the Project
 *  Configure the config.py file with your environment settings.
 *  Run the main script:
-   ```bash python main.py ```
+   ```bash
+   python main.py
+   ```
 
 ## Inputs
 The `data/input` folder contains all input data files required for processing, translation, and interoperability tasks. 
