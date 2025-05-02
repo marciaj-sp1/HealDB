@@ -12,7 +12,7 @@ from src.repositories.main_repository import main as repositories_main
 from src.translation.main_translation import main as translation_main
 from src.nlp_extraction.main_nlp_extraction import main as nlp_extraction_main
 from src.interoperability.main_interoperability import main as interoperability_main
-from src.ontology.main_ontology import main as ontology_main
+from src.rdf_schema.main_rdf_schema import main as rdf_schema_main
 
 
 def log_execution_time(func_name, start_time, end_time):
@@ -45,7 +45,7 @@ def main():
             (translation_main, "Translation"),
             (nlp_extraction_main, "NLP Extraction"),
             (interoperability_main, "Interoperability"),
-            (ontology_main, "Ontology")
+            (rdf_schema_main, "RDF Schema")
         ]:
             execute_function_with_timing(func, func_name)
 
