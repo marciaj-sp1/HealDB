@@ -1,0 +1,24 @@
+PREFIX heal: <http://healdb.org/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX chebiprop: <http://purl.obolibrary.org/obo/chebi/>
+
+SELECT ?ingredientLabel ?externalId ?chebiEntity ?formula ?mass ?monoisotopicMass ?smiles ?inchi ?inchikey
+WHERE {
+  GRAPH <http://healdb.org/graph/healdb> {
+    ?ingredient a heal:ActiveIngredient ;
+                heal:activeIngredientName ?ingredientLabel ;
+                heal:hasExternalIdentifier ?ext .
+
+    ?ext heal:externalIdValue ?externalId ;
+         owl:sameAs ?chebiEntity .
+  }
+
+  GRAPH <http://healdb.org/graph/chebi> {
+    OPTIONAL { ?chebiEntity chebiprop:formula ?formula . }
+    OPTIONAL { ?chebiEntity chebiprop:mass ?mass . }
+    OPTIONAL { ?chebiEntity chebiprop:monoisotopicmass ?monoisotopicMass . }
+    OPTIONAL { ?chebiEntity chebiprop:smiles ?smiles . }
+    OPTIONAL { ?chebiEntity chebiprop:inchi ?inchi . }
+    OPTIONAL { ?chebiEntity chebiprop:inchikey ?inchikey . }
+  }
+}

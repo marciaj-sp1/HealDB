@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
-"""
-Insert External IDs Module
-Provides helper functions to insert External Ids data into MySQL tables.
-"""
+
+# Insert External IDs Module
+# Provides helper functions to insert External Ids data into MySQL tables.
 
 def insert_external_id(cursor, cnx, id_active_ingredient, tp_ext_id, cd_ext_id, fl_origin_ext_id):
     # Inserts external identifiers into the hd_active_ingredient_ext_id table.
     # Ensures that the external ID type exists before inserting and prevents duplicate entries.
     
-    # Check if the external ID type exists in hd_type_ext_id before inserting
+     # Check if the external ID type exists in hd_type_ext_id before inserting
     check_type_query = "SELECT COUNT(*) FROM healdb.hd_type_ext_id WHERE tp_ext_id = %s"
     cursor.execute(check_type_query, (tp_ext_id,))
     count = cursor.fetchone()[0]

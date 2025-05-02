@@ -18,9 +18,10 @@ E-mail: m905106@dac.unicamp.br
 import time
 import pandas as pd
 from SPARQLWrapper import SPARQLWrapper, JSON, POST
+from config import URLS_EXTERNAL_IDS
 
 # Wikidata SPARQL Endpoint
-WIKIDATA_SPARQL_URL = "https://query.wikidata.org/sparql"
+WIKIDATA_SPARQL_URL = URLS_EXTERNAL_IDS["wikidata_sparql_url"]
 
 def fetch_active_ingredient_rxcui(cnx, cursor):
     # Fetch all the active ingredients in HealDB with RXCUI available

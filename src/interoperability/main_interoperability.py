@@ -4,19 +4,21 @@ from datetime import datetime
 
 # Add the project root directory to the Python Path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
-sys.path.append(str(PROJECT_ROOT))
-
+# Add both levels 
+sys.path.append(str(PROJECT_ROOT)) # for db_utils, config etc.
+sys.path.append(str(PROJECT_ROOT / "src")) # for interoperability
 
 from db_utils import open_connection, close_connection
-from src.interoperability.import_dcb_data import import_dcb_data
-from src.interoperability.iucn_conservation_status_PM import iucn_conservation_status_PM
-from src.interoperability.populate_external_ids_types import populate_external_ids_types
-from src.interoperability.link_cas_to_active_ing import link_cas_to_active_ing
-from src.interoperability.link_rxcui_to_active_ing import link_rxcui_to_active_ing
-from src.interoperability.link_rxcui_related_ids_to_active_ing import link_rxcui_related_ids_to_active_ing
-from src.interoperability.link_wikidata_ids_to_wrk_table import link_wikidata_ids_to_wrk_table
-from src.interoperability.link_kegg_related_ids_to_active_ing import link_kegg_related_ids_to_active_ing
-from src.interoperability.fill_missing_external_ids import fill_missing_external_ids
+from interoperability.linking.import_dcb_data import import_dcb_data
+from interoperability.linking.populate_external_ids_types import populate_external_ids_types
+from interoperability.linking.link_cas_to_active_ing import link_cas_to_active_ing
+from interoperability.linking.link_rxcui_to_active_ing import link_rxcui_to_active_ing
+from interoperability.linking.link_rxcui_related_ids_to_active_ing import link_rxcui_related_ids_to_active_ing
+from interoperability.linking.link_wikidata_ids_to_wrk_table import link_wikidata_ids_to_wrk_table
+from interoperability.linking.link_kegg_related_ids_to_active_ing import link_kegg_related_ids_to_active_ing
+from interoperability.linking.fill_missing_external_ids import fill_missing_external_ids
+from  interoperability.usecases.pubchem.export_pubchem_ref_details import export_pubchem_ref_details
+from interoperability.usecases.iucn.export_iucn_detailed_conservation import export_iucn_detailed_conservation
 
 
 
@@ -37,22 +39,23 @@ def log_execution_time(func_name, start_time, end_time):
 def main():
     # Main entry point for the script.
     # Manages database connection and processes repositories.
-        
+             
     try:
         # Open the database connection
         cnx, cursor = open_connection()
 
         # Create repositories and measure execution time
         for func, func_name in [
-            (import_dcb_data, "import_dcb_data"),
-            (iucn_conservation_status_PM, "iucn_conservation_status_PM"),
+            (import_dcb_data, "import_dcb_data")
             (populate_external_ids_types, "populate_external_ids_types"),
             (link_cas_to_active_ing, "link_cas_to_active_ing"),
             (link_rxcui_to_active_ing, "link_rxcui_to_active_ing"),
             (link_rxcui_related_ids_to_active_ing, "link_rxcui_related_ids_to_active_ing"),
             (link_wikidata_ids_to_wrk_table, "link_wikidata_ids_to_wrk_table"),
             (link_kegg_related_ids_to_active_ing, "link_kegg_related_ids_to_active_ing"),
-            (fill_missing_external_ids, "fill_missing_external_ids")
+            (fill_missing_external_ids, "fill_missing_external_ids"),
+            (export_pubchem_ref_details, "export_pubchem_ref_details"),
+            (export_iucn_detailed_conservation, "export_iucn_detailed_conservation")
         ]:
             start_time = datetime.now()
             func(cnx, cursor)  # Execute the function
