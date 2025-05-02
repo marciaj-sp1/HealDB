@@ -21,34 +21,42 @@ C:\project
     │   │   ├── DADOS_ABERTOS_MEDICAMENTOS.csv
     │   │   ├── input_active_ing_translate_meta
     │   │   ├── lista_dcb.xlsx
+    │   │   ├── ddls
+    │   │   │   └── healdb_hd_active_ingredient.sql          # DDLs das tabelas do HealDB
+    │   │   │   └── healdb_hd_active_ingredient_ext_id.sql
+    │   │   │   └── healdb_hd_company.sql ....
+    │   │   ├── ontologies
+    │   │   │   └── chebi.owl           # Ontologia do CHEBI
     │
     │   ├── output
     │   │   ├── downloadBulas
-    │   │   ├── output_active_ing_translate_meta.csv
+    │   │   ├── translation
+    │   │   │   ├── output_active_ing_translate_meta.csv
     │   │   ├── interoperability
+    │   │   │   ├── chebi
+    │   │   │   │   └── chebi_attributes_active_ing.csv
     │   │   │   ├── pubchem
     │   │   │   │   └── pubchem_reference_detailed.json
     │   │   │   ├── iucn
-    │   │   │   │   ├── iucn_conservation_active_ing_data.json
+    │   │   │   │   ├── iucn_conservation_healdb_data.json
     │   │   │   │   ├── iucn_conservation_dcb_data.json
-    │   │   │   ├── chebi
-    │   │   │   │   └── chebi_molecular_attributes.json
-    │   │   ├── ontology
-    │   │   │   └── healdb_ontology.ttl
+    │   │   ├── rdf_schema
+    │   │   │   └── healdb.ttl
+    │   │   │   └── healdb_complete.ttl
     │
     ├── doc
     ├── logs
     ├── tests
     ├── src
-    │   ├── ontology
+    │   ├── rdf_schema
     │   │   ├── __init__.py
-    │   │   ├── main_ontology.py
-    │   │   ├── create_ontology.py
+    │   │   ├── main_rdf_schema.py
+    │   │   ├── create_healdb_rdf_schema.py         # gera healdb_complete.ttl
+    │   │   ├── create_mini_healdb_rdf_schema.py    # gera healdb.ttl com instâncias
     │
     │   ├── interoperability
     │   │   ├── __init__.py
-    │   │   ├── main_interoperability.py
-    │   │
+    │   │   ├── main_interoperability.py    
     │   │   ├── linking
     │   │   │   ├── __init__.py
     │   │   │   ├── import_dcb_data.py
@@ -62,16 +70,13 @@ C:\project
     │   │   │   ├── fill_missing_external_ids.py
     │   │
     │   │   ├── usecases
-    │   │   │   ├── __init__.py
+    │   │   │   ├── chebi
+    │   │   │   │   └── query_sparql_chebi.txt
     │   │   │   ├── pubchem
     │   │   │   │   ├── __init__.py
     │   │   │   │   └── export_pubchem_ref_details.py
     │   │   │   ├── iucn_r 
-    │   │   │   │   ├── __init__.py
     │   │   │   │   ├── export_iucn_conservation_status_r.R
-    │   │   │   ├── chebi
-    │   │   │   │   ├── __init__.py
-    │   │   │   │   └── query_chebi_ontology.txt
     │   │   │   ├── rxnorm
     │   │   │   │   ├── __init__.py
     │   │   │   │   └── usecase_rxnorm_publications.py
