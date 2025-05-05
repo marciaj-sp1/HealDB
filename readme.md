@@ -186,7 +186,7 @@ Key components include:
 
      - **`bulas/`**: Drug leaflet files organized by regulatory category (e.g., generic, herbal medicine).
      - **`ddls/`**: : SQL DDL files representing HealDB table structures, used to generate the RDF schema.
-     - **`ontologies/`**: External biomedial ontologies used in interoperability (e.g. `chebi.owl`).
+     - **`ontologies/`**: External biomedical ontologies used in interoperability (e.g. `chebi.owl`).
 
 These files serve as the foundational datasets for web crawling, natural language processing, and interoperability tasks.
 ## Usage
@@ -545,6 +545,7 @@ of its database tables — into an RDF schema saved in Turtle (.ttl) format.
     and `hd_type_ext_id`.
     - Converts table structures and full content into RDF triples with classes and individuals.
     - Defines basic RDF classes and datatype and object properties.
+    - Defines ``owl:sameAs`` links for external IDs of type ChEBI and ATC 
     - Generates and saves the output as `healdb.ttl`, used in interoperability use cases and SPARQL queries.
   
 - **`create_healdb_rdf_schema.py`** 

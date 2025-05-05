@@ -112,7 +112,7 @@ def get_rxcui_entities(rxcui, types):
 # Retrieved data are name, tty, status, synonym, clinical and branded presentations.
 # Results are exported to a JSON file.
 
-def rxnorm_export_enrichment(cnx, cursor):
+def rxnorm_export_enriched_ingredients(cnx, cursor):
     sql_command = (
         "SELECT DISTINCT b.id_active_ingredient, a.nm_active_ingredient, b.cd_ext_id "
         "FROM hd_active_ingredient a "

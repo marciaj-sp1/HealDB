@@ -12,7 +12,7 @@ E-mail: m905106@dac.unicamp.br
 # Script to generate the HealDB RDF Schema in Turtle format using data from a MySQL database.
 # The RDF Schema includes classes, object and data properties for Active Ingredients, their 
 # External Identifiers, and the types of those identifiers. It also adds owl:sameAs links 
-# between the internal identifiers and their  corresponding external URIs (e.g., ChEBI).
+# between the internal identifiers and their  corresponding external URIs (e.g., ChEBI, ATC).
 
 from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF, RDFS, OWL, XSD
@@ -114,10 +114,13 @@ def populate_rdf_schema(cnx, cursor):
         g.add((ext_uri, HEAL.hasIdentifierType, id_type_map[tp_ext_id]))
         g.add((ai_map[id_ai], HEAL.hasExternalIdentifier, ext_uri))
 
-        # Add owl:sameAs only for ChEBI
+        # Add owl:sameAs for ChEBI and ATC
         if tp_ext_id == "CHEBI":
             external_uri = URIRef(f"http://purl.obolibrary.org/obo/CHEBI_{cd_ext_id}")
             g.add((ext_uri, OWL.sameAs, external_uri))
+        elif tp_ext_id == "ATC":
+           external_uri = URIRef(f"http://purl.bioontology.org/ontology/ATC/{cd_ext_id}")
+           g.add((ext_uri, OWL.sameAs, external_uri))
 
     return
 
