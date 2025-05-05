@@ -22,23 +22,23 @@ C:\project
     │   │   ├── input_active_ing_translate_meta
     │   │   ├── lista_dcb.xlsx
     │   │   ├── ddls
-    │   │   │   └── healdb_hd_active_ingredient.sql          # HealDB Tables Structures
-    │   │   │   └── healdb_hd_active_ingredient_ext_id.sql
-    │   │   │   └── healdb_hd_company.sql 
-    │   │   │   └── healdb_hd_drug_interaction.sql
-    │   │   │   └── healdb_hd_icd_category.sql
-    │   │   │   └── healdb_hd_icd_group.sql
-    │   │   │   └── healdb_hd_icd_subcategory.sql
-    │   │   │   └── healdb_hd_medication.sql
-    │   │   │   └── healdb_hd_medication_active_ingredient.sql
-    │   │   │   └── healdb_hd_medication_disease.sql
-    │   │   │   └── healdb_hd_medication_drug_leaflet.sql
-    │   │   │   └── healdb_hd_regulatory_category.sql
-    │   │   │   └── healdb_hd_symptom.sql
-    │   │   │   └── healdb_hd_therapeutic_class.sql
-    │   │   │   └── healdb_hd_type_ext_id.sql
+    │   │   │   ├── healdb_hd_active_ingredient.sql
+    │   │   │   ├── healdb_hd_active_ingredient_ext_id.sql
+    │   │   │   ├── healdb_hd_company.sql
+    │   │   │   ├── healdb_hd_drug_interaction.sql
+    │   │   │   ├── healdb_hd_icd_category.sql
+    │   │   │   ├── healdb_hd_icd_group.sql
+    │   │   │   ├── healdb_hd_icd_subcategory.sql
+    │   │   │   ├── healdb_hd_medication.sql
+    │   │   │   ├── healdb_hd_medication_active_ingredient.sql
+    │   │   │   ├── healdb_hd_medication_disease.sql
+    │   │   │   ├── healdb_hd_medication_drug_leaflet.sql
+    │   │   │   ├── healdb_hd_regulatory_category.sql
+    │   │   │   ├── healdb_hd_symptom.sql
+    │   │   │   ├── healdb_hd_therapeutic_class.sql
+    │   │   │   ├── healdb_hd_type_ext_id.sql
     │   │   ├── ontologies
-    │   │   │   └── chebi.owl           # RDF Schema ChEBI
+    │   │   │   └── chebi.owl   # RDF Schema ChEBI
     │
     │   ├── output
     │   │   ├── downloadBulas
@@ -46,7 +46,7 @@ C:\project
     │   │   │   ├── output_active_ing_translate_meta.csv
     │   │   ├── interoperability
     │   │   │   ├── chebi
-    │   │   │   │   └── chebi_attributes_healdb.csv
+    │   │   │   │   ├── chebi_attributes_healdb.csv
     │   │   │   │   └── chebi_attributes_healdb_json.json
     │   │   │   ├── iucn
     │   │   │   │   ├── iucn_conservation_dcb.json
@@ -56,7 +56,7 @@ C:\project
     │   │   │   ├── rxnorm
     │   │   │   │   └── rxnorm_enrichment_healdb.json
     │   │   ├── rdf_schema
-    │   │   │   └── healdb.ttl
+    │   │   │   ├── healdb.ttl
     │   │   │   └── healdb_complete.ttl
     │
     ├── doc
@@ -66,12 +66,12 @@ C:\project
     │   ├── rdf_schema
     │   │   ├── __init__.py
     │   │   ├── main_rdf_schema.py
-    │   │   ├── create_healdb_rdf_schema.py         # Create complete RDF Schema HealDB 
-    │   │   ├── create_mini_healdb_rdf_schema.py    # Create mini RDF Scheam HealDB with instance data
+    │   │   ├── create_healdb_rdf_schema.py         # Complete RDF schema for HealDB
+    │   │   ├── create_mini_healdb_rdf_schema.py    # Mini RDF schema with instance data
     │
     │   ├── interoperability
     │   │   ├── __init__.py
-    │   │   ├── main_interoperability.py    
+    │   │   ├── main_interoperability.py
     │   │   ├── linking
     │   │   │   ├── __init__.py
     │   │   │   ├── import_dcb_data.py
@@ -83,13 +83,13 @@ C:\project
     │   │   │   ├── link_wikidata_ids_to_wrk_table.py
     │   │   │   ├── link_kegg_related_ids_to_active_ing.py
     │   │   │   ├── fill_missing_external_ids.py
-    │   │
     │   │   ├── usecases
     │   │   │   ├── __init__.py
-    │   │   │   ├── chebi_attributes_query.rd         # Query SPARQL to integrate HealDB with CHEBI
-    │   │   │   ├── iucn_export_conservation_status.py    # Integration of HealDB with IUCN
-    │   │   │   ├── pubchem_export_references.py          # Integration of HealDB with PUBCHEM
-    │   │   │   ├── rxnorm_export_enriched_ingredients.py # Integration of HealDB with RxNorm
+    │   │   │   ├── chebi_attributes_query.rd               # SPARQL query for CHEBI
+    │   │   │   ├── iucn_export_conservation_status.py      # IUCN integration
+    │   │   │   ├── pubchem_export_references.py            # PubChem integration
+    │   │   │   ├── rxnorm_export_enriched_ingredients.py   # RxNorm integration
+    │
     │   ├── nlp_extraction
     │   │   ├── __init__.py
     │   │   ├── main_nlp_extraction.py
@@ -121,7 +121,8 @@ C:\project
     │   │   ├── validate_translation_and_link_active_ing.py
     │
     │   ├── webcrawler
-    │   │   ├── main_webcralwer.py
+    │   │   ├── __init__.py
+    │   │   ├── main_webcrawler.py
     │   │   ├── webcrawler_leaflet.py
     │
     ├── requirements.txt
