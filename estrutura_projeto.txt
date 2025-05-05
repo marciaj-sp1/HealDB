@@ -22,7 +22,7 @@ C:\project
     │   │   ├── input_active_ing_translate_meta
     │   │   ├── lista_dcb.xlsx
     │   │   ├── ddls
-    │   │   │   └── healdb_hd_active_ingredient.sql          # DDLs das tabelas do HealDB
+    │   │   │   └── healdb_hd_active_ingredient.sql          # HealDB Tables Structures
     │   │   │   └── healdb_hd_active_ingredient_ext_id.sql
     │   │   │   └── healdb_hd_company.sql 
     │   │   │   └── healdb_hd_drug_interaction.sql
@@ -38,7 +38,7 @@ C:\project
     │   │   │   └── healdb_hd_therapeutic_class.sql
     │   │   │   └── healdb_hd_type_ext_id.sql
     │   │   ├── ontologies
-    │   │   │   └── chebi.owl           # Ontologia do CHEBI
+    │   │   │   └── chebi.owl           # RDF Schema ChEBI
     │
     │   ├── output
     │   │   ├── downloadBulas
@@ -46,12 +46,15 @@ C:\project
     │   │   │   ├── output_active_ing_translate_meta.csv
     │   │   ├── interoperability
     │   │   │   ├── chebi
-    │   │   │   │   └── chebi_attributes_active_ing.csv
-    │   │   │   ├── pubchem
-    │   │   │   │   └── pubchem_reference_detailed.json
+    │   │   │   │   └── chebi_attributes_healdb.csv
+    │   │   │   │   └── chebi_attributes_healdb_json.json
     │   │   │   ├── iucn
-    │   │   │   │   ├── iucn_conservation_healdb_data.json
-    │   │   │   │   ├── iucn_conservation_dcb_data.json
+    │   │   │   │   ├── iucn_conservation_dcb.json
+    │   │   │   │   ├── iucn_conservation_healdb.json
+    │   │   │   ├── pubchem
+    │   │   │   │   └── pubchem_reference_healdb.json
+    │   │   │   ├── rxnorm
+    │   │   │   │   └── rxnorm_enrichment_healdb.json
     │   │   ├── rdf_schema
     │   │   │   └── healdb.ttl
     │   │   │   └── healdb_complete.ttl
@@ -63,8 +66,8 @@ C:\project
     │   ├── rdf_schema
     │   │   ├── __init__.py
     │   │   ├── main_rdf_schema.py
-    │   │   ├── create_healdb_rdf_schema.py         # gera healdb_complete.ttl
-    │   │   ├── create_mini_healdb_rdf_schema.py    # gera healdb.ttl com instâncias
+    │   │   ├── create_healdb_rdf_schema.py         # Create complete RDF Schema HealDB 
+    │   │   ├── create_mini_healdb_rdf_schema.py    # Create mini RDF Scheam HealDB with instance data
     │
     │   ├── interoperability
     │   │   ├── __init__.py
@@ -82,22 +85,11 @@ C:\project
     │   │   │   ├── fill_missing_external_ids.py
     │   │
     │   │   ├── usecases
-    │   │   │   ├── chebi
-    │   │   │   │   └── query_sparql_chebi.txt
-    │   │   │   ├── pubchem
-    │   │   │   │   ├── __init__.py
-    │   │   │   │   └── export_pubchem_ref_details.py
-    │   │   │   ├── iucn_r 
-    │   │   │   │   ├── export_iucn_conservation_status_r.R
-    │   │   │   ├── rxnorm
-    │   │   │   │   ├── __init__.py
-    │   │   │   │   └── usecase_rxnorm_publications.py
-    │   │   │   ├── atc
-    │   │   │   │   ├── __init__.py
-    │   │   │   │   └── atc_xxxx.py    │
-    │   │   │   ├── unii_code
-    │   │   │   │   ├── __init__.py
-    │   │   │   │   └── atc_xxxx.py    │
+    │   │   │   ├── __init__.py
+    │   │   │   ├── chebi_attributes_query.rd         # Query SPARQL to integrate HealDB with CHEBI
+    │   │   │   ├── iucn_export_conservation_status.py    # Integration of HealDB with IUCN
+    │   │   │   ├── pubchem_export_references.py          # Integration of HealDB with PUBCHEM
+    │   │   │   ├── rxnorm_export_enriched_ingredients.py # Integration of HealDB with RxNorm
     │   ├── nlp_extraction
     │   │   ├── __init__.py
     │   │   ├── main_nlp_extraction.py

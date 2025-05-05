@@ -23,16 +23,25 @@ from src.interoperability.external_ids_insert import (
 # RXNorm API Base URL
 RXNORM_API_URL = URLS_EXTERNAL_IDS["rxnorm_api_url"]
 
+
 def get_rxcui(nm_active_ingredient_eng):
-    # Search rxcui using the active ingredient name
+    # Search RxCUI using the active ingredient name
+    rxcui = None  # valor padrão
+
     response = requests.get(RXNORM_API_URL.format(nm_active_ingredient_eng))
 
     if response.status_code == 200:
         data = response.json()
-        return data.get("idGroup", {}).get("rxnormId", [None])[0]
+        id_group = data.get("idGroup", {})
+        rxnorm_ids = id_group.get("rxnormId", [])
+        
+        if rxnorm_ids:
+            rxcui = rxnorm_ids[0]
     else:
         print(f"RXNorm API Error: {response.status_code}")
-    return None
+
+    return rxcui
+
 
 
 def link_rxcui_to_active_ing(cnx, cursor):

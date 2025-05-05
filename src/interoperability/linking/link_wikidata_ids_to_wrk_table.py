@@ -35,7 +35,8 @@ def fetch_active_ingredient_rxcui(cnx, cursor):
     cursor.execute(sql_command)
     results = cursor.fetchall()
         
-    return pd.DataFrame(results, columns=["rxcui"])
+    df_rxcui = pd.DataFrame(results, columns=['rxcui'])
+    return df_rxcui
 
 def fetch_wikidata_ids(rxcui_list):
     # Fetches external IDs from Wikidata in batches of 500 RXCUIs
@@ -66,6 +67,7 @@ def fetch_wikidata_ids(rxcui_list):
     )
     sparql.setQuery(sparql_command)
     sparql.setReturnFormat(JSON)
+    df_wikidata = pd.DataFrame()
 
     try:
         response = sparql.query().convert()
@@ -87,12 +89,12 @@ def fetch_wikidata_ids(rxcui_list):
                 "ds_url_wikidata": entry["compound"]["value"] if "compound" in entry else None  # URL do item no Wikidata
             }
             extracted_data.append(record)
-            
-        return pd.DataFrame(extracted_data)
+        
+        df_wikidata = pd.DataFrame(extracted_data)
 
     except Exception as e:
         print(f"Error querying Wikidata: {e}")
-    return pd.DataFrame()
+    return df_wikidata
 
 def link_wikidata_ids_to_stg(cnx, cursor):
     # Processes active ingredients and stores them in a Wikidata working table

@@ -136,7 +136,7 @@ def process_plants(plants, output_list):
     return total
 
 
-def export_iucn_detailed_conservation(cnx, cursor):
+def iucn_export_conservation_status(cnx, cursor):
     print("Starting IUCN Detailed Conservation Status processing...")
 
     sql_command = (
@@ -156,7 +156,7 @@ def export_iucn_detailed_conservation(cnx, cursor):
     output_data = []
     total_processed = process_plants(cleaned_names, output_data)
 
-    output_iucn_path = f"{PATHS['output_iucn']}/export_iucn_detailed_conservation.json"
+    output_iucn_path = f"{PATHS['output_data']}/iucn_conservation_healdb.json"
     with open(output_iucn_path, "w", encoding="utf-8") as f:
         json.dump(output_data, f, indent=4)
 

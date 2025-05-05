@@ -34,7 +34,7 @@ C:\project
     │   │   ├── input_active_ing_translate_meta
     │   │   ├── lista_dcb.xlsx
     │   │   ├── ddls
-    │   │   │   └── healdb_hd_active_ingredient.sql          # DDLs das tabelas do HealDB
+    │   │   │   └── healdb_hd_active_ingredient.sql          # HealDB Tables Structures
     │   │   │   └── healdb_hd_active_ingredient_ext_id.sql
     │   │   │   └── healdb_hd_company.sql 
     │   │   │   └── healdb_hd_drug_interaction.sql
@@ -50,7 +50,7 @@ C:\project
     │   │   │   └── healdb_hd_therapeutic_class.sql
     │   │   │   └── healdb_hd_type_ext_id.sql
     │   │   ├── ontologies
-    │   │   │   └── chebi.owl           # Ontologia do CHEBI
+    │   │   │   └── chebi.owl           # RDF Schema ChEBI
     │
     │   ├── output
     │   │   ├── downloadBulas
@@ -58,12 +58,15 @@ C:\project
     │   │   │   ├── output_active_ing_translate_meta.csv
     │   │   ├── interoperability
     │   │   │   ├── chebi
-    │   │   │   │   └── chebi_attributes_active_ing.csv
-    │   │   │   ├── pubchem
-    │   │   │   │   └── pubchem_reference_detailed.json
+    │   │   │   │   └── chebi_attributes_healdb.csv
+    │   │   │   │   └── chebi_attributes_healdb_json.json
     │   │   │   ├── iucn
-    │   │   │   │   ├── iucn_conservation_healdb_data.json
-    │   │   │   │   ├── iucn_conservation_dcb_data.json
+    │   │   │   │   ├── iucn_conservation_dcb.json
+    │   │   │   │   ├── iucn_conservation_healdb.json
+    │   │   │   ├── pubchem
+    │   │   │   │   └── pubchem_reference_healdb.json
+    │   │   │   ├── rxnorm
+    │   │   │   │   └── rxnorm_enrichment_healdb.json
     │   │   ├── rdf_schema
     │   │   │   └── healdb.ttl
     │   │   │   └── healdb_complete.ttl
@@ -75,8 +78,8 @@ C:\project
     │   ├── rdf_schema
     │   │   ├── __init__.py
     │   │   ├── main_rdf_schema.py
-    │   │   ├── create_healdb_rdf_schema.py         # gera healdb_complete.ttl
-    │   │   ├── create_mini_healdb_rdf_schema.py    # gera healdb.ttl com instâncias
+    │   │   ├── create_healdb_rdf_schema.py         # Create complete RDF Schema HealDB 
+    │   │   ├── create_mini_healdb_rdf_schema.py    # Create mini RDF Scheam HealDB with instance data
     │
     │   ├── interoperability
     │   │   ├── __init__.py
@@ -94,22 +97,11 @@ C:\project
     │   │   │   ├── fill_missing_external_ids.py
     │   │
     │   │   ├── usecases
-    │   │   │   ├── chebi
-    │   │   │   │   └── query_sparql_chebi.txt
-    │   │   │   ├── pubchem
-    │   │   │   │   ├── __init__.py
-    │   │   │   │   └── export_pubchem_ref_details.py
-    │   │   │   ├── iucn_r 
-    │   │   │   │   ├── export_iucn_conservation_status_r.R
-    │   │   │   ├── rxnorm
-    │   │   │   │   ├── __init__.py
-    │   │   │   │   └── usecase_rxnorm_publications.py
-    │   │   │   ├── atc
-    │   │   │   │   ├── __init__.py
-    │   │   │   │   └── atc_xxxx.py    │
-    │   │   │   ├── unii_code
-    │   │   │   │   ├── __init__.py
-    │   │   │   │   └── atc_xxxx.py    │
+    │   │   │   ├── __init__.py
+    │   │   │   ├── chebi_attributes_query.rd         # Query SPARQL to integrate HealDB with CHEBI
+    │   │   │   ├── iucn_export_conservation_status.py    # Integration of HealDB with IUCN
+    │   │   │   ├── pubchem_export_references.py          # Integration of HealDB with PUBCHEM
+    │   │   │   ├── rxnorm_export_enriched_ingredients.py # Integration of HealDB with RxNorm
     │   ├── nlp_extraction
     │   │   ├── __init__.py
     │   │   ├── main_nlp_extraction.py
@@ -492,21 +484,21 @@ This enables interoperability with other health data sources, ontologies, and bi
 
 ### Use Cases
 
-- **`chebi/query_sparql_chebi.txt`**
+- **`chebi_attributes_query.txt`**
   - Purpose: Demonstrates semantic interoperability between HealDB and ChEBI using SPARQL queries.
   - Key Processes:
     - Joins graphs from HealDB and ChEBI in Apache Jena Fuseki.
     - Retrieves chemical attributes like formula, mass, SMILES, InChI, and InChIKey.
     - Links ingredients via owl:sameAs to extract structured ontology data in ChEBI.
 
-- **`pubchem/export_pubchem_ref_details.py`**
+- **`pubchem_export_references.py`**
   - Purpose: Extracts PubMed references linked to PubChem CIDs of antidepressant ingredients.
   - Key Processes:
     - Filters active ingredients by therapeutic class and maps them to PubChem CIDs.
     - Calls _Entrez API_ to retrieve related PMIDs and publication metadata.
     - Exports up to 3 references per ingredient to JSON.
 
-- **`iucn/export_iucn_detailed_conservation.py`**
+- **`iucn_export_conservation_status_r.R`**
   - Purpose: Retrieves conservation and threat data for plant-based ingredients using the IUCN API.
   - Key Processes:
     - Retrieves active ingredients and DCB names classified as "PM" (plant-based).
@@ -514,9 +506,15 @@ This enables interoperability with other health data sources, ontologies, and bi
     - Collects conservation status, threats, and geographic distribution.
     - Summarizes and saves results as JSON files for active ingredients and DCB data.
 
-- **`rxnorm/rxnorm_xxxx.py`**
-  - Purpose: Placeholder for future queries linking RXCUI to normalized health concept.
+- **`rxnorm_export_enriched_ingredients.py`**
+  - Purpose: Enriches HealDB active ingredients with clinical and pharmacological data 
+  from the RxNorm API using RxCUI identifiers.
   - Key Processes:
+    - Select active ingredients with RxCUI from ``hd_active_ingredient_ext_id``.
+    - Retrieve preferred name, TTY, status, and synonyms via RxNorm API.
+    - Extract clinical presentations (SCD) and branded presentations 
+  (SBD, BPCK, SBDF, SBDC).
+    - Structure data retrieved into dictionaries and export to ``rxnorm_enrichment_healdb.json``.
 
 - **`atc/atc_xxxx.py`**
   - Purpose: Placeholder for future queries linking ATC codes to therapeutic classifications.
@@ -589,9 +587,10 @@ Ensure all values are adjusted to match your environment and secure sensitive in
      - ChEBI: Chemical attributes of ingredients via SPARQL query.
      - PubChem: Scientific publications retrieved for active ingredients.
      - IUCN: Conservation status and threats for plant-based ingredients.
-       - `iucn_conservation_active_ing_data.json`: Conservation data for active ingredients.
-       - `iucn_conservation_dcb_data.json`: Conservation data for DCB names.
-     - RxNorm, ATC, UNII_CODE: (in progress)
+       - `iucn_conservation_healdb.json`: Conservation data for active ingredients.
+       - `iucn_conservation_dcb.json`: Conservation data for DCB names.
+     - RxNorm: Enriched active ingredients with RxNorm clinical and pharmacological data.
+     - ATC, UNII_CODE: (in progress)
 3. Translation of active ingredients: 
    - output_active_ing_translate_meta.csv: File containing the translation of active ingredients using the Meta model.
 4. RDF Schema (data/output/rdf_schema):

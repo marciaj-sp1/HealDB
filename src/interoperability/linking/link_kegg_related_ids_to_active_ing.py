@@ -26,23 +26,27 @@ KEGG_API_URL = URLS_EXTERNAL_IDS["kegg_api_url"]
 
 def get_related_ids_from_kegg(kegg_id):
    # Get all PubChem CIDs and a single ChEBI ID from KEGG
+    pubchem_cids = []
+    chebi = None
+    
     response = requests.get(KEGG_API_URL.format(kegg_id))
 
     if response.status_code == 200:
         text = response.text
-        pubchem_cids = set()  # Use a set to avoid duplicates
+        pubchem_cid_set = set()  # Use a set to avoid duplicates
         chebi = None
 
         for line in text.split('\n'):
             if "PubChem" in line:
-                pubchem_cids.add(line.split()[-1])  # Store all PubChem CIDs
+                pubchem_cid_set.add(line.split()[-1])  # Store all PubChem CIDs
             elif "ChEBI" in line and chebi is None:
                 chebi = line.split()[-1]  # Keep only the first ChEBI ID
 
-        return list(pubchem_cids), chebi
+        pubchem_cids = list(pubchem_cid_set)
     else:
         print(f"KEGG API Error: {response.status_code} for KEGG ID: {kegg_id}")
-        return [], None  # Return an empty list for PubChem and None for ChEBI
+    
+    return pubchem_cids, chebi
 
 
 def link_kegg_related_ids_to_active_ing(cnx, cursor):

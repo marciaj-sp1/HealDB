@@ -46,7 +46,9 @@ def get_rxcui_related_ids(rxcui):
                 values = [data.get("propValue", "N/A")] if data else []
 
             # Store values in the result dictionary
-            result[prop] = values if values else ["N/A"]
+            if not values:
+               values = ["N/A"]
+            result[prop] = values 
         else:
             result[prop] = ["API request error"]
 

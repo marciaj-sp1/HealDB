@@ -173,7 +173,7 @@ for (i in names(result_dcb)) {
 
 
 # Export results to JSON files
-write_json(result_healdb, "C:/project/healdb/data/output/interoperability/iucn/iucn_conservation_healdb_data.json", pretty = TRUE, auto_unbox = TRUE)
-write_json(result_dcb, "C:/project/healdb/data/output/interoperability/iucn/iucn_conservation_dcb_data.json", pretty = TRUE, auto_unbox = TRUE)
+write_json(result_healdb, "C:/project/healdb/data/output/interoperability/iucn/iucn_conservation_healdb.json", pretty = TRUE, auto_unbox = TRUE)
+write_json(result_dcb, "C:/project/healdb/data/output/interoperability/iucn/iucn_conservation_dcb.json", pretty = TRUE, auto_unbox = TRUE)
 
 cat("\nExport completed for HealDB and DCB.\n")

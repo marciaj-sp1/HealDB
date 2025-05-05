@@ -100,7 +100,7 @@ def parse_date(pub):
 
 
 # Main function that queries the database and exports the enriched JSON
-def export_pubchem_ref_with_details(cnx, cursor):
+def pubchem_export_references(cnx, cursor):
     sql_command = (
         "SELECT DISTINCT "
         "       a.id_active_ingredient, "
@@ -158,11 +158,10 @@ def export_pubchem_ref_with_details(cnx, cursor):
             "publications": publications
         })
 
-    output_pubchem_ref_file = f"{PATHS['output_pubchem']}/pubchem_reference_detailed.json"
+    output_pubchem_ref_file = f"{PATHS['output_pubchem']}/pubchem_reference_healdb.json"
     with open(output_pubchem_ref_file, "w", encoding="utf-8") as f:
         json.dump(json_output, f, indent=4, ensure_ascii=False)
 
-    print("\nExport completed:")
-    print("- pubchem_reference_detailed.json")
+    print(f"\nExport completed: {output_pubchem_ref_file}")
 
     return
