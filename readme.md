@@ -627,7 +627,7 @@ Ensure all values are adjusted to match your environment and secure sensitive in
 3. Translation of active ingredients: 
    - output_active_ing_translate_meta.csv: File containing the translation of active ingredients using the Meta model.
 4. RDF Schema (data/output/rdf_schema):
-   - healdb_minittl: Simplified RDF schema including all data from the tables (active ingredients, external identifiers, 
+   - healdb_mini.ttl: Simplified RDF schema including all data from the tables (active ingredients, external identifiers, 
      types of external identifiers, medications, therapeutic classes, and regulatory categories).
    - healdb_complete.ttl: Complete RDF schema structure generated from the full HealDB DDLs (no data instantiation).
 
