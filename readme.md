@@ -197,7 +197,7 @@ Key components include:
      - **`bulas/`**: Drug leaflet files organized by regulatory category (e.g., generic, herbal medicine).
      - **`ddls/`**: : SQL DDL files representing HealDB table structures, used to generate the RDF schema.
      - **`ontologies/`**: External biomedical ontologies used in interoperability(e.g. `chebi.owl`, `atc.ttl`), and 
-  a subset of HealDB RDF Schema. 
+  a subset of HealDB RDF Schema (e.g. `healdb_mini.ttl`).
 
 These files serve as the foundational datasets for web crawling, creation of repositories, natural language processing, 
 translations, and interoperability tasks.
@@ -617,12 +617,18 @@ Ensure all values are adjusted to match your environment and secure sensitive in
        - `iucn_conservation_healdb.json`: Conservation data for active ingredients.
        - `iucn_conservation_dcb.json`: Conservation data for DCB names.
      - RxNorm: Enriched active ingredients with RxNorm clinical and pharmacological data.
-     - ATC, UNII_CODE: (in progress)
+     - ATC: Therapeutic class attributes associated with active ingredients, including ATC codes, 
+     UMLS identifiers, and preferred labels.
+       - `atc_attributes_healdb.csv`: Identification of ATC therapeutic classes for active ingredients in HealDB.
+       - `atc_attributes_theraphealdb.csv`: Comparative listing of therapeutic classes from both ATC and HealDB 
+       for each active ingredient.
+     
+     - MESH: (in progress)
 3. Translation of active ingredients: 
    - output_active_ing_translate_meta.csv: File containing the translation of active ingredients using the Meta model.
 4. RDF Schema (data/output/rdf_schema):
-   - healdb.ttl: Simplified RDF schema including all data from three tables (active ingredients, external identifiers, 
-     and types).
+   - healdb_minittl: Simplified RDF schema including all data from the tables (active ingredients, external identifiers, 
+     types of external identifiers, medications, therapeutic classes, and regulatory categories).
    - healdb_complete.ttl: Complete RDF schema structure generated from the full HealDB DDLs (no data instantiation).
 
 ## Contributing
