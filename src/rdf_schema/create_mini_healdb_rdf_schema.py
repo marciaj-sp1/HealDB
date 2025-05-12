@@ -1,13 +1,12 @@
-# -*- coding: utf-8 -*-
-"""
+'''
 Created on Sun Apr 13 18:31:00 2025
 
 Author: Márcia Jacobina Andrade Martins
 Instituto de Computação - IC
 Universidade Estadual de Campinas - UNICAMP
 E-mail: m905106@dac.unicamp.br
+'''
 
-"""
 
 # Script to generate the HealDB RDF Schema in Turtle format using data from a MySQL database.
 # The RDF Schema includes classes, object and data properties for Active Ingredients, their 
@@ -29,6 +28,7 @@ g.bind("owl", OWL)
 g.bind("xsd", XSD)
 g.bind("rdfs", RDFS)
 
+
 def create_classes_and_properties():
     # Define OWL classes and object/data properties used in the RDF Schema.
     
@@ -38,6 +38,10 @@ def create_classes_and_properties():
     g.add((HEAL.ActiveIngredient, RDF.type, OWL.Class))
     g.add((HEAL.ExternalIdentifier, RDF.type, OWL.Class))
     g.add((HEAL.IdentifierType, RDF.type, OWL.Class))
+    g.add((HEAL.TherapeuticClass, RDF.type, OWL.Class))
+    g.add((HEAL.RegulatoryCategory, RDF.type, OWL.Class))
+    g.add((HEAL.Medication, RDF.type, OWL.Class))
+    g.add((HEAL.MedicationActiveIngredient, RDF.type, OWL.Class))
 
     # Object properties
     g.add((HEAL.hasExternalIdentifier, RDF.type, OWL.ObjectProperty))
@@ -47,6 +51,23 @@ def create_classes_and_properties():
     g.add((HEAL.hasIdentifierType, RDF.type, OWL.ObjectProperty))
     g.add((HEAL.hasIdentifierType, RDFS.domain, HEAL.ExternalIdentifier))
     g.add((HEAL.hasIdentifierType, RDFS.range, HEAL.IdentifierType))
+
+    g.add((HEAL.hasTherapeuticClass, RDF.type, OWL.ObjectProperty))
+    g.add((HEAL.hasTherapeuticClass, RDFS.domain, HEAL.Medication))
+    g.add((HEAL.hasTherapeuticClass, RDFS.range, HEAL.TherapeuticClass))
+
+    g.add((HEAL.hasRegulatoryCategory, RDF.type, OWL.ObjectProperty))
+    g.add((HEAL.hasRegulatoryCategory, RDFS.domain, HEAL.Medication))
+    g.add((HEAL.hasRegulatoryCategory, RDFS.range, HEAL.RegulatoryCategory))
+
+    g.add((HEAL.containsActiveIngredient, RDF.type, OWL.ObjectProperty))
+    g.add((HEAL.containsActiveIngredient, RDFS.domain, HEAL.Medication))
+    g.add((HEAL.containsActiveIngredient, RDFS.range, HEAL.ActiveIngredient))
+    
+    # Object Property for Therapeutic Class relationship
+    g.add((HEAL.hasTherapeuticClass, RDF.type, OWL.ObjectProperty))
+    g.add((HEAL.hasTherapeuticClass, RDFS.domain, HEAL.ActiveIngredient))
+    g.add((HEAL.hasTherapeuticClass, RDFS.range, HEAL.TherapeuticClass))
 
     # Data properties
     g.add((HEAL.activeIngredientName, RDF.type, OWL.DatatypeProperty))
@@ -72,13 +93,27 @@ def create_classes_and_properties():
     g.add((HEAL.identifierTypeLongDesc, RDF.type, OWL.DatatypeProperty))
     g.add((HEAL.identifierTypeLongDesc, RDFS.domain, HEAL.IdentifierType))
     g.add((HEAL.identifierTypeLongDesc, RDFS.range, XSD.string))
+    
+    g.add((HEAL.medicationName, RDF.type, OWL.DatatypeProperty))
+    g.add((HEAL.medicationName, RDFS.domain, HEAL.Medication))
+    g.add((HEAL.medicationName, RDFS.range, XSD.string))
+
+    g.add((HEAL.therapeuticClassName, RDF.type, OWL.DatatypeProperty))
+    g.add((HEAL.therapeuticClassName, RDFS.domain, HEAL.TherapeuticClass))
+    g.add((HEAL.therapeuticClassName, RDFS.range, XSD.string))
+
+    g.add((HEAL.regulatoryCategoryName, RDF.type, OWL.DatatypeProperty))
+    g.add((HEAL.regulatoryCategoryName, RDFS.domain, HEAL.RegulatoryCategory))
+    g.add((HEAL.regulatoryCategoryName, RDFS.range, XSD.string))
+
+    return
 
 def populate_rdf_schema(cnx, cursor):
     
     # Connects to the database, reads the data from HealDB, and populates the 
     # rdf schema with individuals and owl:sameAs links.
     
-    # Load identifier types
+    # Populate identifier types
     cursor.execute("SELECT tp_ext_id, ds_short_type, ds_long_type FROM hd_type_ext_id")
     id_type_map = {}
     for tp_ext_id, short_desc, long_desc in cursor.fetchall():
@@ -89,7 +124,7 @@ def populate_rdf_schema(cnx, cursor):
         g.add((id_type_uri, HEAL.identifierTypeShortDesc, Literal(short_desc)))
         g.add((id_type_uri, HEAL.identifierTypeLongDesc, Literal(long_desc)))
 
-    # Load active ingredients
+    # Populate active ingredients
     cursor.execute("SELECT id_active_ingredient, nm_active_ingredient FROM hd_active_ingredient")
     ai_map = {}
     for id_ai, name in cursor.fetchall():
@@ -99,7 +134,7 @@ def populate_rdf_schema(cnx, cursor):
         g.add((ai_uri, RDF.type, HEAL.ActiveIngredient))
         g.add((ai_uri, HEAL.activeIngredientName, Literal(name)))
 
-    # Load external identifiers
+    # Populate external identifiers
     cursor.execute("SELECT id_active_ingredient, tp_ext_id, cd_ext_id, fl_origin_ext_id, dt_updated FROM hd_active_ingredient_ext_id")
     for id_ai, tp_ext_id, cd_ext_id, origin, dt_updated in cursor.fetchall():
         clean_cd_ext_id = cd_ext_id.replace(":", "_").replace("-", "_").strip()
@@ -122,39 +157,67 @@ def populate_rdf_schema(cnx, cursor):
            external_uri = URIRef(f"http://purl.bioontology.org/ontology/ATC/{cd_ext_id}")
            g.add((ext_uri, OWL.sameAs, external_uri))
 
+    # Populate Therapeutic Classes
+    cursor.execute("SELECT id_therapeutic_class, ds_therapeutic_class FROM hd_therapeutic_class")
+    for id_tc, name_tc in cursor.fetchall():
+        tc_uri = HEAL[f"TC_{id_tc}"]
+        g.add((tc_uri, RDF.type, HEAL.TherapeuticClass))
+        g.add((tc_uri, HEAL.therapeuticClassName, Literal(name_tc)))
+
+    # Populate Regulatory Categories
+    cursor.execute("SELECT id_regulatory_category, ds_regulatory_category FROM hd_regulatory_category")
+    for id_rc, name_rc in cursor.fetchall():
+        rc_uri = HEAL[f"RC_{id_rc}"]
+        g.add((rc_uri, RDF.type, HEAL.RegulatoryCategory))
+        g.add((rc_uri, HEAL.regulatoryCategoryName, Literal(name_rc)))
+
+    # Populate Medications
+    cursor.execute("SELECT id_medication, nm_medication, id_therapeutic_class, id_regulatory_category FROM hd_medication")
+    for id_med, name_med, id_tc, id_rc in cursor.fetchall():
+        med_uri = HEAL[f"MED_{id_med}"]
+        g.add((med_uri, RDF.type, HEAL.Medication))
+        g.add((med_uri, HEAL.medicationName, Literal(name_med)))
+
+        # Link to Therapeutic Class
+        if id_tc:
+            g.add((med_uri, HEAL.hasTherapeuticClass, HEAL[f"TC_{id_tc}"]))
+
+        # Link to Regulatory Category
+        if id_rc:
+            g.add((med_uri, HEAL.hasRegulatoryCategory, HEAL[f"RC_{id_rc}"]))
+
+    # Populate Medication Active Ingredients
+    cursor.execute("SELECT id_medication, id_active_ingredient FROM hd_medication_active_ingredient")
+    for id_med, id_ai in cursor.fetchall():
+        med_uri = HEAL[f"MED_{id_med}"]
+        ai_uri = HEAL[f"AI_{id_ai}"]
+        g.add((med_uri, HEAL.containsActiveIngredient, ai_uri))
+
+    
+    # Relacionar Active Ingredients com Therapeutic Classes via Medications
+    cursor.execute("""
+       SELECT a.id_active_ingredient, t.id_therapeutic_class
+       FROM hd_active_ingredient a
+       LEFT JOIN hd_medication_active_ingredient ma ON a.id_active_ingredient = ma.id_active_ingredient
+       LEFT JOIN hd_medication m ON ma.id_medication = m.id_medication
+       LEFT JOIN hd_therapeutic_class t ON m.id_therapeutic_class = t.id_therapeutic_class
+       """)
+
+    for id_ai, id_tc in cursor.fetchall():
+        ai_uri = HEAL[f"AI_{id_ai}"]
+
+        if id_tc:
+            tc_uri = HEAL[f"TC_{id_tc}"]
+            # Relaciona o Active Ingredient com a Therapeutic Class
+            g.add((ai_uri, HEAL.hasTherapeuticClass, tc_uri))
+
     return
 
 def create_mini_healdb_rdf_schema (cnx, cursor):
     create_classes_and_properties()
     populate_rdf_schema(cnx, cursor)
-    output_file = f"{PATHS['output_rdf_schema']}/healdb.ttl"
+    output_file = f"{PATHS['output_rdf_schema']}/healdb_mini.ttl"
     g.serialize(destination=output_file, format="turtle")
     print(f"RDF Schema successfully generated and saved to: {output_file}")
 
     return
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

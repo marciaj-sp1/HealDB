@@ -1,0 +1,48 @@
+PREFIX heal: <http://healdb.org/rdf-schema#>
+PREFIX atc: <http://purl.bioontology.org/ontology/ATC/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX umls: <http://bioportal.bioontology.org/ontologies/umls/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?idActiveIngredient ?nameActiveIngredient ?atcCode ?umlsCUI ?umlsTUI 
+       ?therapeuticClass ?prefLabel ?altLabel 
+       (GROUP_CONCAT(DISTINCT ?healdbClassTherapeutica; SEPARATOR=" | ") AS ?healdbClassTherapeuticas)
+WHERE {
+  GRAPH <http://healdb.org/graph/healdb> {
+    # Active Ingredient e External Identifiers
+    ?idActiveIngredient a heal:ActiveIngredient ;
+                        heal:activeIngredientName ?nameActiveIngredient ;
+                        heal:hasExternalIdentifier ?externalId .
+
+    ?externalId owl:sameAs ?atcCode .
+
+    # Therapeutic Class no HealDB (baseada em Medications)
+    OPTIONAL {
+      ?idActiveIngredient heal:hasTherapeuticClass ?healdbClassTherapeutica .
+      ?healdbClassTherapeutica heal:therapeuticClassName ?healdbClassTherapeuticaName .
+    }
+  }
+
+  GRAPH <http://healdb.org/graph/atc> {
+    ?atcCode a owl:Class ;
+             umls:cui ?umlsCUI ;
+             umls:tui ?umlsTUI ;
+             rdfs:subClassOf ?therapeuticClass .
+
+    # Filtra apenas as classes terapêuticas principais
+    FILTER(CONTAINS(STR(?therapeuticClass), "ATC/"))
+
+    OPTIONAL {
+      ?therapeuticClass skos:prefLabel ?prefLabel .
+      FILTER(LANG(?prefLabel) = "en")
+    }
+
+    OPTIONAL {
+      ?therapeuticClass skos:altLabel ?altLabel .
+      FILTER(LANG(?altLabel) = "en")
+    }
+  }
+}
+GROUP BY ?idActiveIngredient ?nameActiveIngredient ?atcCode ?umlsCUI ?umlsTUI ?therapeuticClass ?prefLabel ?altLabel
+ORDER BY ?idActiveIngredient

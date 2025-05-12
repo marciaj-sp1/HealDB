@@ -37,9 +37,11 @@ C:\project
     │   │   │   ├── healdb_hd_symptom.sql
     │   │   │   ├── healdb_hd_therapeutic_class.sql
     │   │   │   ├── healdb_hd_type_ext_id.sql
+    │   │   │   ├── ddls_summary.xlsx
     │   │   ├── ontologies
-    │   │   │   └── chebi.owl   # RDF Schema ChEBI
-    │
+    │   │   │   └── ATC.ttl   # RDF Schema ChEBI
+    │   │   │   └── chebi.owl   # RDF Schema ATC
+    │   │   │   └── healdb_mini.owl   # RDF Schema subset HealDB   │
     │   ├── output
     │   │   ├── downloadBulas
     │   │   ├── translation
@@ -55,9 +57,12 @@ C:\project
     │   │   │   │   └── pubchem_reference_healdb.json
     │   │   │   ├── rxnorm
     │   │   │   │   └── rxnorm_enrichment_healdb.json
+    │   │   │   ├── atc
+    │   │   │   │   └── atc_attributes_healdb.csv
+    │   │   │   │   └── atc_attributes_theraphealdb.csv
     │   │   ├── rdf_schema
-    │   │   │   ├── healdb.ttl
-    │   │   │   └── healdb_complete.ttl
+    │   │   │   ├── healdb_complete.ttl
+    │   │   │   └── healdb_mini.ttl
     │
     ├── doc
     ├── logs
@@ -85,10 +90,12 @@ C:\project
     │   │   │   ├── fill_missing_external_ids.py
     │   │   ├── usecases
     │   │   │   ├── __init__.py
-    │   │   │   ├── chebi_attributes_query.rd               # SPARQL query for CHEBI
-    │   │   │   ├── iucn_export_conservation_status.py      # IUCN integration
-    │   │   │   ├── pubchem_export_references.py            # PubChem integration
-    │   │   │   ├── rxnorm_export_enriched_ingredients.py   # RxNorm integration
+    │   │   │   ├── chebi_attributes_query.txt             # SPARQL query for CHEBI
+    │   │   │   ├── iucn_export_conservation_status.py     # IUCN integration
+    │   │   │   ├── pubchem_export_references.py           # PubChem integration
+    │   │   │   ├── rxnorm_export_enriched_ingredients.py  # RxNorm integration
+    │   │   │   ├── atc_attributes_query.txt               # SPARQL query for ATC
+    │   │   │   ├── atc_attributes_theraphealdb_query.txt  # SPARQL query for ATC
     │
     │   ├── nlp_extraction
     │   │   ├── __init__.py
@@ -129,3 +136,4 @@ C:\project
     ├── config.py
     ├── db_utils.py
     ├── main.py
+
