@@ -533,7 +533,7 @@ This enables interoperability with other health data sources, ontologies, and bi
   (SBD, BPCK, SBDF, SBDC).
     - Structure data retrieved into dictionaries and export to ``rxnorm_enrichment_healdb.json``.
 
-- **`atc_attributes_query.txt and atc_attributes_theraphealdb_query.txt`**
+- **`atc_attributes_query.txt` and `atc_attributes_theraphealdb_query.txt`**
   - Purpose: Identifies the ATC therapeutic class associated with each active ingredient based on its ATC codes, 
   enabling semantic analysis by linking ATC data with active ingredients in HealDB.
   - Key Processes:
@@ -543,7 +543,7 @@ This enables interoperability with other health data sources, ontologies, and bi
     - `atc_attributes_theraphealdb_query.txt`: Extends the previous query by including therapeutic class data from 
     HealDB, enabling a comparative analysis between ATC and HealDB classifications. It links the therapeutic class 
     of each medication with the active ingredients associated with these medications.
-- 
+
 - **`mesh_xxxx.py`**
   - Purpose: Placeholder for future queries exploring UNII relationships.
   - Key Processes:
@@ -560,7 +560,7 @@ of its database tables — into an RDF schema saved in Turtle (.ttl) format.
     ```
 
 - **`create_mini_healdb_rdf_schema.py`**
-  - Purpose: Generates a simplified RDF schema (`healdb.ttl`) that includes classes, properties, and instances 
+  - Purpose: Generates a simplified RDF schema (`healdb_mini.ttl`) that includes classes, properties, and instances 
  from the HealDB database, focusing on active ingredients, their external identifiers, types of identifiers, 
  medications, regulatory categories, and therapeutic classes. It provides a minimal but comprehensive representation 
  of HealDB, supporting interoperability use cases and SPARQL queries.

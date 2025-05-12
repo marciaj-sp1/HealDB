@@ -8,10 +8,14 @@ E-mail: m905106@dac.unicamp.br
 '''
 
 
-# Script to generate the HealDB RDF Schema in Turtle format using data from a MySQL database.
-# The RDF Schema includes classes, object and data properties for Active Ingredients, their 
-# External Identifiers, and the types of those identifiers. It also adds owl:sameAs links 
-# between the internal identifiers and their  corresponding external URIs (e.g., ChEBI, ATC).
+# Script to generate a simplified HealDB RDF Schema in Turtle format using data
+# from a MySQL database. The RDF Schema includes classes, object and data 
+# properties for Active Ingredients, their External Identifiers, types of 
+# identifiers, medications, regulatory categories, and therapeutic classes. 
+# It also adds owl:sameAs links between the internal identifiers and their  
+# corresponding external URIs (e.g., ChEBI, ATC).
+# It provides a minimal but comprehensive representation of HealDB, supporting 
+# interoperability use cases and SPARQL queries.
 
 from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF, RDFS, OWL, XSD
@@ -114,7 +118,11 @@ def populate_rdf_schema(cnx, cursor):
     # rdf schema with individuals and owl:sameAs links.
     
     # Populate identifier types
-    cursor.execute("SELECT tp_ext_id, ds_short_type, ds_long_type FROM hd_type_ext_id")
+    sql_command = (
+        "SELECT tp_ext_id, ds_short_type, ds_long_type "
+        " FROM hd_type_ext_id "
+        )
+    cursor.execute(sql_command)
     id_type_map = {}
     for tp_ext_id, short_desc, long_desc in cursor.fetchall():
         id_type_uri = HEAL[f"IDTYPE_{tp_ext_id}"]
@@ -125,7 +133,11 @@ def populate_rdf_schema(cnx, cursor):
         g.add((id_type_uri, HEAL.identifierTypeLongDesc, Literal(long_desc)))
 
     # Populate active ingredients
-    cursor.execute("SELECT id_active_ingredient, nm_active_ingredient FROM hd_active_ingredient")
+    sql_command = (
+        "SELECT id_active_ingredient, nm_active_ingredient "
+        " FROM hd_active_ingredient "
+        )
+    cursor.execute(sql_command)
     ai_map = {}
     for id_ai, name in cursor.fetchall():
         ai_uri = HEAL[f"AI_{id_ai}"]
@@ -135,7 +147,12 @@ def populate_rdf_schema(cnx, cursor):
         g.add((ai_uri, HEAL.activeIngredientName, Literal(name)))
 
     # Populate external identifiers
-    cursor.execute("SELECT id_active_ingredient, tp_ext_id, cd_ext_id, fl_origin_ext_id, dt_updated FROM hd_active_ingredient_ext_id")
+    sql_command = (
+        "SELECT id_active_ingredient, tp_ext_id, cd_ext_id, "
+        "       fl_origin_ext_id, dt_updated "
+        " FROM hd_ative_ingredient_ext_id"
+        )
+    cursor.execute(sql_command)
     for id_ai, tp_ext_id, cd_ext_id, origin, dt_updated in cursor.fetchall():
         clean_cd_ext_id = cd_ext_id.replace(":", "_").replace("-", "_").strip()
         ext_uri = HEAL[f"{tp_ext_id}_{clean_cd_ext_id}"]
@@ -158,21 +175,36 @@ def populate_rdf_schema(cnx, cursor):
            g.add((ext_uri, OWL.sameAs, external_uri))
 
     # Populate Therapeutic Classes
-    cursor.execute("SELECT id_therapeutic_class, ds_therapeutic_class FROM hd_therapeutic_class")
+    sql_command = (
+        "SELECT id_therapeutic_class, ds_therapeutic_class "
+        "       fl_origin_ext_id, dt_updated "
+        " FROM hd_therapeutic_class"
+        )
+    cursor.execute(sql_command)
     for id_tc, name_tc in cursor.fetchall():
         tc_uri = HEAL[f"TC_{id_tc}"]
         g.add((tc_uri, RDF.type, HEAL.TherapeuticClass))
         g.add((tc_uri, HEAL.therapeuticClassName, Literal(name_tc)))
 
     # Populate Regulatory Categories
-    cursor.execute("SELECT id_regulatory_category, ds_regulatory_category FROM hd_regulatory_category")
+    sql_command = (
+        "SELECT id_regulatory_category, ds_regulatory_category "
+        "       fl_origin_ext_id, dt_updated "
+        " FROM hd_regulatory_category"
+        )
+    cursor.execute(sql_command)
     for id_rc, name_rc in cursor.fetchall():
         rc_uri = HEAL[f"RC_{id_rc}"]
         g.add((rc_uri, RDF.type, HEAL.RegulatoryCategory))
         g.add((rc_uri, HEAL.regulatoryCategoryName, Literal(name_rc)))
 
     # Populate Medications
-    cursor.execute("SELECT id_medication, nm_medication, id_therapeutic_class, id_regulatory_category FROM hd_medication")
+    sql_command = (
+        "SELECT id_medication, nm_medication, id_therapeutic_class, "
+        "       id_regulatory_category "
+        " FROM hd_medication"
+        )
+    cursor.execute(sql_command)
     for id_med, name_med, id_tc, id_rc in cursor.fetchall():
         med_uri = HEAL[f"MED_{id_med}"]
         g.add((med_uri, RDF.type, HEAL.Medication))
@@ -187,7 +219,11 @@ def populate_rdf_schema(cnx, cursor):
             g.add((med_uri, HEAL.hasRegulatoryCategory, HEAL[f"RC_{id_rc}"]))
 
     # Populate Medication Active Ingredients
-    cursor.execute("SELECT id_medication, id_active_ingredient FROM hd_medication_active_ingredient")
+    sql_command = (
+        "SELECT id_medication, id_active_ingredient "
+        " FROM hd_medication_active_ingredient"
+        )
+    cursor.execute(sql_command)
     for id_med, id_ai in cursor.fetchall():
         med_uri = HEAL[f"MED_{id_med}"]
         ai_uri = HEAL[f"AI_{id_ai}"]
@@ -195,13 +231,16 @@ def populate_rdf_schema(cnx, cursor):
 
     
     # Relacionar Active Ingredients com Therapeutic Classes via Medications
-    cursor.execute("""
-       SELECT a.id_active_ingredient, t.id_therapeutic_class
-       FROM hd_active_ingredient a
-       LEFT JOIN hd_medication_active_ingredient ma ON a.id_active_ingredient = ma.id_active_ingredient
-       LEFT JOIN hd_medication m ON ma.id_medication = m.id_medication
-       LEFT JOIN hd_therapeutic_class t ON m.id_therapeutic_class = t.id_therapeutic_class
-       """)
+    sql_command = (
+        "SELECT a.id_active_ingredient, t.id_therapeutic_class "
+        "FROM hd_active_ingredient a "
+        "LEFT JOIN hd_medication_active_ingredient ma " 
+        "    ON a.id_active_ingredient = ma.id_active_ingredient "
+        "LEFT JOIN hd_medication m ON ma.id_medication = m.id_medication "
+        "LEFT JOIN hd_therapeutic_class t " 
+        "    ON m.id_therapeutic_class = t.id_therapeutic_class "
+        )
+    cursor.execute(sql_command)
 
     for id_ai, id_tc in cursor.fetchall():
         ai_uri = HEAL[f"AI_{id_ai}"]
