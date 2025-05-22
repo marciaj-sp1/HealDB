@@ -20,6 +20,7 @@ C:\project
     │   │   ├── CID-10-SUBCATEGORIAS.csv
     │   │   ├── consulta_medicamento_anvisa.csv
     │   │   ├── DADOS_ABERTOS_MEDICAMENTOS.csv
+    │   │   ├── drugbank_file.xml
     │   │   ├── input_active_ing_translate_meta
     │   │   ├── lista_dcb.xlsx
     │   │   ├── ddls
@@ -57,7 +58,6 @@ C:\project
     │   │   │   │   ├── iucn_conservation_healdb_r.json
     │   │   │   │   ├── pubchem_diseases_labels.csv
     │   │   │   │   ├── pubchem_mesh_disease_healdb.csv
-    │   │   │   │   ├── pubchem_mesh_ids_healdb.csv
     │   │   │   ├── atc
     │   │   │   │   └── atc_attributes_healdb.csv
     │   │   │   │   └── atc_attributes_theraphealdb.csv
