@@ -1,5 +1,4 @@
 C:\project
-
 └── healdb
     ├── data
     │   ├── input
@@ -59,6 +58,7 @@ C:\project
     │   │   │   │   ├── iucn_conservation_healdb_r.json
     │   │   │   │   ├── pubchem_diseases_labels.csv
     │   │   │   │   ├── pubchem_mesh_disease_healdb.csv
+    │   │   │   │   ├── pubchem_mesh_ids_healdb.csv
     │   │   │   ├── atc
     │   │   │   │   └── atc_attributes_healdb.csv
     │   │   │   │   └── atc_attributes_theraphealdb.csv
