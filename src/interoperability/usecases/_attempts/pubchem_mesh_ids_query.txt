@@ -1,0 +1,29 @@
+PREFIX heal: <http://healdb.org/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?id_ai ?name_ai ?pubchem_cid ?disease ?mesh_id WHERE {
+
+  # Parte 1: Pega os princípios ativos com CID do PubChem
+  GRAPH <http://healdb.org/graph/healdb> {
+    ?ext_id owl:sameAs ?pubchem_cid .
+    ?ai heal:hasExternalIdentifier ?ext_id .
+    ?ai heal:activeIngredientName ?name_ai .
+    FILTER(CONTAINS(STR(?pubchem_cid), "rdf.ncbi.nlm.nih.gov/pubchem/compound/CID"))
+    BIND(REPLACE(STR(?ai), "^.*AI_", "") AS ?id_ai)
+  }
+
+  # Parte 2: Relaciona CID → doença (disease)
+  GRAPH <http://healdb.org/graph/pubchem> {
+    ?cooccurrence rdf:subject ?pubchem_cid .
+    ?cooccurrence rdf:object ?disease .
+  }
+
+  # Parte 3: Mapeia disease → MeSH
+  GRAPH <http://healdb.org/graph/pubchem> {
+    ?disease skos:closeMatch ?mesh_id .
+    FILTER(CONTAINS(STR(?mesh_id), "mesh:") || CONTAINS(STR(?mesh_id), "/mesh/"))
+  }
+}
+
