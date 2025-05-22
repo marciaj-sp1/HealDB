@@ -22,18 +22,22 @@ E-mail: m905106@dac.unicamp.br
 # - id_active_ingredient
 # - nm_active_ingredient
 # - cd_pubchem_cid
-# - up to 3 scientific publications (PMID, title, journal, date), the most recent
+# - up to 3 scientific publications (PMID, title, journal, date)
 # If no publications are found, the entry is excluded from the output.
 
 import requests
 import xml.etree.ElementTree as ET
 import json
 import time
-from config import PATHS
+from config import PATHS, APIS_USE_CASES
+
+
+# Load IUCN API configuration from the external configuration file
+PUBCHEM_API = APIS_USE_CASES["pubchem"]
 
 # Retrieves PMIDs from PubChem using the elink API
-def get_pmids_from_pubchem_cid(pubchem_cid):
-    url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi"
+def get_pmids_from_pubchem_cid(pubchem_cid):  
+    url = PUBCHEM_API["elink_url"]
     params = {
         "dbfrom": "pccompound",
         "id": pubchem_cid,
@@ -47,24 +51,21 @@ def get_pmids_from_pubchem_cid(pubchem_cid):
             id_node = link.find("Id")
             if id_node is not None and id_node.text:
                 pmids.append(id_node.text)
-        return pmids
     except Exception as e:
         print(f"Error for Pubchem CID {pubchem_cid}: {e}")
-        return []
+    return pmids
 
 # Retrieves publication details (title, journal, date) for a given PMID
 def get_article_details(pmid):
-    url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi"
+    url = PUBCHEM_API["esummary_url"]
     params = {
         "db": "pubmed",
         "id": pmid,
         "retmode": "xml"
     }
     try:
-        print ("antes da chamada da api, pmid = ", pmid)
         response = requests.get(url, params=params, timeout=10)
         content = ET.fromstring(response.content)
-        print ("após a chamada da api")
         title = content.find(".//Item[@Name='Title']")
         source = content.find(".//Item[@Name='Source']")
         pub_date = content.find(".//Item[@Name='PubDate']")
@@ -83,21 +84,6 @@ def get_article_details(pmid):
         }
     return
     
-# Sort publications by date (descending) and keep only the top 3
-def parse_date(pub):
-    try:
-        parts = pub["date"].split()
-        year = int(parts[0])
-        month = parts[1] if len(parts) > 1 else "Jan"
-        month_map = {
-            "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4,
-            "May": 5, "Jun": 6, "Jul": 7, "Aug": 8,
-            "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12
-        }
-        return (year, month_map.get(month, 1))
-    except:
-        return (0, 1)
-
 
 # Main function that queries the database and exports the enriched JSON
 def pubchem_export_references(cnx, cursor):
@@ -120,7 +106,7 @@ def pubchem_export_references(cnx, cursor):
     rows = cursor.fetchall()
 
     # Limit to a maximum of 100 rows
-    rows = rows[:10]
+    #rows = rows[:100]
 
     json_output = []
 
@@ -133,24 +119,17 @@ def pubchem_export_references(cnx, cursor):
 
         print(f"PUBCHEM CID {pubchem_cid} - {nm_active_ingredient}")
         pmids = get_pmids_from_pubchem_cid(pubchem_cid)
-        print ("pmids = ", pmids)
 
         if not pmids:
             continue
 
         publications = []
+        pmids = pmids[:3]
         for pmid in pmids:
             details = get_article_details(pmid)
             publications.append(details)
-            time.sleep(0.4)
-            
+            time.sleep(0.4)            
                
-        # Sort the publications by parsed date in descending order 
-        # and keep the 3 most recent
-        sorted_publications = sorted(publications, key=parse_date, reverse=True)
-        publications = sorted_publications[:3]   
-        print ("publications after sorted = ", publications)
-
         json_output.append({
             "id_active_ingredient": id_active_ingredient,
             "nm_active_ingredient": nm_active_ingredient,

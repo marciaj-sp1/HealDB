@@ -17,9 +17,11 @@ from interoperability.linking.link_rxcui_related_ids_to_active_ing import link_r
 from interoperability.linking.link_wikidata_ids_to_wrk_table import link_wikidata_ids_to_wrk_table
 from interoperability.linking.link_kegg_related_ids_to_active_ing import link_kegg_related_ids_to_active_ing
 from interoperability.linking.fill_missing_external_ids import fill_missing_external_ids
-from  interoperability.usecases.pubchem_export_references import pubchem_export_references'''
-from interoperability.usecases.iucn_export_conservation_status import iucn_export_conservation_status
-#from interoperability.usecases.rxnorm_export_enriched_ingredients import rxnorm_export_enriched_ingredients
+from  interoperability.usecases.pubchem_export_references import pubchem_export_references
+#from interoperability.usecases.iucn_export_conservation_status import iucn_export_conservation_status
+#from interoperability.usecases.rxnorm_export_enriched_ingredients import rxnorm_export_enriched_ingredients '''
+from interoperability.usecases.clinical_trials_export import clinical_trials_export
+
 
 def log_execution_time(func_name, start_time, end_time):
     # Logs the time taken for a specific function to execute.
@@ -54,8 +56,9 @@ def main():
             #(link_kegg_related_ids_to_active_ing, "link_kegg_related_ids_to_active_ing"),
             #(fill_missing_external_ids, "fill_missing_external_ids"),
             #(pubchem_export_references, "pubchem_export_references"),
-            (iucn_export_conservation_status, "iucn_export_conservation_status"),
-            #(rxnorm_export_enriched_ingredients, "rxnorm_export_enriched_ingredients")
+            #(iucn_export_conservation_status, "iucn_export_conservation_status"),
+            #(rxnorm_export_enriched_ingredients, "rxnorm_export_enriched_ingredients"),
+            (clinical_trials_export, "clinical_trials_export")
         ]:
             start_time = datetime.now()
             func(cnx, cursor)  # Execute the function

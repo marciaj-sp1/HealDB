@@ -1,0 +1,427 @@
+@prefix heal: <http://healdb.org/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+heal: a owl:Ontology .
+
+heal:Cdcat a owl:DatatypeProperty ;
+    rdfs:label "Cdcat" ;
+    rdfs:domain heal:IcdCategory ;
+    rdfs:range xsd:string .
+
+heal:Cdcatend a owl:DatatypeProperty ;
+    rdfs:label "Cdcatend" ;
+    rdfs:domain heal:IcdGroup ;
+    rdfs:range xsd:string .
+
+heal:Cdcatini a owl:DatatypeProperty ;
+    rdfs:label "Cdcatini" ;
+    rdfs:domain heal:IcdGroup ;
+    rdfs:range xsd:string .
+
+heal:Cdexcluded a owl:DatatypeProperty ;
+    rdfs:label "Cdexcluded" ;
+    rdfs:domain heal:IcdCategory,
+        heal:IcdSubcategory ;
+    rdfs:range xsd:string .
+
+heal:Cdextid a owl:DatatypeProperty ;
+    rdfs:label "Cdextid" ;
+    rdfs:domain heal:ActiveIngredientExtId ;
+    rdfs:range xsd:string .
+
+heal:Cdicdfull a owl:DatatypeProperty ;
+    rdfs:label "Cdicdfull" ;
+    rdfs:domain heal:MedicationDisease ;
+    rdfs:range xsd:string .
+
+heal:Cdrefer a owl:DatatypeProperty ;
+    rdfs:label "Cdrefer" ;
+    rdfs:domain heal:IcdCategory,
+        heal:IcdSubcategory ;
+    rdfs:range xsd:string .
+
+heal:Cdsubcat a owl:DatatypeProperty ;
+    rdfs:label "Cdsubcat" ;
+    rdfs:domain heal:IcdSubcategory ;
+    rdfs:range xsd:string .
+
+heal:Cdsymptomfull a owl:DatatypeProperty ;
+    rdfs:label "Cdsymptomfull" ;
+    rdfs:domain heal:Symptom ;
+    rdfs:range xsd:string .
+
+heal:Cdsymptomfullparent a owl:DatatypeProperty ;
+    rdfs:label "Cdsymptomfullparent" ;
+    rdfs:domain heal:Symptom ;
+    rdfs:range xsd:string .
+
+heal:Dsactiveingredients a owl:DatatypeProperty ;
+    rdfs:label "Dsactiveingredients" ;
+    rdfs:domain heal:Medication ;
+    rdfs:range xsd:string .
+
+heal:Dscat a owl:DatatypeProperty ;
+    rdfs:label "Dscat" ;
+    rdfs:domain heal:IcdCategory ;
+    rdfs:range xsd:string .
+
+heal:Dscatabbrev a owl:DatatypeProperty ;
+    rdfs:label "Dscatabbrev" ;
+    rdfs:domain heal:IcdCategory ;
+    rdfs:range xsd:string .
+
+heal:Dsdrugleafletfile a owl:DatatypeProperty ;
+    rdfs:label "Dsdrugleafletfile" ;
+    rdfs:domain heal:MedicationDrugLeaflet ;
+    rdfs:range xsd:string .
+
+heal:Dsdrugleafletfull a owl:DatatypeProperty ;
+    rdfs:label "Dsdrugleafletfull" ;
+    rdfs:domain heal:MedicationDrugLeaflet ;
+    rdfs:range xsd:string .
+
+heal:Dsgroup a owl:DatatypeProperty ;
+    rdfs:label "Dsgroup" ;
+    rdfs:domain heal:IcdGroup ;
+    rdfs:range xsd:string .
+
+heal:Dsgroupabbrev a owl:DatatypeProperty ;
+    rdfs:label "Dsgroupabbrev" ;
+    rdfs:domain heal:IcdGroup ;
+    rdfs:range xsd:string .
+
+heal:Dsindication a owl:DatatypeProperty ;
+    rdfs:label "Dsindication" ;
+    rdfs:domain heal:MedicationDrugLeaflet ;
+    rdfs:range xsd:string .
+
+heal:Dslongtype a owl:DatatypeProperty ;
+    rdfs:label "Dslongtype" ;
+    rdfs:domain heal:TypeExtId ;
+    rdfs:range xsd:string .
+
+heal:Dsprecaution a owl:DatatypeProperty ;
+    rdfs:label "Dsprecaution" ;
+    rdfs:domain heal:MedicationDrugLeaflet ;
+    rdfs:range xsd:string .
+
+heal:Dsregulatorycategory a owl:DatatypeProperty ;
+    rdfs:label "Dsregulatorycategory" ;
+    rdfs:domain heal:RegulatoryCategory ;
+    rdfs:range xsd:string .
+
+heal:Dsshorttype a owl:DatatypeProperty ;
+    rdfs:label "Dsshorttype" ;
+    rdfs:domain heal:TypeExtId ;
+    rdfs:range xsd:string .
+
+heal:Dssubcat a owl:DatatypeProperty ;
+    rdfs:label "Dssubcat" ;
+    rdfs:domain heal:IcdSubcategory ;
+    rdfs:range xsd:string .
+
+heal:Dssubcatabbrev a owl:DatatypeProperty ;
+    rdfs:label "Dssubcatabbrev" ;
+    rdfs:domain heal:IcdSubcategory ;
+    rdfs:range xsd:string .
+
+heal:Dssymptom a owl:DatatypeProperty ;
+    rdfs:label "Dssymptom" ;
+    rdfs:domain heal:Symptom ;
+    rdfs:range xsd:string .
+
+heal:Dstherapeuticclass a owl:DatatypeProperty ;
+    rdfs:label "Dstherapeuticclass" ;
+    rdfs:domain heal:TherapeuticClass ;
+    rdfs:range xsd:string .
+
+heal:Dtexpiration a owl:DatatypeProperty ;
+    rdfs:label "Dtexpiration" ;
+    rdfs:domain heal:Medication ;
+    rdfs:range xsd:date .
+
+heal:Dtpublication a owl:DatatypeProperty ;
+    rdfs:label "Dtpublication" ;
+    rdfs:domain heal:MedicationDrugLeaflet ;
+    rdfs:range xsd:date .
+
+heal:Dtupdated a owl:DatatypeProperty ;
+    rdfs:label "Dtupdated" ;
+    rdfs:domain heal:ActiveIngredientExtId ;
+    rdfs:range xsd:date .
+
+heal:FkActIngred a owl:ObjectProperty ;
+    rdfs:label "FkActIngred" ;
+    rdfs:domain heal:DrugInteraction ;
+    rdfs:range heal:ActiveIngredient .
+
+heal:FkActIngredInt a owl:ObjectProperty ;
+    rdfs:label "FkActIngredInt" ;
+    rdfs:domain heal:DrugInteraction ;
+    rdfs:range heal:ActiveIngredient .
+
+heal:FkActiveIngredient a owl:ObjectProperty ;
+    rdfs:label "FkActiveIngredient" ;
+    rdfs:domain heal:MedicationActiveIngredient ;
+    rdfs:range heal:ActiveIngredient .
+
+heal:FkCategoria a owl:ObjectProperty ;
+    rdfs:label "FkCategoria" ;
+    rdfs:domain heal:IcdSubcategory ;
+    rdfs:range heal:IcdCategory .
+
+heal:FkDiseaseCategoryDiseaseGroup1 a owl:ObjectProperty ;
+    rdfs:label "FkDiseaseCategoryDiseaseGroup1" ;
+    rdfs:domain heal:IcdCategory ;
+    rdfs:range heal:IcdGroup .
+
+heal:FkIcdCat a owl:ObjectProperty ;
+    rdfs:label "FkIcdCat" ;
+    rdfs:domain heal:MedicationDisease ;
+    rdfs:range heal:IcdCategory .
+
+heal:FkIcdGroup a owl:ObjectProperty ;
+    rdfs:label "FkIcdGroup" ;
+    rdfs:domain heal:MedicationDisease ;
+    rdfs:range heal:IcdGroup .
+
+heal:FkIcdSubcat a owl:ObjectProperty ;
+    rdfs:label "FkIcdSubcat" ;
+    rdfs:domain heal:MedicationDisease ;
+    rdfs:range heal:IcdSubcategory .
+
+heal:FkInteractionDrug a owl:ObjectProperty ;
+    rdfs:label "FkInteractionDrug" ;
+    rdfs:domain heal:DrugInteraction ;
+    rdfs:range heal:DbDrugInteraction .
+
+heal:FkMedication a owl:ObjectProperty ;
+    rdfs:label "FkMedication" ;
+    rdfs:domain heal:MedicationActiveIngredient ;
+    rdfs:range heal:Medication .
+
+heal:FkMedicationAcm a owl:ObjectProperty ;
+    rdfs:label "FkMedicationAcm" ;
+    rdfs:domain heal:MedicationDisease ;
+    rdfs:range heal:Medication .
+
+heal:FkMedicationDrugleaflet2 a owl:ObjectProperty ;
+    rdfs:label "FkMedicationDrugleaflet2" ;
+    rdfs:domain heal:MedicationDrugLeaflet ;
+    rdfs:range heal:Medication .
+
+heal:Floriginextid a owl:DatatypeProperty ;
+    rdfs:label "Floriginextid" ;
+    rdfs:domain heal:ActiveIngredientExtId ;
+    rdfs:range xsd:string .
+
+heal:Flrestrgender a owl:DatatypeProperty ;
+    rdfs:label "Flrestrgender" ;
+    rdfs:domain heal:IcdSubcategory ;
+    rdfs:range xsd:string .
+
+heal:Flstatus a owl:DatatypeProperty ;
+    rdfs:label "Flstatus" ;
+    rdfs:domain heal:Medication ;
+    rdfs:range xsd:string .
+
+heal:Hasidactiveingredient a owl:DatatypeProperty ;
+    rdfs:label "Hasidactiveingredient" ;
+    rdfs:domain heal:ActiveIngredient,
+        heal:ActiveIngredientExtId,
+        heal:DrugInteraction,
+        heal:MedicationActiveIngredient ;
+    rdfs:range xsd:integer .
+
+heal:Hasidactiveingredient2 a owl:DatatypeProperty ;
+    rdfs:label "Hasidactiveingredient2" ;
+    rdfs:domain heal:DrugInteraction ;
+    rdfs:range xsd:integer .
+
+heal:Hasidcat a owl:DatatypeProperty ;
+    rdfs:label "Hasidcat" ;
+    rdfs:domain heal:IcdCategory,
+        heal:IcdSubcategory ;
+    rdfs:range xsd:integer .
+
+heal:Hasidcompany a owl:DatatypeProperty ;
+    rdfs:label "Hasidcompany" ;
+    rdfs:domain heal:Company,
+        heal:Medication ;
+    rdfs:range xsd:integer .
+
+heal:Hasiddruginteraction a owl:DatatypeProperty ;
+    rdfs:label "Hasiddruginteraction" ;
+    rdfs:domain heal:DrugInteraction ;
+    rdfs:range xsd:integer .
+
+heal:Hasidgroup a owl:DatatypeProperty ;
+    rdfs:label "Hasidgroup" ;
+    rdfs:domain heal:IcdCategory,
+        heal:IcdGroup ;
+    rdfs:range xsd:integer .
+
+heal:Hasidicdcat a owl:DatatypeProperty ;
+    rdfs:label "Hasidicdcat" ;
+    rdfs:domain heal:MedicationDisease ;
+    rdfs:range xsd:integer .
+
+heal:Hasidicdgroup a owl:DatatypeProperty ;
+    rdfs:label "Hasidicdgroup" ;
+    rdfs:domain heal:MedicationDisease ;
+    rdfs:range xsd:integer .
+
+heal:Hasidicdsubcat a owl:DatatypeProperty ;
+    rdfs:label "Hasidicdsubcat" ;
+    rdfs:domain heal:MedicationDisease ;
+    rdfs:range xsd:integer .
+
+heal:Hasidinteraction a owl:DatatypeProperty ;
+    rdfs:label "Hasidinteraction" ;
+    rdfs:domain heal:DrugInteraction ;
+    rdfs:range xsd:integer .
+
+heal:Hasidmeddisease a owl:DatatypeProperty ;
+    rdfs:label "Hasidmeddisease" ;
+    rdfs:domain heal:MedicationDisease ;
+    rdfs:range xsd:integer .
+
+heal:Hasidmedication a owl:DatatypeProperty ;
+    rdfs:label "Hasidmedication" ;
+    rdfs:domain heal:Medication,
+        heal:MedicationActiveIngredient,
+        heal:MedicationDisease,
+        heal:MedicationDrugLeaflet ;
+    rdfs:range xsd:integer .
+
+heal:Hasidregulatorycategory a owl:DatatypeProperty ;
+    rdfs:label "Hasidregulatorycategory" ;
+    rdfs:domain heal:Medication,
+        heal:RegulatoryCategory ;
+    rdfs:range xsd:integer .
+
+heal:Hasidsubcat a owl:DatatypeProperty ;
+    rdfs:label "Hasidsubcat" ;
+    rdfs:domain heal:IcdSubcategory ;
+    rdfs:range xsd:integer .
+
+heal:Hasidsymptom a owl:DatatypeProperty ;
+    rdfs:label "Hasidsymptom" ;
+    rdfs:domain heal:Symptom ;
+    rdfs:range xsd:integer .
+
+heal:Hasidtherapeuticclass a owl:DatatypeProperty ;
+    rdfs:label "Hasidtherapeuticclass" ;
+    rdfs:domain heal:Medication,
+        heal:TherapeuticClass ;
+    rdfs:range xsd:integer .
+
+heal:Hasnameactiveingredient a owl:DatatypeProperty ;
+    rdfs:label "Hasnameactiveingredient" ;
+    rdfs:domain heal:ActiveIngredient ;
+    rdfs:range xsd:string .
+
+heal:Hasnamecompany a owl:DatatypeProperty ;
+    rdfs:label "Hasnamecompany" ;
+    rdfs:domain heal:Company ;
+    rdfs:range xsd:string .
+
+heal:Hasnamemedication a owl:DatatypeProperty ;
+    rdfs:label "Hasnamemedication" ;
+    rdfs:domain heal:Medication ;
+    rdfs:range xsd:string .
+
+heal:HdActiveIngExtHasfk1 a owl:ObjectProperty ;
+    rdfs:label "HdActiveIngExtHasfk1" ;
+    rdfs:domain heal:ActiveIngredientExtId ;
+    rdfs:range heal:ActiveIngredient .
+
+heal:HdActiveIngExtHasfkExtType a owl:ObjectProperty ;
+    rdfs:label "HdActiveIngExtHasfkExtType" ;
+    rdfs:domain heal:ActiveIngredientExtId ;
+    rdfs:range heal:TypeExtId .
+
+heal:HdMedicationIbfk1 a owl:ObjectProperty ;
+    rdfs:label "HdMedicationIbfk1" ;
+    rdfs:domain heal:Medication ;
+    rdfs:range heal:RegulatoryCategory .
+
+heal:HdMedicationIbfk2 a owl:ObjectProperty ;
+    rdfs:label "HdMedicationIbfk2" ;
+    rdfs:domain heal:Medication ;
+    rdfs:range heal:TherapeuticClass .
+
+heal:HdMedicationIbfk3 a owl:ObjectProperty ;
+    rdfs:label "HdMedicationIbfk3" ;
+    rdfs:domain heal:Medication ;
+    rdfs:range heal:Company .
+
+heal:Nrcnpjcompany a owl:DatatypeProperty ;
+    rdfs:label "Nrcnpjcompany" ;
+    rdfs:domain heal:Company ;
+    rdfs:range xsd:string .
+
+heal:Nrregister a owl:DatatypeProperty ;
+    rdfs:label "Nrregister" ;
+    rdfs:domain heal:Medication ;
+    rdfs:range xsd:integer .
+
+heal:Tpclassif a owl:DatatypeProperty ;
+    rdfs:label "Tpclassif" ;
+    rdfs:domain heal:IcdCategory,
+        heal:IcdSubcategory ;
+    rdfs:range xsd:string .
+
+heal:Tpextid a owl:DatatypeProperty ;
+    rdfs:label "Tpextid" ;
+    rdfs:domain heal:ActiveIngredientExtId,
+        heal:TypeExtId ;
+    rdfs:range xsd:string .
+
+heal:RegulatoryCategory a owl:Class ;
+    rdfs:label "RegulatoryCategory" .
+
+heal:TherapeuticClass a owl:Class ;
+    rdfs:label "TherapeuticClass" .
+
+heal:Company a owl:Class ;
+    rdfs:label "Company" .
+
+heal:MedicationActiveIngredient a owl:Class ;
+    rdfs:label "MedicationActiveIngredient" .
+
+heal:Symptom a owl:Class ;
+    rdfs:label "Symptom" .
+
+heal:TypeExtId a owl:Class ;
+    rdfs:label "TypeExtId" .
+
+heal:ActiveIngredient a owl:Class ;
+    rdfs:label "ActiveIngredient" .
+
+heal:ActiveIngredientExtId a owl:Class ;
+    rdfs:label "ActiveIngredientExtId" .
+
+heal:DrugInteraction a owl:Class ;
+    rdfs:label "DrugInteraction" .
+
+heal:IcdGroup a owl:Class ;
+    rdfs:label "IcdGroup" .
+
+heal:MedicationDrugLeaflet a owl:Class ;
+    rdfs:label "MedicationDrugLeaflet" .
+
+heal:MedicationDisease a owl:Class ;
+    rdfs:label "MedicationDisease" .
+
+heal:IcdCategory a owl:Class ;
+    rdfs:label "IcdCategory" .
+
+heal:IcdSubcategory a owl:Class ;
+    rdfs:label "IcdSubcategory" .
+
+heal:Medication a owl:Class ;
+    rdfs:label "Medication" .
+

@@ -13,6 +13,7 @@ C:\project
     │   │   │       ├── prod_tp
     │   │   │       ├── radiofarmaco
     │   │   │       ├── similar
+    │   │   ├── Arquivo_sintomas.csv
     │   │   ├── CID-10-CAPITULOS.csv
     │   │   ├── CID-10-CATEGORIAS.csv
     │   │   ├── CID-10-GRUPOS.csv
@@ -39,17 +40,33 @@ C:\project
     │   │   │   ├── healdb_hd_type_ext_id.sql
     │   │   │   ├── ddls_summary.xlsx
     │   │   ├── ontologies
-    │   │   │   └── ATC.ttl   # RDF Schema ChEBI
-    │   │   │   └── chebi.owl   # RDF Schema ATC
-    │   │   │   └── healdb_mini.owl   # RDF Schema subset HealDB   │
+    │   │   │   └── ATC.ttl   # RDF Schema ATC
+    │   │   │   └── chebi.owl   # RDF Schema CHEBI
+    │   │   │   └── pc_cooccurrence_chemical_and_disease_000001.ttl # RDF Schema PUBCHEM Chemical  
+    │   │   │   └── pc_cooccurrence_chemical_and_disease_000002.ttl # RDF Schema PUBCHEM Chemical  
+    │   │   │   └── pc_cooccurrence_chemical_and_disease_000003.ttl # RDF Schema PUBCHEM Chemical 
+    │   │   │   └── healdb_mini.owl   # RDF Schema subset HealDB
+    │   │   │   └── pc_disease.ttl    # RDF Schema PUBCHEM Diseases
     │   ├── output
     │   │   ├── downloadBulas
     │   │   ├── translation
     │   │   │   ├── output_active_ing_translate_meta.csv
     │   │   ├── interoperability
+    │   │   │   ├── _attempts
+    │   │   │   │   ├── iucn_conservation_dcb_r.json
+    │   │   │   │   ├── iucn_conservation_healdb_r.json
+    │   │   │   │   ├── pubchem_diseases_labels.csv
+    │   │   │   │   ├── pubchem_mesh_disease_healdb.csv
+    │   │   │   │   ├── pubchem_mesh_ids_healdb.csv
+    │   │   │   ├── atc
+    │   │   │   │   └── atc_attributes_healdb.csv
+    │   │   │   │   └── atc_attributes_theraphealdb.csv
     │   │   │   ├── chebi
     │   │   │   │   ├── chebi_attributes_healdb.csv
     │   │   │   │   └── chebi_attributes_healdb_json.json
+    │   │   │   ├── clinical_trials
+    │   │   │   │   ├── clinical_trials_healdb.csv
+    │   │   │   │   └── clinical_trials_healdb.json
     │   │   │   ├── iucn
     │   │   │   │   ├── iucn_conservation_dcb.json
     │   │   │   │   ├── iucn_conservation_healdb.json
@@ -57,9 +74,6 @@ C:\project
     │   │   │   │   └── pubchem_reference_healdb.json
     │   │   │   ├── rxnorm
     │   │   │   │   └── rxnorm_enrichment_healdb.json
-    │   │   │   ├── atc
-    │   │   │   │   └── atc_attributes_healdb.csv
-    │   │   │   │   └── atc_attributes_theraphealdb.csv
     │   │   ├── rdf_schema
     │   │   │   ├── healdb_complete.ttl
     │   │   │   └── healdb_mini.ttl
@@ -90,12 +104,18 @@ C:\project
     │   │   │   ├── fill_missing_external_ids.py
     │   │   ├── usecases
     │   │   │   ├── __init__.py
-    │   │   │   ├── chebi_attributes_query.txt             # SPARQL query for CHEBI
-    │   │   │   ├── iucn_export_conservation_status.py     # IUCN integration
-    │   │   │   ├── pubchem_export_references.py           # PubChem integration
-    │   │   │   ├── rxnorm_export_enriched_ingredients.py  # RxNorm integration
-    │   │   │   ├── atc_attributes_query.txt               # SPARQL query for ATC
-    │   │   │   ├── atc_attributes_theraphealdb_query.txt  # SPARQL query for ATC
+    │   │   │   ├── _attempts
+    │   │   │   │   ├── iiucn_export_conservation_status_r.r
+    │   │   │   │   ├── pubchem_disease_mesh_query.txt    # SPARQL query for PubChem Disease Mesh
+    │   │   │   │   ├── pubchem_disease_query.txt         # SPARQL query for PUBchem Disease
+    │   │   │   │   ├── pubchem_mesh_ids_query.txt        # SPARQL query for PUBChem Mesh
+    │   │   │   ├── atc_attributes_query.txt              # SPARQL query for ATC
+    │   │   │   ├── atc_attributes_theraphealdb_query.txt # SPARQL query for ATC
+    │   │   │   ├── chebi_attributes_query.txt            # SPARQL query for CHEBI
+    │   │   │   ├── clinical_trials_export.py             # SPARQL query for ClinicalTrials.gov
+    │   │   │   ├── iucn_export_conservation_status.py    # IUCN integration
+    │   │   │   ├── pubchem_export_references.py          # PubChem integration
+    │   │   │   ├── rxnorm_export_enriched_ingredients.py # RxNorm integration
     │
     │   ├── nlp_extraction
     │   │   ├── __init__.py
@@ -136,4 +156,3 @@ C:\project
     ├── config.py
     ├── db_utils.py
     ├── main.py
-

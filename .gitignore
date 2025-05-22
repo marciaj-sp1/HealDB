@@ -1,8 +1,6 @@
 __pycache__/
 *.pyc
 config.py
-data/
-*.csv
-*.json
+data/input/
 tests/
 

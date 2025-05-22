@@ -1,0 +1,815 @@
+[
+    {
+        "id_active_ingredient": "154",
+        "nm_active_ingredient": "BROMIDRATO DE CITALOPRAM",
+        "cd_pubchem_cid": "77995",
+        "publications": [
+            {
+                "pmid": "40357200",
+                "title": "Case Report: Management of a patient with Sheehan's syndrome presenting with anxiety and depression.",
+                "journal": "Front Endocrinol (Lausanne)",
+                "date": "2025"
+            },
+            {
+                "pmid": "40338259",
+                "title": "Vortioxetine for Cognitive Impairment in Major Depressive Disorder During Post-COVID Syndrome: Real-World Evidence.",
+                "journal": "J Clin Psychiatry",
+                "date": "2025 May 5"
+            },
+            {
+                "pmid": "40300703",
+                "title": "The serotonin precursor 5-HTP and the serotonin releaser fenfluramine but not the serotonin reuptake inhibitor escitalopram impair acquisition and expression of context-conditioned fear.",
+                "journal": "Behav Brain Res",
+                "date": "2025 Jun 25"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "167",
+        "nm_active_ingredient": "CLORIDRATO DE VENLAFAXINA",
+        "cd_pubchem_cid": "25137858",
+        "publications": [
+            {
+                "pmid": "40363688",
+                "title": "Electrochemical Degradation of Venlafaxine on Platinum Electrodes: Identification of Transformation Products by LC-MS/MS and In Silico Ecotoxicity Assessment.",
+                "journal": "Molecules",
+                "date": "2025 Apr 23"
+            },
+            {
+                "pmid": "40349006",
+                "title": "Comparative efficacy of antidepressant medication for adolescent depression: a network meta-analysis and systematic review.",
+                "journal": "BMC Psychiatry",
+                "date": "2025 May 10"
+            },
+            {
+                "pmid": "40269980",
+                "title": "Low-dose venlafaxine-induced erythema multiforme: a case report.",
+                "journal": "J Med Case Rep",
+                "date": "2025 Apr 23"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "167",
+        "nm_active_ingredient": "CLORIDRATO DE VENLAFAXINA",
+        "cd_pubchem_cid": "62923",
+        "publications": [
+            {
+                "pmid": "36063371",
+                "title": "Lactational exposure to venlafaxine provokes late repercussions on reproductive parameters in male rat offspring.",
+                "journal": "J Appl Toxicol",
+                "date": "2023 Mar"
+            },
+            {
+                "pmid": "35104487",
+                "title": "Modulation of histone deacetylase, the ubiquitin proteasome system, and autophagy underlies the neuroprotective effects of venlafaxine in a rotenone-induced Parkinson's disease model in rats.",
+                "journal": "Chem Biol Interact",
+                "date": "2022 Feb 25"
+            },
+            {
+                "pmid": "33814510",
+                "title": "Association of CYP1A1 and CYP1B1 inhibition in in vitro assays with drug-induced liver injury.",
+                "journal": "J Toxicol Sci",
+                "date": "2021"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "197",
+        "nm_active_ingredient": "CLORIDRATO DE BUPROPIONA",
+        "cd_pubchem_cid": "62884",
+        "publications": [
+            {
+                "pmid": "1572",
+                "title": "Renal response to short-term hypocapnia in man.",
+                "journal": "Kidney Int",
+                "date": "1975 Dec"
+            },
+            {
+                "pmid": "40282849",
+                "title": "Pharmacological Monotherapy for Depressive Disorders: Current and Future-A Narrative Review.",
+                "journal": "Medicina (Kaunas)",
+                "date": "2025 Mar 21"
+            },
+            {
+                "pmid": "40258929",
+                "title": "Pharmacological agents and injection stress, but not social isolation, alter cognitive judgement bias in the mouse touchscreen operant chamber.",
+                "journal": "Sci Rep",
+                "date": "2025 Apr 21"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "263",
+        "nm_active_ingredient": "CLORIDRATO DE AMITRIPTILINA",
+        "cd_pubchem_cid": "11065",
+        "publications": [
+            {
+                "pmid": "33814510",
+                "title": "Association of CYP1A1 and CYP1B1 inhibition in in vitro assays with drug-induced liver injury.",
+                "journal": "J Toxicol Sci",
+                "date": "2021"
+            },
+            {
+                "pmid": "32808185",
+                "title": "Effect of common medications on the expression of SARS-CoV-2 entry receptors in liver tissue.",
+                "journal": "Arch Toxicol",
+                "date": "2020 Dec"
+            },
+            {
+                "pmid": "31364238",
+                "title": "Neonicotinoid pesticides poorly interact with human drug transporters.",
+                "journal": "J Biochem Mol Toxicol",
+                "date": "2019 Oct"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "266",
+        "nm_active_ingredient": "CLORIDRATO DE CLOMIPRAMINA",
+        "cd_pubchem_cid": "68539",
+        "publications": [
+            {
+                "pmid": "13",
+                "title": "Action of propranolol on mitochondrial functions--effects on energized ion fluxes in the presence of valinomycin.",
+                "journal": "Biochem Pharmacol",
+                "date": "1975 Sep 15"
+            },
+            {
+                "pmid": "39566159",
+                "title": "Adequacy of treatment in outpatients with obsessive-compulsive disorder.",
+                "journal": "Compr Psychiatry",
+                "date": "2025 Jan"
+            },
+            {
+                "pmid": "39428980",
+                "title": "Single-dose and steady-state pharmacokinetics of clomipramine, yohimbine and clomipramine/yohimbine combination: A clinical drug-drug interaction study.",
+                "journal": "Br J Clin Pharmacol",
+                "date": "2025 Mar"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "270",
+        "nm_active_ingredient": "SUCCINATO DE DESVENLAFAXINA MONOIDRATADO",
+        "cd_pubchem_cid": "6918664",
+        "publications": [
+            {
+                "pmid": "35363936",
+                "title": "Impact of maternal desvenlafaxine exposure on brain development in pregnant albino rats and their fetuses.",
+                "journal": "J Biochem Mol Toxicol",
+                "date": "2022 Jul"
+            },
+            {
+                "pmid": "33814510",
+                "title": "Association of CYP1A1 and CYP1B1 inhibition in in vitro assays with drug-induced liver injury.",
+                "journal": "J Toxicol Sci",
+                "date": "2021"
+            },
+            {
+                "pmid": "25811541",
+                "title": "Systems pharmacological analysis of drugs inducing stevens-johnson syndrome and toxic epidermal necrolysis.",
+                "journal": "Chem Res Toxicol",
+                "date": "2015 May 18"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "271",
+        "nm_active_ingredient": "CLORIDRATO DE TRAZODONA",
+        "cd_pubchem_cid": "62935",
+        "publications": [
+            {
+                "pmid": "40262910",
+                "title": "Neuroleptic malignant syndrome induced by donepezil in a patient treated with risperidone and trazodone.",
+                "journal": "BMJ Case Rep",
+                "date": "2025 Apr 22"
+            },
+            {
+                "pmid": "40130526",
+                "title": "Effect of oral administration of trazodone on physiological and echocardiographic variables in cats.",
+                "journal": "J Feline Med Surg",
+                "date": "2025 Mar"
+            },
+            {
+                "pmid": "40128898",
+                "title": "Rethinking trazodone for insomnia in alcohol use disorder.",
+                "journal": "Addict Sci Clin Pract",
+                "date": "2025 Mar 25"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "354",
+        "nm_active_ingredient": "CLORIDRATO DE PAROXETINA",
+        "cd_pubchem_cid": "5282487",
+        "publications": [
+            {
+                "pmid": "40355528",
+                "title": "Selective serotonin reuptake inhibitors induce cardiac toxicity through dysfunction of mitochondria and sarcomeres.",
+                "journal": "Commun Biol",
+                "date": "2025 May 12"
+            },
+            {
+                "pmid": "40270279",
+                "title": "Careful Examination of a Novel Azobenzene Paroxetine Derivative and Its Interactions With Biogenic Amine Transporters.",
+                "journal": "J Neurochem",
+                "date": "2025 Apr"
+            },
+            {
+                "pmid": "40180243",
+                "title": "Chronopharmacokinetics of the antidepressant paroxetine: An in vitro and in vivo approach.",
+                "journal": "Neuropharmacology",
+                "date": "2025 Aug 1"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "371",
+        "nm_active_ingredient": "CLORIDRATO DE SERTRALINA",
+        "cd_pubchem_cid": "63009",
+        "publications": [
+            {
+                "pmid": "1358",
+                "title": "Acute tubular necrosis. An experimental model detailing the biochemical events accompanying renal injury and recovery.",
+                "journal": "Invest Urol",
+                "date": "1976 Jan"
+            },
+            {
+                "pmid": "40355528",
+                "title": "Selective serotonin reuptake inhibitors induce cardiac toxicity through dysfunction of mitochondria and sarcomeres.",
+                "journal": "Commun Biol",
+                "date": "2025 May 12"
+            },
+            {
+                "pmid": "40349006",
+                "title": "Comparative efficacy of antidepressant medication for adolescent depression: a network meta-analysis and systematic review.",
+                "journal": "BMC Psychiatry",
+                "date": "2025 May 10"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "538",
+        "nm_active_ingredient": "CARBONATO DE LÍTIO",
+        "cd_pubchem_cid": "10165",
+        "publications": [
+            {
+                "pmid": "12941468",
+                "title": "Extracellular signaling-regulated kinase-1 and -2 (ERK 1/2) mediate referred hyperalgesia in a murine model of visceral pain.",
+                "journal": "Brain Res Mol Brain Res",
+                "date": "2003 Aug 19"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "538",
+        "nm_active_ingredient": "CARBONATO DE LÍTIO",
+        "cd_pubchem_cid": "11125",
+        "publications": [
+            {
+                "pmid": "34984798",
+                "title": "Lithium intoxication induced pyroptosis via ROS/NF-κB/NLRP3 inflammasome regulatory networks in kidney of mice.",
+                "journal": "Environ Toxicol",
+                "date": "2022 Apr"
+            },
+            {
+                "pmid": "31928237",
+                "title": "The molecular mechanisms of lithium-induced cardiotoxicity in male rats and its amelioration by N-acetyl cysteine.",
+                "journal": "Hum Exp Toxicol",
+                "date": "2020 May"
+            },
+            {
+                "pmid": "29763168",
+                "title": "Lithium Toxicity.",
+                "journal": null,
+                "date": "2025 Jan"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "573",
+        "nm_active_ingredient": "TELMISARTANA",
+        "cd_pubchem_cid": "65999",
+        "publications": [
+            {
+                "pmid": "37356649",
+                "title": "Dibutyl phthalate induces epithelial-mesenchymal transition of renal tubular epithelial cells via the Ang II/AMPKα2/Cx43 signaling pathway.",
+                "journal": "Toxicology",
+                "date": "2023 Aug 1"
+            },
+            {
+                "pmid": "34464088",
+                "title": "Telmisartan Mitigates High-Glucose-Induced Injury in Renal Glomerular Endothelial Cells (rGECs) and Albuminuria in Diabetes Mice.",
+                "journal": "Chem Res Toxicol",
+                "date": "2021 Sep 20"
+            },
+            {
+                "pmid": "34339004",
+                "title": "Effect of Telmisartan on Arsenic-Induced (Sub-chronic) Perturbations in Redox Homeostasis, Pro-inflammatory Cascade and Aortic Dysfunction in Wistar Rats.",
+                "journal": "Biol Trace Elem Res",
+                "date": "2022 Apr"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "573",
+        "nm_active_ingredient": "TELMISARTANA",
+        "cd_pubchem_cid": "9912",
+        "publications": [
+            {
+                "pmid": "33229120",
+                "title": "Chemoenzymatic synthesis of enantiomerically enriched diprophylline and xanthinol nicotinate.",
+                "journal": "Bioorg Chem",
+                "date": "2021 Jan"
+            },
+            {
+                "pmid": "30272425",
+                "title": "[TREATMENT OF THROMBOTIC COMPLICATIONS IN THE INJURED PERSONS IN POLYTRAUMA].",
+                "journal": "Klin Khir",
+                "date": "2016"
+            },
+            {
+                "pmid": "26718554",
+                "title": "Inhibited proliferation of human umbilical artery smooth muscle cells by xanthinol nicotinate.",
+                "journal": "Med Biol Eng Comput",
+                "date": "2016 Jun"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "581",
+        "nm_active_ingredient": "BROMIDRATO DE VORTIOXETINA",
+        "cd_pubchem_cid": "56843850",
+        "publications": [
+            {
+                "pmid": "40338259",
+                "title": "Vortioxetine for Cognitive Impairment in Major Depressive Disorder During Post-COVID Syndrome: Real-World Evidence.",
+                "journal": "J Clin Psychiatry",
+                "date": "2025 May 5"
+            },
+            {
+                "pmid": "40265337",
+                "title": "Vortioxetine Can Be Used Safely to Treat Depression After Implantable Cardioverter Defibrillator Implantation for Congenital Long QT Syndrome: A Case Report.",
+                "journal": "Neuropsychopharmacol Rep",
+                "date": "2025 Jun"
+            },
+            {
+                "pmid": "40167528",
+                "title": "Vortioxetine: A Potential Drug for Repurposing for Glioblastoma Treatment via a Microsphere Local Delivery System.",
+                "journal": "ACS Biomater Sci Eng",
+                "date": "2025 Apr 14"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "741",
+        "nm_active_ingredient": "HIDROBROMETO DE CITALOPRAM (PORT. 344/98 LISTA C 1)",
+        "cd_pubchem_cid": "77995",
+        "publications": [
+            {
+                "pmid": "40357200",
+                "title": "Case Report: Management of a patient with Sheehan's syndrome presenting with anxiety and depression.",
+                "journal": "Front Endocrinol (Lausanne)",
+                "date": "2025"
+            },
+            {
+                "pmid": "40338259",
+                "title": "Vortioxetine for Cognitive Impairment in Major Depressive Disorder During Post-COVID Syndrome: Real-World Evidence.",
+                "journal": "J Clin Psychiatry",
+                "date": "2025 May 5"
+            },
+            {
+                "pmid": "40300703",
+                "title": "The serotonin precursor 5-HTP and the serotonin releaser fenfluramine but not the serotonin reuptake inhibitor escitalopram impair acquisition and expression of context-conditioned fear.",
+                "journal": "Behav Brain Res",
+                "date": "2025 Jun 25"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "742",
+        "nm_active_ingredient": "CITALOPRAM",
+        "cd_pubchem_cid": "2771",
+        "publications": [
+            {
+                "pmid": "38643950",
+                "title": "Dysregulation of adipogenesis and disrupted lipid metabolism by the antidepressants citalopram and sertraline.",
+                "journal": "Toxicol Appl Pharmacol",
+                "date": "2024 May"
+            },
+            {
+                "pmid": "31009648",
+                "title": "Differential effects of psychoactive substances on human wildtype and polymorphic T356M dopamine transporters (DAT).",
+                "journal": "Toxicology",
+                "date": "2019 Jun 15"
+            },
+            {
+                "pmid": "30592962",
+                "title": "Micromolar concentrations of citalopram or escitalopram inhibit glycoprotein VI-mediated and integrin αIIbβ3-mediated signaling in human platelets.",
+                "journal": "Toxicol Appl Pharmacol",
+                "date": "2019 Feb 1"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "742",
+        "nm_active_ingredient": "CITALOPRAM",
+        "cd_pubchem_cid": "9775",
+        "publications": [
+            {
+                "pmid": "19376712",
+                "title": "Angle and energy differential neutron spectrometry for the SPES BNCT facility.",
+                "journal": "Appl Radiat Isot",
+                "date": "2009 Jul"
+            },
+            {
+                "pmid": "16792662",
+                "title": "Cryoanalgesia with dichlorotetrafluoroethane spray versus ice packs in patients treated with botulinum toxin-a for palmar hyperhidrosis: Self-controlled study.",
+                "journal": "Dermatol Surg",
+                "date": "2006 Jun"
+            },
+            {
+                "pmid": "15353704",
+                "title": "A telescope-design directional neutron spectrometer.",
+                "journal": "Radiat Prot Dosimetry",
+                "date": "2004"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "786",
+        "nm_active_ingredient": "CLORIDRATO DE FLUOXETINA",
+        "cd_pubchem_cid": "62857",
+        "publications": [
+            {
+                "pmid": "40355528",
+                "title": "Selective serotonin reuptake inhibitors induce cardiac toxicity through dysfunction of mitochondria and sarcomeres.",
+                "journal": "Commun Biol",
+                "date": "2025 May 12"
+            },
+            {
+                "pmid": "40349006",
+                "title": "Comparative efficacy of antidepressant medication for adolescent depression: a network meta-analysis and systematic review.",
+                "journal": "BMC Psychiatry",
+                "date": "2025 May 10"
+            },
+            {
+                "pmid": "40316278",
+                "title": "Use of breathing retraining exercises and SSRIs in patients with hyperventilation syndrome.",
+                "journal": "BMJ Case Rep",
+                "date": "2025 May 2"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "797",
+        "nm_active_ingredient": "CLORIDRATO DE NORTRIPTILINA",
+        "cd_pubchem_cid": "441358",
+        "publications": [
+            {
+                "pmid": "40036614",
+                "title": "Brain concentrations and brain-blood ratios of amitriptyline and nortriptyline in forensic postmortem cases.",
+                "journal": "J Anal Toxicol",
+                "date": "2025 Apr 12"
+            },
+            {
+                "pmid": "39588680",
+                "title": "Efficacy of Nortriptyline-Topiramate and Verapamil-Paroxetine in Tinnitus Management: A Randomized Placebo-Controlled Trial.",
+                "journal": "Otolaryngol Head Neck Surg",
+                "date": "2025 Apr"
+            },
+            {
+                "pmid": "39470297",
+                "title": "Optimizing the Prediction of Depression Remission: A Longitudinal Machine Learning Approach.",
+                "journal": "Am J Med Genet B Neuropsychiatr Genet",
+                "date": "2025 Apr"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "798",
+        "nm_active_ingredient": "CLORIDRATO DE PAROXETINA HEMI-HIDRATADO",
+        "cd_pubchem_cid": "5282487",
+        "publications": [
+            {
+                "pmid": "40355528",
+                "title": "Selective serotonin reuptake inhibitors induce cardiac toxicity through dysfunction of mitochondria and sarcomeres.",
+                "journal": "Commun Biol",
+                "date": "2025 May 12"
+            },
+            {
+                "pmid": "40270279",
+                "title": "Careful Examination of a Novel Azobenzene Paroxetine Derivative and Its Interactions With Biogenic Amine Transporters.",
+                "journal": "J Neurochem",
+                "date": "2025 Apr"
+            },
+            {
+                "pmid": "40180243",
+                "title": "Chronopharmacokinetics of the antidepressant paroxetine: An in vitro and in vivo approach.",
+                "journal": "Neuropharmacology",
+                "date": "2025 Aug 1"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "971",
+        "nm_active_ingredient": "OXALATO DE ESCITALOPRAM",
+        "cd_pubchem_cid": "146571",
+        "publications": [
+            {
+                "pmid": "28467792",
+                "title": "Assessment of citalopram and escitalopram on neuroblastoma cell lines. Cell toxicity and gene modulation.",
+                "journal": "Oncotarget",
+                "date": "2017 Jun 27"
+            },
+            {
+                "pmid": "40349006",
+                "title": "Comparative efficacy of antidepressant medication for adolescent depression: a network meta-analysis and systematic review.",
+                "journal": "BMC Psychiatry",
+                "date": "2025 May 10"
+            },
+            {
+                "pmid": "40338259",
+                "title": "Vortioxetine for Cognitive Impairment in Major Depressive Disorder During Post-COVID Syndrome: Real-World Evidence.",
+                "journal": "J Clin Psychiatry",
+                "date": "2025 May 5"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "1264",
+        "nm_active_ingredient": "CLORIDRATO DE LEVOMILNACIPRANA",
+        "cd_pubchem_cid": "6917778",
+        "publications": [
+            {
+                "pmid": "37413934",
+                "title": "Levomilnacipran ameliorates lipopolysaccharide-induced depression-like behaviors and suppressed the TLR4/Ras signaling pathway.",
+                "journal": "Int Immunopharmacol",
+                "date": "2023 Sep"
+            },
+            {
+                "pmid": "34890499",
+                "title": "Levomilnacipran for Negative Symptom Domain Schizophrenia.",
+                "journal": "Prim Care Companion CNS Disord",
+                "date": "2021 Dec 9"
+            },
+            {
+                "pmid": "33307885",
+                "title": "Cost-effectiveness of vortioxetine compared with levomilnacipran and vilazodone in patients with major depressive disorder switching from an initial antidepressant.",
+                "journal": "Expert Rev Pharmacoecon Outcomes Res",
+                "date": "2021 Feb"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "1468",
+        "nm_active_ingredient": "CLORIDRATO DE IMIPRAMINA",
+        "cd_pubchem_cid": "15893898",
+        "publications": [
+            {
+                "pmid": "40202572",
+                "title": "Repurposing serotonergic drugs for gastric cancer: induction of apoptosis in vitro.",
+                "journal": "Mol Biol Rep",
+                "date": "2025 Apr 9"
+            },
+            {
+                "pmid": "40010952",
+                "title": "Imipramine-induced Apoptosis and Metastasis Inhibition in Human Bladder Cancer T24 Cells Through EGFR/ERK/NF-κB Pathway Suppression.",
+                "journal": "In Vivo",
+                "date": "2025 Mar-Apr"
+            },
+            {
+                "pmid": "39996753",
+                "title": "Imipramine, an Acid Sphingomyelinase Inhibitor, Promotes Newborn Neuron Survival in the Hippocampus After Seizure.",
+                "journal": "Cells",
+                "date": "2025 Feb 14"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "1468",
+        "nm_active_ingredient": "CLORIDRATO DE IMIPRAMINA",
+        "cd_pubchem_cid": "8228",
+        "publications": [
+            {
+                "pmid": "1147",
+                "title": "L-[alphaS, 5S]-alpha-amino-3-chloro-4,5-dihydro-5-isoxazoleacetic acid (NSC-163501): a new amino acid antibiotic with the properties of an antagonist of L-glutamine.",
+                "journal": "Cancer Chemother Rep",
+                "date": "1975 May-Jun"
+            },
+            {
+                "pmid": "40202572",
+                "title": "Repurposing serotonergic drugs for gastric cancer: induction of apoptosis in vitro.",
+                "journal": "Mol Biol Rep",
+                "date": "2025 Apr 9"
+            },
+            {
+                "pmid": "40010952",
+                "title": "Imipramine-induced Apoptosis and Metastasis Inhibition in Human Bladder Cancer T24 Cells Through EGFR/ERK/NF-κB Pathway Suppression.",
+                "journal": "In Vivo",
+                "date": "2025 Mar-Apr"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "1537",
+        "nm_active_ingredient": "CLORIDRATO DE ESCETAMINA",
+        "cd_pubchem_cid": "15851",
+        "publications": [
+            {
+                "pmid": "40361229",
+                "title": "Comment on \"A randomized double-blind trial of intranasal dexmedetomidine versus intranasal esketamine for procedural sedation and analgesia in young children\".",
+                "journal": "Scand J Trauma Resusc Emerg Med",
+                "date": "2025 May 13"
+            },
+            {
+                "pmid": "40359113",
+                "title": "Attitudes and Perceptions of Portuguese Psychiatrists and Psychologists on the Clinical Use of Ketamine.",
+                "journal": "Acta Med Port",
+                "date": "2025 May 2"
+            },
+            {
+                "pmid": "40355817",
+                "title": "Correlations between major depressive disorder, splenic morphology, and immune function.",
+                "journal": "BMC Psychiatry",
+                "date": "2025 May 12"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "1537",
+        "nm_active_ingredient": "CLORIDRATO DE ESCETAMINA",
+        "cd_pubchem_cid": "43834305",
+        "publications": [
+            {
+                "pmid": "40361229",
+                "title": "Comment on \"A randomized double-blind trial of intranasal dexmedetomidine versus intranasal esketamine for procedural sedation and analgesia in young children\".",
+                "journal": "Scand J Trauma Resusc Emerg Med",
+                "date": "2025 May 13"
+            },
+            {
+                "pmid": "40359113",
+                "title": "Attitudes and Perceptions of Portuguese Psychiatrists and Psychologists on the Clinical Use of Ketamine.",
+                "journal": "Acta Med Port",
+                "date": "2025 May 2"
+            },
+            {
+                "pmid": "40355817",
+                "title": "Correlations between major depressive disorder, splenic morphology, and immune function.",
+                "journal": "BMC Psychiatry",
+                "date": "2025 May 12"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "1584",
+        "nm_active_ingredient": "CLORDIAZEPÓXIDO",
+        "cd_pubchem_cid": "2712",
+        "publications": [
+            {
+                "pmid": "21154375",
+                "title": "Hydroxyzine for generalised anxiety disorder.",
+                "journal": "Cochrane Database Syst Rev",
+                "date": "2010 Dec 8"
+            },
+            {
+                "pmid": "21127120",
+                "title": "Acute liver failure after administration of paracetamol at the maximum recommended daily dose in adults.",
+                "journal": "BMJ",
+                "date": "2010 Dec 2"
+            },
+            {
+                "pmid": "21103339",
+                "title": "A dopaminergic gene cluster in the prefrontal cortex predicts performance indicative of general intelligence in genetically heterogeneous mice.",
+                "journal": "PLoS One",
+                "date": "2010 Nov 17"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "1612",
+        "nm_active_ingredient": "MALEATO DE FLUVOXAMINA",
+        "cd_pubchem_cid": "9560989",
+        "publications": [
+            {
+                "pmid": "28437613",
+                "title": "Evaluating the Role of Multidrug Resistance Protein 3 (MDR3) Inhibition in Predicting Drug-Induced Liver Injury Using 125 Pharmaceuticals.",
+                "journal": "Chem Res Toxicol",
+                "date": "2017 May 15"
+            },
+            {
+                "pmid": "27803785",
+                "title": "Fluvoxamine inhibits some inflammatory genes expression in LPS/stimulated human endothelial cells, U937 macrophages, and carrageenan-induced paw edema in rat.",
+                "journal": "Iran J Basic Med Sci",
+                "date": "2016 Sep"
+            },
+            {
+                "pmid": "26599973",
+                "title": "Cytochrome P450 inhibition potential of new psychoactive substances of the tryptamine class.",
+                "journal": "Toxicol Lett",
+                "date": "2016 Jan 22"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "1672",
+        "nm_active_ingredient": "MIRTAZAPINA",
+        "cd_pubchem_cid": "4205",
+        "publications": [
+            {
+                "pmid": "38740240",
+                "title": "Effect of quercetin and mirtazapine on spermatogenesis and testis structure in phenylhydrazine-induced hemolytic anemia mice: An experimental study.",
+                "journal": "Food Chem Toxicol",
+                "date": "2024 Jul"
+            },
+            {
+                "pmid": "37403423",
+                "title": "Mirtazapine attenuated cadmium-induced neuronal intoxication by regulating Nrf2 and NF-κB/TLR4 signals.",
+                "journal": "Toxicol Mech Methods",
+                "date": "2023 Oct"
+            },
+            {
+                "pmid": "35224877",
+                "title": "The affinity and selectivity of α-adrenoceptor antagonists, antidepressants and antipsychotics for the human α2A, α2B, and α2C-adrenoceptors and comparison with human α1 and β-adrenoceptors.",
+                "journal": "Pharmacol Res Perspect",
+                "date": "2022 Apr"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "1672",
+        "nm_active_ingredient": "MIRTAZAPINA",
+        "cd_pubchem_cid": "9773",
+        "publications": [
+            {
+                "pmid": "22594852",
+                "title": "Corona discharge ion mobility spectrometry with orthogonal acceleration time of flight mass spectrometry for monitoring of volatile organic compounds.",
+                "journal": "Anal Chem",
+                "date": "2012 Jun 19"
+            },
+            {
+                "pmid": "22334151",
+                "title": "Use of denuder/filter apparatus to investigate terpene ozonolysis.",
+                "journal": "J Environ Monit",
+                "date": "2012 Mar"
+            },
+            {
+                "pmid": "21820666",
+                "title": "In situ aqueous derivatization and determination of non-steroidal anti-inflammatory drugs by salting-out-assisted liquid-liquid extraction and gas chromatography-mass spectrometry.",
+                "journal": "J Chromatogr A",
+                "date": "2011 Sep 16"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "1862",
+        "nm_active_ingredient": "SULFATO DE TRANILCIPROMINA",
+        "cd_pubchem_cid": "11473982",
+        "publications": [
+            {
+                "pmid": "40022881",
+                "title": "Discovery of novel tranylcypromine-indazole-based derivatives as LSD1 inhibitors for acute myeloid leukemia treatment.",
+                "journal": "Eur J Med Chem",
+                "date": "2025 May 5"
+            },
+            {
+                "pmid": "39899938",
+                "title": "Histone lysine demethylase 1A inhibitors, seclidemstat and tranylcypromine, induce astrocytogenesis in rat neural stem cells.",
+                "journal": "Biochem Biophys Res Commun",
+                "date": "2025 Mar 1"
+            },
+            {
+                "pmid": "39837213",
+                "title": "Development of BACE2-IN-1/tranylcypromine-based compounds to induce steroidogenesis-dependent neuroprotection.",
+                "journal": "Biomed Pharmacother",
+                "date": "2025 Feb"
+            }
+        ]
+    },
+    {
+        "id_active_ingredient": "2258",
+        "nm_active_ingredient": "CLORIDRATO DE VILAZODONA",
+        "cd_pubchem_cid": "6918313",
+        "publications": [
+            {
+                "pmid": "1167",
+                "title": "Ontogeny of immunity in humans.",
+                "journal": "Clin Immunol Immunopathol",
+                "date": "1975 Nov"
+            },
+            {
+                "pmid": "39532268",
+                "title": "Vilazodone exposure during pregnancy: Effects on embryo-fetal development, pregnancy outcomes and fetal neurotoxicity by BDNF/Bax-Bcl2/5-HT mediated mechanisms.",
+                "journal": "Neurotoxicology",
+                "date": "2024 Dec"
+            },
+            {
+                "pmid": "39466575",
+                "title": "Vilazodone, a Novel SSRI Antidepressant with 5-HT1A Partial Agonist Properties: Diminished Potentiation of Chronic Oral Methylphenidate-Induced Dynorphin Expression in the Striatum in Adolescent Male Rats.",
+                "journal": "Mol Neurobiol",
+                "date": "2025 Apr"
+            }
+        ]
+    }
+]

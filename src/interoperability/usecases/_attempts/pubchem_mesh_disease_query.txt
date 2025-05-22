@@ -1,0 +1,32 @@
+PREFIX heal: <http://healdb.org/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?id_ai ?ai ?name_ai ?pubchem_cid ?disease ?mesh_id WHERE {
+
+  # 1. Retrieve Active Ingredients and their PubChem CIDs in HealDB
+  GRAPH <http://healdb.org/graph/healdb> {
+    ?ext_id owl:sameAs ?pubchem_cid .
+    ?ai heal:hasExternalIdentifier ?ext_id .
+    ?ai heal:activeIngredientName ?name_ai .
+    
+    # Ensure only PubChem CIDs
+    FILTER(CONTAINS(STR(?pubchem_cid), "rdf.ncbi.nlm.nih.gov/pubchem/compound/CID"))
+    
+    # Extract the Active Ingredient ID
+    BIND(REPLACE(STR(?ai), "^.*AI_", "") AS ?id_ai)
+  }
+
+  # 2. Retrieve PubChem cooccurrences between CID and Disease (DZID)
+  GRAPH <http://healdb.org/graph/pubchem> {
+    ?cooccurrence rdf:subject ?pubchem_cid .
+    ?cooccurrence rdf:object ?disease .
+  }
+
+  # 3. Retrieve MeSH ID
+  GRAPH <http://healdb.org/graph/pubchem> {
+    ?disease skos:closeMatch ?mesh_id .
+    FILTER(CONTAINS(STR(?mesh_id), "mesh:") || CONTAINS(STR(?mesh_id), "/mesh/"))
+  }
+}

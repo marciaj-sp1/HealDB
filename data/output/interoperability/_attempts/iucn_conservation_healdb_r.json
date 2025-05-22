@@ -1,0 +1,1667 @@
+{
+  "achillea millefolium": {
+    "name": "achillea millefolium",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2016",
+        "assessment_id": 78457012,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Wyoming", "Wisconsin", "West Virginia", "Washington", "Virginia", "Vermont", "Utah", "Texas", "Tennessee", "South Dakota", "South Carolina", "Rhode Island", "Pennsylvania", "Oregon", "Oklahoma", "Ohio", "North Dakota", "North Carolina", "New York", "Delaware", "Connecticut", "Colorado", "California", "Arkansas", "Arizona", "Aleutian Is.", "Alaska", "Alabama", "United States", "Yukon", "Saskatchewan", "Canada", "Alberta", "British Columbia", "Labrador", "Manitoba", "New Brunswick", "Newfoundland I", "Northwest Territories", "Nova Scotia", "Nunavut", "Ontario", "Prince Edward I.", "Québec", "District of Columbia", "Florida", "Georgia", "Hawaiian Is.", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "Mexico"],
+        "threats": []
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2012",
+        "assessment_id": 2757955,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Türkiye-in-Europe", "Türkiye", "Ukraine (main part)", "Krym", "Ukraine", "South European Russia", "Northwest European Russia", "North European Russia", "Kaliningrad", "East European Russia", "Central European Russia", "Lithuania", "Liechtenstein", "Latvia", "Italy (mainland)", "Italy", "Ireland", "Iceland", "Hungary", "Greece (mainland)", "Greece", "Germany", "France (mainland)", "Albania", "Andorra", "Austria", "Belgium", "Bosnia and Herzegovina", "Bulgaria", "Croatia", "Czechia", "Denmark", "Estonia", "Faroe Islands", "Finland", "France", "Luxembourg", "North Macedonia", "Montenegro", "Netherlands", "Norway", "Poland", "Portugal", "Portugal (mainland)", "Romania", "Serbia", "Kosovo", "Serbia", "Slovakia", "Slovenia", "Spain", "Spain (mainland)", "Sweden", "Switzerland", "United Kingdom", "Great Britain", "Northern Ireland", "Belarus", "Russian Federation", "European Russia", "Moldova"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 1710
+  },
+  "aconitum napellus": {
+    "name": "aconitum napellus",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2014",
+        "assessment_id": 57117867,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Albania", "Portugal", "Poland", "Norway", "Netherlands", "Luxembourg", "Liechtenstein", "Latvia", "Italy (mainland)", "Italy", "Isle of Man", "Ireland", "Hungary", "Portugal (mainland)", "Romania", "Serbia", "Slovakia", "Slovenia", "Spain", "Spain (mainland)", "Sweden", "Switzerland", "United Kingdom", "Great Britain", "Northern Ireland", "Germany", "France (mainland)", "Corsica", "France", "Finland", "Denmark", "Czechia", "Croatia", "Bosnia and Herzegovina", "Belgium", "Austria", "Andorra", "Ukraine", "Ukraine (main part)"],
+        "threats": "Type Unknown/Unrecorded"
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2014",
+        "assessment_id": 57117867,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Albania", "Portugal", "Poland", "Norway", "Netherlands", "Luxembourg", "Liechtenstein", "Latvia", "Italy (mainland)", "Italy", "Isle of Man", "Ireland", "Hungary", "Portugal (mainland)", "Romania", "Serbia", "Slovakia", "Slovenia", "Spain", "Spain (mainland)", "Sweden", "Switzerland", "United Kingdom", "Great Britain", "Northern Ireland", "Germany", "France (mainland)", "Corsica", "France", "Finland", "Denmark", "Czechia", "Croatia", "Bosnia and Herzegovina", "Belgium", "Austria", "Andorra", "Ukraine", "Ukraine (main part)"],
+        "threats": "Type Unknown/Unrecorded"
+      },
+      {
+        "scope": "Global",
+        "year_published": "2014",
+        "assessment_id": 57117867,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Albania", "Portugal", "Poland", "Norway", "Netherlands", "Luxembourg", "Liechtenstein", "Latvia", "Italy (mainland)", "Italy", "Isle of Man", "Ireland", "Hungary", "Portugal (mainland)", "Romania", "Serbia", "Slovakia", "Slovenia", "Spain", "Spain (mainland)", "Sweden", "Switzerland", "United Kingdom", "Great Britain", "Northern Ireland", "Germany", "France (mainland)", "Corsica", "France", "Finland", "Denmark", "Czechia", "Croatia", "Bosnia and Herzegovina", "Belgium", "Austria", "Andorra", "Ukraine", "Ukraine (main part)"],
+        "threats": "Type Unknown/Unrecorded"
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2014",
+        "assessment_id": 57117867,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Albania", "Portugal", "Poland", "Norway", "Netherlands", "Luxembourg", "Liechtenstein", "Latvia", "Italy (mainland)", "Italy", "Isle of Man", "Ireland", "Hungary", "Portugal (mainland)", "Romania", "Serbia", "Slovakia", "Slovenia", "Spain", "Spain (mainland)", "Sweden", "Switzerland", "United Kingdom", "Great Britain", "Northern Ireland", "Germany", "France (mainland)", "Corsica", "France", "Finland", "Denmark", "Czechia", "Croatia", "Bosnia and Herzegovina", "Belgium", "Austria", "Andorra", "Ukraine", "Ukraine (main part)"],
+        "threats": "Type Unknown/Unrecorded"
+      }
+    ],
+    "id_active_ingredient": 1407
+  },
+  "actaea racemosa": {
+    "name": "actaea racemosa",
+    "error": "No assessments found",
+    "id_active_ingredient": 327
+  },
+  "aesculus hippocastanum": {
+    "name": "aesculus hippocastanum",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2017",
+        "assessment_id": 68084249,
+        "category": "VU",
+        "category_description": "Vulnerable",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["United Kingdom", "Switzerland", "Albania", "Bulgaria", "Denmark", "Finland", "France", "Germany", "Greece", "Greece (mainland)", "North Macedonia", "Norway", "Portugal", "Spain", "Sweden", "France (mainland)", "Portugal (mainland)", "Spain (mainland)", "Great Britain", "Northern Ireland"],
+        "threats": ["Mining & quarrying", "Intentional use: (subsistence/small scale) [harvest]", "Scale Unknown/Unrecorded", "Increase in fire frequency/intensity", "Tourism & recreation areas", "Named species", "Large dams"]
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2017",
+        "assessment_id": 68084249,
+        "category": "VU",
+        "category_description": "Vulnerable",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["United Kingdom", "Switzerland", "Albania", "Bulgaria", "Denmark", "Finland", "France", "Germany", "Greece", "Greece (mainland)", "North Macedonia", "Norway", "Portugal", "Spain", "Sweden", "France (mainland)", "Portugal (mainland)", "Spain (mainland)", "Great Britain", "Northern Ireland"],
+        "threats": ["Mining & quarrying", "Intentional use: (subsistence/small scale) [harvest]", "Scale Unknown/Unrecorded", "Increase in fire frequency/intensity", "Tourism & recreation areas", "Named species", "Large dams"]
+      },
+      {
+        "scope": "Global",
+        "year_published": "2017",
+        "assessment_id": 68084249,
+        "category": "VU",
+        "category_description": "Vulnerable",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["United Kingdom", "Switzerland", "Albania", "Bulgaria", "Denmark", "Finland", "France", "Germany", "Greece", "Greece (mainland)", "North Macedonia", "Norway", "Portugal", "Spain", "Sweden", "France (mainland)", "Portugal (mainland)", "Spain (mainland)", "Great Britain", "Northern Ireland"],
+        "threats": ["Mining & quarrying", "Intentional use: (subsistence/small scale) [harvest]", "Scale Unknown/Unrecorded", "Increase in fire frequency/intensity", "Tourism & recreation areas", "Named species", "Large dams"]
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2017",
+        "assessment_id": 68084249,
+        "category": "VU",
+        "category_description": "Vulnerable",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["United Kingdom", "Switzerland", "Albania", "Bulgaria", "Denmark", "Finland", "France", "Germany", "Greece", "Greece (mainland)", "North Macedonia", "Norway", "Portugal", "Spain", "Sweden", "France (mainland)", "Portugal (mainland)", "Spain (mainland)", "Great Britain", "Northern Ireland"],
+        "threats": ["Mining & quarrying", "Intentional use: (subsistence/small scale) [harvest]", "Scale Unknown/Unrecorded", "Increase in fire frequency/intensity", "Tourism & recreation areas", "Named species", "Large dams"]
+      },
+      {
+        "scope": "Global",
+        "year_published": "2017",
+        "assessment_id": 122961065,
+        "category": "VU",
+        "category_description": "Vulnerable",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Northern Ireland", "Great Britain", "United Kingdom", "Switzerland", "Sweden", "Spain (mainland)", "Spain", "Portugal (mainland)", "Albania", "Bulgaria", "Denmark", "Finland", "France", "France (mainland)", "Germany", "Greece", "Greece (mainland)", "North Macedonia", "Norway", "Portugal"],
+        "threats": ["Mining & quarrying", "Intentional use: (subsistence/small scale) [harvest]", "Large dams", "Scale Unknown/Unrecorded", "Named species", "Increase in fire frequency/intensity", "Tourism & recreation areas"]
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2017",
+        "assessment_id": 122961065,
+        "category": "VU",
+        "category_description": "Vulnerable",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Northern Ireland", "Great Britain", "United Kingdom", "Switzerland", "Sweden", "Spain (mainland)", "Spain", "Portugal (mainland)", "Albania", "Bulgaria", "Denmark", "Finland", "France", "France (mainland)", "Germany", "Greece", "Greece (mainland)", "North Macedonia", "Norway", "Portugal"],
+        "threats": ["Mining & quarrying", "Intentional use: (subsistence/small scale) [harvest]", "Large dams", "Scale Unknown/Unrecorded", "Named species", "Increase in fire frequency/intensity", "Tourism & recreation areas"]
+      },
+      {
+        "scope": "Global",
+        "year_published": "2017",
+        "assessment_id": 122961065,
+        "category": "VU",
+        "category_description": "Vulnerable",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Northern Ireland", "Great Britain", "United Kingdom", "Switzerland", "Sweden", "Spain (mainland)", "Spain", "Portugal (mainland)", "Albania", "Bulgaria", "Denmark", "Finland", "France", "France (mainland)", "Germany", "Greece", "Greece (mainland)", "North Macedonia", "Norway", "Portugal"],
+        "threats": ["Mining & quarrying", "Intentional use: (subsistence/small scale) [harvest]", "Large dams", "Scale Unknown/Unrecorded", "Named species", "Increase in fire frequency/intensity", "Tourism & recreation areas"]
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2017",
+        "assessment_id": 122961065,
+        "category": "VU",
+        "category_description": "Vulnerable",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Northern Ireland", "Great Britain", "United Kingdom", "Switzerland", "Sweden", "Spain (mainland)", "Spain", "Portugal (mainland)", "Albania", "Bulgaria", "Denmark", "Finland", "France", "France (mainland)", "Germany", "Greece", "Greece (mainland)", "North Macedonia", "Norway", "Portugal"],
+        "threats": ["Mining & quarrying", "Intentional use: (subsistence/small scale) [harvest]", "Large dams", "Scale Unknown/Unrecorded", "Named species", "Increase in fire frequency/intensity", "Tourism & recreation areas"]
+      },
+      {
+        "scope": "Global",
+        "year_published": "2013",
+        "assessment_id": 2757985,
+        "category": "NT",
+        "category_description": "Near Threatened",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Greece (mainland)", "Greece", "Bulgaria", "Albania", "North Macedonia", "Norway", "Switzerland", "United Kingdom", "France", "Germany", "Spain", "Sweden", "Denmark", "Finland", "Portugal"],
+        "threats": ["Tourism & recreation areas", "Increase in fire frequency/intensity", "Intentional use: (subsistence/small scale) [harvest]", "Scale Unknown/Unrecorded", "Mining & quarrying", "Named species"]
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2013",
+        "assessment_id": 2757985,
+        "category": "NT",
+        "category_description": "Near Threatened",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Greece (mainland)", "Greece", "Bulgaria", "Albania", "North Macedonia", "Norway", "Switzerland", "United Kingdom", "France", "Germany", "Spain", "Sweden", "Denmark", "Finland", "Portugal"],
+        "threats": ["Tourism & recreation areas", "Increase in fire frequency/intensity", "Intentional use: (subsistence/small scale) [harvest]", "Scale Unknown/Unrecorded", "Mining & quarrying", "Named species"]
+      },
+      {
+        "scope": "Global",
+        "year_published": "2013",
+        "assessment_id": 2757985,
+        "category": "NT",
+        "category_description": "Near Threatened",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Greece (mainland)", "Greece", "Bulgaria", "Albania", "North Macedonia", "Norway", "Switzerland", "United Kingdom", "France", "Germany", "Spain", "Sweden", "Denmark", "Finland", "Portugal"],
+        "threats": ["Tourism & recreation areas", "Increase in fire frequency/intensity", "Intentional use: (subsistence/small scale) [harvest]", "Scale Unknown/Unrecorded", "Mining & quarrying", "Named species"]
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2013",
+        "assessment_id": 2757985,
+        "category": "NT",
+        "category_description": "Near Threatened",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Greece (mainland)", "Greece", "Bulgaria", "Albania", "North Macedonia", "Norway", "Switzerland", "United Kingdom", "France", "Germany", "Spain", "Sweden", "Denmark", "Finland", "Portugal"],
+        "threats": ["Tourism & recreation areas", "Increase in fire frequency/intensity", "Intentional use: (subsistence/small scale) [harvest]", "Scale Unknown/Unrecorded", "Mining & quarrying", "Named species"]
+      }
+    ],
+    "id_active_ingredient": 667
+  },
+  "allium sativum": {
+    "name": "allium sativum",
+    "error": "No assessments found",
+    "id_active_ingredient": 859
+  },
+  "aloe ferox": {
+    "name": "aloe ferox",
+    "error": "No assessments found",
+    "id_active_ingredient": 1821
+  },
+  "alpinia zerumbet": {
+    "name": "alpinia zerumbet",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2020",
+        "assessment_id": 13507114,
+        "category": "DD",
+        "category_description": "Data Deficient",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Taiwan, Province of China", "Japan", "Viet Nam", "Thailand", "Peninsular Malaysia", "Malaysia", "Lao People's Democratic Republic", "China", "Cambodia", "Bangladesh", "Canary Is.", "Spain", "Honduras", "Cuba", "United States", "Florida", "Hawaiian Is.", "Dominican Republic", "Haiti", "Puerto Rico", "Bolivia, Plurinational States of", "Philippines", "Trinidad and Tobago"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 2292
+  },
+  "ananas comosus": {
+    "name": "ananas comosus",
+    "error": "No assessments found",
+    "id_active_ingredient": 582
+  },
+  "arctostaphylos uva-ursi": {
+    "name": "arctostaphylos uva-ursi",
+    "assessments": [
+      {
+        "scope": "Europe",
+        "year_published": "2011",
+        "assessment_id": 5982337,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Estonia", "Albania", "Liechtenstein", "Netherlands", "Spain", "Greece", "Russian Federation", "Switzerland", "Ukraine", "Serbia", "Andorra", "Poland", "North European Russia", "Bosnia and Herzegovina", "Italy", "East European Russia", "Iceland", "Slovakia", "Spain (mainland)", "Slovenia", "North Macedonia", "Greece (mainland)", "Montenegro", "Bulgaria", "France", "Norway", "Ukraine (main part)", "Romania", "Croatia", "United Kingdom", "Lithuania", "Belarus", "Latvia", "Italy (mainland)", "Northwest European Russia", "Germany", "Central European Russia", "France (mainland)", "Kaliningrad", "Denmark", "Finland", "Ireland", "Austria", "Czechia", "Sweden"],
+        "threats": ["Intentional use (species is the target)", "Nutrient loads", "Scale Unknown/Unrecorded", "Other ecosystem modifications", "Recreational activities"]
+      }
+    ],
+    "id_active_ingredient": 2213
+  },
+  "arnica montana": {
+    "name": "arnica montana",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2011",
+        "assessment_id": 5574104,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Estonia", "Liechtenstein", "Netherlands", "Spain", "Russian Federation", "Switzerland", "Andorra", "Ukraine", "Poland", "Portugal", "Belgium", "Portugal (mainland)", "Montenegro", "France", "Bulgaria", "Hungary", "Norway", "Ukraine (main part)", "Romania", "Croatia", "Lithuania", "Luxembourg", "Belarus", "Italy (mainland)", "Germany", "France (mainland)", "Denmark", "Kaliningrad", "Czechia", "Austria", "Sweden", "Slovenia", "Spain (mainland)", "Italy", "Bosnia and Herzegovina"],
+        "threats": ["Intentional use (species is the target)", "Nutrient loads", "Scale Unknown/Unrecorded", "Other ecosystem modifications", "Recreational activities"]
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2011",
+        "assessment_id": 5574104,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Estonia", "Liechtenstein", "Netherlands", "Spain", "Russian Federation", "Switzerland", "Andorra", "Ukraine", "Poland", "Portugal", "Belgium", "Portugal (mainland)", "Montenegro", "France", "Bulgaria", "Hungary", "Norway", "Ukraine (main part)", "Romania", "Croatia", "Lithuania", "Luxembourg", "Belarus", "Italy (mainland)", "Germany", "France (mainland)", "Denmark", "Kaliningrad", "Czechia", "Austria", "Sweden", "Slovenia", "Spain (mainland)", "Italy", "Bosnia and Herzegovina"],
+        "threats": ["Intentional use (species is the target)", "Nutrient loads", "Scale Unknown/Unrecorded", "Other ecosystem modifications", "Recreational activities"]
+      },
+      {
+        "scope": "Global",
+        "year_published": "2011",
+        "assessment_id": 5574104,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Estonia", "Liechtenstein", "Netherlands", "Spain", "Russian Federation", "Switzerland", "Andorra", "Ukraine", "Poland", "Portugal", "Belgium", "Portugal (mainland)", "Montenegro", "France", "Bulgaria", "Hungary", "Norway", "Ukraine (main part)", "Romania", "Croatia", "Lithuania", "Luxembourg", "Belarus", "Italy (mainland)", "Germany", "France (mainland)", "Denmark", "Kaliningrad", "Czechia", "Austria", "Sweden", "Slovenia", "Spain (mainland)", "Italy", "Bosnia and Herzegovina"],
+        "threats": ["Intentional use (species is the target)", "Nutrient loads", "Scale Unknown/Unrecorded", "Other ecosystem modifications", "Recreational activities"]
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2011",
+        "assessment_id": 5574104,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Estonia", "Liechtenstein", "Netherlands", "Spain", "Russian Federation", "Switzerland", "Andorra", "Ukraine", "Poland", "Portugal", "Belgium", "Portugal (mainland)", "Montenegro", "France", "Bulgaria", "Hungary", "Norway", "Ukraine (main part)", "Romania", "Croatia", "Lithuania", "Luxembourg", "Belarus", "Italy (mainland)", "Germany", "France (mainland)", "Denmark", "Kaliningrad", "Czechia", "Austria", "Sweden", "Slovenia", "Spain (mainland)", "Italy", "Bosnia and Herzegovina"],
+        "threats": ["Intentional use (species is the target)", "Nutrient loads", "Scale Unknown/Unrecorded", "Other ecosystem modifications", "Recreational activities"]
+      }
+    ],
+    "id_active_ingredient": 350
+  },
+  "atropa belladonna": {
+    "name": "atropa belladonna",
+    "error": "No assessments found",
+    "id_active_ingredient": 943
+  },
+  "bacopa monnieri": {
+    "name": "bacopa monnieri",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2013",
+        "assessment_id": 17722668,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Taiwan, Province of China", "Pakistan", "Viet Nam", "Sri Lanka", "Nepal", "West Bengal", "Tamil Nadu", "Rajasthan", "Punjab", "Orissa", "Manipur", "Kerala", "Karnataka", "Gujarat", "Goa", "Delhi", "Bihar", "Assam", "Andhra Pradesh", "China", "Andaman Is.", "Hawaiian Is.", "Florida", "South Yemen", "North Yemen", "Yemen", "United Arab Emirates", "Trinidad and Tobago", "Brazil", "Bolivia, Plurinational States of", "Saint Lucia", "Argentina", "Puerto Rico", "Australia", "Martinique", "Jamaica", "Haiti", "Guadeloupe", "Grenada", "Bahamas", "Belize", "Costa Rica", "El Salvador", "Guatemala", "Honduras", "Barbados", "Mexico", "Nicaragua", "Panama", "Cuba", "United States", "Dominican Republic", "Chile", "Virgin Islands, British", "Ecuador", "French Guiana", "Virgin Islands, U.S.", "Peru", "Bhutan", "Cambodia", "India", "Indonesia", "Lao People's Democratic Republic", "Malaysia", "Philippines", "Thailand", "Madagascar", "Mozambique", "Nigeria", "Somalia", "South Africa", "Eswatini", "Bahrain", "Kuwait", "Oman", "Saudi Arabia", "Socotra"],
+        "threats": []
+      },
+      {
+        "scope": "Global",
+        "year_published": "2011",
+        "assessment_id": 5762222,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Chile", "China", "Delhi", "Panama", "Sri Lanka", "Peru", "Costa Rica", "Pakistan", "Guadeloupe", "Philippines", "Rajasthan", "Saint Lucia", "Guatemala", "Manipur", "Lao People's Democratic Republic", "Somalia", "Florida", "Cuba", "Andaman Is.", "Martinique", "Kerala", "Australia", "Malaysia", "India", "Mozambique", "Argentina", "Bihar", "United States", "Mexico", "Hawaiian Is.", "Assam", "Gujarat", "South Africa", "West Bengal", "Honduras", "Viet Nam", "Ecuador", "Goa", "Virgin Islands, U.S.", "Haiti", "Virgin Islands, British", "Madagascar", "Dominican Republic", "Indonesia", "Nigeria", "Nicaragua", "Karnataka", "Puerto Rico", "Orissa", "Trinidad and Tobago", "Taiwan, Province of China", "Grenada", "French Guiana", "Bahamas", "Jamaica", "Brazil", "Bhutan", "Thailand", "Belize", "Nepal", "El Salvador", "Barbados", "Eswatini", "Andhra Pradesh", "Bolivia, Plurinational States of", "Cambodia", "Tamil Nadu", "Punjab"],
+        "threats": []
+      },
+      {
+        "scope": "Mediterranean",
+        "year_published": "2010",
+        "assessment_id": 5762067,
+        "category": "EN",
+        "category_description": "Endangered",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Egypt (African part)", "Egypt", "Palestine, State of", "Sinai", "Israel", "Jordan"],
+        "threats": "Small-holder farming"
+      }
+    ],
+    "id_active_ingredient": 820
+  },
+  "berberis laurina": {
+    "name": "berberis laurina",
+    "error": "No assessments found",
+    "id_active_ingredient": 1984
+  },
+  "borago officinalis": {
+    "name": "borago officinalis",
+    "assessments": [
+      {
+        "scope": "Europe",
+        "year_published": "2013",
+        "assessment_id": 2758153,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Cyprus", "Spain (mainland)", "Canary Is.", "Baleares", "Spain", "Portugal (mainland)", "Albania", "France", "Corsica", "France (mainland)", "Greece", "Greece (mainland)", "Kriti", "Italy", "Italy (mainland)", "Sardegna", "Sicilia", "Portugal", "Madeira", "Latvia", "Croatia", "Lithuania", "Belarus", "Moldova", "Russian Federation", "Malta", "European Russia", "Central European Russia", "East European Russia", "Kaliningrad", "North European Russia", "Northwest European Russia", "South European Russia", "Switzerland"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 1350
+  },
+  "calendula officinalis": {
+    "name": "calendula officinalis",
+    "error": "No assessments found",
+    "id_active_ingredient": 1712
+  },
+  "capsicum annuum": {
+    "name": "capsicum annuum",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2017",
+        "assessment_id": 100895540,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Guatemala", "Costa Rica", "Belize", "Bahamas", "Honduras", "Mexico", "Nicaragua", "Panama", "United States", "Dominica", "Dominican Republic", "Haiti", "Jamaica", "Puerto Rico", "Colombia", "Saint Vincent and the Grenadines", "Saint Lucia", "Saint Kitts and Nevis", "Montserrat", "Martinique", "Cayman Islands", "Barbados", "Anguilla", "Sint Maarten (Dutch part)", "Veracruz", "Tamaulipas", "Tabasco", "Sonora", "Sinaloa", "Yucatán", "Morelos", "Michoacán", "Jalisco", "Guerrero", "Chihuahua", "Chiapas", "Campeche", "Baja California Sur", "Nayarit", "Nuevo León", "Oaxaca", "Querétaro", "Quintana Roo", "San Luis Potosí", "Texas", "Guadeloupe", "Grenada", "Louisiana", "Georgia", "Arizona", "Florida", "Saint Martin (French part)", "Bonaire", "Curaçao", "Saba", "Bonaire, Sint Eustatius and Saba", "Aruba", "Sint Eustatius", "Zacatecas", "Tlaxcala", "Puebla", "Durango", "Colima", "Coahuila", "Baja California", "Aguascalientes", "Guanajuato", "Hidalgo", "México Distrito Federal", "México State"],
+        "threats": ["Small-holder farming", "Oil & gas drilling", "Housing & urban areas", "Small-holder grazing, ranching or farming", "Droughts", "Unintentional effects (species is not the target)"]
+      },
+      {
+        "scope": "Global",
+        "year_published": "2020",
+        "assessment_id": 172969027,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Colombia", "Puerto Rico", "Haiti", "Dominican Republic", "Dominica", "Panama", "Nicaragua", "Mexico", "Honduras", "Guatemala", "Costa Rica", "Belize", "United States", "Bahamas", "Sint Maarten (Dutch part)", "Saint Vincent and the Grenadines", "Saint Martin (French part)", "Saint Lucia", "Saint Kitts and Nevis", "Bonaire", "Montserrat", "Martinique", "Oaxaca", "Nuevo León", "Nayarit", "Bonaire, Sint Eustatius and Saba", "Morelos", "Michoacán", "México State", "México Distrito Federal", "Jalisco", "Hidalgo", "Guerrero", "Guanajuato", "Anguilla", "Aruba", "Barbados", "Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "Chiapas", "Chihuahua", "Coahuila", "Colima", "Durango", "Puebla", "Querétaro", "Quintana Roo", "San Luis Potosí", "Sinaloa", "Sint Eustatius", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas", "Saba", "Cayman Islands", "Curaçao", "Arizona", "Florida", "Georgia", "Louisiana", "Grenada", "Guadeloupe", "Texas", "Jamaica"],
+        "threats": ["Herbicides and pesticides", "Small-holder farming", "Oil & gas drilling", "Housing & urban areas", "Small-holder grazing, ranching or farming", "Droughts", "Intentional use (species is the target)"]
+      },
+      {
+        "scope": "Global",
+        "year_published": "2019",
+        "assessment_id": 143826567,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Colombia", "Puerto Rico", "Haiti", "Dominican Republic", "Dominica", "Panama", "Nicaragua", "Mexico", "Honduras", "Guatemala", "Costa Rica", "Belize", "United States", "Bahamas", "Sint Maarten (Dutch part)", "Saint Vincent and the Grenadines", "Saint Martin (French part)", "Saint Lucia", "Saint Kitts and Nevis", "Bonaire", "Montserrat", "Martinique", "Oaxaca", "Nuevo León", "Nayarit", "Bonaire, Sint Eustatius and Saba", "Morelos", "Michoacán", "México State", "México Distrito Federal", "Jalisco", "Hidalgo", "Guerrero", "Guanajuato", "Anguilla", "Aruba", "Barbados", "Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "Chiapas", "Chihuahua", "Coahuila", "Colima", "Durango", "Puebla", "Querétaro", "Quintana Roo", "San Luis Potosí", "Sinaloa", "Sint Eustatius", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas", "Saba", "Cayman Islands", "Curaçao", "Arizona", "Florida", "Georgia", "Louisiana", "Grenada", "Guadeloupe", "Texas", "Jamaica"],
+        "threats": ["Unintentional effects (species is not the target)", "Small-holder farming", "Oil & gas drilling", "Housing & urban areas", "Small-holder grazing, ranching or farming", "Droughts", "Herbicides and pesticides"]
+      }
+    ],
+    "id_active_ingredient": 1436
+  },
+  "cassia fistula": {
+    "name": "cassia fistula",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2018",
+        "assessment_id": 136142329,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Indonesia", "Bhutan", "Colombia", "Panama", "Thailand", "Viet Nam", "Nepal", "Malaysia", "Lao People's Democratic Republic", "Timor-Leste", "India", "Japan", "Bangladesh", "Cambodia", "Myanmar"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 1073
+  },
+  "centella asiatica": {
+    "name": "centella asiatica",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2019",
+        "assessment_id": 88308182,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Taiwan, Province of China", "Korea, Republic of", "Korea, Democratic People's Republic of", "Japan", "Zhejiang", "Yunnan", "Sichuan", "Shaanxi", "Socotra", "Yemen", "Saudi Arabia", "Pakistan", "Gabon", "Ethiopia", "Côte d'Ivoire", "Congo, The Democratic Republic of the", "Central African Republic", "Cameroon", "Botswana", "Guangxi", "Angola", "Viet Nam", "Thailand", "Guangdong", "Australia", "Bangladesh", "Bhutan", "India", "China", "Anhui", "Fujian", "Lao People's Democratic Republic", "Malaysia", "Myanmar", "Myanmar (mainland)", "Nepal", "Gambia", "Ghana", "Guinea", "Kenya", "Liberia", "Madagascar", "Malawi", "Mali", "Mauritius", "Mauritius (main island)", "Mozambique", "Nigeria", "Sao Tome and Principe", "Senegal", "Somalia", "South Africa", "Hubei", "Sudan", "Tanzania, United Republic of", "Hunan", "Zambia", "Zimbabwe", "Jiangsu", "Jiangxi", "Indonesia", "Sri Lanka", "Niue", "Micronesia, Federated States of ", "Marshall Islands", "Guam", "Tubuai Is.", "Society Is.", "Marquesas", "French Polynesia", "Fiji", "Cook Is.", "Cook Islands", "American Samoa", "Palau", "Papua New Guinea", "Bismarck Archipelago", "Tonga"],
+        "threats": []
+      },
+      {
+        "scope": "Global",
+        "year_published": "2013",
+        "assessment_id": 19645149,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Taiwan, Province of China", "Korea, Republic of", "Korea, Democratic People's Republic of", "Japan", "Zhejiang", "Yunnan", "Sichuan", "Shaanxi", "Yemen", "Pakistan", "Gabon", "Ethiopia", "Côte d'Ivoire", "Congo, The Democratic Republic of the", "Central African Republic", "Cameroon", "Botswana", "Guangxi", "Angola", "Viet Nam", "Thailand", "Guangdong", "Australia", "Bangladesh", "Bhutan", "India", "Andaman Is.", "China", "Anhui", "Fujian", "Lao People's Democratic Republic", "Malaysia", "Myanmar", "Myanmar (mainland)", "Nepal", "Gambia", "Ghana", "Guinea", "Kenya", "Liberia", "Madagascar", "Malawi", "Mali", "Mauritius", "Mauritius (main island)", "Mozambique", "Nigeria", "Sao Tome and Principe", "Senegal", "Somalia", "South Africa", "Hubei", "Sudan", "Tanzania, United Republic of", "Hunan", "Zambia", "Zimbabwe", "Jiangsu", "Jiangxi", "Saudi Arabia", "Socotra"],
+        "threats": []
+      },
+      {
+        "scope": "Global",
+        "year_published": "2012",
+        "assessment_id": 1216386,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Mauritius (main island)", "Ghana", "China", "Cameroon", "Gambia", "Guinea", "Guangxi", "Angola", "Tanzania, United Republic of", "Ethiopia", "Nigeria", "Yemen", "Myanmar", "Australia", "India", "Malaysia", "Mozambique", "Malawi", "Mauritius", "Hubei", "South Africa", "Viet Nam", "Jiangsu", "Fujian", "Jiangxi", "Liberia", "Madagascar", "Anhui", "Guangdong", "Mali", "Zambia", "Zimbabwe", "Taiwan, Province of China", "Japan", "Botswana", "Zhejiang", "Hunan", "Gabon", "Thailand", "Bhutan", "Nepal", "Sao Tome and Principe", "Shaanxi", "Sichuan", "Yunnan", "Kenya", "Sudan", "Korea, Republic of", "Senegal", "Somalia", "Lao People's Democratic Republic", "Côte d'Ivoire", "Central African Republic", "Myanmar (mainland)", "Pakistan", "Congo, The Democratic Republic of the", "Korea, Democratic People's Republic of", "Andaman Is.", "Bangladesh"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 700
+  },
+  "cephaelis ipecacuanha": {
+    "name": "cephaelis ipecacuanha",
+    "error": "No assessments found",
+    "id_active_ingredient": 1408
+  },
+  "cereus jamacaru": {
+    "name": "cereus jamacaru",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2013",
+        "assessment_id": 693787,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Goiás", "Alagoas", "Sergipe", "Maranhão", "Bahia", "Pernambuco", "Minas Gerais", "Brazil"],
+        "threats": ["Agro-industry plantations", "Small-holder plantations", "Agro-industry grazing, ranching or farming", "Small-holder grazing, ranching or farming"]
+      },
+      {
+        "scope": "Global",
+        "year_published": "2017",
+        "assessment_id": 121494380,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Bahia", "Goiás", "Maranhão", "Pernambuco", "Sergipe", "Minas Gerais", "Alagoas", "Brazil"],
+        "threats": ["Small-holder plantations", "Small-holder grazing, ranching or farming", "Agro-industry plantations", "Agro-industry grazing, ranching or farming"]
+      }
+    ],
+    "id_active_ingredient": 1279
+  },
+  "cinchona calisaya": {
+    "name": "cinchona calisaya",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2019",
+        "assessment_id": 146075439,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Peru", "Bolivia, Plurinational States of"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 134
+  },
+  "cinnamomum verum": {
+    "name": "cinnamomum verum",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2024",
+        "assessment_id": 15441339,
+        "category": "VU",
+        "category_description": "Vulnerable",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": "Sri Lanka",
+        "threats": ["Agro-industry farming", "Agro-industry plantations", "Housing & urban areas", "Commercial & industrial areas", "Tourism & recreation areas"]
+      }
+    ],
+    "id_active_ingredient": 622
+  },
+  "cordia verbenacea": {
+    "name": "cordia verbenacea",
+    "error": "No assessments found",
+    "id_active_ingredient": 51
+  },
+  "crataegus rhipidophylla": {
+    "name": "crataegus rhipidophylla",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2018",
+        "assessment_id": 119836588,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Austria", "Belgium", "Bosnia and Herzegovina", "Bulgaria", "Croatia", "Czechia", "Denmark", "Estonia", "Finland", "Belarus", "Germany", "France (mainland)", "France", "Greece", "Greece (mainland)", "Hungary", "Latvia", "Liechtenstein", "Lithuania", "North Macedonia", "Luxembourg", "Netherlands", "Montenegro", "Norway", "Poland", "Romania", "Serbia", "Moldova", "Russian Federation", "European Russia", "Central European Russia", "East European Russia", "Kaliningrad", "South European Russia", "Kosovo", "Serbia", "Slovakia", "Slovenia", "Sweden", "Switzerland", "United Kingdom", "Great Britain", "Ukraine", "Krym", "Ukraine (main part)", "Armenia", "Azerbaijan", "Georgia", "Türkiye", "Türkiye-in-Asia"],
+        "threats": []
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2017",
+        "assessment_id": 109993247,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Ukraine (main part)", "Krym", "Ukraine", "Central European Russia", "European Russia", "Russian Federation", "Moldova", "Belarus", "Switzerland", "Sweden", "Slovenia", "Slovakia", "Serbia", "Greece", "Germany", "France (mainland)", "France", "Finland", "Estonia", "Denmark", "Czechia", "Croatia", "Bulgaria", "Belgium", "Austria", "Greece (mainland)", "Hungary", "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "Netherlands", "Norway", "Poland", "Romania", "Serbia", "Kosovo", "North Macedonia", "Italy (mainland)", "Italy", "Bosnia and Herzegovina", "Kaliningrad", "Montenegro", "East European Russia", "South European Russia", "United Kingdom", "Great Britain"],
+        "threats": []
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2017",
+        "assessment_id": 127299277,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Great Britain", "United Kingdom", "Montenegro", "Ukraine (main part)", "Krym", "Ukraine", "South European Russia", "Kaliningrad", "East European Russia", "Central European Russia", "European Russia", "Russian Federation", "Moldova", "Belarus", "Switzerland", "Sweden", "Slovenia", "Slovakia", "Serbia", "Kosovo", "Serbia", "Romania", "Poland", "Germany", "France (mainland)", "France", "Finland", "Estonia", "Denmark", "Czechia", "Croatia", "Bulgaria", "Bosnia and Herzegovina", "Belgium", "Austria", "Greece", "Greece (mainland)", "Hungary", "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "North Macedonia", "Netherlands", "Norway"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 17
+  },
+  "croton heliotropiifolius": {
+    "name": "croton heliotropiifolius",
+    "error": "No assessments found",
+    "id_active_ingredient": 671
+  },
+  "curcuma longa": {
+    "name": "curcuma longa",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2019",
+        "assessment_id": 88308057,
+        "category": "DD",
+        "category_description": "Data Deficient",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": "India",
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 1714
+  },
+  "cynara scolymus": {
+    "name": "cynara scolymus",
+    "error": "No assessments found",
+    "id_active_ingredient": 153
+  },
+  "dorstenia arifolia": {
+    "name": "dorstenia arifolia",
+    "error": "No assessments found",
+    "id_active_ingredient": 1280
+  },
+  "echinacea angustifolia": {
+    "name": "echinacea angustifolia",
+    "error": "No assessments found",
+    "id_active_ingredient": 1713
+  },
+  "echinacea purpurea": {
+    "name": "echinacea purpurea",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2024",
+        "assessment_id": 88323259,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Michigan", "Ontario", "Canada", "Wisconsin", "West Virginia", "Virginia", "Texas", "Tennessee", "South Carolina", "Iowa", "Indiana", "Illinois", "Georgia", "Florida", "District of Columbia", "Delaware", "Connecticut", "Colorado", "Arkansas", "Alabama", "Kansas", "Kentucky", "Louisiana", "Maryland", "Mississippi", "Missouri", "New Jersey", "New York", "North Carolina", "Ohio", "Oklahoma", "Pennsylvania", "Arizona", "California", "Idaho", "Maine", "Minnesota", "Nebraska", "New Hampshire", "Oregon", "Rhode Island", "Washington", "New Mexico", "North Dakota", "South Dakota", "Utah", "Vermont", "British Columbia", "Nova Scotia", "Québec", "United States"],
+        "threats": ["Supression in fire frequency/intensity", "Intentional use (species is the target)", "Housing & urban areas"]
+      }
+    ],
+    "id_active_ingredient": 1133
+  },
+  "equisetum arvense": {
+    "name": "equisetum arvense",
+    "assessments": [
+      {
+        "scope": "Europe",
+        "year_published": "2017",
+        "assessment_id": 85427527,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Türkiye-in-Europe", "Türkiye", "Cyprus", "Ukraine (main part)", "Krym", "Ukraine", "South European Russia", "Northwest European Russia", "North European Russia", "Central European Russia", "Russian Federation", "Moldova", "Belarus", "Great Britain", "United Kingdom", "Switzerland", "Sweden", "Italy", "Isle of Man", "Ireland", "Iceland", "Hungary", "Guernsey", "Kriti", "Greece (mainland)", "Greece", "Germany", "France (mainland)", "Albania", "Andorra", "Austria", "Belgium", "Bulgaria", "Croatia", "Czechia", "Denmark", "Estonia", "Faroe Islands", "Finland", "France", "Corsica", "Italy (mainland)", "Sardegna", "Sicilia", "Jersey", "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "North Macedonia", "Malta", "Netherlands", "Norway", "Poland", "Portugal", "Azores", "Portugal (mainland)", "Romania", "Serbia", "Slovakia", "Slovenia", "Spain", "Baleares", "Spain (mainland)", "Svalbard and Jan Mayen", "Åland Islands", "Bosnia and Herzegovina", "Monaco", "Montenegro", "San Marino", "European Russia", "Northern Ireland", "East European Russia"],
+        "threats": []
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2017",
+        "assessment_id": 161581375,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Türkiye-in-Europe", "Türkiye", "Cyprus", "Ukraine (main part)", "Krym", "Ukraine", "South European Russia", "Northwest European Russia", "North European Russia", "Central European Russia", "European Russia", "Russian Federation", "Moldova", "Belarus", "Great Britain", "United Kingdom", "Switzerland", "Sweden", "Svalbard and Jan Mayen", "Spain (mainland)", "Baleares", "Spain", "Slovenia", "Slovakia", "Serbia", "Hungary", "Guernsey", "Kriti", "Greece (mainland)", "Greece", "Germany", "France (mainland)", "Corsica", "France", "Finland", "Faroe Islands", "Estonia", "Northern Ireland", "East European Russia", "Åland Islands", "Albania", "Andorra", "Austria", "Belgium", "Bosnia and Herzegovina", "Bulgaria", "Croatia", "Czechia", "Denmark", "Iceland", "Ireland", "Isle of Man", "Italy", "Italy (mainland)", "Sardegna", "Sicilia", "Jersey", "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "North Macedonia", "Malta", "Monaco", "Montenegro", "Netherlands", "Norway", "Poland", "Portugal", "Azores", "Portugal (mainland)", "Romania", "San Marino"],
+        "threats": []
+      },
+      {
+        "scope": "Global",
+        "year_published": "2017",
+        "assessment_id": 121904280,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Korea, Democratic People's Republic of", "Japan", "China", "Washington", "Virginia", "Vermont", "Utah", "Texas", "Tennessee", "South Dakota", "South Carolina", "Rhode Island", "Pennsylvania", "Oregon", "Oklahoma", "Ohio", "North Dakota", "North Carolina", "New York", "Connecticut", "Colorado", "California", "Arkansas", "Arizona", "Alaska", "Alabama", "United States", "Yukon", "Saskatchewan", "Québec", "Prince Edward I.", "Greenland", "Canada", "Alberta", "British Columbia", "Labrador", "Manitoba", "New Brunswick", "Newfoundland I", "Northwest Territories", "Nova Scotia", "Nunavut", "Ontario", "Delaware", "District of Columbia", "Georgia", "Hawaiian Is.", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "United Kingdom", "Switzerland", "Jersey", "Italy", "Isle of Man", "Ireland", "Iceland", "Hungary", "Guernsey", "Greece", "Germany", "France", "Finland", "Åland Islands", "Albania", "Andorra", "Austria", "Belgium", "Bosnia and Herzegovina", "Bulgaria", "Croatia", "Czechia", "Denmark", "Estonia", "Ukraine", "Russian Federation", "Moldova", "Belarus", "Sweden", "Svalbard and Jan Mayen", "Spain (mainland)", "Baleares", "Spain", "Slovenia", "Slovakia", "Serbia", "San Marino", "Romania", "Portugal (mainland)", "Azores", "Portugal", "Poland", "Norway", "Netherlands", "Montenegro", "Monaco", "Malta", "North Macedonia", "Luxembourg", "Lithuania", "Liechtenstein", "Latvia", "Faroe Islands"],
+        "threats": []
+      },
+      {
+        "scope": "Global",
+        "year_published": "2016",
+        "assessment_id": 1178497,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Korea, Democratic People's Republic of", "Japan", "China", "Greenland", "New York", "New Mexico", "New Jersey", "New Hampshire", "Nevada", "Nebraska", "Montana", "Missouri", "Mississippi", "Minnesota", "Michigan", "Massachusetts", "Maryland", "Maine", "Louisiana", "Kentucky", "Kansas", "Iowa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Washington", "Virginia", "Vermont", "Utah", "Texas", "Tennessee", "South Dakota", "South Carolina", "Rhode Island", "Alaska", "Alabama", "United States", "Yukon", "Saskatchewan", "Québec", "Canada", "Alberta", "British Columbia", "Labrador", "Manitoba", "New Brunswick", "Newfoundland I", "Northwest Territories", "Nova Scotia", "Nunavut", "Ontario", "Prince Edward I.", "District of Columbia", "Georgia", "Hawaiian Is.", "Idaho", "Illinois", "Indiana"],
+        "threats": []
+      },
+      {
+        "scope": "Global",
+        "year_published": "2017",
+        "assessment_id": 161580271,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Korea, Democratic People's Republic of", "Japan", "China", "Ukraine", "Russian Federation", "Moldova", "Belarus", "Washington", "Virginia", "Vermont", "Utah", "Texas", "Tennessee", "South Dakota", "South Carolina", "Rhode Island", "Pennsylvania", "Oregon", "Oklahoma", "Ohio", "North Dakota", "North Carolina", "New York", "New Mexico", "Sweden", "Svalbard and Jan Mayen", "Spain (mainland)", "Baleares", "Spain", "Slovenia", "Slovakia", "Serbia", "San Marino", "Romania", "Portugal (mainland)", "Azores", "Portugal", "Poland", "Norway", "Netherlands", "Montenegro", "Monaco", "Malta", "North Macedonia", "Luxembourg", "Lithuania", "Liechtenstein", "Latvia", "Faroe Islands", "Estonia", "Denmark", "Czechia", "Croatia", "Bulgaria", "Bosnia and Herzegovina", "Belgium", "Austria", "Andorra", "Albania", "Åland Islands", "Finland", "France", "Germany", "Greece", "Greenland", "Guernsey", "Hungary", "Iceland", "Ireland", "Isle of Man", "Italy", "Jersey", "Switzerland", "United Kingdom", "Canada", "Alberta", "British Columbia", "Labrador", "Manitoba", "New Brunswick", "Newfoundland I", "Northwest Territories", "Nova Scotia", "Nunavut", "Ontario", "Prince Edward I.", "Québec", "Saskatchewan", "Yukon", "United States", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Georgia", "Hawaiian Is.", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "Corsica", "France (mainland)", "Greece (mainland)", "Italy (mainland)", "Sardegna", "Sicilia", "Kosovo", "Serbia", "Great Britain", "Northern Ireland", "Türkiye-in-Europe", "Türkiye-in-Asia", "European Russia", "Türkiye", "Cyprus"],
+        "threats": []
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2014",
+        "assessment_id": 63661077,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Türkiye-in-Europe", "Türkiye", "Cyprus", "Ukraine (main part)", "Krym", "Ukraine", "South European Russia", "Northwest European Russia", "North European Russia", "Central European Russia", "Russian Federation", "Moldova", "Belarus", "Northern Ireland", "Great Britain", "United Kingdom", "Switzerland", "Sweden", "Italy", "Isle of Man", "Ireland", "Iceland", "Hungary", "Guernsey", "Greenland", "Kriti", "Greece (mainland)", "Greece", "Germany", "France (mainland)", "Albania", "Andorra", "Austria", "Belgium", "Bulgaria", "Croatia", "Czechia", "Denmark", "Estonia", "Faroe Islands", "Finland", "France", "Corsica", "Italy (mainland)", "Sardegna", "Sicilia", "Jersey", "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "North Macedonia", "Malta", "Netherlands", "Norway", "Poland", "Portugal", "Azores", "Portugal (mainland)", "Romania", "Serbia", "Slovakia", "Slovenia", "Spain", "Baleares", "Spain (mainland)", "Svalbard and Jan Mayen"],
+        "threats": []
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2011",
+        "assessment_id": 6398920,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Guernsey", "Greenland", "Liechtenstein", "Greece", "Russian Federation", "Switzerland", "Serbia", "Poland", "North European Russia", "Kriti", "Slovakia", "Corsica", "Spain (mainland)", "Slovenia", "Svalbard and Jan Mayen", "Sweden", "Cyprus", "Czechia", "Ukraine", "Portugal", "Sicilia", "Malta", "Italy", "Iceland", "Isle of Man", "Austria", "Ireland", "Denmark", "Moldova", "Northwest European Russia", "Türkiye-in-Europe", "Latvia", "Luxembourg", "Lithuania", "Croatia", "Ukraine (main part)", "Romania", "Hungary", "Azores", "North Macedonia", "Portugal (mainland)", "Italy (mainland)", "Germany", "Baleares", "Andorra", "Spain", "Netherlands", "Great Britain", "Albania", "Jersey", "Sardegna", "Estonia", "Belarus", "United Kingdom", "South European Russia", "Krym", "Türkiye", "Norway", "Bulgaria", "France", "Greece (mainland)", "Faroe Islands", "Belgium", "Central European Russia", "France (mainland)", "Finland", "Northern Ireland"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 674
+  },
+  "erythrina velutina": {
+    "name": "erythrina velutina",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2024",
+        "assessment_id": 243327880,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Ecuador", "Peru", "Venezuela, Bolivarian Republic of", "Brazil", "Colombia", "Ecuador (mainland)", "Galápagos"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 1281
+  },
+  "eucalyptus globulus": {
+    "name": "eucalyptus globulus",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2019",
+        "assessment_id": 61912931,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Victoria", "Tasmania", "Australia"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 594
+  },
+  "frangula purshiana": {
+    "name": "frangula purshiana",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2018",
+        "assessment_id": 61957074,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Canada", "British Columbia", "United States", "California", "Idaho", "Montana", "Oregon", "Washington"],
+        "threats": "Motivation Unknown/Unrecorded"
+      }
+    ],
+    "id_active_ingredient": 948
+  },
+  "fucus vesiculosus": {
+    "name": "fucus vesiculosus",
+    "error": "No assessments found",
+    "id_active_ingredient": 476
+  },
+  "garcinia cambogia": {
+    "name": "garcinia cambogia",
+    "error": "No assessments found",
+    "id_active_ingredient": 2178
+  },
+  "gentiana lutea": {
+    "name": "gentiana lutea",
+    "assessments": [
+      {
+        "scope": "Europe",
+        "year_published": "2011",
+        "assessment_id": 5546174,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Corsica", "Slovenia", "Austria", "France (mainland)", "Germany", "Italy (mainland)", "Portugal (mainland)", "Greece (mainland)", "France", "Bulgaria", "Ukraine (main part)", "Romania", "Croatia", "Spain (mainland)", "Italy", "Bosnia and Herzegovina", "Sicilia", "Portugal", "Serbia", "Ukraine", "Switzerland", "Greece", "Spain", "Albania", "Sardegna"],
+        "threats": "Intentional use (species is the target)"
+      }
+    ],
+    "id_active_ingredient": 639
+  },
+  "ginkgo biloba": {
+    "name": "ginkgo biloba",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "1998",
+        "assessment_id": 9700472,
+        "category": "EN",
+        "category_description": "Endangered",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Zhejiang", "China"],
+        "threats": "Motivation Unknown/Unrecorded"
+      },
+      {
+        "scope": "Global",
+        "year_published": "1998",
+        "assessment_id": 9700526,
+        "category": "R",
+        "category_description": "Rare",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": [],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 551
+  },
+  "glycine max": {
+    "name": "glycine max",
+    "error": "No assessments found",
+    "id_active_ingredient": 599
+  },
+  "glycyrrhiza glabra": {
+    "name": "glycyrrhiza glabra",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2021",
+        "assessment_id": 88313725,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Cyprus", "Italy", "Greece", "Croatia", "Bulgaria", "Bosnia and Herzegovina", "Albania", "France", "North Macedonia", "Montenegro", "Romania", "Serbia", "Slovenia", "Moldova", "Russian Federation", "Ukraine", "Iraq", "Iran, Islamic Republic of", "Georgia", "Azerbaijan", "Armenia", "Afghanistan", "China", "Malta", "Israel", "Jordan", "Kazakhstan", "Kyrgyzstan", "Lebanon", "Pakistan", "Mongolia", "Uzbekistan", "Turkmenistan", "Türkiye", "Tajikistan", "Syrian Arab Republic", "Saudi Arabia", "Palestine, State of", "India", "Jammu-Kashmir", "European Russia", "Eastern Asian Russia"],
+        "threats": "Intentional use (species is the target)"
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2014",
+        "assessment_id": 2764319,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Cyprus", "Ukraine (main part)", "Krym", "Ukraine", "European Russia", "Russian Federation", "Moldova", "Romania", "Sicilia", "Sardegna", "Italy (mainland)", "Italy", "Kriti", "Albania", "Bulgaria", "France", "France (mainland)", "Greece", "Greece (mainland)", "Slovenia", "Serbia", "Croatia", "Bosnia and Herzegovina", "North Macedonia", "Montenegro", "Serbia", "Kosovo"],
+        "threats": ["Intentional use (species is the target)", "Housing & urban areas", "Scale Unknown/Unrecorded"]
+      }
+    ],
+    "id_active_ingredient": 640
+  },
+  "hamamelis virginiana": {
+    "name": "hamamelis virginiana",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2018",
+        "assessment_id": 62018975,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["New Hampshire", "Montana", "Missouri", "Minnesota", "Michigan", "Massachusetts", "Maryland", "Maine", "Louisiana", "Kentucky", "Iowa", "Illinois", "Canada", "New Brunswick", "New York", "North Carolina", "Ohio", "Pennsylvania", "Rhode Island", "South Carolina", "Tennessee", "Texas", "Vermont", "Virginia", "West Virginia", "Wisconsin", "New Jersey", "Georgia", "Florida", "District of Columbia", "Delaware", "Connecticut", "Arkansas", "Alaska", "United States", "Québec", "Ontario", "Nova Scotia", "Prince Edward I.", "Indiana", "Alabama", "Mississippi", "Oklahoma"],
+        "threats": "Intentional use (species is the target)"
+      }
+    ],
+    "id_active_ingredient": 864
+  },
+  "harpagophytum procumbens": {
+    "name": "harpagophytum procumbens",
+    "error": "No assessments found",
+    "id_active_ingredient": 355
+  },
+  "hedera helix": {
+    "name": "hedera helix",
+    "assessments": [
+      {
+        "scope": "Europe",
+        "year_published": "2012",
+        "assessment_id": 2758285,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Türkiye-in-Europe", "Türkiye", "Ukraine (main part)", "Ukraine", "European Russia", "Russian Federation", "Belarus", "Great Britain", "United Kingdom", "Switzerland", "Sweden", "Spain (mainland)", "Baleares", "Spain", "Romania", "Portugal (mainland)", "Portugal", "Greece (mainland)", "Greece", "Germany", "France (mainland)", "Corsica", "France", "Estonia", "Denmark", "Czechia", "Bulgaria", "Belgium", "Austria", "Albania", "Kriti", "Hungary", "Ireland", "Italy", "Italy (mainland)", "Sardegna", "Sicilia", "Latvia", "Lithuania", "Netherlands", "Norway", "Poland", "Croatia", "Andorra", "Kaliningrad"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 16
+  },
+  "himatanthus lancifolius": {
+    "name": "himatanthus lancifolius",
+    "error": "No assessments found",
+    "id_active_ingredient": 1282
+  },
+  "humulus lupulus": {
+    "name": "humulus lupulus",
+    "assessments": [
+      {
+        "scope": "Europe",
+        "year_published": "2012",
+        "assessment_id": 2758327,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Türkiye-in-Europe", "Türkiye", "Ukraine (main part)", "Krym", "Ukraine", "Northwest European Russia", "North European Russia", "Kaliningrad", "East European Russia", "Montenegro", "Luxembourg", "Lithuania", "Liechtenstein", "Latvia", "Sardegna", "Italy (mainland)", "Italy", "Hungary", "Greece (mainland)", "Greece", "Germany", "Albania", "Austria", "Belgium", "Bosnia and Herzegovina", "Bulgaria", "Croatia", "Czechia", "Denmark", "Estonia", "Finland", "France", "Corsica", "France (mainland)", "Netherlands", "Norway", "Poland", "Portugal", "Portugal (mainland)", "Romania", "Serbia", "Kosovo", "Serbia", "Slovakia", "Slovenia", "Spain", "Baleares", "Spain (mainland)", "Sweden", "Switzerland", "United Kingdom", "Great Britain", "Northern Ireland", "Belarus", "Moldova", "Russian Federation", "European Russia", "Central European Russia", "North Macedonia", "Sicilia", "South European Russia"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 1991
+  },
+  "hydrastis canadensis": {
+    "name": "hydrastis canadensis",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2017",
+        "assessment_id": 44340071,
+        "category": "VU",
+        "category_description": "Vulnerable",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["United States", "Canada", "Ontario", "Alabama", "Tennessee", "Pennsylvania", "Ohio", "North Carolina", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Vermont", "Virginia", "West Virginia", "Wisconsin", "Georgia", "Delaware", "Connecticut", "Arkansas", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "New Jersey", "New York"],
+        "threats": ["Intentional use (species is the target)", "Unspecified species", "Shifting agriculture", "Recreational activities", "Housing & urban areas", "Supression in fire frequency/intensity", "Other ecosystem modifications", "Named species"]
+      }
+    ],
+    "id_active_ingredient": 866
+  },
+  "hypericum perforatum": {
+    "name": "hypericum perforatum",
+    "assessments": [
+      {
+        "scope": "Europe",
+        "year_published": "2012",
+        "assessment_id": 2762472,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Türkiye-in-Europe", "Türkiye", "Cyprus", "Ukraine (main part)", "Krym", "Ukraine", "South European Russia", "Northwest European Russia", "North European Russia", "Kaliningrad", "East European Russia", "Central European Russia", "European Russia", "Russian Federation", "Moldova", "Sardegna", "Italy (mainland)", "Italy", "Ireland", "Hungary", "Kriti", "Greece (mainland)", "East Aegean Is.", "Greece", "Gibraltar", "Germany", "France (mainland)", "Albania", "Andorra", "Austria", "Belgium", "Bosnia and Herzegovina", "Bulgaria", "Croatia", "Czechia", "Denmark", "Estonia", "Finland", "France", "Corsica", "Sicilia", "Latvia", "Lithuania", "Malta", "Montenegro", "Netherlands", "Norway", "Poland", "Portugal", "Madeira", "Portugal (mainland)", "Romania", "Serbia", "Slovakia", "Slovenia", "Spain", "Baleares", "Spain (mainland)", "Sweden", "Switzerland", "United Kingdom", "Great Britain", "Northern Ireland", "Belarus", "Luxembourg"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 986
+  },
+  "jateorhiza palmata": {
+    "name": "jateorhiza palmata",
+    "error": "No assessments found",
+    "id_active_ingredient": 2173
+  },
+  "juniperus sabina": {
+    "name": "juniperus sabina",
+    "assessments": [
+      {
+        "scope": "Europe",
+        "year_published": "2017",
+        "assessment_id": 84029807,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Sicilia", "Italy (mainland)", "Italy", "Greece (mainland)", "Greece", "Germany", "France (mainland)", "France", "Czechia", "Bulgaria", "Austria", "Albania", "Montenegro", "Poland", "Romania", "Serbia", "Spain", "Spain (mainland)", "Switzerland", "Ukraine", "Krym", "Slovenia", "Slovakia", "Serbia", "Kosovo", "North Macedonia", "Andorra", "Croatia", "Bosnia and Herzegovina"],
+        "threats": []
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2012",
+        "assessment_id": 16960052,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Switzerland", "Spain", "Serbia", "Romania", "Albania", "Austria", "Bulgaria", "Czechia", "France", "Germany", "Greece", "Kriti", "Italy", "Sicilia", "Montenegro", "Poland", "Portugal", "Ukraine", "Türkiye", "France (mainland)", "Greece (mainland)", "Italy (mainland)", "Portugal (mainland)", "Spain (mainland)", "Krym"],
+        "threats": []
+      },
+      {
+        "scope": "Global",
+        "year_published": "2013",
+        "assessment_id": 2966599,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Tibet [or Xizang]", "China", "Ningxia", "Tuva", "Greece", "Russian Federation", "Switzerland", "Serbia", "Poland", "Kriti", "Shanxi", "Armenia", "Altay", "Albania", "Chechnya", "Spain", "Khabarovsk", "Ukraine", "Portugal", "Sicilia", "Heilongjiang", "Italy", "Azerbaijan", "Hubei", "West Siberia", "Romania", "Dagestan", "Nagorno-Karabakh", "Montenegro", "Primoryi", "Germany", "Guizhou", "Austria", "Liaoning", "Mongolia", "Nakhichevan", "Georgia", "Amur", "Severo-Osetiya", "Abkhaziya", "Krasnodar", "Adzhariya", "Türkiye", "France", "Bulgaria", "Shandong", "Shaanxi", "Sichuan", "Hebei", "Gansu", "Karachaevo-Cherkessiya", "Kyrgyzstan", "Kabardino-Balkariya", "Yunnan", "Jilin", "Czechia", "Nei Mongol", "Korea, Democratic People's Republic of", "Qinghai", "Kazakhstan"],
+        "threats": []
+      },
+      {
+        "scope": "Global",
+        "year_published": "1998",
+        "assessment_id": 10683571,
+        "category": "LR/lc",
+        "category_description": "Lower Risk/least concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["China", "Tibet [or Xizang]", "Ningxia", "Tuva", "Greece", "Switzerland", "Russian Federation", "Serbia", "Poland", "Kriti", "Shanxi", "Armenia", "Altay", "Albania", "Chechnya", "Spain", "Khabarovsk", "Ukraine", "Portugal", "Sicilia", "Heilongjiang", "Italy", "Azerbaijan", "Hubei", "West Siberia", "Romania", "Dagestan", "Nagorno-Karabakh", "Montenegro", "Primoryi", "Germany", "Guizhou", "Austria", "Liaoning", "Mongolia", "Nakhichevan", "Georgia", "Amur", "Severo-Osetiya", "Abkhaziya", "Krasnodar", "Adzhariya", "Türkiye", "France", "Bulgaria", "Shandong", "Shaanxi", "Sichuan", "Hebei", "Gansu", "Karachaevo-Cherkessiya", "Kyrgyzstan", "Kabardino-Balkariya", "Yunnan", "Jilin", "Czechia", "Nei Mongol", "Korea, Democratic People's Republic of", "Qinghai", "Kazakhstan"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 1986
+  },
+  "matricaria chamomilla": {
+    "name": "matricaria chamomilla",
+    "assessments": [
+      {
+        "scope": "Europe",
+        "year_published": "2012",
+        "assessment_id": 2758411,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Türkiye-in-Europe", "Türkiye", "Cyprus", "Ukraine (main part)", "Krym", "Ukraine", "South European Russia", "Northwest European Russia", "North Macedonia", "Luxembourg", "Liechtenstein", "Sicilia", "Sardegna", "Italy (mainland)", "Italy", "Hungary", "Kriti", "Greece (mainland)", "East Aegean Is.", "Greece", "Albania", "Andorra", "Austria", "Belgium", "Bosnia and Herzegovina", "Bulgaria", "Croatia", "Czechia", "Denmark", "Finland", "France", "France (mainland)", "Germany", "Malta", "Montenegro", "Netherlands", "Norway", "Portugal", "Portugal (mainland)", "Romania", "Serbia", "Slovakia", "Slovenia", "Spain", "Spain (mainland)", "Sweden", "Switzerland", "United Kingdom", "Great Britain", "Belarus", "Moldova", "Russian Federation", "European Russia", "Central European Russia", "East European Russia", "Kaliningrad", "North European Russia", "Northern Ireland", "Ireland", "Corsica", "Poland", "Latvia", "Estonia", "Lithuania"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 641
+  },
+  "matricaria recutita": {
+    "name": "matricaria recutita",
+    "error": "No assessments found",
+    "id_active_ingredient": 73
+  },
+  "melilotus officinalis": {
+    "name": "melilotus officinalis",
+    "assessments": [
+      {
+        "scope": "Europe",
+        "year_published": "2011",
+        "assessment_id": 7265879,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Estonia", "Sardegna", "Albania", "Liechtenstein", "Netherlands", "Spain", "Greece", "Russian Federation", "Ukraine", "Baleares", "Andorra", "Serbia", "Poland", "Portugal", "Kosovo", "Serbia", "Italy", "East European Russia", "Slovakia", "Spain (mainland)", "Corsica", "Slovenia", "France", "Hungary", "Türkiye", "Ukraine (main part)", "Krym", "South European Russia", "Romania", "Croatia", "Lithuania", "Luxembourg", "Belarus", "Latvia", "Türkiye-in-Europe", "Bulgaria", "Greece (mainland)", "Portugal (mainland)", "Belgium", "Italy (mainland)", "Germany", "Northwest European Russia", "Central European Russia", "France (mainland)", "Moldova", "Kaliningrad", "Austria"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 1277
+  },
+  "melissa officinalis": {
+    "name": "melissa officinalis",
+    "assessments": [
+      {
+        "scope": "Europe",
+        "year_published": "2013",
+        "assessment_id": 2762574,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Spain (mainland)", "Canary Is.", "Spain", "Portugal (mainland)", "Portugal", "Albania", "Bulgaria", "France", "Corsica", "France (mainland)", "Greece", "East Aegean Is.", "Greece (mainland)", "Kriti", "Italy", "Italy (mainland)", "Sardegna", "Sicilia", "Belgium", "Austria", "Hungary", "Ireland", "North Macedonia", "Montenegro", "Netherlands", "Bosnia and Herzegovina", "Croatia", "Czechia", "Denmark", "Germany", "Poland", "Azores", "Madeira", "Romania", "Serbia", "Slovakia", "Slovenia", "Baleares", "Sweden", "Switzerland", "United Kingdom", "Russian Federation", "European Russia", "Ukraine", "Krym", "Ukraine (main part)", "Cyprus", "Türkiye", "Türkiye-in-Europe", "Malta"],
+        "threats": "Intentional use (species is the target)"
+      }
+    ],
+    "id_active_ingredient": 1667
+  },
+  "mentha crispa": {
+    "name": "mentha crispa",
+    "error": "No assessments found",
+    "id_active_ingredient": 1385
+  },
+  "mikania glomerata": {
+    "name": "mikania glomerata",
+    "error": "No assessments found",
+    "id_active_ingredient": 325
+  },
+  "mikania laevigata": {
+    "name": "mikania laevigata",
+    "error": "No assessments found",
+    "id_active_ingredient": 2271
+  },
+  "myroxylon balsamum": {
+    "name": "myroxylon balsamum",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2021",
+        "assessment_id": 62026530,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["El Salvador", "Mexico", "Nicaragua", "Colombia", "Guyana", "Peru", "Venezuela, Bolivarian Republic of", "Sinaloa", "Costa Rica", "Belize", "Durango", "Hidalgo", "Cuba", "Guerrero", "Nayarit", "Veracruz", "Oaxaca", "Costa Rica (mainland)", "Acre", "Chiapas", "Morelos", "Ecuador (mainland)", "Campeche", "México State", "Michoacán", "Venezuela (mainland)", "Honduras (mainland)", "Honduras", "Quintana Roo", "Ecuador", "Tabasco", "Panama", "Colombia (mainland)", "Guatemala", "Bolivia, Plurinational States of", "Brazil", "Puerto Rico", "Florida", "United States", "India", "Indonesia", "Jawa", "Congo, The Democratic Republic of the", "Tanzania, United Republic of", "Dominican Republic", "Puerto Rico (main island)", "Trinidad and Tobago", "Gabon", "Ghana", "Uganda", "Sri Lanka", "Sierra Leone"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 1409
+  },
+  "nasturtium officinale": {
+    "name": "nasturtium officinale",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2020",
+        "assessment_id": 136666515,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Uzbekistan", "Turkmenistan", "Türkiye", "Tajikistan", "Syrian Arab Republic", "Spain", "Slovenia", "Slovakia", "Serbia", "Romania", "Portugal", "Poland", "Netherlands", "Montenegro", "North Macedonia", "Italy", "Ireland", "Albania", "Austria", "Belgium", "Bosnia and Herzegovina", "Bulgaria", "Croatia", "Czechia", "Denmark", "France", "Germany", "Greece", "Hungary", "Canary Is.", "Sweden", "Switzerland", "United Kingdom", "Algeria", "Egypt", "Libya", "Morocco", "Tunisia", "Canada", "India", "Afghanistan", "Armenia", "Azerbaijan", "Cyprus", "Georgia", "Iran, Islamic Republic of", "Iraq", "Israel", "Jordan", "Kazakhstan", "Kyrgyzstan", "Lebanon", "Pakistan", "Bolivia, Plurinational States of", "Argentina", "Australia", "Bhutan", "Brazil", "Zimbabwe", "Tanzania, United Republic of", "South Africa", "Rwanda", "Lesotho", "Kenya", "Ethiopia", "Congo, The Democratic Republic of the", "Chad", "Cameroon", "United States", "Dominican Republic", "Cuba", "Mexico", "Guadeloupe", "Puerto Rico", "Colombia", "Ecuador", "Peru", "Venezuela, Bolivarian Republic of", "French Guiana", "Uruguay", "New Zealand", "French Polynesia", "Papua New Guinea", "Vanuatu", "Madagascar", "Mauritius", "Saint Helena, Ascension and Tristan da Cunha", "Sao Tome and Principe", "Cabo Verde", "Saudi Arabia"],
+        "threats": "Intentional use (species is the target)"
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2011",
+        "assessment_id": 6393258,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Guernsey", "Albania", "Netherlands", "Spain", "Ukraine", "Baleares", "Portugal", "Sicilia", "Bosnia and Herzegovina", "Italy", "Isle of Man", "Austria", "Ireland", "Canary Is.", "Croatia", "Romania", "Ukraine (main part)", "Spanish North African Territories", "Hungary", "Azores", "Montenegro", "North Macedonia", "Portugal (mainland)", "Italy (mainland)", "Germany", "Denmark", "Great Britain", "Jersey", "Estonia", "Sardegna", "United Kingdom", "Krym", "Madeira", "France", "Bulgaria", "Belgium", "France (mainland)", "Northern Ireland", "Czechia", "Sweden", "Slovenia", "Corsica", "Spain (mainland)", "Slovakia", "Serbia", "Kriti", "Poland", "Serbia", "Switzerland", "Greece"],
+        "threats": []
+      },
+      {
+        "scope": "Global",
+        "year_published": "2014",
+        "assessment_id": 1040462,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Pakistan", "Greece", "Switzerland", "Lebanon", "Afghanistan", "Netherlands", "Spain", "Portugal", "Bosnia and Herzegovina", "Italy", "Azerbaijan", "Iran, Islamic Republic of", "Iraq", "India", "Israel", "Austria", "Canary Is.", "Libya", "Croatia", "Romania", "Algeria", "Hungary", "Montenegro", "North Macedonia", "Germany", "Uzbekistan", "Denmark", "Morocco", "Ireland", "Egypt", "Albania", "Armenia", "Georgia", "Jordan", "Tajikistan", "United Kingdom", "Tunisia", "Turkmenistan", "Canada", "Türkiye", "France", "Bulgaria", "Syrian Arab Republic", "Belgium", "Kyrgyzstan", "Czechia", "Cyprus", "Sweden", "Slovenia", "Slovakia", "Kazakhstan", "Poland", "Serbia"],
+        "threats": []
+      },
+      {
+        "scope": "Mediterranean",
+        "year_published": "2010",
+        "assessment_id": 5821593,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Türkiye-in-Asia", "Sardegna", "Egypt", "Albania", "Palestine, State of", "Spain", "Greece", "Lebanon", "Serbia", "Baleares", "Portugal", "Sicilia", "Kriti", "North Macedonia", "Greece (mainland)", "Montenegro", "France", "Bulgaria", "Algeria", "Türkiye", "Tunisia", "East Aegean Is.", "Croatia", "Libya", "Jordan", "Türkiye-in-Europe", "Syrian Arab Republic", "Portugal (mainland)", "Italy (mainland)", "France (mainland)", "Morocco", "Cyprus", "Israel", "Slovenia", "Corsica", "Spain (mainland)", "Italy", "Malta"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 1410
+  },
+  "oryza sativa": {
+    "name": "oryza sativa",
+    "error": "No assessments found",
+    "id_active_ingredient": 1708
+  },
+  "papaver somniferum": {
+    "name": "papaver somniferum",
+    "assessments": [
+      {
+        "scope": "Europe",
+        "year_published": "2014",
+        "assessment_id": 2764773,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Spain (mainland)", "France", "Corsica", "France (mainland)", "Kriti", "Italy", "Italy (mainland)", "Sardegna", "Sicilia", "Portugal", "Portugal (mainland)", "Spain", "Baleares", "Greece", "Selvagens", "Madeira", "Canary Is.", "Cyprus"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 1112
+  },
+  "passiflora alata": {
+    "name": "passiflora alata",
+    "error": "No assessments found",
+    "id_active_ingredient": 302
+  },
+  "passiflora incarnata": {
+    "name": "passiflora incarnata",
+    "error": "No assessments found",
+    "id_active_ingredient": 18
+  },
+  "paullinia cupana": {
+    "name": "paullinia cupana",
+    "error": "No assessments found",
+    "id_active_ingredient": 672
+  },
+  "pelargonium sidoides": {
+    "name": "pelargonium sidoides",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2022",
+        "assessment_id": 219273122,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Lesotho", "South Africa", "Eastern Cape Province", "Free State", "Gauteng", "North-West Province", "KwaZulu-Natal", "Western Cape"],
+        "threats": ["Housing & urban areas", "Habitat shifting & alteration", "Intentional use (species is the target)"]
+      }
+    ],
+    "id_active_ingredient": 1473
+  },
+  "persea americana": {
+    "name": "persea americana",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2017",
+        "assessment_id": 129765464,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Yucatán", "Guatemala", "Tamaulipas", "Veracruz", "El Salvador", "Costa Rica", "Nicaragua", "Chiapas", "Mexico", "Honduras", "San Luis Potosí", "Michoacán", "Quintana Roo", "Guerrero", "Puebla", "Hidalgo", "Belize", "Colima", "Oaxaca"],
+        "threats": ["Motivation Unknown/Unrecorded", "Small-holder grazing, ranching or farming", "Housing & urban areas", "Shifting agriculture", "Other ecosystem modifications", "Increase in fire frequency/intensity"]
+      },
+      {
+        "scope": "Global",
+        "year_published": "2017",
+        "assessment_id": 96986588,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Nicaragua", "Tamaulipas", "Belize", "Costa Rica", "El Salvador", "Guatemala", "Honduras", "Mexico", "Chiapas", "Oaxaca", "Puebla", "Quintana Roo", "San Luis Potosí", "Hidalgo", "Veracruz", "Yucatán", "Michoacán", "Guerrero", "Colima"],
+        "threats": ["Shifting agriculture", "Housing & urban areas", "Small-holder grazing, ranching or farming", "Motivation Unknown/Unrecorded", "Increase in fire frequency/intensity", "Other ecosystem modifications"]
+      }
+    ],
+    "id_active_ingredient": 1879
+  },
+  "peumus boldus": {
+    "name": "peumus boldus",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2018",
+        "assessment_id": 135698438,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": "Chile",
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 552
+  },
+  "pinus pinaster": {
+    "name": "pinus pinaster",
+    "assessments": [
+      {
+        "scope": "Europe",
+        "year_published": "2016",
+        "assessment_id": 95845703,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Spain (mainland)", "France", "Corsica", "France (mainland)", "Gibraltar", "Italy", "Italy (mainland)", "Sardegna", "Sicilia", "Malta", "Monaco", "Portugal", "Spain"],
+        "threats": ["Introduced genetic material", "Tourism & recreation areas", "Commercial & industrial areas", "Housing & urban areas"]
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2014",
+        "assessment_id": 55011357,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["France", "Corsica", "Gibraltar", "Italy", "Sardegna", "Sicilia", "Monaco", "Portugal", "Spain", "Malta", "France (mainland)", "Italy (mainland)", "Spain (mainland)"],
+        "threats": ["Tourism & recreation areas", "Commercial & industrial areas", "Housing & urban areas", "Introduced genetic material"]
+      },
+      {
+        "scope": "Global",
+        "year_published": "2013",
+        "assessment_id": 2977079,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Corsica", "Tunisia", "Italy", "Algeria", "Sicilia", "Portugal", "France", "Baleares", "Spain", "Sardegna", "Monaco", "Gibraltar", "Morocco"],
+        "threats": ["Commercial & industrial areas", "Housing & urban areas", "Tourism & recreation areas"]
+      },
+      {
+        "scope": "Global",
+        "year_published": "1998",
+        "assessment_id": 10690262,
+        "category": "LR/lc",
+        "category_description": "Lower Risk/least concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Corsica", "Tunisia", "Italy", "Algeria", "Sicilia", "Portugal", "France", "Baleares", "Spain", "Sardegna", "Monaco", "Gibraltar", "Morocco"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 1276
+  },
+  "piper methysticum": {
+    "name": "piper methysticum",
+    "error": "No assessments found",
+    "id_active_ingredient": 1535
+  },
+  "polygala senega": {
+    "name": "polygala senega",
+    "error": "No assessments found",
+    "id_active_ingredient": 1274
+  },
+  "polygonum punctatum": {
+    "name": "polygonum punctatum",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2016",
+        "assessment_id": 67730477,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Pakistan", "Indonesia", "China", "India", "United States", "Canada", "Bermuda", "Guadeloupe", "Cuba", "Panama", "Nicaragua", "Honduras", "Guatemala", "El Salvador", "Costa Rica", "Belize", "Saint Vincent and the Grenadines", "Saint Lucia", "Puerto Rico", "Martinique", "Jamaica", "Bahamas", "French Guiana", "Ecuador", "Colombia", "Brazil", "Bolivia, Plurinational States of", "Argentina", "New Zealand", "Guyana", "Paraguay", "Venezuela, Bolivarian Republic of", "Suriname", "Peru", "Hawaiian Is."],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 2358
+  },
+  "polypodium leucatomos": {
+    "name": "polypodium leucatomos",
+    "error": "No assessments found",
+    "id_active_ingredient": 1430
+  },
+  "rheum palmatum": {
+    "name": "rheum palmatum",
+    "error": "No assessments found",
+    "id_active_ingredient": 1146
+  },
+  "rhodiola rosea": {
+    "name": "rhodiola rosea",
+    "assessments": [
+      {
+        "scope": "Europe",
+        "year_published": "2014",
+        "assessment_id": 55685155,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Ukraine (main part)", "Ukraine", "European Russia", "Russian Federation", "Northern Ireland", "Italy (mainland)", "Italy", "Ireland", "Iceland", "Germany", "France (mainland)", "France", "Finland", "Czechia", "Croatia", "Bulgaria", "Bosnia and Herzegovina", "Austria", "North Macedonia", "Norway", "Poland", "Romania", "Slovakia", "Slovenia", "Spain", "Spain (mainland)", "Sweden", "Switzerland", "United Kingdom", "Great Britain", "Svalbard and Jan Mayen", "Liechtenstein", "Andorra", "Faroe Islands", "Central European Russia", "East European Russia", "North European Russia", "Northwest European Russia", "South European Russia"],
+        "threats": "Intentional use (species is the target)"
+      }
+    ],
+    "id_active_ingredient": 1272
+  },
+  "ruta graveolens": {
+    "name": "ruta graveolens",
+    "assessments": [
+      {
+        "scope": "Europe",
+        "year_published": "2014",
+        "assessment_id": 2765942,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Ukraine (main part)", "Krym", "Ukraine", "Great Britain", "United Kingdom", "Switzerland", "Sweden", "Spain (mainland)", "Baleares", "Spain", "Slovenia", "Serbia", "Germany", "France (mainland)", "Corsica", "France", "Estonia", "Denmark", "Czechia", "Croatia", "Bulgaria", "Bosnia and Herzegovina", "Belgium", "Austria", "Albania", "Greece", "Greece (mainland)", "Hungary", "Isle of Man", "Italy", "Italy (mainland)", "Sicilia", "Lithuania", "Malta", "Norway", "Poland", "Romania"],
+        "threats": ["Motivation Unknown/Unrecorded", "Intentional use (species is the target)", "Scale Unknown/Unrecorded"]
+      }
+    ],
+    "id_active_ingredient": 894
+  },
+  "salix alba": {
+    "name": "salix alba",
+    "assessments": [
+      {
+        "scope": "Europe",
+        "year_published": "2013",
+        "assessment_id": 2765960,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Ukraine", "European Russia", "Russian Federation", "Moldova", "Belarus", "United Kingdom", "Switzerland", "Sweden", "Baleares", "Spain", "Slovenia", "Slovakia", "Kosovo", "Serbia", "Romania", "Portugal", "Poland", "Norway", "Netherlands", "Montenegro", "Malta", "Germany", "France", "Finland", "Estonia", "Denmark", "Czechia", "Croatia", "Bulgaria", "Bosnia and Herzegovina", "Belgium", "Austria", "Albania", "Greece", "East Aegean Is.", "Kriti", "Hungary", "Ireland", "Italy", "Sardegna", "Sicilia", "Latvia", "Lithuania", "Luxembourg", "North Macedonia", "Northern Ireland", "Liechtenstein", "Andorra", "Great Britain", "Türkiye-in-Europe", "Türkiye"],
+        "threats": "Other ecosystem modifications"
+      },
+      {
+        "scope": "Global",
+        "year_published": "2014",
+        "assessment_id": 42409554,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Xinjiang", "Tibet [or Xizang]", "Qinghai", "Nei Mongol", "Uzbekistan", "Turkmenistan", "Türkiye-in-Europe", "Türkiye-in-Asia", "Türkiye", "Tajikistan", "Syrian Arab Republic", "Lebanon", "Kyrgyzstan", "Kazakhstan", "Jordan", "Israel", "Iraq", "Iran, Islamic Republic of", "Georgia", "Cyprus", "Azerbaijan", "New Brunswick", "Manitoba", "Alberta", "Canada", "Morocco", "Algeria", "Northern Ireland", "Great Britain", "United Kingdom", "Switzerland", "Sweden", "Spain (mainland)", "Baleares", "Spain", "Slovenia", "Slovakia", "Romania", "Portugal (mainland)", "Portugal", "Poland", "Norway", "Netherlands", "Malta", "North Macedonia", "East Aegean Is.", "Greece", "Germany", "France (mainland)", "Corsica", "France", "Finland", "Estonia", "Denmark", "Croatia", "Belgium", "Austria", "Albania", "Greece (mainland)", "Kriti", "Hungary", "Ireland", "Italy", "Italy (mainland)", "Sardegna", "Sicilia", "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "Nova Scotia", "Ontario", "Prince Edward I.", "Québec", "Saskatchewan", "United States", "Arizona", "Arkansas", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Georgia", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Missouri", "Montana", "Nebraska", "New Hampshire", "New Jersey", "New York", "North Carolina", "North Dakota", "Ohio", "Pennsylvania", "Rhode Island", "South Dakota", "Tennessee", "Vermont", "Virginia", "West Virginia", "Wisconsin", "Wyoming", "Russian Federation", "Eastern Asian Russia", "West Siberia", "China", "Gansu", "Armenia"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 634
+  },
+  "schinus terebinthifolia": {
+    "name": "schinus terebinthifolia",
+    "error": "No assessments found",
+    "id_active_ingredient": 1545
+  },
+  "senna alexandrina": {
+    "name": "senna alexandrina",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2019",
+        "assessment_id": 149051614,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Chad", "Somalia", "Sri Lanka", "Saudi Arabia", "Ethiopia", "Djibouti", "Egypt", "Sudan", "Central African Republic", "Mali", "Yemen", "Oman", "Nigeria", "Niger", "Tanzania, United Republic of", "Pakistan", "Kenya", "Mauritania", "India", "Algeria", "Eritrea"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 66
+  },
+  "serenoa repens": {
+    "name": "serenoa repens",
+    "error": "No assessments found",
+    "id_active_ingredient": 1948
+  },
+  "strychnos nux-vomica": {
+    "name": "strychnos nux-vomica",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2024",
+        "assessment_id": 226545304,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["China", "Cambodia", "India", "Lao People's Democratic Republic", "Malaysia", "Peninsular Malaysia", "Philippines", "Sri Lanka", "Thailand", "Viet Nam", "Bangladesh", "Taiwan, Province of China"],
+        "threats": ["Small-holder plantations", "Agro-industry plantations", "Housing & urban areas", "Roads & railroads", "Tourism & recreation areas", "Small-holder farming", "Agro-industry farming"]
+      },
+      {
+        "scope": "Global",
+        "year_published": "1998",
+        "assessment_id": 9734611,
+        "category": "NE",
+        "category_description": "Not Evaluated",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Cambodia", "Sri Lanka", "Myanmar", "Thailand", "Viet Nam", "India", "Philippines", "Lao People's Democratic Republic"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 1810
+  },
+  "stryphnodendron adstringens": {
+    "name": "stryphnodendron adstringens",
+    "error": "No assessments found",
+    "id_active_ingredient": 1275
+  },
+  "symphytum officinale": {
+    "name": "symphytum officinale",
+    "assessments": [
+      {
+        "scope": "Europe",
+        "year_published": "2012",
+        "assessment_id": 2758315,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Türkiye-in-Europe", "Türkiye", "Romania", "Portugal (mainland)", "Portugal", "Poland", "Netherlands", "Malta", "Lithuania", "Liechtenstein", "Latvia", "Sicilia", "Sardegna", "Italy (mainland)", "Albania", "Austria", "Belgium", "Bulgaria", "Croatia", "Czechia", "Estonia", "France", "France (mainland)", "Germany", "Hungary", "Ireland", "Italy", "Serbia", "Kosovo", "Serbia", "Slovakia", "Slovenia", "Spain", "Spain (mainland)", "Switzerland", "United Kingdom", "Great Britain", "Northern Ireland", "Belarus", "Moldova", "Russian Federation", "European Russia", "Central European Russia", "East European Russia", "Kaliningrad", "North European Russia", "Northwest European Russia", "South European Russia", "Ukraine", "Krym", "Ukraine (main part)", "Corsica", "Luxembourg"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 1278
+  },
+  "syzygium aromaticum": {
+    "name": "syzygium aromaticum",
+    "error": "No assessments found",
+    "id_active_ingredient": 623
+  },
+  "tanacetum parthenium": {
+    "name": "tanacetum parthenium",
+    "assessments": [
+      {
+        "scope": "Europe",
+        "year_published": "2013",
+        "assessment_id": 2758453,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Türkiye-in-Europe", "Türkiye", "Albania", "Bulgaria", "Croatia", "Czechia", "Greece", "Greece (mainland)", "North Macedonia", "Montenegro", "Portugal", "Portugal (mainland)", "Serbia", "Ukraine", "Poland", "Norway", "Netherlands", "Luxembourg", "Lithuania", "Latvia", "Italy", "Ireland", "Hungary", "Austria", "Belgium", "Bosnia and Herzegovina", "Denmark", "Estonia", "France", "Germany", "Romania", "Kosovo", "European Russia", "Great Britain", "United Kingdom", "Switzerland", "Sweden", "Spain", "Slovenia", "Slovakia", "Serbia", "Belarus", "Moldova", "Sicilia", "Sardegna", "Canary Is.", "Russian Federation", "Azores", "Madeira"],
+        "threats": "Intentional use (species is the target)"
+      }
+    ],
+    "id_active_ingredient": 2150
+  },
+  "tribulus terrestris": {
+    "name": "tribulus terrestris",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2020",
+        "assessment_id": 84011807,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Altay", "Algeria", "Albania", "Austria", "Baleares", "Bangladesh", "Angola", "Benin", "Botswana", "Cambodia", "Buryatiya", "Burundi", "Burkina Faso", "Bulgaria", "Canary Is.", "Cameroon", "Eastern Cape Province", "Northern Cape Province", "Central European Russia", "Cabo Verde", "Central African Republic", "Chad", "Caprivi Strip", "China", "Corsica", "Czechia", "France", "East Aegean Is.", "Egypt", "Djibouti", "Eritrea", "Ethiopia", "Greece", "Gambia", "Ghana", "Guinea", "Free State", "Bahrain", "Kuwait", "Oman", "Qatar", "Saudi Arabia", "India", "Hungary", "United Arab Emirates", "Kazakhstan", "Kenya", "Côte d'Ivoire", "Mongolia", "Japan", "Italy", "Kyrgyzstan", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kriti", "KwaZulu-Natal", "Mali", "Malawi", "Libya", "Maldives", "Mauritania", "Mozambique", "Myanmar (mainland)", "Portugal", "Morocco", "Namibia (main part)", "Niger", "Nigeria", "Pakistan", "Sardegna", "Sicilia", "Romania", "Rwanda", "Senegal", "Socotra", "Sri Lanka", "South European Russia", "Spain", "Somalia", "Sudan", "Eswatini", "Tuva", "Tunisia", "Tanzania, United Republic of", "Togo", "Uganda", "Tajikistan", "Türkiye", "Turkmenistan", "Taiwan, Province of China", "Viet Nam", "Ukraine", "West Siberia", "Uzbekistan", "Yemen", "Slovenia", "Serbia", "Bosnia and Herzegovina", "Croatia", "Zimbabwe", "Zambia", "Montenegro", "North Macedonia", "Congo", "South Africa", "Russian Federation", "European Russia", "Central Asian Russia", "Eastern Asian Russia", "Myanmar", "Namibia"],
+        "threats": []
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2014",
+        "assessment_id": 2766331,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Türkiye-in-Europe", "Türkiye", "Cyprus", "Ukraine (main part)", "Krym", "Ukraine", "South European Russia", "East European Russia", "Central European Russia", "European Russia", "Russian Federation", "Moldova", "Switzerland", "Sweden", "Spain (mainland)", "Canary Is.", "Baleares", "Spain", "Slovenia", "Slovakia", "Serbia", "Romania", "Greece", "Gibraltar", "Germany", "France (mainland)", "Corsica", "France", "Czechia", "Croatia", "Bulgaria", "Belgium", "Austria", "Andorra", "Albania", "East Aegean Is.", "Greece (mainland)", "Kriti", "Hungary", "Italy", "Italy (mainland)", "Sardegna", "Sicilia", "Malta", "Norway", "Portugal", "Portugal (mainland)", "Denmark", "Montenegro", "Monaco"],
+        "threats": "Intentional use (species is the target)"
+      }
+    ],
+    "id_active_ingredient": 282
+  },
+  "trifolium pratense": {
+    "name": "trifolium pratense",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2012",
+        "assessment_id": 20156449,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["South Is.", "North Is.", "Kermadec Is.", "Chatham Is.", "Antipodean Is.", "Hawaiian Is.", "Wyoming", "Wisconsin", "West Virginia", "Washington", "Virginia", "Vermont", "Utah", "Texas", "Tennessee", "South Dakota", "South Carolina", "Rhode Island", "Pennsylvania", "Oregon", "Oklahoma", "Ohio", "North Dakota", "North Carolina", "New York", "New Mexico", "New Jersey", "New Hampshire", "Nevada", "Nebraska", "Montana", "Missouri", "Mississippi", "Minnesota", "Michigan", "Massachusetts", "Maryland", "Maine", "Louisiana", "Kentucky", "Kansas", "Iowa", "Indiana", "Illinois", "Idaho", "Georgia", "Florida", "Delaware", "Connecticut", "Colorado", "California", "Arkansas", "Arizona", "Aleutian Is.", "Alabama", "France (mainland)", "Corsica", "Tasmania", "Western Australia", "Victoria", "Queensland", "New South Wales", "Australian Capital Territory", "Yakutiya", "West Siberia", "Tuva", "Stavropol", "Severo-Osetiya", "Sakhalin", "South European Russia", "Northwest European Russia", "North European Russia", "East European Russia", "Central European Russia", "Primoryi", "Magadan", "Kuril Is.", "Krasnoyarsk", "Krasnodar", "Khabarovsk", "Karachaevo-Cherkessiya", "Kamchatka", "Kabardino-Balkariya", "Irkutsk", "Dagestan", "Chita", "Chechnya", "Buryatiya", "Amur", "Altay", "Bosnia and Herzegovina", "Uzbekistan", "Uruguay", "United Kingdom", "Turkmenistan", "Türkiye", "Tajikistan", "Taiwan, Province of China", "Syrian Arab Republic", "Sri Lanka", "Puerto Rico", "Moldova", "Malta", "Lithuania", "Lebanon", "Latvia", "Jamaica", "Israel", "Guatemala", "Faroe Islands", "Estonia", "Czechia", "Cuba", "Colombia", "Mongolia", "Kenya", "Kazakhstan", "Japan", "Iran, Islamic Republic of", "Iraq", "Indonesia", "Georgia", "Ethiopia", "Bhutan", "Azerbaijan", "Armenia", "Afghanistan", "Morocco", "Nepal", "Pakistan", "Philippines", "Tunisia", "Algeria", "Argentina", "Bahamas", "Belarus", "Bermuda", "Canada", "Chile", "Croatia", "Kyrgyzstan", "North Macedonia", "Peru", "Slovakia", "Slovenia", "Ukraine", "Montenegro", "Serbia", "Albania", "Austria", "Belgium", "Bulgaria", "Denmark", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Italy", "Netherlands", "Norway", "Poland", "Portugal", "Romania", "Spain", "Sweden", "Switzerland", "Australia", "China", "India", "New Zealand", "Russian Federation", "South Africa", "United States", "Zambia", "Zimbabwe", "Arunachal Pradesh", "Himachal Pradesh", "Jammu-Kashmir", "Madhya Pradesh", "Punjab", "Sikkim", "Tamil Nadu", "Uttar Pradesh", "West Bengal"],
+        "threats": []
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2011",
+        "assessment_id": 7090416,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Liechtenstein", "Greece", "Russian Federation", "Switzerland", "Serbia", "Poland", "North European Russia", "Serbia", "Slovakia", "Corsica", "Spain (mainland)", "Andorra", "Ukraine", "Portugal", "Sicilia", "Kosovo", "Malta", "Italy", "East European Russia", "Austria", "Ireland", "Denmark", "Kaliningrad", "Türkiye-in-Europe", "Latvia", "Luxembourg", "Lithuania", "Croatia", "Ukraine (main part)", "Romania", "Hungary", "Portugal (mainland)", "Italy (mainland)", "Germany", "Northwest European Russia", "Moldova", "Baleares", "Spain", "Netherlands", "Albania", "Great Britain", "Sardegna", "Estonia", "Belarus", "United Kingdom", "Krym", "South European Russia", "Türkiye", "Norway", "Bulgaria", "France", "Greece (mainland)", "Belgium", "Central European Russia", "France (mainland)", "Finland", "Northern Ireland", "Czechia", "Sweden", "Slovenia"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 756
+  },
+  "vaccinium macrocarpon": {
+    "name": "vaccinium macrocarpon",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2016",
+        "assessment_id": 67731192,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["United States", "Canada", "United Kingdom", "Ireland", "Germany", "Netherlands", "Switzerland"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 1113
+  },
+  "valeriana officinalis": {
+    "name": "valeriana officinalis",
+    "assessments": [
+      {
+        "scope": "Europe",
+        "year_published": "2012",
+        "assessment_id": 2708339,
+        "category": "LC",
+        "category_description": "Least Concern",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Ukraine (main part)", "Krym", "Ukraine", "European Russia", "Russian Federation", "Moldova", "Belarus", "United Kingdom", "Switzerland", "Sweden", "Spain (mainland)", "Spain", "Romania", "Greece (mainland)", "Greece", "Germany", "France (mainland)", "France", "Finland", "Estonia", "Denmark", "Czechia", "Bulgaria", "Belgium", "Austria", "Albania", "Hungary", "Iceland", "Ireland", "Italy", "Italy (mainland)", "Latvia", "Lithuania", "Netherlands", "Norway", "Poland", "Portugal", "Portugal (mainland)", "Croatia", "Montenegro", "North Macedonia", "Bosnia and Herzegovina", "Serbia", "Great Britain", "Northern Ireland", "South European Russia", "Central European Russia", "East European Russia", "Kaliningrad", "Northwest European Russia"],
+        "threats": "Other ecosystem modifications"
+      }
+    ],
+    "id_active_ingredient": 19
+  },
+  "vitex agnus-castus": {
+    "name": "vitex agnus-castus",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2020",
+        "assessment_id": 174149576,
+        "category": "DD",
+        "category_description": "Data Deficient",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Italy (mainland)", "Georgia", "Albania", "Cyprus", "Bosnia and Herzegovina", "Italy", "Jordan", "Malta", "Sardegna", "Israel", "Tajikistan", "North Macedonia", "Serbia", "Montenegro", "Sicilia", "Serbia", "Uzbekistan", "Syrian Arab Republic", "France (mainland)", "Tunisia", "Armenia", "Lebanon", "Corsica", "Spain (mainland)", "Greece", "Türkiye-in-Europe", "Azerbaijan", "Türkiye", "Türkiye-in-Asia", "Algeria", "Spain", "Croatia", "Baleares", "Krym", "France", "Bulgaria", "Morocco", "Ukraine", "Slovenia", "Turkmenistan", "Kosovo"],
+        "threats": "Intentional use (species is the target)"
+      },
+      {
+        "scope": "Global",
+        "year_published": "2018",
+        "assessment_id": 79150710,
+        "category": "DD",
+        "category_description": "Data Deficient",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Türkiye-in-Europe", "Türkiye", "Spain (mainland)", "Baleares", "Spain", "Slovenia", "Serbia", "Kosovo", "Serbia", "Montenegro", "Malta", "Albania", "Bosnia and Herzegovina", "Bulgaria", "Croatia", "France", "Corsica", "France (mainland)", "Greece", "Italy", "Italy (mainland)", "Sardegna", "Sicilia", "North Macedonia", "Morocco", "Algeria", "Tunisia", "Armenia", "Azerbaijan", "Cyprus", "Georgia", "Israel", "Jordan", "Tajikistan", "Turkmenistan", "Uzbekistan", "Ukraine", "Krym", "Lebanon", "Syrian Arab Republic", "Türkiye-in-Asia"],
+        "threats": "Intentional use (species is the target)"
+      },
+      {
+        "scope": "Global",
+        "year_published": "2020",
+        "assessment_id": 177441757,
+        "category": "DD",
+        "category_description": "Data Deficient",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Spain (mainland)", "Bosnia and Herzegovina", "Albania", "Spain", "Algeria", "Tunisia", "Azerbaijan", "Uzbekistan", "Syrian Arab Republic", "Ukraine", "Bulgaria", "Cyprus", "Türkiye-in-Europe", "Morocco", "Croatia", "France", "Tajikistan", "Slovenia", "Turkmenistan", "Corsica", "France (mainland)", "Greece", "Sicilia", "Montenegro", "Serbia", "Georgia", "Kosovo", "North Macedonia", "Malta", "Serbia", "Türkiye-in-Asia", "Israel", "Italy", "Italy (mainland)", "Baleares", "Lebanon", "Krym", "Armenia", "Jordan", "Türkiye", "Sardegna"],
+        "threats": "Intentional use (species is the target)"
+      },
+      {
+        "scope": "Europe",
+        "year_published": "2013",
+        "assessment_id": 2764301,
+        "category": "DD",
+        "category_description": "Data Deficient",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["Baleares", "Spain", "Slovenia", "Kosovo", "Serbia", "Albania", "Bosnia and Herzegovina", "Bulgaria", "Croatia", "France", "Corsica", "Greece", "Italy", "Sardegna", "Sicilia", "North Macedonia", "Malta", "Montenegro", "Türkiye-in-Europe", "Italy (mainland)", "France (mainland)", "Serbia", "Spain (mainland)", "Türkiye"],
+        "threats": "Intentional use (species is the target)"
+      }
+    ],
+    "id_active_ingredient": 1787
+  },
+  "zingiber officinale": {
+    "name": "zingiber officinale",
+    "assessments": [
+      {
+        "scope": "Global",
+        "year_published": "2020",
+        "assessment_id": 88308174,
+        "category": "DD",
+        "category_description": "Data Deficient",
+        "possibly_extinct": false,
+        "possibly_extinct_in_the_wild": false,
+        "locations": ["China", "India", "Cuba", "Dominican Republic", "Haiti", "Australia", "Queensland", "Trinidad and Tobago", "Thailand", "Sri Lanka", "Philippines", "Myanmar", "Sarawak", "Madagascar", "Mauritius", "Réunion", "Taiwan, Province of China", "Viet Nam", "Cambodia", "Bangladesh", "Puerto Rico", "Mexico", "Honduras", "Costa Rica", "Indonesia", "Kalimantan", "Malaysia", "Peninsular Malaysia", "Sabah"],
+        "threats": []
+      }
+    ],
+    "id_active_ingredient": 1372
+  }
+}

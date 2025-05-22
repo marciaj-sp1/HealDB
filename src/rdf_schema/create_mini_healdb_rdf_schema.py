@@ -13,7 +13,7 @@ E-mail: m905106@dac.unicamp.br
 # properties for Active Ingredients, their External Identifiers, types of 
 # identifiers, medications, regulatory categories, and therapeutic classes. 
 # It also adds owl:sameAs links between the internal identifiers and their  
-# corresponding external URIs (e.g., ChEBI, ATC).
+# corresponding external URIs (e.g., ChEBI, ATC, PUBCHEM).
 # It provides a minimal but comprehensive representation of HealDB, supporting 
 # interoperability use cases and SPARQL queries.
 
@@ -72,6 +72,11 @@ def create_classes_and_properties():
     g.add((HEAL.hasTherapeuticClass, RDF.type, OWL.ObjectProperty))
     g.add((HEAL.hasTherapeuticClass, RDFS.domain, HEAL.ActiveIngredient))
     g.add((HEAL.hasTherapeuticClass, RDFS.range, HEAL.TherapeuticClass))
+
+    # Data properties for ActiveIngredient
+    g.add((HEAL.idActiveIngredient, RDF.type, OWL.DatatypeProperty))
+    g.add((HEAL.idActiveIngredient, RDFS.domain, HEAL.ActiveIngredient))
+    g.add((HEAL.idActiveIngredient, RDFS.range, XSD.integer))
 
     # Data properties
     g.add((HEAL.activeIngredientName, RDF.type, OWL.DatatypeProperty))
@@ -144,13 +149,14 @@ def populate_rdf_schema(cnx, cursor):
         ai_map[id_ai] = ai_uri
 
         g.add((ai_uri, RDF.type, HEAL.ActiveIngredient))
+        g.add((ai_uri, HEAL.idActiveIngredient, Literal(id_ai, datatype=XSD.integer)))
         g.add((ai_uri, HEAL.activeIngredientName, Literal(name)))
 
     # Populate external identifiers
     sql_command = (
         "SELECT id_active_ingredient, tp_ext_id, cd_ext_id, "
         "       fl_origin_ext_id, dt_updated "
-        " FROM hd_ative_ingredient_ext_id"
+        " FROM hd_active_ingredient_ext_id"
         )
     cursor.execute(sql_command)
     for id_ai, tp_ext_id, cd_ext_id, origin, dt_updated in cursor.fetchall():
@@ -173,11 +179,14 @@ def populate_rdf_schema(cnx, cursor):
         elif tp_ext_id == "ATC":
            external_uri = URIRef(f"http://purl.bioontology.org/ontology/ATC/{cd_ext_id}")
            g.add((ext_uri, OWL.sameAs, external_uri))
+        elif tp_ext_id == "PUBCHEM_CID":
+           external_uri = URIRef(f"https://pubchem.ncbi.nlm.nih.gov/compound/{cd_ext_id}")
+           g.add((ext_uri, OWL.sameAs, external_uri))
+            
 
     # Populate Therapeutic Classes
     sql_command = (
         "SELECT id_therapeutic_class, ds_therapeutic_class "
-        "       fl_origin_ext_id, dt_updated "
         " FROM hd_therapeutic_class"
         )
     cursor.execute(sql_command)
@@ -189,7 +198,6 @@ def populate_rdf_schema(cnx, cursor):
     # Populate Regulatory Categories
     sql_command = (
         "SELECT id_regulatory_category, ds_regulatory_category "
-        "       fl_origin_ext_id, dt_updated "
         " FROM hd_regulatory_category"
         )
     cursor.execute(sql_command)

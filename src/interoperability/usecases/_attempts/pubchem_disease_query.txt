@@ -1,0 +1,7 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?disease ?disease_label ?alt_label WHERE {
+  GRAPH <http://healdb.org/graph/pubchem> {
+    ?disease skos:prefLabel ?disease_label .
+    OPTIONAL { ?disease skos:altLabel ?alt_label . }
+  }
+}
