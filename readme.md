@@ -25,12 +25,14 @@ C:\project
     │   │   │       ├── prod_tp
     │   │   │       ├── radiofarmaco
     │   │   │       ├── similar
+    │   │   ├── Arquivo_sintomas.csv
     │   │   ├── CID-10-CAPITULOS.csv
     │   │   ├── CID-10-CATEGORIAS.csv
     │   │   ├── CID-10-GRUPOS.csv
     │   │   ├── CID-10-SUBCATEGORIAS.csv
     │   │   ├── consulta_medicamento_anvisa.csv
     │   │   ├── DADOS_ABERTOS_MEDICAMENTOS.csv
+    │   │   ├── drugbank_file.xml
     │   │   ├── input_active_ing_translate_meta
     │   │   ├── lista_dcb.xlsx
     │   │   ├── ddls
@@ -51,17 +53,33 @@ C:\project
     │   │   │   ├── healdb_hd_type_ext_id.sql
     │   │   │   ├── ddls_summary.xlsx
     │   │   ├── ontologies
-    │   │   │   └── ATC.ttl   # RDF Schema ChEBI
-    │   │   │   └── chebi.owl   # RDF Schema ATC
-    │   │   │   └── healdb_mini.owl   # RDF Schema subset HealDB   │
+    │   │   │   └── ATC.ttl   # RDF Schema ATC
+    │   │   │   └── chebi.owl   # RDF Schema CHEBI
+    │   │   │   └── pc_cooccurrence_chemical_and_disease_000001.ttl # RDF Schema PUBCHEM Chemical  
+    │   │   │   └── pc_cooccurrence_chemical_and_disease_000002.ttl # RDF Schema PUBCHEM Chemical  
+    │   │   │   └── pc_cooccurrence_chemical_and_disease_000003.ttl # RDF Schema PUBCHEM Chemical 
+    │   │   │   └── healdb_mini.owl   # RDF Schema subset HealDB
+    │   │   │   └── pc_disease.ttl    # RDF Schema PUBCHEM Diseases
     │   ├── output
     │   │   ├── downloadBulas
     │   │   ├── translation
     │   │   │   ├── output_active_ing_translate_meta.csv
     │   │   ├── interoperability
+    │   │   │   ├── _attempts
+    │   │   │   │   ├── iucn_conservation_dcb_r.json
+    │   │   │   │   ├── iucn_conservation_healdb_r.json
+    │   │   │   │   ├── pubchem_diseases_labels.csv
+    │   │   │   │   ├── pubchem_mesh_disease_healdb.csv
+    │   │   │   │   ├── pubchem_mesh_ids_healdb.csv
+    │   │   │   ├── atc
+    │   │   │   │   └── atc_attributes_healdb.csv
+    │   │   │   │   └── atc_attributes_theraphealdb.csv
     │   │   │   ├── chebi
     │   │   │   │   ├── chebi_attributes_healdb.csv
     │   │   │   │   └── chebi_attributes_healdb_json.json
+    │   │   │   ├── clinical_trials
+    │   │   │   │   ├── clinical_trials_healdb.csv
+    │   │   │   │   └── clinical_trials_healdb.json
     │   │   │   ├── iucn
     │   │   │   │   ├── iucn_conservation_dcb.json
     │   │   │   │   ├── iucn_conservation_healdb.json
@@ -69,9 +87,6 @@ C:\project
     │   │   │   │   └── pubchem_reference_healdb.json
     │   │   │   ├── rxnorm
     │   │   │   │   └── rxnorm_enrichment_healdb.json
-    │   │   │   ├── atc
-    │   │   │   │   └── atc_attributes_healdb.csv
-    │   │   │   │   └── atc_attributes_theraphealdb.csv
     │   │   ├── rdf_schema
     │   │   │   ├── healdb_complete.ttl
     │   │   │   └── healdb_mini.ttl
@@ -102,12 +117,18 @@ C:\project
     │   │   │   ├── fill_missing_external_ids.py
     │   │   ├── usecases
     │   │   │   ├── __init__.py
-    │   │   │   ├── chebi_attributes_query.txt              # SPARQL query for CHEBI
-    │   │   │   ├── iucn_export_conservation_status.py      # IUCN integration
-    │   │   │   ├── pubchem_export_references.py            # PubChem integration
-    │   │   │   ├── rxnorm_export_enriched_ingredients.py   # RxNorm integration
-    │   │   │   ├── atc_attributes_query.txt                # SPARQL query for ATC
-    │   │   │   ├── atc_attributes_theraphealdb_query.txt   # SPARQL query for ATC
+    │   │   │   ├── _attempts
+    │   │   │   │   ├── iiucn_export_conservation_status_r.r #IUCN integration using R
+    │   │   │   │   ├── pubchem_disease_mesh_query.txt    # SPARQL query for PubChem Disease Mesh
+    │   │   │   │   ├── pubchem_disease_query.txt         # SPARQL query for PUBchem Disease
+    │   │   │   │   ├── pubchem_mesh_ids_query.txt        # SPARQL query for PUBChem Mesh
+    │   │   │   ├── atc_attributes_query.txt              # SPARQL query for ATC
+    │   │   │   ├── atc_attributes_theraphealdb_query.txt # SPARQL query for ATC
+    │   │   │   ├── chebi_attributes_query.txt            # SPARQL query for CHEBI
+    │   │   │   ├── clinical_trials_export.py             # SPARQL query for ClinicalTrials.gov
+    │   │   │   ├── iucn_export_conservation_status.py    # IUCN integration
+    │   │   │   ├── pubchem_export_references.py          # PubChem integration
+    │   │   │   ├── rxnorm_export_enriched_ingredients.py # RxNorm integration
     │
     │   ├── nlp_extraction
     │   │   ├── __init__.py
@@ -162,7 +183,7 @@ C:\project
 6. Interoperability:
    * Linking: Associates active ingredients with standardized external identifiers (e.g., RxCUI, CAS, KEGG, PubChem, Wikidata).
    * Use Cases: Demonstrates how external identifiers can be used to extract insights from biomedical ontologies and 
-data sources (e.g., ChEBI, IUCN, PubChem, ATC, RxNorm).
+data sources (e.g., ChEBI, IUCN, PubChem, ATC, RxNorm, ClinicalTrials.gov).
 ## How to Run
 ### Requirements
 1. Install Python 3.9+.
@@ -180,24 +201,22 @@ data sources (e.g., ChEBI, IUCN, PubChem, ATC, RxNorm).
    ```
 
 ## Inputs
-The `data/input` folder contains all input data files required for processing, translation, and interoperability tasks. 
+The `data/input` folder contains all input data files required for processing, translation, and interoperability tasks.  
 Key components include:
 
-   - **CID-10 files**: International Classification of Diseases (chapters, categories, groups, subcategories).
-   - DADOS_ABERTOS_MEDICAMENTOS.csv: Publicly available data on medications.
-   - consulta_medicamento_anvisa.csv: Comprehensive list of medications and their attributes obtained from ANVISA.
-   - drugbank_file.xml: DrugBank XML file containing structured biomedical data.
-   - Arquivo_sintomas.xlsx: List of symptoms from the Bireme/MeSH vocabulary. 
-   - input_active_ing_translate_meta: Dataset of active ingredients in Portuguese, used for translation with 
-     Meta´s SeamlessM4T model.
-   - lista_dcb.xlsx: List of Brazilian Common Denominations (DCB).
+- **CID-10 files**: International Classification of Diseases (`CID-10-CAPITULOS.csv`, `CID-10-CATEGORIAS.csv`, `CID-10-GRUPOS.csv`, `CID-10-SUBCATEGORIAS.csv`).
+- `DADOS_ABERTOS_MEDICAMENTOS.csv`: Publicly available data on medications.
+- `consulta_medicamento_anvisa.csv`: Comprehensive list of medications and their attributes obtained from ANVISA.
+- `drugbank_file.xml`: DrugBank XML file containing structured biomedical data.
+- `Arquivo_sintomas.csv`: List of symptoms from the Bireme/MeSH vocabulary.
+- `input_active_ing_translate_meta`: Dataset of active ingredients in Portuguese, used for translation with Meta’s SeamlessM4T model.
+- `lista_dcb.xlsx`: List of Brazilian Common Denominations (DCB).
 
-- ###  Subfolders
+### Subfolders within `data/input`
 
-     - **`bulas/`**: Drug leaflet files organized by regulatory category (e.g., generic, herbal medicine).
-     - **`ddls/`**: : SQL DDL files representing HealDB table structures, used to generate the RDF schema.
-     - **`ontologies/`**: External biomedical ontologies used in interoperability(e.g. `chebi.owl`, `atc.ttl`), and 
-  a subset of HealDB RDF Schema (e.g. `healdb_mini.ttl`).
+- **`bulas/`**: Drug leaflet files organized by regulatory category (e.g., generic, herbal medicine).
+- **`ddls/`**: SQL DDL files representing HealDB table structures, used to generate the RDF schema.
+- **`ontologies/`**: External biomedical ontologies used in interoperability (e.g., `chebi.owl`, `atc.ttl`) and a subset of the HealDB RDF schema (e.g., `healdb_mini.ttl`).
 
 These files serve as the foundational datasets for web crawling, creation of repositories, natural language processing, 
 translations, and interoperability tasks.
@@ -496,57 +515,49 @@ This enables interoperability with other health data sources, ontologies, and bi
 
 ### Use Cases
 
+Each use case demonstrates a specific integration of HealDB with external biomedical or environmental data sources. 
+Results for these use cases are available in the `Output` section.
+
 - **`chebi_attributes_query.txt`**
-  - Purpose: Demonstrates semantic interoperability between HealDB and ChEBI using SPARQL queries.
+  - Purpose: Demonstrates semantic interoperability between HealDB and the ChEBI ontology via SPARQL.
   - Key Processes:
-    - Joins graphs from HealDB and ChEBI in Apache Jena Fuseki.
-    - Retrieves chemical attributes like formula, mass, SMILES, InChI, and InChIKey.
-    - Links ingredients via owl:sameAs to extract structured ontology data in ChEBI.
+    - Performs a join between HealDB and ChEBI graphs using `owl:sameAs`.
+    - Retrieves chemical attributes like molecular formula, mass, SMILES, InChI, and InChIKey.
 
 - **`pubchem_export_references.py`**
-  - Purpose: Extracts PubMed references linked to PubChem CIDs of antidepressant ingredients.
+  - Purpose: Retrieves up to 3 PubMed references linked to PubChem CIDs for antidepressant ingredients in HealDB.
   - Key Processes:
-    - Filters active ingredients by therapeutic class and maps them to PubChem CIDs.
-    - Calls _Entrez API_ to retrieve related PMIDs and publication metadata.
-    - Exports up to 3 references per ingredient to JSON.
+    - Filters active ingredients with therapeutic class "antidepressant" and maps them to PubChem CIDs.
+    - Uses NCBI Entrez E-Utilities API to retrieve PMIDs and related metadata.
+    - Exports selected publication data to structured JSON.
 
 - **`iucn_export_conservation_status.py`**
-  - Purpose: Retrieves conservation and threat data for plant-based ingredients using the IUCN API.
+  - Purpose: Retrieves conservation status, threats, and geographic distribution of plant-based ingredients from the IUCN Red List API.
   - Key Processes:
-    - Retrieves active ingredients and DCB names classified as "PM" (plant-based).
-    - Normalizes scientific names and queries IUCN Red List API.
-    - Collects the following data:
-      - Conservation status (e.g., "Vulnerable", "Endangered") - retrieved from the fields "category" and "category_description". 
-      - Assessment year and geographical scope (e.g., Global, Europe, Mediterranean, Pan-Africa) - retrieved from the fields "year_published" and "scopes".
-      - Extinction information - retrieved from the fields "possibly_extinct" and "possibly_extinct_in_the_wild".
-      - Main threats - retrieved from the "threats" field as a list.
-      - Geographical locations - retrieved from the "locations" field as a list.
-    - Summarizes and saves results as JSON files for active ingredients and DCB data.
+    - Filters active ingredients and DCBs classified as plant-based (type "PM").
+    - Normalizes scientific names and retrieves assessment data using IUCN API.
+    - Extracts category, threats, location, extinction risk, and scope of assessments.
 
 - **`rxnorm_export_enriched_ingredients.py`**
-  - Purpose: Enriches HealDB active ingredients with clinical and pharmacological data 
-  from the RxNorm API using RxCUI identifiers.
+  - Purpose: Enriches HealDB active ingredients with RxNorm clinical and pharmacological information.
   - Key Processes:
-    - Select active ingredients with RxCUI from ``hd_active_ingredient_ext_id``.
-    - Retrieve preferred name, TTY, status, and synonyms via RxNorm API.
-    - Extract clinical presentations (SCD) and branded presentations 
-  (SBD, BPCK, SBDF, SBDC).
-    - Structure data retrieved into dictionaries and export to ``rxnorm_enrichment_healdb.json``.
+    - Selects active ingredients with RxCUI.
+    - Retrieves preferred names, TTY, status, synonyms, clinical presentations (SCD), and branded presentations (SBD, BPCK, SBDF, SBDC).
+    - Structures and exports data to JSON.
 
 - **`atc_attributes_query.txt` and `atc_attributes_theraphealdb_query.txt`**
-  - Purpose: Identifies the ATC therapeutic class associated with each active ingredient based on its ATC codes, 
-  enabling semantic analysis by linking ATC data with active ingredients in HealDB.
+  - Purpose: Identify ATC therapeutic classes for each active ingredient based on ATC codes, enabling semantic comparisons 
+  between ATC and HealDB classifications using SPARQL query.
   - Key Processes:
-    - `atc_attributes_query.txt`: Extracts therapeutic class information based on ATC codes and UMLS identifiers, 
-    linking them to active ingredients within the HealDB dataset. Includes labels and alternative labels to enhance 
-    semantic alignment. 
-    - `atc_attributes_theraphealdb_query.txt`: Extends the previous query by including therapeutic class data from 
-    HealDB, enabling a comparative analysis between ATC and HealDB classifications. It links the therapeutic class 
-    of each medication with the active ingredients associated with these medications.
+    - `atc_attributes_query.txt`: Extracts therapeutic class, UMLS identifiers, preferred/alternative labels from ATC ontology.
+    - `atc_attributes_theraphealdb_query.txt`: Adds HealDB's therapeutic class linked to medications, allowing comparative analysis.
 
-- **`mesh_xxxx.py`**
-  - Purpose: Placeholder for future queries exploring UNII relationships.
+- **`clinical_trials_export.py`**
+  - Purpose: Links active ingredients to clinical trials registered on ClinicalTrials.gov.
   - Key Processes:
+    - Queries the ClinicalTrials.gov v2 API using the English name of each active ingredient.
+    - Retrieves NCT ID, study title, conditions, interventions, and outcome measures.
+    - Inserts data into a working table and exports it as CSV and JSON grouped by active ingredient.
 
 ## **RDF Schema**
 Scripts that convert the relational structure of HealDB — based on the DDLs 
@@ -558,34 +569,29 @@ of its database tables — into an RDF schema saved in Turtle (.ttl) format.
     ```bash
     python src/interoperability/rdf_schema/main_rdf_schema.py
     ```
-
 - **`create_mini_healdb_rdf_schema.py`**
-  - Purpose: Generates a simplified RDF schema (`healdb_mini.ttl`) that includes classes, properties, and instances 
- from the HealDB database, focusing on active ingredients, their external identifiers, types of identifiers, 
- medications, regulatory categories, and therapeutic classes. It provides a minimal but comprehensive representation 
- of HealDB, supporting interoperability use cases and SPARQL queries.
+  - Purpose: Generates a simplified RDF schema (`healdb_mini.ttl`) with classes, properties, and instances based on 
+  selected HealDB tables, focused on semantic integration of active ingredients, external identifiers, medications, 
+  regulatory categories, and therapeutic classes.
   - Key Processes:
-    - Defines RDF classes, datatype and object properties for the entities: Active Ingredients, External Identifiers, 
-    Identifier Types, Medications, Regulatory Categories, and Therapeutic Classes.
-    - Converts HealDB data into RDF triples, instantiating classes and their relationships based on data fetched 
-    from MySQL tables such as  `hd_active_ingredient`, `hd_active_ingredient_ext_id`, `hd_type_ext_id`, 
-  `hd_medication`, `hd_medication_active_ingredient`, `hd_therapeutic_class`, and `hd_regulatory_category`.
-    - Creates object properties to link Active Ingredients to Therapeutic Classes via Medications.
-    - Defines ``owl:sameAs`` links for external IDs of type ChEBI and ATC, enhancing linkage with external ontologies.
-    - Generates and saves the output as `healdb_mini.ttl`, used in interoperability use cases and SPARQL queries.
-  
+    - Defines RDF classes and properties (datatype and object) for core entities: Active Ingredients, External Identifiers, 
+    Identifier Types, Medications, Therapeutic Classes, and Regulatory Categories.
+    - Extracts data from selected MySQL tables and generates RDF triples representing entities and their relationships.
+    - Establishes `owl:sameAs` links for external IDs (ChEBI, ATC, PubChem) to ensure alignment with biomedical ontologies.
+    - Outputs the simplified RDF file (`healdb_mini.ttl`) used in SPARQL queries and interoperability scenarios.
+
 - **`create_healdb_rdf_schema.py`** 
-  - Purpose: Converts the DDL files of HealDB's relational database into a complete RDF schema written in 
-  Turtle (.ttl) format. 
+  - Purpose: Converts the SQL DDL definitions of the HealDB relational schema into a complete RDF schema in Turtle (.ttl) format.
   - Key Processes: 
-    - Reads DDL´s sql files from the folder defined by ```PATHS ["healdb_ddls"]```.
-    - Parses CREATE TABLE statements to extract columns, data types, and foreign keys. 
+    - Reads DDL´s SQL files from the folder defined by `PATHS["healdb_ddls"]`.
+    - Parses CREATE TABLE statements to extract columns, data types, and foreign keys.
     - Maps SQL elements to OWL constructs:
-      - Tables → ```owl:Class```
-      - Columns → ```owl:DatatypeProperty```
-      - Foreign keys → ```owl:ObjectProperty```
+      - Tables → `owl:Class`
+      - Columns → `owl:DatatypeProperty`
+      - Foreign keys → `owl:ObjectProperty`
     - Automatically generates labels for classes and properties based on naming patterns (e.g., id_ → hasID_, nm_ → hasName_).
-    - Writes the ontology to a file: ```healdb_complete.ttl``` in the directory defined by ```PATHS["output_rdf_schema"]```.
+    - Saves the resulting RDF schema to `healdb_complete.ttl`, without instantiating data, for ontology-based modeling and future SPARQL extensions.
+
     - **Note:** This script generates only the RDF schema (classes and properties), without populating it with data from 
     the tables. Future steps may use this structure to instantiate individuals.
 
@@ -595,43 +601,53 @@ Defines file paths, API credentials, and project settings for managing data inpu
 Includes configurations for:
 
 - Input/output directories (e.g., drug leaflets, ICD files, DrugBank XML, RDF Schema).
-- API credentials and endpoints for OpenAI, AWS, IUCN and RxNorm.
+- API credentials and endpoints for OpenAI, AWS, IUCN, RxNorm, PubChem, and ClinicalTrials.gov.
 - Web scraping settings, including browser preferences and download directories.
 - Category mappings for leaflet types and conservation statuses.
 - External ID URLs for health-related data sources (e.g., RxNorm, KEGG, Wikidata).
 - API endpoints used in interoperability use cases to fetch biomedical and environmental data.
 - Namespaces used in RDF schema generation and external ontologies.
+- File and folder paths for ontology inputs (e.g., `chebi.owl`, `atc.ttl`) and RDF schema outputs.
+- Definition of default models and headers for OpenAI requests (e.g., model version, content type).
 
 Ensure all values are adjusted to match your environment and secure sensitive information like API keys.
 
-
 ## Output
 
-1. Drug leaflets from Anvisa (data/output/downloadBulas):
+1. **Drug leaflets from Anvisa** (data/output/downloadBulas):
    - Folder containing the downloaded drug leaflets from the Anvisa Portal. 
-2. Interoperability Data (data/output/interoperability):
+2. **Interoperability Data** (`data/output/interoperability`):
    - Output folder for the use cases involving external data integration. Includes results from:
-     - ChEBI: Chemical attributes of ingredients via SPARQL query.
-     - PubChem: Scientific publications retrieved for active ingredients.
-     - IUCN: Conservation status and threats for plant-based ingredients.
-       - `iucn_conservation_healdb.json`: Conservation data for active ingredients.
-       - `iucn_conservation_dcb.json`: Conservation data for DCB names.
-     - RxNorm: Enriched active ingredients with RxNorm clinical and pharmacological data.
-     - ATC: Therapeutic class attributes associated with active ingredients, including ATC codes, 
-     UMLS identifiers, and preferred labels.
-       - `atc_attributes_healdb.csv`: Identification of ATC therapeutic classes for active ingredients in HealDB.
-       - `atc_attributes_theraphealdb.csv`: Comparative listing of therapeutic classes from both ATC and HealDB 
-       for each active ingredient.
-     
-     - MESH: (in progress)
-3. Translation of active ingredients: 
-   - output_active_ing_translate_meta.csv: File containing the translation of active ingredients using the Meta model.
-4. RDF Schema (data/output/rdf_schema):
-   - healdb_mini.ttl: Simplified RDF schema encompassing data from the following HealDB tables: `hd_active_ingredient`, 
-   `hd_active_ingredient_ext_id`, `hd_type_ext_id`, `hd_medication`, `hd_medication_active_ingredient`, 
-   `hd_therapeutic_class`, and `hd_regulatory_category`. This schema provides a structured representation of 
-   active ingredients, their external identifiers and types, medications, therapeutic classes, and regulatory categories.
-   - healdb_complete.ttl: Complete RDF schema structure generated from the full HealDB DDLs (no data instantiation).
+
+     - **ChEBI**: Chemical attributes of active ingredients retrieved via SPARQL query to the ChEBI ontology.
+       - `chebi_attributes_healdb.csv`: Table with chemical attributes for each active ingredient including molecular formula, mass, monoisotopic mass, SMILES, InChI, and InChIKey.
+       - `chebi_attributes_healdb_json.json`: Same content in JSON format for programmatic consumption and interoperability use cases.
+
+     - **PubChem**: Scientific publications related to active ingredients, retrieved using PubChem CID and Entrez APIs.
+       - `pubchem_reference_healdb.json`: Contains up to 3 recent PubMed publications per active ingredient, including title, journal, publication date, and PMID.
+
+     - **IUCN**: Conservation status, geographic distribution, and threats related to medicinal plants.
+       - `iucn_conservation_healdb.json`: Enrichment of plant-based active ingredients in HealDB with IUCN conservation data.
+       - `iucn_conservation_dcb.json`: Similar data but based on the Brazilian Common Denominations (DCB) list.
+
+     - **RxNorm**: Clinical and pharmacological data retrieved using RxCUI identifiers.
+       - `rxnorm_enrichment_healdb.json`: Includes standardized names, RxNorm types (TTY), clinical and branded drug presentations, synonyms, and status information.
+
+     - **ATC**: Therapeutic class attributes and UMLS identifiers associated with active ingredients.
+       - `atc_attributes_healdb.csv`: Identification of ATC therapeutic classes for active ingredients using external identifiers.
+       - `atc_attributes_theraphealdb.csv`: Comparative listing showing both ATC and HealDB therapeutic classes for each active ingredient, allowing semantic alignment analysis.
+
+     - **ClinicalTrials.gov**: Clinical studies involving active ingredients from HealDB, retrieved via the ClinicalTrials.gov v2 API.
+       - `clinical_trials_healdb.csv`: Structured table listing clinical trials by NCT ID, title, conditions, interventions, and outcomes per active ingredient.
+       - `clinical_trials_healdb.json`: Same data as CSV, but formatted by active ingredient for easier programmatic use and hierarchical analysis.
+
+3. **Translation of active ingredients**:
+   - `output_active_ing_translate_meta.csv`: CSV file containing active ingredients translated from Portuguese to English using Meta’s SeamlessM4T model.
+
+4. **RDF Schema** (`data/output/rdf_schema`):
+   - `healdb_mini.ttl`: Simplified RDF schema including instances from HealDB tables `hd_active_ingredient`, `hd_active_ingredient_ext_id`, `hd_type_ext_id`, `hd_medication`, `hd_medication_active_ingredient`, `hd_therapeutic_class`, and `hd_regulatory_category`. Provides a minimal and structured representation for semantic integration.
+   - `healdb_complete.ttl`: Full RDF schema with class and property definitions based on HealDB’s relational schema. It includes structural definitions but does not instantiate data.
+
 
 ## Contributing
 Contributions are welcome! To contribute:
