@@ -558,6 +558,36 @@ Results for these use cases are available in the `Output` section.
     - Queries the ClinicalTrials.gov v2 API using the English name of each active ingredient.
     - Retrieves NCT ID, study title, conditions, interventions, and outcome measures.
     - Inserts data into a working table and exports it as CSV and JSON grouped by active ingredient.
+### Use Case Attempts (Experimental)
+
+These exploratory use cases were implemented and tested but ultimately not incorporated into HealDB due to data quality 
+issues or strategic changes. They remain documented for transparency and future reference. Outputs can be found in 
+the `_attempts` folders.
+
+- **PubChem + MeSH Disease Co-occurrence**  
+  - **Purpose**: To identify diseases associated with active ingredients by linking PubChem co-occurrence data with MeSH descriptors.  
+  - **Approach**:  
+    - RDF data from PubChem was loaded into Fuseki.
+    - SPARQL queries linked PubChem CIDs → DZIDs → MeSH IDs.
+    - MeSH API was used to enrich disease data.
+  - **Why it was discarded**:
+    - Co-occurrence in PubChem reflects shared mentions in articles, not clinical relationships.
+    - Generated hundreds of vague or irrelevant associations (e.g., for "Hesperidin").
+    - No therapeutic or causal logic was present.
+    - Mapping to MeSH did not filter noise effectively.
+  - **Decision**: Replaced by ClinicalTrials.gov integration, which offers validated associations between compounds and clinical conditions.
+
+
+- **IUCN Integration in R**  
+  - **Purpose**: To retrieve conservation status and threats for plant-based ingredients using the IUCN Red List API v4 via R.  
+  - **Approach**:  
+    - Species names from DCB classified as "PM" (plants) were queried.
+    - Results included category, extinction risk, geographical scope, and threats.
+    - Developed in R due to authentication issues with Python at the time.
+  - **Why it was migrated**:
+    - Integration in R worked well but lacked alignment with the rest of the Python-based pipeline.
+    - Authentication problems with Python were resolved later.
+  - **Decision**: Script was kept in `_attempts` as a historical record; a newer Python version was implemented.
 
 ## **RDF Schema**
 Scripts that convert the relational structure of HealDB — based on the DDLs 
@@ -645,8 +675,19 @@ Ensure all values are adjusted to match your environment and secure sensitive in
    - `output_active_ing_translate_meta.csv`: CSV file containing active ingredients translated from Portuguese to English using Meta’s SeamlessM4T model.
 
 4. **RDF Schema** (`data/output/rdf_schema`):
-   - `healdb_mini.ttl`: Simplified RDF schema including instances from HealDB tables `hd_active_ingredient`, `hd_active_ingredient_ext_id`, `hd_type_ext_id`, `hd_medication`, `hd_medication_active_ingredient`, `hd_therapeutic_class`, and `hd_regulatory_category`. Provides a minimal and structured representation for semantic integration.
+   - `healdb_mini.ttl`: Simplified RDF schema including instances from HealDB tables `hd_active_ingredient`, 
+   `hd_active_ingredient_ext_id`, `hd_type_ext_id`, `hd_medication`, `hd_medication_active_ingredient`, 
+   `hd_therapeutic_class`, and `hd_regulatory_category`. Provides a minimal and structured representation for 
+   semantic integration.
    - `healdb_complete.ttl`: Full RDF schema with class and property definitions based on HealDB’s relational schema. It includes structural definitions but does not instantiate data.
+
+5. **Experimental Use Case Outputs** (`data/output/interoperability/_attempts`):
+   - Outputs from exploratory use cases that were tested but not integrated into HealDB due to quality or strategic considerations. These files remain available for future reference.
+     - `pubchem_mesh_disease_healdb.csv`: Mapping between active ingredients (via PubChem CID) and co-occurring diseases.
+     - `pubchem_mesh_ids_healdb.csv`: Mapping of PubChem diseases to MeSH IDs.
+     - `pubchem_diseases_labels.csv`: Disease labels and synonyms from PubChem's RDF dataset.
+     - `iucn_conservation_healdb_r.json`: IUCN conservation data retrieved via an R script for HealDB active ingredients.
+     - `iucn_conservation_dcb_r.json`: IUCN conservation data retrieved via an R script for Brazilian Common Denominations (DCB) of type Medicinal Plant, "PM".
 
 
 ## Contributing
