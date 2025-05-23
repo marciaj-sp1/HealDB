@@ -564,8 +564,9 @@ These exploratory use cases were implemented and tested but ultimately not incor
 issues or strategic changes. They remain documented for transparency and future reference. Outputs can be found in 
 the `_attempts` folders.
 
-- **PubChem + MeSH Disease Co-occurrence**  
-  - **Purpose**: To identify diseases associated with active ingredients by linking PubChem co-occurrence data with MeSH descriptors.  
+- **`pubchem_disease_query.txt` + `pubchem_mesh_disease_query.txt` + `pubchem_mesh_ids_query.txt`**
+  - **Purpose**: To identify the association between active ingredients in HealDB and diseases mentioned in scientific 
+  publications through co-occurrence with MeSH identifiers, using RDF data from PubChem and SPARQL queries.
   - **Approach**:  
     - RDF data from PubChem was loaded into Fuseki.
     - SPARQL queries linked PubChem CIDs → DZIDs → MeSH IDs.
@@ -578,7 +579,7 @@ the `_attempts` folders.
   - **Decision**: Replaced by ClinicalTrials.gov integration, which offers validated associations between compounds and clinical conditions.
 
 
-- **IUCN Integration in R**  
+- `iucn_export_conservation_status_r.py`  
   - **Purpose**: To retrieve conservation status and threats for plant-based ingredients using the IUCN Red List API v4 via R.  
   - **Approach**:  
     - Species names from DCB classified as "PM" (plants) were queried.
