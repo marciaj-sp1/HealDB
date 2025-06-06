@@ -56,7 +56,8 @@ def search_repository_icd(cursor, cd_icd_full_nodot):
             "WHERE s.cd_subcat = %s "
             "and   s.id_cat = c.id_cat "
         )
-        cursor.execute(sql_command, (cd_icd_full_nodot,))
+        register = (cd_icd_full_nodot,)
+        cursor.execute(sql_command, register)
         register = cursor.fetchone()
         if register:
             #id_subcat = register[0]
@@ -108,23 +109,25 @@ def link_medications_with_diseases(cnx, cursor):
             traits = values['traits']
 
             # Skip if CID does not exist in category or subcategory tables
-            sql_check = (
+            sql_command = (
                 "SELECT EXISTS (SELECT 1 FROM healdb.hd_icd_category "
                 "                WHERE cd_cat = %s) "
                 "OR EXISTS (SELECT 1 FROM healdb.hd_icd_subcategory "
                 "                WHERE cd_subcat = %s)"
             )
-            cursor.execute(sql_check, (icd_full_nodot, icd_full_nodot))
+            register = (icd_full_nodot, icd_full_nodot)
+            cursor.execute(sql_command, register)
             exists = cursor.fetchone()[0]
             # Check if the first three characters of the subcategory CID exist in the category table.
             # If so, use this CID to associate it with the medication.
             if not exists:
                 if (len(icd_full_nodot) >=3):
                     icd_cat = icd_full_nodot[:3]
-                    sql_check = (
+                    sql_command = (
                         "SELECT EXISTS (SELECT 1 FROM healdb.hd_icd_category "
                         "                WHERE cd_cat = %s) ")
-                    cursor.execute(sql_check, (icd_cat,))
+                    register = (icd_cat,)
+                    cursor.execute(sql_command, register)
                     exists = cursor.fetchone()[0]
                     if not exists:
                        continue
@@ -159,18 +162,18 @@ def link_medications_with_diseases(cnx, cursor):
 
             id_group, id_cat, id_subcat = search_repository_icd(cursor, icd_full_nodot)
 
-            sql_insert = (
+            sql_command = (
                 "INSERT INTO healdb.hd_medication_disease "
                 "(id_medication, cd_icd_full, id_icd_group, id_icd_cat, id_icd_subcat, "
                 "vl_score, vl_entity_score, nm_trait_main, vl_trait_main_score, fl_low_confidence) "
                 "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
             )
-            reg_insert = (
+            register = (
                 id_med, icd_full, id_group, id_cat, id_subcat,
                 vl_score, vl_entity_score, nm_trait_main, vl_trait_score_main, fl_low_confidence
             )
 
-            cursor.execute(sql_insert, reg_insert)
+            cursor.execute(sql_command, register)
             cnx.commit()
             print(f"Linked medication ID {id_med} with ICD {icd_full}")
 
