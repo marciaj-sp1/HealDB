@@ -10,7 +10,8 @@ E-mail: m905106@dac.unicamp.br
 """
 
 # Extract diseases and symptoms (ICD codes) from the medication leaflet 
-# indications using the Amazon Comprehend Medical API. The response is stored 
+# indications and functionality sections using the Amazon Comprehend Medical 
+# API. The response is stored 
 # in JSON format, and the ICD codes and scores are extracted from this JSON.
 
 import json
@@ -33,26 +34,38 @@ def extract_diseases_from_indications(cnx, cursor):
         print("Fetching data from the table hd_translate_eng_leaflet_section...")
         # Fetch data from the translation table
         sql_command = (
-            "SELECT id_medication, ds_indication_eng  "
+            "SELECT id_medication, ds_indication_eng, ds_functionality_eng  "
             "FROM healdb.hd_translate_eng_leaflet_section  "
-            "WHERE length(ds_indication) > 10 "
+            "WHERE length(ds_indication_eng) > 10 "
+            " AND id_medication in "
+            "(3205, 4139) "
+
         )
         cursor.execute(sql_command)
         rows = cursor.fetchall()
-
+        cont = 0
         for row in rows:
             
             # Access tuple elements using indices
             id_medication = row[0]  # First column: id_medication
-            ds_indication_eng = row[1]           # Second column: ds_indication_eng
-
+            ds_indication_eng = row[1] # Second column: ds_indication_eng
+            ds_functionality_eng = row[1] # Third column: ds_functionality_eng
+            
+            full_text = (
+                "What this medication is indicated for:\n" +
+                ds_indication_eng.strip() + "\n\n" +
+                "How this medication works:\n" +
+                ds_functionality_eng.strip()
+            )   
+            # Limit for 10.000 caracters
+            full_text = full_text[:10000]
             print(f"Processing medication ID: {id_medication}")
-            print(f"Text for analysis: {ds_indication_eng}")
-
+            #print(f"Text for analysis: {full_text}")
+ 
             try:
                 # Call Amazon Comprehend Medical API to infer ICD codes
-                api_response = comprehend_client.infer_icd10_cm(Text=ds_indication_eng)
-                print(f"API response for medication ID {id_medication}: {api_response}")
+                api_response = comprehend_client.infer_icd10_cm(Text=full_text)
+                #print(f"API response for medication ID {id_medication}: {api_response}")
             except Exception as e:
                 print(f"Error calling Amazon Comprehend Medical API for medication ID {id_medication}: {e}")
                 continue
@@ -74,12 +87,16 @@ def extract_diseases_from_indications(cnx, cursor):
                     "UPDATE ds_api_response = VALUES(ds_api_response)"
                 )
                 cursor.execute(sql_command, (id_medication, ds_api_response))
-                cnx.commit()
+                cont += 1
+                if (cont == 100):
+                    cnx.commit()
+                    cont = 0
                 print(f"API response successfully stored for medication ID {id_medication}.")
             except Exception as e:
                 print(f"Error storing API response in the database for medication ID {id_medication}: {e}")
                 continue
-
+        cnx.commit()
     except Exception as e:
+        cnx.commit()
         print(f"Error processing indications: {e}")
     return

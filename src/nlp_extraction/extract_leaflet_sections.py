@@ -11,8 +11,9 @@ E-mail: m905106@dac.unicamp.br
 
 # This script performs the following tasks:
 # 1. Reads and processes drug leaflets from the database.
-# 2. Extracts specific sections, such as "Para que este medicamento é indicado?" and
-#    "O que devo saber antes de usar esse medicamento?"
+# 2. Extracts specific sections, such as "What is this medication indicated for?" and
+#    "What should I know before using this medication?"
+#    "How this medication works?"
 # 3. Stores extracted data in working tables.
 # 4. Updates the leaflet repository with the extracted information.
 
@@ -29,7 +30,8 @@ def update_drug_leaflet_repository(cnx, cursor):
            "INNER JOIN healdb.hd_wrk_med_leaflet_section AS t "
            "ON t.id_medication = m.id_medication "
            "SET m.ds_indication = t.ds_indication, "
-           "    m.ds_precaution = t.ds_precaution "
+           "    m.ds_precaution = t.ds_precaution, "
+           "    m.ds_functionality = t.ds_functionality "
         )    
         cursor.execute(sql_command)
         cnx.commit()
@@ -43,22 +45,25 @@ def insert_df_session_to_table(df, cnx, cursor):
     # working table 'hd_wrk_med_leaflet_section', after truncating it
     try:
         print("Clearing the table 'hd_wrk_med_leaflet_section'...")
-        cursor.execute("TRUNCATE TABLE healdb.hd_wrk_med_leaflet_section")  
-        cnx.commit()
+        #cursor.execute("TRUNCATE TABLE healdb.hd_wrk_med_leaflet_section")  
+        #cnx.commit()
 
         # Convert the DataFrame into a list of tuples
         registers = df.to_records(index=False).tolist()
         
         # Execute the insertion query
         print("Inserting DataFrame into 'hd_wrk_med_leaflet_section'...")
-        cursor.executemany(
-            f"INSERT INTO healdb.hd_wrk_med_leaflet_section VALUES ({', '.join(['%s'] * len(df.columns))})", 
-            registers
-        )
+        sql_command = (
+            "INSERT INTO healdb.hd_wrk_med_leaflet_section "
+            "(id_medication, ds_indication, ds_precaution, ds_functionality) "
+            "VALUES (%s, %s, %s, %s)"
+            )
+        cursor.executemany(sql_command, registers)
         cnx.commit()
     except Exception as e:
         print(f"Error inserting DataFrame into 'hd_wrk_med_leaflet_section': {e}")
     return
+
 
 def find_pattern_last_occurrence(pattern, drug_leaflet_text):
     # Find the last occurrence of a regex pattern in the leaflet text
@@ -92,6 +97,7 @@ def read_extract_leaflet_precaution(id_medication, nm_medication, drug_leaflet_t
         # Extract the text using the adjusted index
         remaining_text = text_no_quotes[start_index:]
 
+        ds_precaution = ''
         # Find the end of the section
         end_match = re.search(end_pattern, remaining_text)
         if not end_match:
@@ -112,21 +118,48 @@ def read_extract_leaflet_precaution(id_medication, nm_medication, drug_leaflet_t
                     ds_precaution = remaining_text[:end_match.start()].strip()
                 else:
                     return ""
-       
            
         # Remove numbers and trailing periods that may appear at the end of the section
         ds_precaution = re.sub(r'\.\s*\d+\.$', '', ds_precaution).strip()
         
-        #print(f"id_medication = {id_medication}")
-        #print(f"nm_medication = {nm_medication}")
-        #print(f"ds_precaution = {ds_precaution}")
-
-        return ds_precaution
-
     except Exception as e:
         print(f"Error processing the drug leaflet {nm_medication}: {e}")
-        return ""
+    return ds_precaution
 
+
+def read_extract_leaflet_functionality(id_medication, nm_medication, drug_leaflet_text):
+    # Read the drug leaflet and extract the indication section
+    try:
+        text = drug_leaflet_text.replace('\n', ' ').replace('\t', ' ')
+        text = re.sub(r'\s+', ' ', text).strip()
+
+        begin_pattern = r"(?i)(?:^\d+\.\s*)?COMO\s+(?:ESTE|ESSE)\s+(?:MEDICAMENTO|PRODUTO)\s+FUNCIONA\??"
+        end_pattern = r"(?i)(?:^\d+\.\s*)?QUANDO\s+N[ÃA]O\s+DEVO\s+USAR"
+
+
+        begin_match = re.search(begin_pattern, text)
+        if not begin_match:
+            print(f"{nm_medication}: section start not found (functionality).")
+            return ""
+
+        start_index = begin_match.end()
+        remaining_text = text[start_index:]
+
+        end_match = re.search(end_pattern, remaining_text)
+        if not end_match:
+            print(f"{nm_medication}: section end not found (functionality). Trying generic section delimiter...")
+            fallback_end = re.search(r"(?i)^\d+\s*[-–]?\s+", remaining_text)
+            if fallback_end:
+                return remaining_text[:fallback_end.start()].strip()
+            else:
+                return remaining_text.strip()
+
+        ds_functionality = remaining_text[:end_match.start()].strip()
+        return ds_functionality
+
+    except Exception as e:
+        print(f"Error extracting functionality ({nm_medication}): {e}")
+        return ""
 
 
 def read_extract_leaflet_indication(id_medication, nm_medication, drug_leaflet_text):
@@ -184,6 +217,7 @@ def read_extract_leaflet_indication(id_medication, nm_medication, drug_leaflet_t
             index_begin = re.search(begin_pattern[i], drug_leaflet_text)
             if flag_last:
                 index_begin = find_pattern_last_occurrence(begin_pattern[i], drug_leaflet_text)
+                print ("index_begin = ", index_begin)
 
             if index_begin:
                break
@@ -197,18 +231,23 @@ def read_extract_leaflet_indication(id_medication, nm_medication, drug_leaflet_t
                     break
                 else:
                     break
-                     
-        if index_begin and index_end:
-           # Extract the indication section
-           ds_indication = drug_leaflet_text[index_begin.end():index_end.start()].rstrip()
-    
-           # Remove "2." from the end of the string, if present
-           if ds_indication.endswith("2."):
-              # Remove the last 2 characters and trim whitespace
-              ds_indication = ds_indication[:-2]
+                
+        if index_begin and index_end and index_begin.end() < index_end.start():
+            ds_indication = drug_leaflet_text[index_begin.end():index_end.start()].rstrip()
+            if ds_indication.endswith("2."):
+                ds_indication = ds_indication[:-2].strip()
+        elif index_begin:
+            print(f"[Fallback] End of indication section not found for {nm_medication}. Trying generic section delimiter...")
+            text_after_start = drug_leaflet_text[index_begin.end():]
+            fallback_end = re.search(r"(?i)^\d+\s*[-–]?\s+", text_after_start)
+            if fallback_end:
+                ds_indication = text_after_start[:fallback_end.start()].strip()
+            else:
+                ds_indication = text_after_start.strip()
         else:
-           ds_indication = ""    
-            
+            print(f"[Fallback] Beginning of indication section not found for {nm_medication}.")
+            ds_indication = ""
+           
     except ValueError as e:
         ds_indication = ""
         print("Error reading leaflet: ", e)
@@ -219,17 +258,20 @@ def read_extract_leaflet_indication(id_medication, nm_medication, drug_leaflet_t
 def load_df_session(df_drug_leaflet):
     # Extract indications from leaflet texts and store them in a DataFrame.
     df_session = pd.DataFrame(columns=['id_medication', 'ds_indication', 
-                                               'ds_precaution'])
+                                       'ds_precaution', 'ds_functionality'])
     for index, row in df_drug_leaflet.iterrows():
         id_medication = row['id_medication']
         nm_medication = row['nm_medication']
         ds_drug_leaflet_full = row['ds_drug_leaflet_full']
         ds_indication = ''
+        ds_functionality = ''
         ds_precaution = ''
 
+        print (f"Extracting section from medication {id_medication} {nm_medication} ")
         ds_indication = read_extract_leaflet_indication(id_medication, nm_medication, ds_drug_leaflet_full)
         ds_precaution = read_extract_leaflet_precaution(id_medication, nm_medication, ds_drug_leaflet_full)
-        df_session.loc[index] = [id_medication, ds_indication, ds_precaution]
+        ds_functionality = read_extract_leaflet_functionality(id_medication, nm_medication, ds_drug_leaflet_full)
+        df_session.loc[index] = [id_medication, ds_indication, ds_precaution, ds_functionality]
 
     return df_session
 
@@ -243,7 +285,6 @@ def read_and_store_drug_leaflets(cnx, cursor):
             "INNER JOIN healdb.hd_medication m ON d.id_medication = m.id_medication "
             "WHERE LENGTH(CAST(d.ds_drug_leaflet_full AS CHAR)) >= 10 "
             "AND d.ds_drug_leaflet_file != 'ERRO' "
-            #"AND d.id_medication in (300) "
         )
         cursor.execute(sql_command)
         registers = cursor.fetchall()
@@ -269,7 +310,8 @@ def extract_leaflet_sections(cnx, cursor):
     # 1. Read drug leaflets.
     # 2. Extract "indication" section.
     # 3. Extract "precaution" section.
-    # 3. Update the drug leaflet repository.
+    # 4. Extract "functionality" section.
+    # 5. Update the drug leaflet repository.
     
     print("Reading leaflets from the repository...")
     df_drug_leaflet = read_and_store_drug_leaflets(cnx, cursor)

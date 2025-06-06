@@ -1,0 +1,592 @@
+{
+  "Entities": [
+    {
+      "Id": 8,
+      "Text": "skin conditions",
+      "Category": "MEDICAL_CONDITION",
+      "Type": "DX_NAME",
+      "Score": 0.8617406487464905,
+      "BeginOffset": 126,
+      "EndOffset": 141,
+      "Attributes": [
+        {
+          "Type": "QUALITY",
+          "Score": 0.5330596566200256,
+          "RelationshipScore": 0.5068173408508301,
+          "Id": 4,
+          "BeginOffset": 92,
+          "EndOffset": 104,
+          "Text": "inflammatory",
+          "Traits": []
+        },
+        {
+          "Type": "QUALITY",
+          "Score": 0.7172441482543945,
+          "RelationshipScore": 0.7223333120346069,
+          "Id": 5,
+          "BeginOffset": 109,
+          "EndOffset": 117,
+          "Text": "pruritic",
+          "Traits": []
+        },
+        {
+          "Type": "QUALITY",
+          "Score": 0.7172441482543945,
+          "RelationshipScore": 0.7223333120346069,
+          "Id": 6,
+          "BeginOffset": 119,
+          "EndOffset": 124,
+          "Text": "itchy",
+          "Traits": []
+        },
+        {
+          "Type": "SYSTEM_ORGAN_SITE",
+          "Score": 0.8435389995574951,
+          "RelationshipScore": 0.8386837244033813,
+          "Id": 7,
+          "BeginOffset": 126,
+          "EndOffset": 130,
+          "Text": "skin",
+          "Traits": []
+        }
+      ],
+      "Traits": [
+        {
+          "Name": "DIAGNOSIS",
+          "Score": 0.47435709834098816
+        }
+      ],
+      "ICD10CMConcepts": [
+        {
+          "Description": "Disorder of the skin and subcutaneous tissue, unspecified",
+          "Code": "L98.9",
+          "Score": 0.9427513480186462
+        },
+        {
+          "Description": "Unspecified skin changes",
+          "Code": "R23.9",
+          "Score": 0.8286503553390503
+        },
+        {
+          "Description": "Other specified disorders of the skin and subcutaneous tissue",
+          "Code": "L98.8",
+          "Score": 0.810448408126831
+        },
+        {
+          "Description": "Other skin changes",
+          "Code": "R23.8",
+          "Score": 0.8033667206764221
+        },
+        {
+          "Description": "Other disorders of skin and subcutaneous tissue, not elsewhere classified",
+          "Code": "L98",
+          "Score": 0.7986736297607422
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "Text": "eczema",
+      "Category": "MEDICAL_CONDITION",
+      "Type": "DX_NAME",
+      "Score": 0.90631103515625,
+      "BeginOffset": 153,
+      "EndOffset": 159,
+      "Attributes": [],
+      "Traits": [
+        {
+          "Name": "DIAGNOSIS",
+          "Score": 0.6768204569816589
+        }
+      ],
+      "ICD10CMConcepts": [
+        {
+          "Description": "Dermatitis, unspecified",
+          "Code": "L30.9",
+          "Score": 0.8176023364067078
+        },
+        {
+          "Description": "Radiodermatitis, unspecified",
+          "Code": "L58.9",
+          "Score": 0.495246022939682
+        },
+        {
+          "Description": "Other specified dermatitis",
+          "Code": "L30.8",
+          "Score": 0.4675331115722656
+        },
+        {
+          "Description": "Atopic dermatitis, unspecified",
+          "Code": "L20.9",
+          "Score": 0.454832524061203
+        },
+        {
+          "Description": "Unspecified contact dermatitis, unspecified cause",
+          "Code": "L25.9",
+          "Score": 0.4445110559463501
+        }
+      ]
+    },
+    {
+      "Id": 10,
+      "Text": "lesions",
+      "Category": "MEDICAL_CONDITION",
+      "Type": "DX_NAME",
+      "Score": 0.8921527862548828,
+      "BeginOffset": 161,
+      "EndOffset": 168,
+      "Attributes": [
+        {
+          "Type": "SYSTEM_ORGAN_SITE",
+          "Score": 0.6603351831436157,
+          "RelationshipScore": 0.6270833611488342,
+          "Id": 11,
+          "BeginOffset": 172,
+          "EndOffset": 182,
+          "Text": "skin folds",
+          "Traits": []
+        },
+        {
+          "Type": "QUALITY",
+          "Score": 0.5971075296401978,
+          "RelationshipScore": 0.5068173408508301,
+          "Id": 12,
+          "BeginOffset": 183,
+          "EndOffset": 209,
+          "Text": "with itching and discharge",
+          "Traits": []
+        }
+      ],
+      "Traits": [
+        {
+          "Name": "DIAGNOSIS",
+          "Score": 0.47435709834098816
+        }
+      ],
+      "ICD10CMConcepts": [
+        {
+          "Description": "Disorder of the skin and subcutaneous tissue, unspecified",
+          "Code": "L98.9",
+          "Score": 0.8564430475234985
+        },
+        {
+          "Description": "Other specified disorders of the skin and subcutaneous tissue",
+          "Code": "L98.8",
+          "Score": 0.5380077362060547
+        },
+        {
+          "Description": "Other disorders of skin and subcutaneous tissue, not elsewhere classified",
+          "Code": "L98",
+          "Score": 0.4310779571533203
+        },
+        {
+          "Description": "Other skin changes",
+          "Code": "R23.8",
+          "Score": 0.42107003927230835
+        },
+        {
+          "Description": "Atrophic disorder of skin, unspecified",
+          "Code": "L90.9",
+          "Score": 0.4025636911392212
+        }
+      ]
+    },
+    {
+      "Id": 13,
+      "Text": "seborrheic dermatitis",
+      "Category": "MEDICAL_CONDITION",
+      "Type": "DX_NAME",
+      "Score": 0.7172441482543945,
+      "BeginOffset": 212,
+      "EndOffset": 233,
+      "Attributes": [],
+      "Traits": [
+        {
+          "Name": "DIAGNOSIS",
+          "Score": 0.47435709834098816
+        }
+      ],
+      "ICD10CMConcepts": [
+        {
+          "Description": "Seborrheic dermatitis, unspecified",
+          "Code": "L21.9",
+          "Score": 0.9789420366287231
+        },
+        {
+          "Description": "Other seborrheic dermatitis",
+          "Code": "L21.8",
+          "Score": 0.9416135549545288
+        },
+        {
+          "Description": "Seborrheic dermatitis",
+          "Code": "L21",
+          "Score": 0.9156976342201233
+        },
+        {
+          "Description": "Seborrheic keratosis",
+          "Code": "L82",
+          "Score": 0.8261690139770508
+        },
+        {
+          "Description": "Seborrheic infantile dermatitis",
+          "Code": "L21.1",
+          "Score": 0.8143223524093628
+        }
+      ]
+    },
+    {
+      "Id": 16,
+      "Text": "lesions",
+      "Category": "MEDICAL_CONDITION",
+      "Type": "DX_NAME",
+      "Score": 0.90631103515625,
+      "BeginOffset": 250,
+      "EndOffset": 257,
+      "Attributes": [
+        {
+          "Type": "QUALITY",
+          "Score": 0.5971075296401978,
+          "RelationshipScore": 0.5692254304885864,
+          "Id": 14,
+          "BeginOffset": 235,
+          "EndOffset": 242,
+          "Text": "reddish",
+          "Traits": []
+        },
+        {
+          "Type": "QUALITY",
+          "Score": 0.5971075296401978,
+          "RelationshipScore": 0.6270833611488342,
+          "Id": 15,
+          "BeginOffset": 244,
+          "EndOffset": 249,
+          "Text": "moist",
+          "Traits": []
+        },
+        {
+          "Type": "SYSTEM_ORGAN_SITE",
+          "Score": 0.5971075296401978,
+          "RelationshipScore": 0.6270833611488342,
+          "Id": 18,
+          "BeginOffset": 279,
+          "EndOffset": 283,
+          "Text": "face",
+          "Traits": []
+        },
+        {
+          "Type": "SYSTEM_ORGAN_SITE",
+          "Score": 0.90631103515625,
+          "RelationshipScore": 0.8672217726707458,
+          "Id": 19,
+          "BeginOffset": 287,
+          "EndOffset": 291,
+          "Text": "neck",
+          "Traits": []
+        }
+      ],
+      "Traits": [
+        {
+          "Name": "DIAGNOSIS",
+          "Score": 0.6248409748077393
+        }
+      ],
+      "ICD10CMConcepts": [
+        {
+          "Description": "Disorder of the skin and subcutaneous tissue, unspecified",
+          "Code": "L98.9",
+          "Score": 0.9139172434806824
+        },
+        {
+          "Description": "Unspecified lesions of oral mucosa",
+          "Code": "K13.70",
+          "Score": 0.6241109371185303
+        },
+        {
+          "Description": "Other specified disorders of the skin and subcutaneous tissue",
+          "Code": "L98.8",
+          "Score": 0.6194506287574768
+        },
+        {
+          "Description": "Other seborrheic dermatitis",
+          "Code": "L21.8",
+          "Score": 0.6175306439399719
+        },
+        {
+          "Description": "Seborrheic dermatitis, unspecified",
+          "Code": "L21.9",
+          "Score": 0.6107318997383118
+        }
+      ]
+    },
+    {
+      "Id": 17,
+      "Text": "discharge",
+      "Category": "MEDICAL_CONDITION",
+      "Type": "DX_NAME",
+      "Score": 0.8617406487464905,
+      "BeginOffset": 200,
+      "EndOffset": 209,
+      "Attributes": [],
+      "Traits": [
+        {
+          "Name": "HYPOTHETICAL",
+          "Score": 0.47435709834098816
+        },
+        {
+          "Name": "SYMPTOM",
+          "Score": 0.9013108015060425
+        }
+      ],
+      "ICD10CMConcepts": [
+        {
+          "Description": "Disorder of the skin and subcutaneous tissue, unspecified",
+          "Code": "L98.9",
+          "Score": 0.7483601570129395
+        },
+        {
+          "Description": "Other skin changes",
+          "Code": "R23.8",
+          "Score": 0.6663797497749329
+        },
+        {
+          "Description": "Other specified local infections of the skin and subcutaneous tissue",
+          "Code": "L08.89",
+          "Score": 0.6328786611557007
+        },
+        {
+          "Description": "Other specified disorders of the skin and subcutaneous tissue",
+          "Code": "L98.8",
+          "Score": 0.6321896910667419
+        },
+        {
+          "Description": "Local infection of the skin and subcutaneous tissue, unspecified",
+          "Code": "L08.9",
+          "Score": 0.5910180807113647
+        }
+      ]
+    },
+    {
+      "Id": 20,
+      "Text": "neurodermatitis",
+      "Category": "MEDICAL_CONDITION",
+      "Type": "DX_NAME",
+      "Score": 0.9201511740684509,
+      "BeginOffset": 298,
+      "EndOffset": 313,
+      "Attributes": [],
+      "Traits": [
+        {
+          "Name": "HYPOTHETICAL",
+          "Score": 0.8203471899032593
+        },
+        {
+          "Name": "DIAGNOSIS",
+          "Score": 0.779019296169281
+        }
+      ],
+      "ICD10CMConcepts": [
+        {
+          "Description": "Atopic neurodermatitis",
+          "Code": "L20.81",
+          "Score": 0.5783458352088928
+        },
+        {
+          "Description": "Radiodermatitis, unspecified",
+          "Code": "L58.9",
+          "Score": 0.5563430786132812
+        },
+        {
+          "Description": "Seborrheic dermatitis, unspecified",
+          "Code": "L21.9",
+          "Score": 0.5012941360473633
+        },
+        {
+          "Description": "Dermatitis, unspecified",
+          "Code": "L30.9",
+          "Score": 0.4720483422279358
+        },
+        {
+          "Description": "Chronic inflammatory demyelinating polyneuritis",
+          "Code": "G61.81",
+          "Score": 0.4704800248146057
+        }
+      ]
+    },
+    {
+      "Id": 24,
+      "Text": "skin lesions",
+      "Category": "MEDICAL_CONDITION",
+      "Type": "DX_NAME",
+      "Score": 0.7950295805931091,
+      "BeginOffset": 333,
+      "EndOffset": 345,
+      "Attributes": [
+        {
+          "Type": "QUALITY",
+          "Score": 0.7613970637321472,
+          "RelationshipScore": 0.7552722692489624,
+          "Id": 21,
+          "BeginOffset": 315,
+          "EndOffset": 318,
+          "Text": "dry",
+          "Traits": []
+        },
+        {
+          "Type": "QUALITY",
+          "Score": 0.821601390838623,
+          "RelationshipScore": 0.8219892978668213,
+          "Id": 22,
+          "BeginOffset": 320,
+          "EndOffset": 332,
+          "Text": "well-defined",
+          "Traits": []
+        },
+        {
+          "Type": "SYSTEM_ORGAN_SITE",
+          "Score": 0.7950295805931091,
+          "RelationshipScore": 0.8031880259513855,
+          "Id": 23,
+          "BeginOffset": 333,
+          "EndOffset": 337,
+          "Text": "skin",
+          "Traits": []
+        }
+      ],
+      "Traits": [
+        {
+          "Name": "HYPOTHETICAL",
+          "Score": 0.8203471899032593
+        },
+        {
+          "Name": "SIGN",
+          "Score": 0.6768204569816589
+        }
+      ],
+      "ICD10CMConcepts": [
+        {
+          "Description": "Disorder of the skin and subcutaneous tissue, unspecified",
+          "Code": "L98.9",
+          "Score": 0.912685751914978
+        },
+        {
+          "Description": "Other specified disorders of the skin and subcutaneous tissue",
+          "Code": "L98.8",
+          "Score": 0.5939727425575256
+        },
+        {
+          "Description": "Other disorders of skin and subcutaneous tissue, not elsewhere classified",
+          "Code": "L98",
+          "Score": 0.5291199088096619
+        },
+        {
+          "Description": "Dermatitis, unspecified",
+          "Code": "L30.9",
+          "Score": 0.44784700870513916
+        },
+        {
+          "Description": "Other hypertrophic disorders of the skin",
+          "Code": "L91.8",
+          "Score": 0.44639289379119873
+        }
+      ]
+    },
+    {
+      "Id": 29,
+      "Text": "itching",
+      "Category": "MEDICAL_CONDITION",
+      "Type": "DX_NAME",
+      "Score": 0.7172441482543945,
+      "BeginOffset": 484,
+      "EndOffset": 491,
+      "Attributes": [],
+      "Traits": [
+        {
+          "Name": "SYMPTOM",
+          "Score": 0.7299559712409973
+        }
+      ],
+      "ICD10CMConcepts": [
+        {
+          "Description": "Pruritus, unspecified",
+          "Code": "L29.9",
+          "Score": 0.7402514219284058
+        },
+        {
+          "Description": "Other pruritus",
+          "Code": "L29.8",
+          "Score": 0.1762397587299347
+        },
+        {
+          "Description": "Other prurigo",
+          "Code": "L28.2",
+          "Score": 0.17445752024650574
+        },
+        {
+          "Description": "Adverse effect of other nonsteroidal anti-inflammatory drugs [NSAID], initial encounter",
+          "Code": "T39.395A",
+          "Score": 0.15014950931072235
+        },
+        {
+          "Description": "Pruritus ani",
+          "Code": "L29.0",
+          "Score": 0.14987713098526
+        }
+      ]
+    },
+    {
+      "Id": 30,
+      "Text": "inflammation symptoms",
+      "Category": "MEDICAL_CONDITION",
+      "Type": "DX_NAME",
+      "Score": 0.5971075296401978,
+      "BeginOffset": 496,
+      "EndOffset": 517,
+      "Attributes": [],
+      "Traits": [
+        {
+          "Name": "SYMPTOM",
+          "Score": 0.5752319693565369
+        }
+      ],
+      "ICD10CMConcepts": [
+        {
+          "Description": "Other general symptoms and signs",
+          "Code": "R68.89",
+          "Score": 0.5648168325424194
+        },
+        {
+          "Description": "Symptoms and signs specifically associated with systemic inflammation and infection",
+          "Code": "R65",
+          "Score": 0.5096805095672607
+        },
+        {
+          "Description": "Other inflammatory and immune myopathies, not elsewhere classified",
+          "Code": "G72.49",
+          "Score": 0.4919850528240204
+        },
+        {
+          "Description": "Nonspecific lymphadenitis, unspecified",
+          "Code": "I88.9",
+          "Score": 0.3972732722759247
+        },
+        {
+          "Description": "Adverse effect of local antifungal, anti-infective and anti-inflammatory drugs, initial encounter",
+          "Code": "T49.0X5A",
+          "Score": 0.3970695734024048
+        }
+      ]
+    }
+  ],
+  "ModelVersion": "3.0.0.20231001",
+  "ResponseMetadata": {
+    "RequestId": "07a87d1f-1bb1-4db0-8d5b-99602e1b4c94",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "x-amzn-requestid": "07a87d1f-1bb1-4db0-8d5b-99602e1b4c94",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "9794",
+      "date": "Tue, 27 May 2025 12:25:17 GMT"
+    },
+    "RetryAttempts": 0
+  }
+}

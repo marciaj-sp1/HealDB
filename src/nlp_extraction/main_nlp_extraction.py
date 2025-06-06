@@ -7,11 +7,12 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.append(str(PROJECT_ROOT))
 
 from db_utils import open_connection, close_connection
-from src.nlp_extraction.extract_leaflet_sections import extract_leaflet_sections
-from src.nlp_extraction.translate_leaflet_indication import translate_leaflet_indication
-from src.nlp_extraction.extract_diseases_from_indications import extract_diseases_from_indications
-from src.nlp_extraction.process_disease_data_json import process_disease_data_json
+#from src.nlp_extraction.extract_leaflet_sections import extract_leaflet_sections
+#from src.nlp_extraction.translate_leaflet_sections import translate_leaflet_sections
+#from src.nlp_extraction.extract_diseases_from_indications import extract_diseases_from_indications
+#from src.nlp_extraction.process_disease_data_json import process_disease_data_json
 from src.nlp_extraction.link_medications_with_diseases import link_medications_with_diseases
+
 
 
 def log_execution_time(func_name, start_time, end_time):
@@ -38,10 +39,10 @@ def main():
 
         # Create repositories and measure execution time
         for func, func_name in [
-            (extract_leaflet_sections, "extract_leaflet_sections"),
-            (translate_leaflet_indication, "translate_leaflet_indication"),
-            (extract_diseases_from_indications, "extract_diseases_from_indications"),
-            (process_disease_data_json, "process_disease_data_json"),
+            #(extract_leaflet_sections, "extract_leaflet_sections"),
+            #(translate_leaflet_sections, "translate_leaflet_sections"),
+            #(extract_diseases_from_indications, "extract_diseases_from_indications"),
+            #(process_disease_data_json, "process_disease_data_json"),
             (link_medications_with_diseases, "link_medications_with_diseases")
         ]:
             start_time = datetime.now()

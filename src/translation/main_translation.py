@@ -13,7 +13,7 @@ from src.translation.import_translated_active_ingredients_meta import import_tra
 from src.translation.validate_translation_and_link_active_ing import validate_translation_and_link_active_ing
 from src.translation.translate_drug_interactions import translate_drug_interactions
 from src.translation.translate_food_interactions import translate_food_interactions
-
+from src.translation.translate_disease_descriptions import translate_disease_descriptions
 
 def log_execution_time(func_name, start_time, end_time):
     # Logs the time taken for a specific function to execute.
@@ -43,7 +43,8 @@ def main():
             (import_translated_active_ingredients_meta, "import_translated_active_ingredients_meta"),
             (validate_translation_and_link_active_ing, "validate_translation_and_link_active_ing"),
             (translate_drug_interactions, "translate_drug_interactions"),
-            (translate_food_interactions, "translate_food_interactions")            
+            (translate_food_interactions, "translate_food_interactions"),
+            (translate_disease_descriptions, "translate_disease_descriptions")                   
         ]:
             start_time = datetime.now()
             func(cnx, cursor)  # Execute the function

@@ -52,13 +52,17 @@ C:\project
     │   │   │   ├── healdb_hd_therapeutic_class.sql
     │   │   │   ├── healdb_hd_type_ext_id.sql
     │   │   │   ├── ddls_summary.xlsx
+    │   │   ├── icd_eng
+    │   │   │   └── blocks.txt
+    │   │   │   └── categories.txt
+    │   │   │   └── chatpters.txt  
     │   │   ├── ontologies
     │   │   │   └── ATC.ttl   # RDF Schema ATC
     │   │   │   └── chebi.owl   # RDF Schema CHEBI
+    │   │   │   └── healdb_mini.owl   # RDF Schema subset HealDB
     │   │   │   └── pc_cooccurrence_chemical_and_disease_000001.ttl # RDF Schema PUBCHEM Chemical  
     │   │   │   └── pc_cooccurrence_chemical_and_disease_000002.ttl # RDF Schema PUBCHEM Chemical  
     │   │   │   └── pc_cooccurrence_chemical_and_disease_000003.ttl # RDF Schema PUBCHEM Chemical 
-    │   │   │   └── healdb_mini.owl   # RDF Schema subset HealDB
     │   │   │   └── pc_disease.ttl    # RDF Schema PUBCHEM Diseases
     │   ├── output
     │   │   ├── downloadBulas
@@ -93,7 +97,9 @@ C:\project
     │
     ├── doc
     ├── logs
-    ├── tests
+    ├── notebooks
+    │   ├── exploracao_healdb_completa.ypynb  # Notebook para exploração da base HealDB
+    │   ├── exploracao_healdb_completa.html   # Visualização da exploração da base HealDB
     ├── src
     │   ├── rdf_schema
     │   │   ├── __init__.py
@@ -106,19 +112,19 @@ C:\project
     │   │   ├── main_interoperability.py
     │   │   ├── linking
     │   │   │   ├── __init__.py
-    │   │   │   ├── import_dcb_data.py
-    │   │   │   ├── populate_external_ids_types.py
     │   │   │   ├── external_ids_insert.py
-    │   │   │   ├── link_cas_to_active_ing.py
-    │   │   │   ├── link_rxcui_to_active_ing.py
-    │   │   │   ├── link_rxcui_related_ids_to_active_ing.py
-    │   │   │   ├── link_wikidata_ids_to_wrk_table.py
-    │   │   │   ├── link_kegg_related_ids_to_active_ing.py
     │   │   │   ├── fill_missing_external_ids.py
+    │   │   │   ├── import_dcb_data.py
+    │   │   │   ├── link_cas_to_active_ing.py
+    │   │   │   ├── link_kegg_related_ids_to_active_ing.py
+    │   │   │   ├── link_rxcui_related_ids_to_active_ing.py
+    │   │   │   ├── link_rxcui_to_active_ing.py
+    │   │   │   ├── link_wikidata_ids_to_wrk_table.py
+    │   │   │   ├── populate_external_ids_types.py
     │   │   ├── usecases
     │   │   │   ├── __init__.py
     │   │   │   ├── _attempts
-    │   │   │   │   ├── iiucn_export_conservation_status_r.r #IUCN integration using R
+    │   │   │   │   ├── iiucn_export_conservation_status_r.r
     │   │   │   │   ├── pubchem_disease_mesh_query.txt    # SPARQL query for PubChem Disease Mesh
     │   │   │   │   ├── pubchem_disease_query.txt         # SPARQL query for PUBchem Disease
     │   │   │   │   ├── pubchem_mesh_ids_query.txt        # SPARQL query for PUBChem Mesh
@@ -134,10 +140,10 @@ C:\project
     │   │   ├── __init__.py
     │   │   ├── main_nlp_extraction.py
     │   │   ├── extract_leaflet_sections.py
-    │   │   ├── translate_leaflet_indication.py
     │   │   ├── extract_diseases_from_indications.py
-    │   │   ├── process_disease_data_json.py
     │   │   ├── link_medications_with_diseases.py
+    │   │   ├── process_disease_data_json.py
+    │   │   ├── translate_leaflet_section.py
     │
     │   ├── repositories
     │   │   ├── __init__.py
@@ -153,9 +159,11 @@ C:\project
     │   ├── translation
     │   │   ├── __init__.py
     │   │   ├── main_translation.py
+    │   │   ├── import_translated_active_ingredients_meta.py
+    │   │   ├── import_translated_active_ingredients_meta.py
     │   │   ├── translate_active_ingredients.py
     │   │   ├── translate_active_ingredients_meta.ipynb
-    │   │   ├── import_translated_active_ingredients_meta.py
+    │   │   ├── translate_disease_descriptions.py
     │   │   ├── translate_drug_interactions.py
     │   │   ├── translate_food_interactions.py
     │   │   ├── validate_translation_and_link_active_ing.py
@@ -164,7 +172,7 @@ C:\project
     │   │   ├── __init__.py
     │   │   ├── main_webcrawler.py
     │   │   ├── webcrawler_leaflet.py
-    │
+    ├── tests
     ├── requirements.txt
     ├── config.py
     ├── db_utils.py
@@ -184,6 +192,30 @@ C:\project
    * Linking: Associates active ingredients with standardized external identifiers (e.g., RxCUI, CAS, KEGG, PubChem, Wikidata).
    * Use Cases: Demonstrates how external identifiers can be used to extract insights from biomedical ontologies and 
 data sources (e.g., ChEBI, IUCN, PubChem, ATC, RxNorm, ClinicalTrials.gov).
+   
+
+## Exploratory Analysis Notebook
+
+- **Purpose**: Interactive notebook for exploratory analysis of HealDB data. 
+Provides an overview of the database structure and content through visualizations and key questions.
+- **Key Features**:  
+  - Presents visual summaries (e.g., bar charts, treemaps) using `matplotlib`, `pandas`, and `seaborn`, 
+  based on HealDB data.  
+  - Answers analytical questions about medications, active ingredients, and diseases.  
+  - Helps verify relationships between medications, diseases, and interactions. 
+  - Summarizes key findings from the analyses.
+
+- **Questions addressed in the notebook include**:  
+  - What are the most common active ingredients across medications?  
+  - Which medications treat the greatest number of diseases or symptoms?  
+  - What are the most frequent disease categories treated by the medications?  
+  - How are medications distributed across therapeutic classes?  
+  - What are the top diseases with the highest number of associated medications?  
+  - What are the most frequent food or drug interactions?  
+  - Which active ingredients have the highest number of interactions?  
+  - What is the distribution of ICD codes in medication associations?  
+  - How complete is the linkage between active ingredients and external identifiers?
+
 ## How to Run
 ### Requirements
 1. Install Python 3.9+.
@@ -216,6 +248,8 @@ Key components include:
 
 - **`bulas/`**: Drug leaflet files organized by regulatory category (e.g., generic, herbal medicine).
 - **`ddls/`**: SQL DDL files representing HealDB table structures, used to generate the RDF schema.
+- **`icd_eng/`**: ICD English files extracted from WHO, used as reference for the English descriptions of groups,
+categories and chapters. (`blocks.txt`, `categories.txt`, `chapters.txt`)
 - **`ontologies/`**: External biomedical ontologies used in interoperability (e.g., `chebi.owl`, `atc.ttl`) and a subset of the HealDB RDF schema (e.g., `healdb_mini.ttl`).
 
 These files serve as the foundational datasets for web crawling, creation of repositories, natural language processing, 
@@ -364,6 +398,17 @@ Scripts for translating data and validating translations.
     - Stores the final translation (manual if available, otherwise automatic).
     - Links active ingredients in Portuguese to corresponding DrugBank drugs in English, enabling the capture of related drug interactions.
 
+- **`translate_disease_descriptions.py`**  
+  - Purpose: Updates the English descriptions of ICD-10 disease groups, categories, and subcategories in HealDB using 
+  WHO reference files and GPT-4 translation when necessary. This supports multilingual access and improves 
+  international interoperability.
+  - Key Processes:
+    - Loads ICD-10 English descriptions from official WHO CSV files (blocks.txt, categories.txt) and populates
+    `ds_group_eng`, `ds_cat_eng`, and `ds_subcat_eng`.
+    - For ICDs not found in the reference files, translates the Portuguese descriptions into English using the OpenAI GPT-4 API.
+    - For subcategory translations, more context are provided, passing to the API the category translations when available.
+    - The translations are stored in the HealDB tables: `hd_icd_group`, `hd_icd_category`, and `hd_icd_subcategory`. 
+
 ## **NLP Extraction**
 Scripts for extracting data using NLP techniques.
 
@@ -413,13 +458,16 @@ Scripts for extracting data using NLP techniques.
 
 
 - **`link_medications_with_diseases.py`**  
-  - Purpose: Links medications with corresponding diseases using 
-  ICD codes identified by Amazon Comprehend Medical from drug indication 
-  text analysis.
+  - Purpose: Links medications with corresponding diseases using ICD codes identified by Amazon Comprehend Medical
+  from drug indication text analysis.
   - Key Processes:
-    - Filters ICD data based on confidence scores (>0.7) with additional conditions for lower scores.
-    - Links extracted ICD codes to existing categories and subcategories in the HealDB ICD repository.
-    - Updates the new medication-disease mapping table to reflect advanced research findings.
+    - Filters ICD codes by confidence (≥ 0.6) and excludes irrelevant or uncertain traits.
+    - Validates that codes exist in HealDB’s ICD category or subcategory tables.
+    - Selects the main trait (e.g., DIAGNOSIS, SYMPTOM) based on highest score and stores it.
+    - Adds fallback logic for ICDs with valid category prefixes (three first characters) even 
+    if subcategory is missing.
+    - Flags links with low confidence (< 0.7) to support further analysis.
+    - Updates the medication-disease mapping table to reflect advanced research findings.
 
 
 ## **Interoperability**
@@ -558,6 +606,7 @@ Results for these use cases are available in the `Output` section.
     - Queries the ClinicalTrials.gov v2 API using the English name of each active ingredient.
     - Retrieves NCT ID, study title, conditions, interventions, and outcome measures.
     - Inserts data into a working table and exports it as CSV and JSON grouped by active ingredient.
+    
 ### Use Case Attempts (Experimental)
 
 These exploratory use cases were implemented and tested but ultimately not incorporated into HealDB due to data quality 

@@ -1,6 +1,7 @@
 # db_utils.py
 
 import mysql.connector
+from sqlalchemy import create_engine
 
 def open_connection():
     # Open a connection to the MySQL database.
@@ -18,6 +19,7 @@ def open_connection():
     except mysql.connector.Error as e:
         print(f"Error connecting to the database: {e}")
         raise
+    return
 
 def close_connection(cnx, cursor):
     # Close the connection to the MySQL database.
@@ -26,3 +28,27 @@ def close_connection(cnx, cursor):
         cursor.close()
     if cnx:
         cnx.close()
+    return
+
+def open_connection_alchemy():
+    # Open a connection to the MySQL database using the library sqlalchemy
+   
+    try:
+        host="127.0.0.1"
+        port="3306"   
+        user="root"
+        password="root"
+        database="healdb"
+        
+        connection_string = f"mysql+pymysql://{user}:{password}@{host}:{port}/{database}"
+        engine = create_engine(connection_string)
+        return engine
+    except Exception as e:
+        print(f"Erro ao conectar via SQLAlchemy: {e}")
+        raise
+
+def close_connection_alchemy(engine):
+    # Close the engine to SQLAlchemy, releasing the connection pool
+    if engine:
+        engine.dispose()
+    return

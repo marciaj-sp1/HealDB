@@ -40,13 +40,17 @@ C:\project
     │   │   │   ├── healdb_hd_therapeutic_class.sql
     │   │   │   ├── healdb_hd_type_ext_id.sql
     │   │   │   ├── ddls_summary.xlsx
+    │   │   ├── icd_eng
+    │   │   │   └── blocks.txt
+    │   │   │   └── categories.txt
+    │   │   │   └── chatpters.txt  
     │   │   ├── ontologies
     │   │   │   └── ATC.ttl   # RDF Schema ATC
     │   │   │   └── chebi.owl   # RDF Schema CHEBI
+    │   │   │   └── healdb_mini.owl   # RDF Schema subset HealDB
     │   │   │   └── pc_cooccurrence_chemical_and_disease_000001.ttl # RDF Schema PUBCHEM Chemical  
     │   │   │   └── pc_cooccurrence_chemical_and_disease_000002.ttl # RDF Schema PUBCHEM Chemical  
     │   │   │   └── pc_cooccurrence_chemical_and_disease_000003.ttl # RDF Schema PUBCHEM Chemical 
-    │   │   │   └── healdb_mini.owl   # RDF Schema subset HealDB
     │   │   │   └── pc_disease.ttl    # RDF Schema PUBCHEM Diseases
     │   ├── output
     │   │   ├── downloadBulas
@@ -81,7 +85,9 @@ C:\project
     │
     ├── doc
     ├── logs
-    ├── tests
+    ├── notebooks
+    │   ├── exploracao_healdb_completa.ypynb  # Notebook para exploração da base HealDB
+    │   ├── exploracao_healdb_completa.html   # Visualização da exploração da base HealDB
     ├── src
     │   ├── rdf_schema
     │   │   ├── __init__.py
@@ -94,15 +100,15 @@ C:\project
     │   │   ├── main_interoperability.py
     │   │   ├── linking
     │   │   │   ├── __init__.py
-    │   │   │   ├── import_dcb_data.py
-    │   │   │   ├── populate_external_ids_types.py
     │   │   │   ├── external_ids_insert.py
-    │   │   │   ├── link_cas_to_active_ing.py
-    │   │   │   ├── link_rxcui_to_active_ing.py
-    │   │   │   ├── link_rxcui_related_ids_to_active_ing.py
-    │   │   │   ├── link_wikidata_ids_to_wrk_table.py
-    │   │   │   ├── link_kegg_related_ids_to_active_ing.py
     │   │   │   ├── fill_missing_external_ids.py
+    │   │   │   ├── import_dcb_data.py
+    │   │   │   ├── link_cas_to_active_ing.py
+    │   │   │   ├── link_kegg_related_ids_to_active_ing.py
+    │   │   │   ├── link_rxcui_related_ids_to_active_ing.py
+    │   │   │   ├── link_rxcui_to_active_ing.py
+    │   │   │   ├── link_wikidata_ids_to_wrk_table.py
+    │   │   │   ├── populate_external_ids_types.py
     │   │   ├── usecases
     │   │   │   ├── __init__.py
     │   │   │   ├── _attempts
@@ -122,10 +128,10 @@ C:\project
     │   │   ├── __init__.py
     │   │   ├── main_nlp_extraction.py
     │   │   ├── extract_leaflet_sections.py
-    │   │   ├── translate_leaflet_indication.py
     │   │   ├── extract_diseases_from_indications.py
-    │   │   ├── process_disease_data_json.py
     │   │   ├── link_medications_with_diseases.py
+    │   │   ├── process_disease_data_json.py
+    │   │   ├── translate_leaflet_section.py
     │
     │   ├── repositories
     │   │   ├── __init__.py
@@ -141,9 +147,11 @@ C:\project
     │   ├── translation
     │   │   ├── __init__.py
     │   │   ├── main_translation.py
+    │   │   ├── import_translated_active_ingredients_meta.py
+    │   │   ├── import_translated_active_ingredients_meta.py
     │   │   ├── translate_active_ingredients.py
     │   │   ├── translate_active_ingredients_meta.ipynb
-    │   │   ├── import_translated_active_ingredients_meta.py
+    │   │   ├── translate_disease_descriptions.py
     │   │   ├── translate_drug_interactions.py
     │   │   ├── translate_food_interactions.py
     │   │   ├── validate_translation_and_link_active_ing.py
@@ -152,7 +160,7 @@ C:\project
     │   │   ├── __init__.py
     │   │   ├── main_webcrawler.py
     │   │   ├── webcrawler_leaflet.py
-    │
+    ├── tests
     ├── requirements.txt
     ├── config.py
     ├── db_utils.py
