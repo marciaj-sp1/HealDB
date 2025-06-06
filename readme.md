@@ -206,15 +206,23 @@ Provides an overview of the database structure and content through visualization
   - Summarizes key findings from the analyses.
 
 - **Questions addressed in the notebook include**:  
-  - What are the most common active ingredients across medications?  
-  - Which medications treat the greatest number of diseases or symptoms?  
-  - What are the most frequent disease categories treated by the medications?  
-  - How are medications distributed across therapeutic classes?  
-  - What are the top diseases with the highest number of associated medications?  
-  - What are the most frequent food or drug interactions?  
-  - Which active ingredients have the highest number of interactions?  
-  - What is the distribution of ICD codes in medication associations?  
-  - How complete is the linkage between active ingredients and external identifiers?
+  - What are the main regulatory category of these medications?
+  - How are medications distributed across therapeutic classes?
+  - Which medications are closest to expiration?
+  - Which companies supply the most medications?
+  - What are the TOP 10 most commonly used active ingredients? 
+  - Which active ingredients are present in the largest number of medications, in decreasing order of occurrence?
+  - Which existing medications contain a certain active ingredient?
+  - What are the TOP 15 most frequent disease categories treated by the medications? 
+  - What are the TOP 15 most frequent disease categories treated by the active ingredients?
+  - What are the average scores by ICD category?
+  - For a specific disease, which are the associated medications and their scores? 
+  - What is the distribution of the association score between the medication and the disease?
+  - Are there drug interactions between two specific active ingredients? 
+  - What are the drug interactions of a given medication?
+  - Does a given medication interact with food?
+  - What are the TOP 20 active ingredients with the highest number of drug interactions, in decreasing order of frequency?
+
 
 ## How to Run
 ### Requirements
