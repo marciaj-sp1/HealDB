@@ -196,32 +196,33 @@ data sources (e.g., ChEBI, IUCN, PubChem, ATC, RxNorm, ClinicalTrials.gov).
 
 ## Exploratory Analysis Notebook
 
-- **Purpose**: Interactive notebook for exploratory analysis of HealDB data. 
-Provides an overview of the database structure and content through visualizations and key questions.
-- **Key Features**:  
-  - Presents visual summaries (e.g., bar charts, treemaps) using `matplotlib`, `pandas`, and `seaborn`, 
-  based on HealDB data.  
-  - Answers analytical questions about medications, active ingredients, and diseases.  
-  - Helps verify relationships between medications, diseases, and interactions. 
-  - Summarizes key findings from the analyses.
+- **`healdb_exploratory_analysis.ipynb`**  
+  - **Purpose**: Interactive notebook for exploratory analysis of HealDB data. 
+  Provides an overview of the database structure and content through visualizations and key questions.
+  - **Key Features**:  
+    - Presents visual summaries (e.g., bar charts, pizzas, dispersion) using `matplotlib`, `pandas`, and `seaborn`, 
+    based on HealDB data.  
+    - Answers analytical questions about medications, active ingredients, and diseases.  
+    - Helps verify relationships between medications, diseases, and interactions. 
+    - Summarizes key findings from the analyses.
 
-- **Questions addressed in the notebook include**:  
-  - What are the main regulatory category of these medications?
-  - How are medications distributed across therapeutic classes?
-  - Which medications are closest to expiration?
-  - Which companies supply the most medications?
-  - What are the TOP 10 most commonly used active ingredients? 
-  - Which active ingredients are present in the largest number of medications, in decreasing order of occurrence?
-  - Which existing medications contain a certain active ingredient?
-  - What are the TOP 15 most frequent disease categories treated by the medications? 
-  - What are the TOP 15 most frequent disease categories treated by the active ingredients?
-  - What are the average scores by ICD category?
-  - For a specific disease, which are the associated medications and their scores? 
-  - What is the distribution of the association score between the medication and the disease?
-  - Are there drug interactions between two specific active ingredients? 
-  - What are the drug interactions of a given medication?
-  - Does a given medication interact with food?
-  - What are the TOP 20 active ingredients with the highest number of drug interactions, in decreasing order of frequency?
+  - **Questions addressed in the notebook include**:  
+    - What are the main regulatory category of these medications?
+    - How are medications distributed across therapeutic classes?
+    - Which medications are closest to expiration?
+    - Which companies supply the most medications?
+    - What are the TOP 10 most commonly used active ingredients? 
+    - Which active ingredients are present in the largest number of medications, in decreasing order of occurrence?
+    - Which existing medications contain a certain active ingredient?
+    - What are the TOP 15 most frequent disease categories treated by the medications? 
+    - What are the TOP 15 most frequent disease categories treated by the active ingredients?
+    - What are the average scores by ICD category?
+    - For a specific disease, which are the associated medications and their scores? 
+    - What is the distribution of the association score between the medication and the disease?
+    - Are there drug interactions between two specific active ingredients? 
+    - What are the drug interactions of a given medication?
+    - Does a given medication interact with food?
+    - What are the TOP 20 active ingredients with the highest number of drug interactions, in decreasing order of frequency?
 
 
 ## How to Run
