@@ -23,12 +23,12 @@ E-mail: m905106@dac.unicamp.br
 # - preferred_name
 # - tty (IN-Ingredient, PIN-Precise Ingredient and others)
 # - status
-# - is_current
-# - release_start_date
-# - release_end_date
+# - status_date
 # - synonyms
 # - clinical_presentations
 # - branded presentations
+
+
 
 import requests
 import json
@@ -52,6 +52,8 @@ def get_rxcui_properties(rxcui):
             data = response.json().get("properties", {})
             rxcui_property["preferred_name"] = data.get("name")
             rxcui_property["tty"] = data.get("tty")
+            rxcui_property["status"] = data.get("status")
+            rxcui_property["status_date"] = data.get("statusDate")
     except Exception as e:
         print (f"Error retrieving properties from RxCUI {rxcui}, {e}")
             
@@ -104,36 +106,6 @@ def get_rxcui_entities(rxcui, types):
 
     return rxcui_related
 
-# Retrieves current status and validity period from RxCUI (status, isCurrent,
-# releaseStartDate and releaseEndDate).
-
-def get_rxcui_status(rxcui):
-    url = RXNORM_API["status_url"].format(rxcui=rxcui)
-    status_info = {
-        "status": None,
-        "is_current": None,
-        "release_start": None,
-        "release_end": None
-    }
-
-    try:
-        response = requests.get(url)
-        if response.status_code == 200:
-            data = response.json()
-            meta = data.get("rxcuiStatusHistory", {}).get("metaData", {})
-            
-            status_info["status"] = meta.get("status")
-            status_info["is_current"] = meta.get("isCurrent")
-            status_info["release_start"] = meta.get("releaseStartDate")
-            status_info["release_end"] = meta.get("releaseEndDate")
-
-        else:
-            print(f"Warning: Status code {response.status_code} for RxCUI {rxcui}")
-    except Exception as e:
-        print(f"Error retrieving status from RxCUI {rxcui}: {e}")
-
-    return status_info
-
 
 
 # Main function that enriches active ingredients from HealDB using RxNorm data.
@@ -166,21 +138,19 @@ def rxnorm_export_enriched_ingredients(cnx, cursor):
         print(f"Processing {id_active_ingredient} - {nm_active_ingredient} (RxCUI {rxcui})")
 
         properties = get_rxcui_properties(rxcui)
-        status_info = get_rxcui_status(rxcui)
         synonyms = get_rxcui_synonyms(rxcui)
         clinical = get_rxcui_entities(rxcui, types=["SCD"])      # retrieves clinical entity
         branded = get_rxcui_entities(rxcui, types=["SBD", "BPCK", "SBDF", "SBDC"]) # retrievs  branded entity
-       
+        
+
         rxnorm_data = {
             "id_active_ingredient": id_active_ingredient,
             "nm_active_ingredient": nm_active_ingredient,
             "cd_rxcui": rxcui,
             "preferred_name": properties.get("preferred_name"),
             "tty": properties.get("tty"),
-            "status": status_info.get("status"),
-            "iscurrent": status_info.get("is_current"),
-            "release_start": status_info.get("release_start"),
-            "release_end": status_info.get("release_end"),
+            "status": properties.get("status"),
+            "status_date": properties.get("status_date"),
             "synonyms": synonyms,
             "clinical_presentations": clinical,
             "branded_presentations": branded

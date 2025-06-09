@@ -599,7 +599,8 @@ Results for these use cases are available in the `Output` section.
   - Purpose: Enriches HealDB active ingredients with RxNorm clinical and pharmacological information.
   - Key Processes:
     - Selects active ingredients with RxCUI.
-    - Retrieves preferred names, TTY, status, synonyms, clinical presentations (SCD), and branded presentations (SBD, BPCK, SBDF, SBDC).
+    - Retrieves preferred names, TTY, detailed status (including current activity and release dates), 
+    synonyms, clinical presentations (SCD), and branded presentations (SBD, BPCK, SBDF, SBDC).
     - Structures and exports data to JSON.
 
 - **`atc_attributes_query.txt` and `atc_attributes_theraphealdb_query.txt`**
