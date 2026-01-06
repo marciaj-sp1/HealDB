@@ -1,0 +1,576 @@
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css">.uib-time input{width:50px;}</style><style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-datepicker-popup.dropdown-menu{display:block;}.uib-button-bar{padding:10px 9px 2px;}</style><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Consultas - Agência Nacional de Vigilância Sanitária</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <script type="text/javascript" async="" defer="" src="//analiseweb.anvisa.gov.br/piwik.js"></script><script type="text/javascript" src="/ruxitagentjs_ICA7NVfhqrux_10321250808084810.js" data-dtconfig="app=70d59aa21861f7ba|owasp=1|featureHash=ICA7NVfhqrux|srsr=10000|rdnt=1|uxrgce=1|cuc=w5fdz9p6|mel=100000|expw=1|dpvc=1|md=mdcc1=dnomeproduto|lastModification=1757622859184|postfix=w5fdz9p6|tp=500,50,0|srbbv=2|agentUri=/ruxitagentjs_ICA7NVfhqrux_10321250808084810.js|reportUrl=/rb_bf56089gco|rid=RID_2418|rpid=-1091645767|domain=anvisa.gov.br"></script><link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="scripts/app/components/anvs-multiselect/anvs-multiselect.css">
+
+    <!-- build:css assets/styles/vendor.css -->
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="vendor/open-sans/css/open-sans.css">
+    <link rel="stylesheet" type="text/css" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/AngularJS-Toaster/toaster.css">
+    <link rel="stylesheet" href="vendor/ng-table/dist/ng-table.min.css">
+    <link rel="stylesheet" href="vendor/owl.carousel/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendor/owl.carousel/dist/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="vendor/angular-loading/angular-loading.css">
+    <link rel="stylesheet" href="vendor/angular-tree-control/css/tree-control.css">
+    <link rel="stylesheet" href="vendor/angular-tree-control/css/tree-control-attribute.css">
+    <link rel="stylesheet" href="vendor/angular-ui-select/dist/select.min.css">
+    <!-- endbuild -->
+    <!-- build:css assets/styles/app.css -->
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <script src="assets/scripts/base64.js"></script>
+    <script src="assets/scripts/upperCaseF.js"></script>
+    <!-- endbuild -->
+<style type="text/css"></style></head>
+<body ng-app="consultas" class="ng-scope">
+
+<div id="barra-brasil" class="no-print"><div id="wrapper-barra-brasil"><div class="brasil-flag"><a href="http://brasil.gov.br" class="link-barra">Brasil</a></div><span class="acesso-info"><a href="http://www.servicos.gov.br/?pk_campaign=barrabrasil&amp;orgao=http://estruturaorganizacional.dados.gov.br/id/unidade-organizacional/36687" class="link-barra" id="barra-brasil-orgao">Serviços</a></span><nav><ul class="list"><li><a href="#" id="menu-icon"></a></li><li class="list-item first"><a href="http://brasil.gov.br/barra#participe" class="link-barra">Participe</a></li><li class="list-item"><a href="http://brasil.gov.br/barra#acesso-informacao" class="link-barra">Acesso à informação</a></li><li class="list-item"><a href="http://www.planalto.gov.br/legislacao" class="link-barra">Legislação</a></li><li class="list-item last last-item"><a href="http://brasil.gov.br/barra#orgaos-atuacao-canais" class="link-barra">Canais</a></li></ul></nav><nav id="brasil-vlibras"><ul><li><a class="logo-vlibras" href="#"></a><a href="http://www.vlibras.gov.br/" class="link-vlibras">Acessível em Libras</a></li></ul></nav></div></div>
+
+<header id="header-portal" class="no-print">
+    <div class="container max-width">
+        <div class="row-custom">
+            <div class="col-md-6 menu-ancoras hidden-xs">
+                <ul>
+                    <li>
+                        <a accesskey="1" href="#conteudo">
+                            Ir para o conteúdo <span>1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a accesskey="2" href="#menu">
+                            Ir para o menu <span>2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a accesskey="3" href="#busca">
+                            Ir para a busca <span>3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a accesskey="4" href="#footer">
+                            Ir para o rodapé <span>4</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-sm-12 menu-acessibilidade">
+                <ul>
+                    <li>
+                        <a href="acessibilidade" title="Acessibilidade" accesskey="5">Acessibilidade</a>
+                    </li>
+                    <li>
+                        <a href="#" title="Alto Contraste" id="alto_contraste_id" accesskey="6">Alto Contraste</a>
+                    </li>
+                    <li>
+                        <a href="mapa-do-site" title="Mapa do Site" accesskey="7">Mapa do Site</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row-custom">
+            <div class="col-md-7 col-sm-12">
+                <a href="#/login" title="Ir para a página inicial" class="titulo-portal">
+                    <h1 translate="" class="ng-scope">Consultas</h1>
+                    <p>Anvisa - Agência Nacional de Vigilância Sanitária</p>
+                </a>
+            </div>
+
+            <!-- uiView: perfil --><!-- uiView: perfil --><div ui-view="perfil" class="ng-scope"></div>
+
+        </div>
+    </div>
+
+    <!-- section-->
+    <!-- uiView: menu --><!-- uiView: menu --><div ui-view="menu" class="ng-scope"></div>
+    <!-- fim - section-->
+</header>
+
+
+<div id="toast-container" ng-class="[config.position, config.animation]" toaster-options="{'close-button': true}" class="ng-scope toast-top-right"><!-- ngRepeat: toaster in toasters --></div>
+
+<div class="container ng-scope" dw-loading="content" dw-loading-options="{text: ('global.carregando' | translate) }">
+    <ui-breadcrumbs displayname-property="data.displayName" template-url="vendor/angular-utils-ui-breadcrumbs/uiBreadcrumbs.tpl.html" class="ng-isolate-scope"><ol class="breadcrumb">
+  <!-- ngRepeat: crumb in breadcrumbs --><li ng-repeat="crumb in breadcrumbs" ng-class="{ active: $last }" class="ng-scope" style=""><!-- ngIf: !$last --><a ui-sref="main" ng-if="!$last" class="ng-binding ng-scope" href="#/">Consultas&nbsp;</a><!-- end ngIf: !$last --><span ng-show="$last" class="ng-binding ng-hide">Consultas</span>
+  </li><!-- end ngRepeat: crumb in breadcrumbs --><li ng-repeat="crumb in breadcrumbs" ng-class="{ active: $last }" class="ng-scope"><!-- ngIf: !$last --><a ui-sref="bulario" ng-if="!$last" class="ng-binding ng-scope" href="#/bulario/?categoriasRegulatorias=1">Bulário Eletrônico&nbsp;</a><!-- end ngIf: !$last --><span ng-show="$last" class="ng-binding ng-hide">Bulário Eletrônico</span>
+  </li><!-- end ngRepeat: crumb in breadcrumbs --><li ng-repeat="crumb in breadcrumbs" ng-class="{ active: $last }" class="ng-scope active" style=""><!-- ngIf: !$last --><span ng-show="$last" class="ng-binding">Bulário Eletrônico</span>
+  </li><!-- end ngRepeat: crumb in breadcrumbs -->
+</ol></ui-breadcrumbs>
+
+    <!-- uiView: content --><div ui-view="content" class="ng-scope" style=""><div class="row ng-scope">
+<span class="text-center col-sm-7"></span>
+<label class="text-center col-sm-5 ng-binding">
+	Última atualização da base de dados:  12/09/2025  às  00:00:00
+</label>
+</div>
+<form ng-submit="consultar()" class="ng-pristine ng-valid ng-scope">
+    <div class="panel panel-default  table-responsive">
+        <div class="panel-heading text-center ng-binding">Resultado da Consulta de Bulário Eletrônico</div>
+
+        <div id="containerTable" class="table-responsive">
+            <table class="table table-hover table-striped ng-scope ng-table" ng-table="table"><!-- ngInclude: templates.header --><thead ng-include="templates.header" class="ng-scope"><!-- ngIf: params.hasGroup() --> <tr class="ng-table-sort-header"> <!-- ngRepeat: $column in $columns --> </tr> <tr ng-show="show_filter" class="ng-table-filters ng-hide"> <!-- ngRepeat: $column in $columns --> </tr> </thead>
+                <tbody><tr>
+                	<th class="col-xs-1"></th>
+                    <th translate="" class="ng-scope">Medicamento</th>
+                    <th translate="" class="ng-scope">Empresa - CNPJ</th>
+                    <th translate="" class="ng-scope">Expediente</th>
+                    <th translate="" class="ng-scope">Data de Publicação</th>
+                    <th translate="" class="ng-scope">Bula do Paciente</th>
+                    <th translate="" class="ng-scope">Bula do Profissional</th>
+                    <th translate="" class="ng-scope">Histórico de Bulas</th>
+
+
+                </tr>
+                <!-- ngIf: !produtos.length -->
+                <!-- ngRepeat: produto in produtos --><tr style="cursor: pointer;" ng-repeat="produto in produtos" class="ng-scope">
+
+                    <!-- Ajustar OS CAMPOS com o retorno da API-->
+					<td class="col-xs-1 text-center"><check-monitoramento ng-model="monitoramento" value="produto.numProcesso" class="ng-pristine ng-untouched ng-valid ng-isolate-scope"><input type="checkbox" ng-checked="selected()" ng-click="toggle()"></check-monitoramento></td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: codigoNotificacao == null --><a ng-if="codigoNotificacao == null" href="#/medicamentos/816909?numeroProcesso=25351142344201292" target="_blank" class="ng-binding ng-scope"> TISSEEL</a><!-- end ngIf: codigoNotificacao == null -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1 ng-binding">BAXTER HOSPITALAR LTDA - 49351786000261</td>
+                    <td class="text-center col-sm-1 ng-binding">1230775242</td>
+                    <td class="text-center col-sm-1 ng-binding">06/09/2024</td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaPacienteProtegido --><a ng-if="produto.idBulaPacienteProtegido" ng-click="downloadBula(produto.idBulaPacienteProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaPacienteProtegido -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaProfissionalProtegido --><a ng-if="produto.idBulaProfissionalProtegido" ng-click="downloadBula(produto.idBulaProfissionalProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaProfissionalProtegido -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <a href="" translate="" ng-click="detail(produto.idProduto)" target="_blank" class="ng-scope">DETALHAR</a>
+                    </td>
+                </tr><!-- end ngRepeat: produto in produtos --><tr style="cursor:pointer" ng-repeat="produto in produtos" class="ng-scope">
+
+                    <!-- Ajustar OS CAMPOS com o retorno da API-->
+					<td class="col-xs-1 text-center"><check-monitoramento ng-model="monitoramento" value="produto.numProcesso" class="ng-pristine ng-untouched ng-valid ng-isolate-scope"><input type="checkbox" ng-checked="selected()" ng-click="toggle()"></check-monitoramento></td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: codigoNotificacao == null --><a ng-if="codigoNotificacao == null" href="#/medicamentos/934193?numeroProcesso=25351708654201326" target="_blank" class="ng-binding ng-scope"> HERZUMA</a><!-- end ngIf: codigoNotificacao == null -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1 ng-binding">CELLTRION HEALTHCARE DISTRIBUICAO DE PRODUTOS FARMACEUTICOS DOS BRASIL LTDA - 05452889000161</td>
+                    <td class="text-center col-sm-1 ng-binding">1605933244</td>
+                    <td class="text-center col-sm-1 ng-binding">25/11/2024</td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaPacienteProtegido --><a ng-if="produto.idBulaPacienteProtegido" ng-click="downloadBula(produto.idBulaPacienteProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaPacienteProtegido -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaProfissionalProtegido --><a ng-if="produto.idBulaProfissionalProtegido" ng-click="downloadBula(produto.idBulaProfissionalProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaProfissionalProtegido -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <a href="" translate="" ng-click="detail(produto.idProduto)" target="_blank" class="ng-scope">DETALHAR</a>
+                    </td>
+                </tr><!-- end ngRepeat: produto in produtos --><tr style="cursor:pointer" ng-repeat="produto in produtos" class="ng-scope">
+
+                    <!-- Ajustar OS CAMPOS com o retorno da API-->
+					<td class="col-xs-1 text-center"><check-monitoramento ng-model="monitoramento" value="produto.numProcesso" class="ng-pristine ng-untouched ng-valid ng-isolate-scope"><input type="checkbox" ng-checked="selected()" ng-click="toggle()"></check-monitoramento></td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: codigoNotificacao == null --><a ng-if="codigoNotificacao == null" href="#/medicamentos/934192?numeroProcesso=25351702966201326" target="_blank" class="ng-binding ng-scope"> LONQUEX</a><!-- end ngIf: codigoNotificacao == null -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1 ng-binding">TEVA FARMACÊUTICA LTDA. - 05333542000108</td>
+                    <td class="text-center col-sm-1 ng-binding">0127572252</td>
+                    <td class="text-center col-sm-1 ng-binding">29/01/2025</td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaPacienteProtegido --><a ng-if="produto.idBulaPacienteProtegido" ng-click="downloadBula(produto.idBulaPacienteProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaPacienteProtegido -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaProfissionalProtegido --><a ng-if="produto.idBulaProfissionalProtegido" ng-click="downloadBula(produto.idBulaProfissionalProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaProfissionalProtegido -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <a href="" translate="" ng-click="detail(produto.idProduto)" target="_blank" class="ng-scope">DETALHAR</a>
+                    </td>
+                </tr><!-- end ngRepeat: produto in produtos --><tr style="cursor:pointer" ng-repeat="produto in produtos" class="ng-scope">
+
+                    <!-- Ajustar OS CAMPOS com o retorno da API-->
+					<td class="col-xs-1 text-center"><check-monitoramento ng-model="monitoramento" value="produto.numProcesso" class="ng-pristine ng-untouched ng-valid ng-isolate-scope"><input type="checkbox" ng-checked="selected()" ng-click="toggle()"></check-monitoramento></td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: codigoNotificacao == null --><a ng-if="codigoNotificacao == null" href="#/medicamentos/808544?numeroProcesso=25351476677201114" target="_blank" class="ng-binding ng-scope"> Simponi</a><!-- end ngIf: codigoNotificacao == null -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1 ng-binding">JANSSEN-CILAG FARMACÊUTICA LTDA - 51780468000187</td>
+                    <td class="text-center col-sm-1 ng-binding">0869069250</td>
+                    <td class="text-center col-sm-1 ng-binding">02/07/2025</td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaPacienteProtegido --><a ng-if="produto.idBulaPacienteProtegido" ng-click="downloadBula(produto.idBulaPacienteProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaPacienteProtegido -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaProfissionalProtegido --><a ng-if="produto.idBulaProfissionalProtegido" ng-click="downloadBula(produto.idBulaProfissionalProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaProfissionalProtegido -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <a href="" translate="" ng-click="detail(produto.idProduto)" target="_blank" class="ng-scope">DETALHAR</a>
+                    </td>
+                </tr><!-- end ngRepeat: produto in produtos --><tr style="cursor:pointer" ng-repeat="produto in produtos" class="ng-scope">
+
+                    <!-- Ajustar OS CAMPOS com o retorno da API-->
+					<td class="col-xs-1 text-center"><check-monitoramento ng-model="monitoramento" value="produto.numProcesso" class="ng-pristine ng-untouched ng-valid ng-isolate-scope"><input type="checkbox" ng-checked="selected()" ng-click="toggle()"></check-monitoramento></td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: codigoNotificacao == null --><a ng-if="codigoNotificacao == null" href="#/medicamentos/902182?numeroProcesso=25351369621201316" target="_blank" class="ng-binding ng-scope"> VIMIZIM</a><!-- end ngIf: codigoNotificacao == null -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1 ng-binding">BIOMARIN BRASIL FARMACÊUTICA LTDA - 08002360000134</td>
+                    <td class="text-center col-sm-1 ng-binding">0834326256</td>
+                    <td class="text-center col-sm-1 ng-binding">25/06/2025</td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaPacienteProtegido --><a ng-if="produto.idBulaPacienteProtegido" ng-click="downloadBula(produto.idBulaPacienteProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaPacienteProtegido -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaProfissionalProtegido --><a ng-if="produto.idBulaProfissionalProtegido" ng-click="downloadBula(produto.idBulaProfissionalProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaProfissionalProtegido -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <a href="" translate="" ng-click="detail(produto.idProduto)" target="_blank" class="ng-scope">DETALHAR</a>
+                    </td>
+                </tr><!-- end ngRepeat: produto in produtos --><tr style="cursor:pointer" ng-repeat="produto in produtos" class="ng-scope">
+
+                    <!-- Ajustar OS CAMPOS com o retorno da API-->
+					<td class="col-xs-1 text-center"><check-monitoramento ng-model="monitoramento" value="produto.numProcesso" class="ng-pristine ng-untouched ng-valid ng-isolate-scope"><input type="checkbox" ng-checked="selected()" ng-click="toggle()"></check-monitoramento></td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: codigoNotificacao == null --><a ng-if="codigoNotificacao == null" href="#/medicamentos/606296?numeroProcesso=25351630905200815" target="_blank" class="ng-binding ng-scope"> SANDOGLOBULINA</a><!-- end ngIf: codigoNotificacao == null -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1 ng-binding">CSL BEHRING COMÉRCIO DE PRODUTOS FARMACÊUTICOS LTDA - 62969589000198</td>
+                    <td class="text-center col-sm-1 ng-binding">1313313246</td>
+                    <td class="text-center col-sm-1 ng-binding">24/09/2024</td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaPacienteProtegido --><a ng-if="produto.idBulaPacienteProtegido" ng-click="downloadBula(produto.idBulaPacienteProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaPacienteProtegido -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaProfissionalProtegido --><a ng-if="produto.idBulaProfissionalProtegido" ng-click="downloadBula(produto.idBulaProfissionalProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaProfissionalProtegido -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <a href="" translate="" ng-click="detail(produto.idProduto)" target="_blank" class="ng-scope">DETALHAR</a>
+                    </td>
+                </tr><!-- end ngRepeat: produto in produtos --><tr style="cursor:pointer" ng-repeat="produto in produtos" class="ng-scope">
+
+                    <!-- Ajustar OS CAMPOS com o retorno da API-->
+					<td class="col-xs-1 text-center"><check-monitoramento ng-model="monitoramento" value="produto.numProcesso" class="ng-pristine ng-untouched ng-valid ng-isolate-scope"><input type="checkbox" ng-checked="selected()" ng-click="toggle()"></check-monitoramento></td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: codigoNotificacao == null --><a ng-if="codigoNotificacao == null" href="#/medicamentos/814684?numeroProcesso=25351115665201217" target="_blank" class="ng-binding ng-scope"> Perjeta</a><!-- end ngIf: codigoNotificacao == null -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1 ng-binding">PRODUTOS ROCHE QUÍMICOS E FARMACÊUTICOS S.A. - 33009945000123</td>
+                    <td class="text-center col-sm-1 ng-binding">0530902249</td>
+                    <td class="text-center col-sm-1 ng-binding">23/04/2024</td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaPacienteProtegido --><a ng-if="produto.idBulaPacienteProtegido" ng-click="downloadBula(produto.idBulaPacienteProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaPacienteProtegido -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaProfissionalProtegido --><a ng-if="produto.idBulaProfissionalProtegido" ng-click="downloadBula(produto.idBulaProfissionalProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaProfissionalProtegido -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <a href="" translate="" ng-click="detail(produto.idProduto)" target="_blank" class="ng-scope">DETALHAR</a>
+                    </td>
+                </tr><!-- end ngRepeat: produto in produtos --><tr style="cursor:pointer" ng-repeat="produto in produtos" class="ng-scope">
+
+                    <!-- Ajustar OS CAMPOS com o retorno da API-->
+					<td class="col-xs-1 text-center"><check-monitoramento ng-model="monitoramento" value="produto.numProcesso" class="ng-pristine ng-untouched ng-valid ng-isolate-scope"><input type="checkbox" ng-checked="selected()" ng-click="toggle()"></check-monitoramento></td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: codigoNotificacao == null --><a ng-if="codigoNotificacao == null" href="#/medicamentos/957562?numeroProcesso=25351243091201487" target="_blank" class="ng-binding ng-scope"> TRULICITY</a><!-- end ngIf: codigoNotificacao == null -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1 ng-binding">ELI LILLY DO BRASIL LTDA - 43940618000144</td>
+                    <td class="text-center col-sm-1 ng-binding">0814519253</td>
+                    <td class="text-center col-sm-1 ng-binding">18/06/2025</td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaPacienteProtegido --><a ng-if="produto.idBulaPacienteProtegido" ng-click="downloadBula(produto.idBulaPacienteProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaPacienteProtegido -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaProfissionalProtegido --><a ng-if="produto.idBulaProfissionalProtegido" ng-click="downloadBula(produto.idBulaProfissionalProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaProfissionalProtegido -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <a href="" translate="" ng-click="detail(produto.idProduto)" target="_blank" class="ng-scope">DETALHAR</a>
+                    </td>
+                </tr><!-- end ngRepeat: produto in produtos --><tr style="cursor:pointer" ng-repeat="produto in produtos" class="ng-scope">
+
+                    <!-- Ajustar OS CAMPOS com o retorno da API-->
+					<td class="col-xs-1 text-center"><check-monitoramento ng-model="monitoramento" value="produto.numProcesso" class="ng-pristine ng-untouched ng-valid ng-isolate-scope"><input type="checkbox" ng-checked="selected()" ng-click="toggle()"></check-monitoramento></td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: codigoNotificacao == null --><a ng-if="codigoNotificacao == null" href="#/medicamentos/943763?numeroProcesso=25351068659201407" target="_blank" class="ng-binding ng-scope"> SURVANTA</a><!-- end ngIf: codigoNotificacao == null -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1 ng-binding">ABBVIE FARMACÊUTICA LTDA. - 15800545000150</td>
+                    <td class="text-center col-sm-1 ng-binding">3978792203</td>
+                    <td class="text-center col-sm-1 ng-binding">12/11/2020</td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaPacienteProtegido --><a ng-if="produto.idBulaPacienteProtegido" ng-click="downloadBula(produto.idBulaPacienteProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaPacienteProtegido -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaProfissionalProtegido --><a ng-if="produto.idBulaProfissionalProtegido" ng-click="downloadBula(produto.idBulaProfissionalProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaProfissionalProtegido -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <a href="" translate="" ng-click="detail(produto.idProduto)" target="_blank" class="ng-scope">DETALHAR</a>
+                    </td>
+                </tr><!-- end ngRepeat: produto in produtos --><tr style="cursor:pointer" ng-repeat="produto in produtos" class="ng-scope">
+
+                    <!-- Ajustar OS CAMPOS com o retorno da API-->
+					<td class="col-xs-1 text-center"><check-monitoramento ng-model="monitoramento" value="produto.numProcesso" class="ng-pristine ng-untouched ng-valid ng-isolate-scope"><input type="checkbox" ng-checked="selected()" ng-click="toggle()"></check-monitoramento></td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: codigoNotificacao == null --><a ng-if="codigoNotificacao == null" href="#/medicamentos/948951?numeroProcesso=25351127467201461" target="_blank" class="ng-binding ng-scope"> INSULIV R</a><!-- end ngIf: codigoNotificacao == null -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1 ng-binding">EMS S/A - 57507378000365</td>
+                    <td class="text-center col-sm-1 ng-binding">1471059215</td>
+                    <td class="text-center col-sm-1 ng-binding">17/04/2021</td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaPacienteProtegido --><a ng-if="produto.idBulaPacienteProtegido" ng-click="downloadBula(produto.idBulaPacienteProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaPacienteProtegido -->
+                        <!-- ngIf: codigoNotificacao != null -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <!-- ngIf: produto.idBulaProfissionalProtegido --><a ng-if="produto.idBulaProfissionalProtegido" ng-click="downloadBula(produto.idBulaProfissionalProtegido,Authorization)" class="ng-scope">
+                            <img src="assets/img/pdf.png">
+                        </a><!-- end ngIf: produto.idBulaProfissionalProtegido -->
+                    </td>
+                    <td class="text-center col-sm-1">
+                        <a href="" translate="" ng-click="detail(produto.idProduto)" target="_blank" class="ng-scope">DETALHAR</a>
+                    </td>
+                </tr><!-- end ngRepeat: produto in produtos -->
+            </tbody></table><div ng-table-pagination="params" template-url="templates.pagination" class="ng-scope ng-isolate-scope"><!-- ngInclude: templateUrl --><div ng-include="templateUrl" class="ng-scope"><!-- ngIf: params.data.length --><div class="ng-table-pager ng-scope" ng-if="params.data.length" style=""> <!-- ngIf: params.settings().counts.length --><div ng-if="params.settings().counts.length" class="ng-table-counts btn-group pull-right ng-scope"> <!-- ngRepeat: count in params.settings().counts --><button ng-repeat="count in params.settings().counts" type="button" ng-class="{'active':params.count()==count}" ng-click="params.count(count)" class="btn btn-default ng-scope active"> <span ng-bind="count" class="ng-binding">10</span> </button><!-- end ngRepeat: count in params.settings().counts --><button ng-repeat="count in params.settings().counts" type="button" ng-class="{'active':params.count()==count}" ng-click="params.count(count)" class="btn btn-default ng-scope"> <span ng-bind="count" class="ng-binding">25</span> </button><!-- end ngRepeat: count in params.settings().counts --><button ng-repeat="count in params.settings().counts" type="button" ng-class="{'active':params.count()==count}" ng-click="params.count(count)" class="btn btn-default ng-scope"> <span ng-bind="count" class="ng-binding">50</span> </button><!-- end ngRepeat: count in params.settings().counts --> </div><!-- end ngIf: params.settings().counts.length --> <!-- ngIf: pages.length --><ul ng-if="pages.length" class="pagination ng-table-pagination ng-scope"> <!-- ngRepeat: page in pages --><li ng-class="{'disabled': !page.active &amp;&amp; !page.current, 'active': page.current}" ng-repeat="page in pages" ng-switch="page.type" class="ng-scope disabled"> <!-- ngSwitchWhen: prev --><a ng-switch-when="prev" ng-click="params.page(page.number)" href="" class="ng-scope">«</a><!-- end ngSwitchWhen: --> <!-- ngSwitchWhen: first --> <!-- ngSwitchWhen: page --> <!-- ngSwitchWhen: more --> <!-- ngSwitchWhen: last --> <!-- ngSwitchWhen: next --> </li><!-- end ngRepeat: page in pages --><li ng-class="{'disabled': !page.active &amp;&amp; !page.current, 'active': page.current}" ng-repeat="page in pages" ng-switch="page.type" class="ng-scope active"> <!-- ngSwitchWhen: prev --> <!-- ngSwitchWhen: first --><a ng-switch-when="first" ng-click="params.page(page.number)" href="" class="ng-scope"><span ng-bind="page.number" class="ng-binding">1</span></a><!-- end ngSwitchWhen: --> <!-- ngSwitchWhen: page --> <!-- ngSwitchWhen: more --> <!-- ngSwitchWhen: last --> <!-- ngSwitchWhen: next --> </li><!-- end ngRepeat: page in pages --><li ng-class="{'disabled': !page.active &amp;&amp; !page.current, 'active': page.current}" ng-repeat="page in pages" ng-switch="page.type" class="ng-scope"> <!-- ngSwitchWhen: prev --> <!-- ngSwitchWhen: first --> <!-- ngSwitchWhen: page --><a ng-switch-when="page" ng-click="params.page(page.number)" href="" class="ng-scope"><span ng-bind="page.number" class="ng-binding">2</span></a><!-- end ngSwitchWhen: --> <!-- ngSwitchWhen: more --> <!-- ngSwitchWhen: last --> <!-- ngSwitchWhen: next --> </li><!-- end ngRepeat: page in pages --><li ng-class="{'disabled': !page.active &amp;&amp; !page.current, 'active': page.current}" ng-repeat="page in pages" ng-switch="page.type" class="ng-scope"> <!-- ngSwitchWhen: prev --> <!-- ngSwitchWhen: first --> <!-- ngSwitchWhen: page --><a ng-switch-when="page" ng-click="params.page(page.number)" href="" class="ng-scope"><span ng-bind="page.number" class="ng-binding">3</span></a><!-- end ngSwitchWhen: --> <!-- ngSwitchWhen: more --> <!-- ngSwitchWhen: last --> <!-- ngSwitchWhen: next --> </li><!-- end ngRepeat: page in pages --><li ng-class="{'disabled': !page.active &amp;&amp; !page.current, 'active': page.current}" ng-repeat="page in pages" ng-switch="page.type" class="ng-scope"> <!-- ngSwitchWhen: prev --> <!-- ngSwitchWhen: first --> <!-- ngSwitchWhen: page --><a ng-switch-when="page" ng-click="params.page(page.number)" href="" class="ng-scope"><span ng-bind="page.number" class="ng-binding">4</span></a><!-- end ngSwitchWhen: --> <!-- ngSwitchWhen: more --> <!-- ngSwitchWhen: last --> <!-- ngSwitchWhen: next --> </li><!-- end ngRepeat: page in pages --><li ng-class="{'disabled': !page.active &amp;&amp; !page.current, 'active': page.current}" ng-repeat="page in pages" ng-switch="page.type" class="ng-scope"> <!-- ngSwitchWhen: prev --> <!-- ngSwitchWhen: first --> <!-- ngSwitchWhen: page --><a ng-switch-when="page" ng-click="params.page(page.number)" href="" class="ng-scope"><span ng-bind="page.number" class="ng-binding">5</span></a><!-- end ngSwitchWhen: --> <!-- ngSwitchWhen: more --> <!-- ngSwitchWhen: last --> <!-- ngSwitchWhen: next --> </li><!-- end ngRepeat: page in pages --><li ng-class="{'disabled': !page.active &amp;&amp; !page.current, 'active': page.current}" ng-repeat="page in pages" ng-switch="page.type" class="ng-scope"> <!-- ngSwitchWhen: prev --> <!-- ngSwitchWhen: first --> <!-- ngSwitchWhen: page --><a ng-switch-when="page" ng-click="params.page(page.number)" href="" class="ng-scope"><span ng-bind="page.number" class="ng-binding">6</span></a><!-- end ngSwitchWhen: --> <!-- ngSwitchWhen: more --> <!-- ngSwitchWhen: last --> <!-- ngSwitchWhen: next --> </li><!-- end ngRepeat: page in pages --><li ng-class="{'disabled': !page.active &amp;&amp; !page.current, 'active': page.current}" ng-repeat="page in pages" ng-switch="page.type" class="ng-scope"> <!-- ngSwitchWhen: prev --> <!-- ngSwitchWhen: first --> <!-- ngSwitchWhen: page --><a ng-switch-when="page" ng-click="params.page(page.number)" href="" class="ng-scope"><span ng-bind="page.number" class="ng-binding">7</span></a><!-- end ngSwitchWhen: --> <!-- ngSwitchWhen: more --> <!-- ngSwitchWhen: last --> <!-- ngSwitchWhen: next --> </li><!-- end ngRepeat: page in pages --><li ng-class="{'disabled': !page.active &amp;&amp; !page.current, 'active': page.current}" ng-repeat="page in pages" ng-switch="page.type" class="ng-scope disabled"> <!-- ngSwitchWhen: prev --> <!-- ngSwitchWhen: first --> <!-- ngSwitchWhen: page --> <!-- ngSwitchWhen: more --><a ng-switch-when="more" ng-click="params.page(page.number)" href="" class="ng-scope">…</a><!-- end ngSwitchWhen: --> <!-- ngSwitchWhen: last --> <!-- ngSwitchWhen: next --> </li><!-- end ngRepeat: page in pages --><li ng-class="{'disabled': !page.active &amp;&amp; !page.current, 'active': page.current}" ng-repeat="page in pages" ng-switch="page.type" class="ng-scope"> <!-- ngSwitchWhen: prev --> <!-- ngSwitchWhen: first --> <!-- ngSwitchWhen: page --> <!-- ngSwitchWhen: more --> <!-- ngSwitchWhen: last --><a ng-switch-when="last" ng-click="params.page(page.number)" href="" class="ng-scope"><span ng-bind="page.number" class="ng-binding">47</span></a><!-- end ngSwitchWhen: --> <!-- ngSwitchWhen: next --> </li><!-- end ngRepeat: page in pages --><li ng-class="{'disabled': !page.active &amp;&amp; !page.current, 'active': page.current}" ng-repeat="page in pages" ng-switch="page.type" class="ng-scope"> <!-- ngSwitchWhen: prev --> <!-- ngSwitchWhen: first --> <!-- ngSwitchWhen: page --> <!-- ngSwitchWhen: more --> <!-- ngSwitchWhen: last --> <!-- ngSwitchWhen: next --><a ng-switch-when="next" ng-click="params.page(page.number)" href="" class="ng-scope">»</a><!-- end ngSwitchWhen: --> </li><!-- end ngRepeat: page in pages --> </ul><!-- end ngIf: pages.length --> </div><!-- end ngIf: params.data.length --> </div></div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="panel-footer text-right">
+            <monitoramento class="pull-left ng-pristine ng-untouched ng-valid ng-isolate-scope" ng-model="monitoramento" tipo-registro="BULARIOS"><a class="btn btn-default ng-binding ng-isolate-scope" modal-anvisa="modalMonitoramento">Monitorar</a>
+</monitoramento>
+
+            <a class="btn btn-default ng-scope" href="" ng-click="voltar()" translate="">Voltar</a>
+
+        </div>
+
+    </div>
+</form></div>
+<div class="dw-loading dw-loading-overlay"><div class="dw-loading-body"><div class="dw-loading-spinner"></div><div class="dw-loading-text">global.carregando</div></div></div><div class="dw-loading dw-loading-overlay"><div class="dw-loading-body"><div class="dw-loading-spinner"></div><div class="dw-loading-text">Carregando...</div></div></div></div>
+
+<!-- build:js scripts/vendor.js -->
+<script src="vendor/modernizr/modernizr.js"></script>
+<script src="vendor/jquery/dist/jquery.min.js"></script>
+<script src="vendor/angular/angular.min.js"></script>
+<script src="vendor/angular-animate/angular-animate.min.js"></script>
+<script src="vendor/AngularJS-Toaster/toaster.js"></script>
+<script src="vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="vendor/angular-confirm-modal/angular-confirm.min.js"></script>
+<script src="vendor/angular-i18n/angular-locale_pt-br.js"></script>
+<script src="vendor/angular-messages/angular-messages.js"></script>
+<script src="vendor/angular-sanitize/angular-sanitize.js"></script>
+<script src="vendor/angular-translate/angular-translate.js"></script>
+<script src="vendor/messageformat/messageformat.js"></script>
+<script src="vendor/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js"></script>
+<script src="vendor/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+<script src="vendor/angular-ui-mask/dist/mask.js"></script>
+<script src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="vendor/angular-ui-select/dist/select.min.js"></script>
+<script src="vendor/angular-utils-ui-breadcrumbs/uiBreadcrumbs.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+<script src="vendor/jquery-mask-plugin/dist/jquery.mask.js"></script>
+<script src="vendor/ng-table/dist/ng-table.min.js"></script>
+<script src="vendor/lodash/lodash.min.js"></script>
+<script src="vendor/restangular/dist/restangular.js"></script>
+<script src="vendor/stringjs/dist/string.min.js"></script>
+<script src="vendor/messageformat/locale/pt.js"></script>
+<script src="vendor/jquery-form/jquery.form.js"></script>
+<script src="vendor/angular-input-masks/angular-input-masks-standalone.min.js"></script>
+<script src="vendor/moment/min/moment.min.js"></script>
+<script src="vendor/moment/min/moment-with-locales.min.js"></script>
+<script src="vendor/owl.carousel/dist/owl.carousel.min.js"></script>
+<script src="vendor/angular-jwt/dist/angular-jwt.min.js"></script>
+<script src="vendor/angular-permission/dist/angular-permission.min.js"></script>
+<script src="vendor/angular-permission/dist/angular-permission-ui.min.js"></script>
+<script src="vendor/spin.js/spin.js"></script>
+<script src="vendor/angular-loading/angular-loading.min.js"></script>
+<script src="vendor/file-saver/FileSaver.js"></script>
+<script src="vendor/angular-tree-control/angular-tree-control.js"></script>
+<!-- endbuild -->
+<!-- build:js scripts/app.js -->
+<script src="scripts/app/app.js"></script>
+<!-- Piwik -->
+<script src="scripts/app/piwik.js"></script><img src="//analiseweb.anvisa.gov.br/piwik.php?idsite=42" style="border:0;" alt="">
+
+<!-- Aplicação -->
+<script src="scripts/app/main/main.controller.js"></script>
+<script src="scripts/app/medicamentos/medicamentos.controller.js"></script>
+<script src="scripts/app/alimentos/alimentos.controller.js"></script>
+<script src="scripts/app/assunto/assunto.controller.js"></script>
+<script src="scripts/app/produtos/produtos.controller.js"></script>
+<script src="scripts/app/captcha/captcha.controller.js"></script>
+<script src="scripts/app/ensaio/ensaio.controller.js"></script>
+<script src="scripts/app/monitoramento/monitoramento.controller.js"></script>
+<script src="scripts/app/funcionamento/funcionamentoTipo.controller.js"></script>
+<script src="scripts/app/funcionamento/nacional/filtro/filtro.controller.js"></script>
+<script src="scripts/app/funcionamento/nacional/result/result.controller.js"></script>
+<script src="scripts/app/funcionamento/nacional/detail/detail.controller.js"></script>
+<script src="scripts/app/funcionamento/nacional/inspecoes/inspecoes.controller.js"></script>
+<script src="scripts/app/funcionamento/nacional/nacional.controller.js"></script>
+<script src="scripts/app/funcionamento/internacional/filtro/filtro.controller.js"></script>
+<script src="scripts/app/funcionamento/internacional/result/result.controller.js"></script>
+<script src="scripts/app/funcionamento/internacional/detail/detail.controller.js"></script>
+<script src="scripts/app/funcionamento/internacional/internacional.controller.js"></script>
+<script src="scripts/app/documentos/documentos.controller.js"></script>
+<script src="scripts/app/certificado/filtro/filtro.controller.js"></script>
+<script src="scripts/app/certificado/result/result.controller.js"></script>
+<script src="scripts/app/certificado/detail/detail.controller.js"></script>
+<script src="scripts/app/certificado/certificado.controller.js"></script>
+<script src="scripts/app/certificado/certificado-medicamento.controller.js"></script>
+<script src="scripts/app/dossie/dossie.controller.js"></script>
+<script src="scripts/app/cosmeticos/cosmeticos.controller.js"></script>
+<script src="scripts/app/cosmeticos/registrado/cosmeticos.controller.js"></script>
+<script src="scripts/app/cosmeticos/notificado/cosmeticos.controller.js"></script>
+<script src="scripts/app/cosmeticos/regularizado/cosmeticos.controller.js"></script>
+<script src="scripts/app/saude/saude.controller.js"></script>
+<script src="scripts/app/saneantes/saneantes.controller.js"></script>
+<script src="scripts/app/saneantes/produto/saneantes.controller.js"></script>
+<script src="scripts/app/saneantes/notificado/saneantes.controller.js"></script>
+<script src="scripts/app/genericos/genericos.controller.js"></script>
+<script src="scripts/app/filas/fila.controller.js"></script>
+<script src="scripts/app/listas/lista.controller.js"></script>
+<script src="scripts/app/tabaco/tabaco.controller.js"></script>
+<script src="scripts/app/cannabis/cannabis.controller.js"></script>
+<script src="scripts/app/pareceres/parecer.controller.js"></script>
+<script src="scripts/app/bulario/bulario.controller.js"></script>
+<script src="scripts/app/nomesTecnicos/nomesTecnicos.controller.js"></script>
+<script src="scripts/app/autenticaDocumento/autenticaDocumento.controller.js"></script>
+<!-- Services -->
+<script src="scripts/services/app.service.js"></script>
+<script src="scripts/services/alimento.service.js"></script>
+<script src="scripts/services/assunto.service.js"></script>
+<script src="scripts/services/consulta.service.js"></script>
+<script src="scripts/services/certificado.service.js"></script>
+<script src="scripts/services/dossie.service.js"></script>
+<script src="scripts/services/empresa.service.js"></script>
+<script src="scripts/services/empresaInternacional.service.js"></script>
+<script src="scripts/services/ensaio.service.js"></script>
+<script src="scripts/services/substancia.service.js"></script>
+<script src="scripts/services/relatorios.service.js"></script>
+<script src="scripts/services/categoria.produto.service.js"></script>
+<script src="scripts/services/monitoramento.service.js"></script>
+<script src="scripts/services/uf.service.js"></script>
+<script src="scripts/services/pais.service.js"></script>
+<script src="scripts/services/documento.service.js"></script>
+<script src="scripts/services/valida.input.service.js"></script>
+<script src="scripts/services/medicamento.service.js"></script>
+<script src="scripts/services/fila.service.js"></script>
+<script src="scripts/services/grupoPopulacional.service.js"></script>
+<script src="scripts/services/viaAdministracao.service.js"></script>
+<script src="scripts/services/composicaoAlergenico.service.js"></script>
+<script src="scripts/services/cannabis.service.js"></script>
+<script src="scripts/services/tabaco.service.js"></script>
+<script src="scripts/services/parecer.service.js"></script>
+<script src="scripts/services/bulario.service.js"></script>
+<script src="scripts/services/informacaoRegulatoria.service.js"></script>
+<script src="scripts/services/autenticacaoApi.service.js"></script>
+<script src="scripts/services/hcaptcha.service.js"></script>
+<!-- endbuild -->
+<!-- build:js scripts/components.js -->
+
+<!-- Componentes -->
+<script src="scripts/components/components.js"></script>
+<script src="scripts/components/filters/mask.filter.js"></script>
+<script src="scripts/components/filters/resolucao.filter.js"></script>
+<script src="scripts/components/filters/decodeHtml.filter.js"></script>
+<script src="scripts/components/message/message.directive.js"></script>
+<script src="scripts/components/message/message.factory.js"></script>
+<script src="scripts/components/confirm/confirm.service.js"></script>
+<script src="scripts/components/pagination/ngtableparams.anvisa.js"></script>
+<script src="scripts/components/date/datepicker.anvisa.directive.js"></script>
+<script src="scripts/components/date/date-month-year-picker.anvisa.directive.js"></script>
+<script src="scripts/components/modal-form/modal-form.directive.js"></script>
+<script src="scripts/components/anvs-form-group/form-group.directive.js"></script>
+<script src="scripts/components/anvs-label/label.directive.js"></script>
+<script src="scripts/components/hint-btn/hint-btn.directive.js"></script>
+<script src="scripts/components/med-cautelar-btn/med-cautelar-btn.directive.js"></script>
+<script src="scripts/components/anvs-message/message.directive.js"></script>
+<script src="scripts/components/confirm/confirm.service.js"></script>
+<script src="scripts/components/pagination/ngtableparams.anvisa.js"></script>
+<script src="scripts/components/owl-carousel/owl-carousel.directive.js"></script>
+<script src="scripts/components/autocomplete/autocomplete.directive.js"></script>
+<script src="scripts/components/inline-spinner/inline-spinner.directive.js"></script>
+<script src="scripts/app/components/input-empresa/input-empresa.directive.js"></script>
+<script src="scripts/app/components/input-empresa-extendido/input-empresa.directive.js"></script>
+<script src="scripts/app/components/input-empresa-internacional/input-empresa-internacional.directive.js"></script>
+<script src="scripts/app/components/input-empresa-dossie/input-empresa-dossie.directive.js"></script>
+<script src="scripts/app/components/input-substancia/input-substancia.directive.js"></script>
+<script src="scripts/app/components/captcha/captcha.directive.js"></script>
+<script src="scripts/app/components/monitoramento/monitoramento.directive.js"></script>
+<script src="scripts/app/components/monitoramentoGenerico/monitoramento.directive.js"></script>
+<script src="scripts/app/components/input-numero/input-numero.directive.js"></script>
+<script src="scripts/app/components/anvs-radio/anvs-radio.directive.js"></script>
+<script src="scripts/app/components/anvs-radio/anvs-radio-sim-nao.directive.js"></script>
+<script src="scripts/app/components/anvs-select/anvs-select.directive.js"></script>
+<script src="scripts/app/components/anvs-multiselect/anvs-multiselect.directive.js"></script>
+<script src="scripts/app/components/input-search/input-search.directive.js"></script>
+<script src="scripts/app/components/input-cid10/input-cid10.directive.js"></script>
+<script src="scripts/app/components/input-instituicao-pesquisa/input-instituicao-pesquisa.directive.js"></script>
+<script src="scripts/app/components/input-investigador/input-investigador.directive.js"></script>
+<script src="config.js"></script>
+<script src="scripts/config.constant.js"></script>
+<script src="scripts/app/components/hcaptcha/hcaptcha.component.js"></script>
+
+<script src="scripts/app/components/input-nome-tecnico/input-nome-tecnico.directive.js"></script>
+<script src="https://hcaptcha.com/1/api.js" async="" defer=""></script>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
+</script>
+<!-- endbuild -->
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97dfb2d9bf3ef1da',t:'MTc1NzY4MzE4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;97dfb2d9bf3ef1da&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.8.0&quot;,&quot;token&quot;:&quot;1e0662897d7f40d3bb9b989941433225&quot;}" crossorigin="anonymous"></script>
+
+
+</body></html>

@@ -116,6 +116,7 @@ C:\project
     │   │   │   ├── fill_missing_external_ids.py
     │   │   │   ├── import_dcb_data.py
     │   │   │   ├── link_cas_to_active_ing.py
+    │   │   │   ├── link_drugbank_to_active_ing.py
     │   │   │   ├── link_kegg_related_ids_to_active_ing.py
     │   │   │   ├── link_rxcui_related_ids_to_active_ing.py
     │   │   │   ├── link_rxcui_to_active_ing.py
@@ -189,9 +190,9 @@ C:\project
 4. Translation: Enables translation of data for interoperability.
 5. NLP Extraction: Uses Natural Language Processing to extract diseases, symptoms, leaflets, interactions, and more.
 6. Interoperability:
-   * Linking: Associates active ingredients with standardized external identifiers (e.g., RxCUI, CAS, KEGG, PubChem, Wikidata).
+   * Linking: Associates active ingredients with standardized external identifiers (e.g., RxCUI, CAS, DRUGBANK, KEGG, PubChem, Wikidata).
    * Use Cases: Demonstrates how external identifiers can be used to extract insights from biomedical ontologies and 
-data sources (e.g., ChEBI, IUCN, PubChem, ATC, RxNorm, ClinicalTrials.gov).
+     data sources (e.g., ChEBI, IUCN, PubChem, ATC, RxNorm, ClinicalTrials.gov).
    
 
 ## Exploratory Analysis Notebook
@@ -448,35 +449,42 @@ Scripts for extracting data using NLP techniques.
 
 
 - **`extract_diseases_from_indications.py`**  
-  - Purpose: Extracts diseases and symptoms from drug leaflet indications translated to English using Amazon Comprehend Medical.
+  - Purpose: Extracts candidate diseases and symptoms from English translated drug-leaflet indication text 
+    using Amazon Comprehend Medical (ICD-10-CM inference).
   - Key Processes:
-    - Reads translated indications.
-    - Sends texts to Amazon Comprehend Medical for ICD code extraction using the ```comprehend_client_infer_icd10_acm``` API.
-    - Saves results in JSON format and maps ICD codes with confidence scores to the database.
+    - Reads translated indication text from the database.
+    - Optionally normalizes the input text (e.g., replaces the medication name with a placeholder) to reduce noise.
+    - Sends texts to Amazon Comprehend Medical for ICD code extraction using the ```infer_icd10_cm``` endpoint.
+    - Stores the raw JSON response (and the submitted text) in the database for traceability and later processing.
 
 
 - **`process_disease_data_json.py`**  
-  - Purpose: Processes the JSON response from Amazon Comprehend Medical, 
-  extracting detailed information such as ICD codes, descriptions, and scores, and stores it in the database.
+  - Purpose: Transforms the stored Amazon Comprehend Medical JSON responses into structured relational records 
+    for analysis and downstream linking.
   - Key Processes:
     - Reads API responses stored in the database.
-    - Transforms JSON strings into dictionaries.
-    - Extracts data fields like c, ```icd_text```, 
-    ```description```, and ```score```.
-    - Saves extracted information for further analysis and linking.
+    - Converts JSON strings into dictionaries/objects.
+    - Extracts entity-level metadata (e.g., entity text, offsets, category/type, entity score).
+    - Extracts ICD-10-CM concepts (e.g., ```code```, ```description```, ```score```) associated with each entity. 
+    - Extracts entity traits (e.g., ```DIAGNOSIS```, ```SYMPTOM```, ```NEGATION```) and stores them separately.
+    - Saves the extracted content into structured tables to support auditing and linking logic.
 
 
 - **`link_medications_with_diseases.py`**  
-  - Purpose: Links medications with corresponding diseases using ICD codes identified by Amazon Comprehend Medical
-  from drug indication text analysis.
+  - Purpose: Links medications to diseases (ICD) by applying a transparent cutoff policy over 
+    the extracted ICD-10-CM candidates and mapping them to HealDB’s ICD tables.
   - Key Processes:
-    - Filters ICD codes by confidence (≥ 0.6) and excludes irrelevant or uncertain traits.
-    - Validates that codes exist in HealDB’s ICD category or subcategory tables.
-    - Selects the main trait (e.g., DIAGNOSIS, SYMPTOM) based on highest score and stores it.
-    - Adds fallback logic for ICDs with valid category prefixes (three first characters) even 
-    if subcategory is missing.
-    - Flags links with low confidence (< 0.7) to support further analysis.
-    - Updates the medication-disease mapping table to reflect advanced research findings.
+    - Uses the structured entity/ICD/trait tables as input.
+    - Keeps only clinically relevant entities (e.g., ```DX_NAME```) and excludes negated mentions (```NEGATION``` trait).
+    - Applies a minimum entity confidence threshold (default: Entity.Score ≥ 0.70).
+    - Selects the top ICD-10-CM concept per entity (highest ICD score).
+    - Maps ICD-10-CM to HealDB ICD tables using:
+    	- Exact subcategory match when available, and
+        - A fallback to the 3-character category prefix when the subcategory is missing.
+    - Classifies ICD scores into confidence level (default: MEDIUM ≥ 0.30, HIGH ≥ 0.60) and 
+      keeps only MEDIUM/HIGH links.
+    - Writes an audit table with cutoff flags and mapping outcomes, plus the final deduplicated 
+      medication–disease associations for analysis and reporting.
 
 
 ## **Interoperability**
@@ -503,16 +511,18 @@ This enables interoperability with other health data sources, ontologies, and bi
 
   - Purpose: Creates and populates a static table with the possible external identifiers types.
   - Key Processes:
-    - Defines external ID system (RXNORM, KEGG, PUBCHEM, SNOMEDCT and others).
+    - Defines external ID system (RXNORM, KEGG, DRUGBANK, PUBCHEM, SNOMEDCT and others).
     - Inserts this data into the external identifier type table for consistency in linking.
 
 
 - **`external_ids_insert`**  
 
-  - Purpose: Inserts external identifiers (e.g., RXCUI, KEGG, PubChem) associated with active ingredients into the ```hd_active_ingredient_ext_id``` table in the HealDB database, ensuring referential integrity and avoiding duplicates.
+  - Purpose: Inserts external identifiers (e.g., RXCUI, KEGG, PubChem) associated with active ingredients 
+    into the ```hd_active_ingredient_ext_id``` table in the HealDB database, ensuring referential integrity and avoiding duplicates.
   - Key Processes:
     - Validates whether the external ID type (```tp_ext_id```) exists in the ```hd_type_ext_id``` table before proceeding.
-    - Inserts the external ID into the ```hd_active_ingredient_ext_id``` association table only if a matching record for the given active ingredient does not already exist, ensuring data integrity and avoiding duplication.
+    - Inserts the external ID into the ```hd_active_ingredient_ext_id``` association table only 
+      if a matching record for the given active ingredient does not already exist, ensuring data integrity and avoiding duplication.
 
 
 - **`link_cas_to_active_ing`**  
@@ -526,6 +536,22 @@ This enables interoperability with other health data sources, ontologies, and bi
     - Inserts valid CAS mappings into the external ID table identifying the source as “DCB”.
 
 
+- **`link_drugbank_to_active_ing`**  
+
+  - Purpose: Refreshes and stores DrugBank identifiers for active ingredients in HealDB by persisting the results 
+    of a previous harmonization step (name translation/matching), enabling interoperability and DrugBank-based analyses.
+  - Key Processes:
+    - Removes existing rows for ```tp_ext_id = 'DRUGBANK_ID'``` from ```hd_active_ingredient_ext_id``` to allow clean re-runs. 
+    - Inserts DrugBank IDs into hd_active_ingredient_ext_id with:
+      - ```tp_ext_id = 'DRUGBANK_ID'```
+      - ```fl_origin_ext_id = 'DRUGBANK'```
+    - Builds the mapping using a join between:
+      - ```hd_priv_active_ingredient_drug``` (active ingredient <-> drug mapping from the harmonization pipeline), and
+      - ```db_drug``` (DrugBank drug table containing ```id_drugbank```).
+    - Avoids duplicate inserts by checking if the active ingredient already has a ```DRUGBANK_ID``` registered (```NOT EXISTS```).
+    - Commits changes and prints status messages for traceability during execution.
+
+
 - **`link_rxcui_to_active_ing`**  
 
   - Purpose: Links RxNorm Concept Unique Identifiers (RxCUI) to active ingredients in HealDB using the RxNorm API.
@@ -536,7 +562,8 @@ This enables interoperability with other health data sources, ontologies, and bi
   
 
 - **`link_rxcui_related_ids_to_active_ing`**  
-  - Purpose: Links RxNorm-related external identifiers (e.g., SNOMED CT, ATC, UNII, DrugBank) to active ingredients in HealDB by querying the RxNorm API for each RxCUI linked to active ingredient.
+  - Purpose: Links RxNorm-related external identifiers (e.g., SNOMED CT, ATC, UNII) to active ingredients in HealDB by 
+    querying the RxNorm API for each RxCUI linked to active ingredient.
   - Key Processes:
     - Retrieves all active ingredients from the database that already have a mapped RxCUI.
     - Queries the RxNorm API for each RxCUI to fetch related identifiers (e.g., SNOMED CT codes, ATC classifications).
@@ -553,7 +580,8 @@ This enables interoperability with other health data sources, ontologies, and bi
 
 
 - **`link_kegg_related_ids_to_active_ing`**  
-  - Purpose: Links KEGG Compound IDs (from Wikidata) to active ingredients in HealDB and uses them to retrieve PubChem and ChEBI identifiers (via KEGG API) and associate them with the same active ingredients. 
+  - Purpose: Links KEGG Compound IDs (from Wikidata) to active ingredients in HealDB and uses them to retrieve PubChem and 
+    ChEBI identifiers (via KEGG API) and associate them with the same active ingredients. 
   - Key Processes: 
     - Clears existing KEGG-related identifiers from the external ID table to avoid duplication.
     - Retrieves KEGG Compound IDs previously linked via Wikidata in the working table and maps them to active ingredients.
@@ -563,7 +591,8 @@ This enables interoperability with other health data sources, ontologies, and bi
   
 
 - **`fill_missing_external_ids`**  
-  - Purpose: Fills in missing external identifiers (CAS, ATC, SNOMEDCT, UNII_CODE, CHEBI, PUBCHEM_CID) for active ingredients in HealDB by using RxCUI matches from the Wikidata working table.
+  - Purpose: Fills in missing external identifiers (CAS, ATC, SNOMEDCT, UNII_CODE, CHEBI, PUBCHEM_CID) for active ingredients in 
+    HealDB by using RxCUI matches from the Wikidata working table.
   - Key Processes:
     - Identifies active ingredients that have a mapped RxCUI but are missing specific external IDs.
     - Searches the ```hd_wrk_wikidata_ext_id``` working table for ATC, SNOMEDCT, UNII_CODE, CHEBI and PUBCHEM_CID codes linked to those RxCUIs.

@@ -13,8 +13,6 @@ from src.nlp_extraction.extract_diseases_from_indications import extract_disease
 from src.nlp_extraction.process_disease_data_json import process_disease_data_json
 from src.nlp_extraction.link_medications_with_diseases import link_medications_with_diseases
 
-
-
 def log_execution_time(func_name, start_time, end_time):
     # Logs the time taken for a specific function to execute.
     # Displays the duration in hours, minutes, and seconds.

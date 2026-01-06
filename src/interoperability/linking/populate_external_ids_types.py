@@ -32,7 +32,7 @@ def populate_external_ids_types(cnx, cursor):
                 ('PUBCHEM_CID', 'PubChem Compound ID', 'Identifier for chemical compounds in PubChem Compound database'),
                 ('KEGG_DRUG', 'KEGG Drug ID', 'Identifier for drugs in the KEGG Drug database'),
                 ('KEGG_COMP', 'KEGG Compound ID', 'Identifier for chemical compounds in the KEGG Compound database'),
-                ('DRUGBANK', 'DrugBank ID', 'Unique identifier for drugs listed in the DrugBank database'),
+                ('DRUGBANK_ID', 'DrugBank ID', 'Unique identifier for drugs listed in the DrugBank database'),
                 ('SNOMEDCT', 'SNOMED CT', 'Identifier from SNOMED Clinical Terms for medical concepts'),
                 ('CHEBI', 'ChEBI ID', 'Identifier for chemical entities in the ChEBI database'),
                 ('ATC', 'ATC Code', 'Anatomical Therapeutic Chemical Classification System code'),

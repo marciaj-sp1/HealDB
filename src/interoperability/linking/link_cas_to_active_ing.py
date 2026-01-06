@@ -52,8 +52,7 @@ def link_cas_from_dcb_to_active_ing_ext_id(cnx, cursor):
     return
 
 def link_cas_to_active_ing(cnx, cursor):
-    # Link the external ids to active ingredients, searching the following
-    # sources: RXNORM, WIKIDATA and KEGG sources
+    # Link the cas number to active ingredients
 
     try:
         # Truncate table hd_active_ingredient_ext_id if needed

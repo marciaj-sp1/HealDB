@@ -33,35 +33,54 @@ def extract_diseases_from_indications(cnx, cursor):
     try:
         print("Fetching data from the table hd_translate_eng_leaflet_section...")
         # Fetch data from the translation table
-        sql_command = (
-            "SELECT id_medication, ds_indication_eng, ds_functionality_eng  "
-            "FROM healdb.hd_translate_eng_leaflet_section  "
-            "WHERE length(ds_indication_eng) > 10 "
-            " AND id_medication in "
-            "(3205, 4139) "
 
-        )
+        sql_command = """
+            SELECT 
+                t.id_medication,
+                m.nm_medication,
+                REGEXP_REPLACE(
+                    REGEXP_REPLACE(
+                      t.ds_indication_eng,
+                      CONCAT(
+                        '\\b',
+                        REGEXP_REPLACE(
+                          m.nm_medication,
+                          '([\\\\\\\\.^$|()\\\\[\\\\]{}*+?\\\\-])',
+                          '\\\\\\\\$1'
+                          ),
+                         '\\b'
+                         ),
+                         '<drug>',
+                         1, 0, 'i'
+                       ),
+                       'with[[:space:]]+or[[:space:]]+without',
+                       'regardless of',
+                       1, 0, 'i'
+                ) AS ds_indication_eng
+            FROM healdb.hd_translate_eng_leaflet_section t
+            JOIN healdb.hd_medication m
+            ON m.id_medication = t.id_medication
+            WHERE LENGTH(t.ds_indication_eng) > 10;
+        """
         cursor.execute(sql_command)
         rows = cursor.fetchall()
         cont = 0
         for row in rows:
-            
             # Access tuple elements using indices
             id_medication = row[0]  # First column: id_medication
-            ds_indication_eng = row[1] # Second column: ds_indication_eng
-            ds_functionality_eng = row[1] # Third column: ds_functionality_eng
-            
+            ds_indication_eng = row[2] # Third column: ds_indication_eng
             full_text = (
                 "What this medication is indicated for:\n" +
-                ds_indication_eng.strip() + "\n\n" +
-                "How this medication works:\n" +
-                ds_functionality_eng.strip()
+                ds_indication_eng.strip() + "\n\n"  
+                #+
+                #"How this medication works:\n" +
+                #ds_functionality_eng.strip()
             )   
             # Limit for 10.000 caracters
             full_text = full_text[:10000]
             print(f"Processing medication ID: {id_medication}")
             #print(f"Text for analysis: {full_text}")
- 
+            
             try:
                 # Call Amazon Comprehend Medical API to infer ICD codes
                 api_response = comprehend_client.infer_icd10_cm(Text=full_text)
@@ -81,12 +100,13 @@ def extract_diseases_from_indications(cnx, cursor):
                 # Insert the response into the database
                 sql_command = (
                     "INSERT INTO healdb.hd_int_med_disease_api_response "
-                    "(id_medication, ds_api_response) "
-                    "VALUES (%s, %s) "
-                    "ON DUPLICATE KEY "
-                    "UPDATE ds_api_response = VALUES(ds_api_response)"
+                    "(id_medication, ds_text_submitted, ds_api_response) "
+                    "VALUES (%s, %s, %s) "
+                    "ON DUPLICATE KEY UPDATE "
+                    "ds_text_submitted = VALUES(ds_text_submitted), "
+                    "ds_api_response = VALUES(ds_api_response)"
                 )
-                cursor.execute(sql_command, (id_medication, ds_api_response))
+                cursor.execute(sql_command, (id_medication, full_text, ds_api_response))
                 cont += 1
                 if (cont == 100):
                     cnx.commit()
@@ -96,6 +116,7 @@ def extract_diseases_from_indications(cnx, cursor):
                 print(f"Error storing API response in the database for medication ID {id_medication}: {e}")
                 continue
         cnx.commit()
+       
     except Exception as e:
         cnx.commit()
         print(f"Error processing indications: {e}")

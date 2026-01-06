@@ -9,8 +9,8 @@ E-mail: m905106@dac.unicamp.br
 
 """
 
-# Link RxNorm-related external identifiers (e.g., SNOMED CT, ATC, UNII, 
-# DrugBank) to active ingredients using their RxCUI, enabling richer 
+# Link RxNorm-related external identifiers (e.g., SNOMED CT, ATC, UNII) 
+# to active ingredients using their RxCUI, enabling richer 
 # interoperability across biomedical ontologies and databases.
 
 import requests
@@ -24,7 +24,7 @@ from src.interoperability.external_ids_insert import (
 RXNORM_PROPERTY_API_URL = URLS_EXTERNAL_IDS["rxnorm_property_api_url"]
 
 # List of properties to retrieve from RxNorm
-properties = ["SNOMEDCT", "ATC", "UNII_CODE", "DRUGBANK"]
+properties = ["SNOMEDCT", "ATC", "UNII_CODE"]
 
 def get_rxcui_related_ids(rxcui):
     # Retrieves related external identifiers for a given RxCUI from the RxNorm API.

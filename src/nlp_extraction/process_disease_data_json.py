@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Nov 24 12:17:00 2024
+Created on Sat Jan 03 15:20:00 2026
 
 Author: Márcia Jacobina Andrade S. Martins
 Instituto de Computação - IC
@@ -9,118 +9,156 @@ E-mail: m905106@dac.unicamp.br
 
 """
 
-# This script processes the API response from Amazon Comprehend Medical.
-# It extracts all the information, particularly the ICD (International
-# Classification of Diseases) codes and their scores from the indication
-# text. The extracted information will be used later to associate medications
-# with diseases and symptoms represented by the ICD codes.
-# It stores the results in two tables: hd_int_med_disease_entity and 
-# hd_int_med_disease_trait. 
+# This script parses the Amazon Comprehend Medical output stored in
+# `hd_int_med_disease_api_response.ds_api_response` and materializes the
+# extracted clinical concepts into relational tables.
+#
+# For each medication, it iterates over the detected entities in the text and
+# stores: (i) each ICD-10-CM concept suggested for an entity, including its code,
+# description, confidence score, and the entity metadata (text span, type/category,
+# offsets, and entity score); and (ii) all traits assigned to the entity (e.g.,
+# NEGATION, HYPOTHETICAL, LOW_CONFIDENCE, PERTAINS_TO_FAMILY) along with their
+# corresponding scores.
+#
+# The output is stored in two tables:
+# - `hd_int_med_disease_entity_icd`: one row per (medication, entity occurrence, ICD code)
+# - `hd_int_med_disease_entity_trait`: one row per (medication, entity occurrence, trait)
+#
+# These tables preserve the full set of extracted candidates and evidence,
+# enabling downstream rules to select and deduplicate the clinically plausible
+# medication–disease/symptom associations.
+
 
 
 import json
 
 
-def process_disease_data_json(cnx, cursor):
-    # Extract all information from the API response of AWS Amazon Comprehend Medical
-    # and insert it into the table hd_int_med_disease_entity.
-    
+def process_disease_data_json(cnx, cursor, truncate_before_load=True, batch_size=2000):
     try:
-        # Clear existing data
-        cursor.execute("TRUNCATE TABLE healdb.hd_int_med_disease_trait;")
-        cursor.execute("DELETE FROM healdb.hd_int_med_disease_entity;")
-        cnx.commit()
-            
-        print("Fetching data from the table `hd_int_med_disease_api_response`...")
+        if truncate_before_load:
+            cursor.execute("TRUNCATE TABLE healdb.hd_int_med_disease_entity_icd;")
+            cursor.execute("TRUNCATE TABLE healdb.hd_int_med_disease_entity_trait;")
+            cnx.commit()
+
+        print("Fetching data from `hd_int_med_disease_api_response`...")
         sql_command = (
             "SELECT id_medication, ds_api_response "
-            "FROM healdb.hd_int_med_disease_api_response "            
+            "FROM healdb.hd_int_med_disease_api_response "
+            "WHERE ds_api_response IS NOT NULL;"            
         )
         cursor.execute(sql_command)
         rows = cursor.fetchall()
 
-        for row in rows:
-            id_medication = row[0]
-            ds_api_response = row[1]
-            print (f"Processing id_medication={id_medication}... ")
-            #print (f"ds_api_response = {ds_api_response}")
-            
+        # --- Inserts ---------------------------------------------------------
+        sql_command_entity_icd = (
+            "INSERT INTO healdb.hd_int_med_disease_entity_icd ("
+            "id_medication, nr_entity_id, ds_entity_text, tp_entity, ds_category, "
+            "vl_entity_score, nr_begin_offset, nr_end_offset, ds_attributes, "
+            "cd_icd_full, ds_icd, vl_icd_score"
+            ") VALUES ("
+            "%s,%s,%s,%s,%s,"
+            "%s,%s,%s,%s,"
+            "%s,%s,%s"
+            ") "
+            "ON DUPLICATE KEY UPDATE "
+            "ds_entity_text=VALUES(ds_entity_text), "
+            "tp_entity=VALUES(tp_entity), "
+            "ds_category=VALUES(ds_category), "
+            "vl_entity_score=VALUES(vl_entity_score), "
+            "nr_begin_offset=VALUES(nr_begin_offset), "
+            "nr_end_offset=VALUES(nr_end_offset), "
+            "ds_attributes=VALUES(ds_attributes), "
+            "ds_icd=VALUES(ds_icd), "
+            "vl_icd_score=VALUES(vl_icd_score)"
+        )
+
+        sql_command_trait = (
+            "INSERT INTO healdb.hd_int_med_disease_entity_trait ("
+            "id_medication, nr_entity_id, nm_trait, vl_trait_score"
+            ") VALUES (%s,%s,%s,%s) "
+            "ON DUPLICATE KEY UPDATE "
+            "vl_trait_score=VALUES(vl_trait_score)"
+        )
+
+        batch_entity_icd = []
+        batch_trait = []
+
+        for (id_medication, ds_api_response) in rows:
+            print(f"Processing id_medication={id_medication}...")
+
+            # Keep EXACT behavior from your original script 2
             try:
-                # Convert the JSON string to a dictionary
                 response_dict = json.loads(ds_api_response)
             except json.JSONDecodeError as e:
                 print(f"Error decoding JSON for medication ID {id_medication}: {e}")
                 continue
-            
-            # Iterate through the entities in the API response
-            for entity in response_dict.get('Entities', []):
-                ds_icd_aggreg = entity.get('Text')
-                tp_entity = entity.get('Type')
-                vl_entity_score = entity.get('Score')
-                tp_category = entity.get('Category')
-                nr_begin_offset = entity.get('BeginOffset')
-                nr_end_offset = entity.get('EndOffset')
-                ds_attributes = json.dumps(entity.get('Attributes', []))
-                
-                for icd10cm_attribute in entity.get('ICD10CMConcepts', []):
-                    cd_icd_full = icd10cm_attribute.get('Code')
-                    vl_score = icd10cm_attribute.get('Score')
-                    ds_icd = icd10cm_attribute.get('Description')
 
-                    # Main entity register
-                    reg_entity = (
-                        id_medication, cd_icd_full, ds_icd,
-                        vl_score, ds_icd_aggreg, vl_entity_score,
-                        tp_category, nr_begin_offset, nr_end_offset,
-                        tp_entity, ds_attributes
-                    )
+            entities = response_dict.get("Entities", []) or []
 
-                    sql_command = (
-                        "INSERT INTO healdb.hd_int_med_disease_entity "
-                        "(id_medication, cd_icd_full, ds_icd, vl_score, "
-                        "ds_icd_aggreg, vl_entity_score, tp_category, "
-                        "nr_begin_offset, nr_end_offset, tp_entity, "
-                        "ds_attributes) "
-                        "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) "
-                        "ON DUPLICATE KEY UPDATE "
-                        "ds_icd = VALUES(ds_icd), "
-                        "vl_score = VALUES(vl_score), "
-                        "ds_icd_aggreg = VALUES(ds_icd_aggreg), "
-                        "vl_entity_score = VALUES(vl_entity_score), "
-                        "tp_category = VALUES(tp_category), "
-                        "nr_begin_offset = VALUES(nr_begin_offset), "
-                        "nr_end_offset = VALUES(nr_end_offset), "
-                        "tp_entity = VALUES(tp_entity), "
-                        "ds_attributes = VALUES(ds_attributes)"
-                    )
+            for idx, entity in enumerate(entities, start=1):
+                # Entity occurrence identifier (prevents wrong deduplication)
+                nr_entity_id = entity.get("Id")
+                if nr_entity_id is None:
+                    nr_entity_id = idx  # fallback (rare)
 
-                    try:
-                        cursor.execute(sql_command, reg_entity)
-                        cnx.commit()
-                    except Exception as e:
-                        print(f"Error inserting entity for id_medication={id_medication}, ICD={cd_icd_full}: {e}")
+                ds_entity_text = entity.get("Text") or ""
+                tp_entity = entity.get("Type")
+                ds_category = entity.get("Category")
+                vl_entity_score = entity.get("Score")
+                nr_begin_offset = entity.get("BeginOffset")
+                nr_end_offset = entity.get("EndOffset")
+
+                # Keep attributes raw for traceability
+                ds_attributes = json.dumps(entity.get("Attributes", []), ensure_ascii=False)
+
+                # --- Traits: one row per trait (entity occurrence x trait) -----
+                traits = entity.get("Traits", []) or []
+                for tr in traits:
+                    nm_trait = tr.get("Name")
+                    if not nm_trait:
                         continue
+                    vl_trait_score = tr.get("Score")
+                    batch_trait.append((id_medication, nr_entity_id, nm_trait, vl_trait_score))
 
-                    # Traits registers (if exists)
-                    for trait in entity.get('Traits', []):
-                        nm_trait = trait.get('Name')
-                        vl_trait_score = trait.get('Score')
-                        #print ("nm_trait = ", nm_trait)
-                        #print ("vl_trait_score = ", vl_trait_score)
+                # --- ICD concepts: one row per entity occurrence x ICD ----------
+                for icd in (entity.get("ICD10CMConcepts", []) or []):
+                    cd_icd_full = icd.get("Code")
+                    if not cd_icd_full:
+                        continue
+                    ds_icd = icd.get("Description")
+                    vl_icd_score = icd.get("Score")
 
-                        reg_trait = (id_medication, cd_icd_full, nm_trait, vl_trait_score)
-                        sql_command = (
-                            "INSERT INTO healdb.hd_int_med_disease_trait "
-                            "(id_medication, cd_icd_full, nm_trait, vl_trait_score) "
-                            "VALUES (%s, %s, %s, %s) "
-                            "ON DUPLICATE KEY UPDATE vl_trait_score = VALUES(vl_trait_score)"
-                        )
+                    batch_entity_icd.append((
+                        id_medication, nr_entity_id, ds_entity_text, tp_entity, ds_category,
+                        vl_entity_score, nr_begin_offset, nr_end_offset, ds_attributes,
+                        cd_icd_full, ds_icd, vl_icd_score
+                    ))
 
-                        try:
-                            cursor.execute(sql_command, reg_trait)
-                            cnx.commit()
-                        except Exception as e:
-                            print(f"Error inserting trait for id_medication={id_medication}, ICD={cd_icd_full}, trait={nm_trait}: {e}")
+                # Flush if needed
+                if len(batch_trait) >= batch_size:
+                    cursor.executemany(sql_command_trait, batch_trait)
+                    cnx.commit()
+                    batch_trait.clear()
+
+                if len(batch_entity_icd) >= batch_size:
+                    cursor.executemany(sql_command_entity_icd, batch_entity_icd)
+                    cnx.commit()
+                    batch_entity_icd.clear()
+
+        # Final flush
+        if batch_trait:
+            cursor.executemany(sql_command_trait, batch_trait)
+            cnx.commit()
+
+        if batch_entity_icd:
+            cursor.executemany(sql_command_entity_icd, batch_entity_icd)
+            cnx.commit()
+
+        print("Done. Tables populated:")
+        print(" - healdb.hd_int_med_disease_entity_icd")
+        print(" - healdb.hd_int_med_disease_entity_trait")
+
     except Exception as e:
-        print(f"Error fetching data from `hd_int_med_disease_api_response`: {e}")
+        print(f"Error processing `hd_int_med_disease_api_response`: {e}")
+
     return
