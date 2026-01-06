@@ -3,4 +3,5 @@ __pycache__/
 config.py
 data/input/
 tests/
+Dump*.zip
 
