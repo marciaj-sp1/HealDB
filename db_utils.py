@@ -8,8 +8,8 @@ def open_connection():
     
     try:
         cnx = mysql.connector.connect(
-            host="127.0.0.1",
-            port="3306",
+            host="xxx.x.x.x",
+            port="xxxx",
             user="root",
             password="root",
             database="healdb"
@@ -34,8 +34,8 @@ def open_connection_alchemy():
     # Open a connection to the MySQL database using the library sqlalchemy
    
     try:
-        host="127.0.0.1"
-        port="3306"   
+        host="xxx.x.x.x"
+        port="xxxx"   
         user="root"
         password="root"
         database="healdb"
