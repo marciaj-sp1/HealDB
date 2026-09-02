@@ -12,7 +12,7 @@ C:\project
     │   │   │       ├── novo
     │   │   │       ├── prod_tp
     │   │   │       ├── radiofarmaco
-    │   │   │       ├── similar
+    │   │   │       └── similar
     │   │   ├── Arquivo_sintomas.csv
     │   │   ├── CID-10-CAPITULOS.csv
     │   │   ├── CID-10-CATEGORIAS.csv
@@ -39,91 +39,92 @@ C:\project
     │   │   │   ├── healdb_hd_symptom.sql
     │   │   │   ├── healdb_hd_therapeutic_class.sql
     │   │   │   ├── healdb_hd_type_ext_id.sql
-    │   │   │   ├── ddls_summary.xlsx
+    │   │   │   └── ddls_summary.xlsx
     │   │   ├── icd_eng
-    │   │   │   └── blocks.txt
-    │   │   │   └── categories.txt
-    │   │   │   └── chatpters.txt  
-    │   │   ├── ontologies
-    │   │   │   └── ATC.ttl   # RDF Schema ATC
-    │   │   │   └── chebi.owl   # RDF Schema CHEBI
-    │   │   │   └── healdb_mini.owl   # RDF Schema subset HealDB
-    │   │   │   └── pc_cooccurrence_chemical_and_disease_000001.ttl # RDF Schema PUBCHEM Chemical  
-    │   │   │   └── pc_cooccurrence_chemical_and_disease_000002.ttl # RDF Schema PUBCHEM Chemical  
-    │   │   │   └── pc_cooccurrence_chemical_and_disease_000003.ttl # RDF Schema PUBCHEM Chemical 
-    │   │   │   └── pc_disease.ttl    # RDF Schema PUBCHEM Diseases
-    │   ├── output
-    │   │   ├── downloadBulas
-    │   │   ├── translation
-    │   │   │   ├── output_active_ing_translate_meta.csv
-    │   │   ├── interoperability
-    │   │   │   ├── _attempts
-    │   │   │   │   ├── iucn_conservation_dcb_r.json
-    │   │   │   │   ├── iucn_conservation_healdb_r.json
-    │   │   │   │   ├── pubchem_diseases_labels.csv
-    │   │   │   │   ├── pubchem_mesh_disease_healdb.csv
-    │   │   │   │   ├── pubchem_mesh_ids_healdb.csv
-    │   │   │   ├── atc
-    │   │   │   │   └── atc_attributes_healdb.csv
-    │   │   │   │   └── atc_attributes_theraphealdb.csv
-    │   │   │   ├── chebi
-    │   │   │   │   ├── chebi_attributes_healdb.csv
-    │   │   │   │   └── chebi_attributes_healdb_json.json
-    │   │   │   ├── clinical_trials
-    │   │   │   │   ├── clinical_trials_healdb.csv
-    │   │   │   │   └── clinical_trials_healdb.json
-    │   │   │   ├── iucn
-    │   │   │   │   ├── iucn_conservation_dcb.json
-    │   │   │   │   ├── iucn_conservation_healdb.json
-    │   │   │   ├── pubchem
-    │   │   │   │   └── pubchem_reference_healdb.json
-    │   │   │   ├── rxnorm
-    │   │   │   │   └── rxnorm_enrichment_healdb.json
-    │   │   ├── rdf_schema
-    │   │   │   ├── healdb_complete.ttl
-    │   │   │   └── healdb_mini.ttl
-    │
+    │   │   │   ├── blocks.txt
+    │   │   │   ├── categories.txt
+    │   │   │   └── chapters.txt
+    │   │   └── ontologies
+    │   │       ├── ATC.ttl
+    │   │       ├── chebi.owl
+    │   │       ├── healdb_mini.ttl
+    │   │       └── _attempts
+    │   │           ├── pc_cooccurrence_chemical_and_disease_000001.ttl
+    │   │           ├── pc_cooccurrence_chemical_and_disease_000002.ttl
+    │   │           ├── pc_cooccurrence_chemical_and_disease_000003.ttl
+    │   │           └── pc_disease.ttl
+    │   └── output
+    │       ├── downloadBulas
+    │       ├── translation
+    │       │   └── output_active_ing_translate_meta.csv
+    │       ├── interoperability
+    │       │   ├── _attempts
+    │       │   │   ├── iucn_conservation_dcb_r.json
+    │       │   │   ├── iucn_conservation_healdb_r.json
+    │       │   │   ├── pubchem_diseases_labels.csv
+    │       │   │   ├── pubchem_mesh_disease_healdb.csv
+    │       │   │   └── pubchem_mesh_ids_healdb.csv
+    │       │   ├── atc
+    │       │   │   ├── atc_attributes_healdb.csv
+    │       │   │   └── atc_attributes_theraphealdb.csv
+    │       │   ├── chebi
+    │       │   │   ├── chebi_attributes_healdb.csv
+    │       │   │   └── chebi_attributes_healdb_json.json
+    │       │   ├── clinical_trials
+    │       │   │   ├── clinical_trials_healdb.csv
+    │       │   │   └── clinical_trials_healdb.json
+    │       │   ├── iucn
+    │       │   │   ├── iucn_conservation_dcb.json
+    │       │   │   └── iucn_conservation_healdb.json
+    │       │   ├── pubchem
+    │       │   │   └── pubchem_reference_healdb.json
+    │       │   └── rxnorm
+    │       │       └── rxnorm_enrichment_healdb.json
+    │       └── rdf_schema
+    │           ├── healdb_complete.ttl
+    │           └── healdb_mini.ttl
     ├── doc
     ├── logs
     ├── notebooks
-    │   ├── exploracao_healdb_completa.ypynb  # Notebook para exploração da base HealDB
-    │   ├── exploracao_healdb_completa.html   # Visualização da exploração da base HealDB
+    │   ├── exploracao_healdb_completa.ipynb
+    │   └── exploracao_healdb_completa.html
     ├── src
     │   ├── rdf_schema
     │   │   ├── __init__.py
     │   │   ├── main_rdf_schema.py
-    │   │   ├── create_healdb_rdf_schema.py         # Complete RDF schema for HealDB
-    │   │   ├── create_mini_healdb_rdf_schema.py    # Mini RDF schema with instance data
-    │
+    │   │   ├── create_healdb_rdf_schema.py
+    │   │   └── create_mini_healdb_rdf_schema.py
     │   ├── interoperability
     │   │   ├── __init__.py
     │   │   ├── main_interoperability.py
     │   │   ├── linking
     │   │   │   ├── __init__.py
-    │   │   │   ├── external_ids_insert.py
+    │   │   │   ├── insert_external_id.py
     │   │   │   ├── fill_missing_external_ids.py
     │   │   │   ├── import_dcb_data.py
     │   │   │   ├── link_cas_to_active_ing.py
+    │   │   │   ├── link_drugbank_to_active_ing.py
     │   │   │   ├── link_kegg_related_ids_to_active_ing.py
     │   │   │   ├── link_rxcui_related_ids_to_active_ing.py
     │   │   │   ├── link_rxcui_to_active_ing.py
     │   │   │   ├── link_wikidata_ids_to_wrk_table.py
-    │   │   │   ├── populate_external_ids_types.py
-    │   │   ├── usecases
-    │   │   │   ├── __init__.py
-    │   │   │   ├── _attempts
-    │   │   │   │   ├── iiucn_export_conservation_status_r.r
-    │   │   │   │   ├── pubchem_disease_mesh_query.txt    # SPARQL query for PubChem Disease Mesh
-    │   │   │   │   ├── pubchem_disease_query.txt         # SPARQL query for PUBchem Disease
-    │   │   │   │   ├── pubchem_mesh_ids_query.txt        # SPARQL query for PUBChem Mesh
-    │   │   │   ├── atc_attributes_query.txt              # SPARQL query for ATC
-    │   │   │   ├── atc_attributes_theraphealdb_query.txt # SPARQL query for ATC
-    │   │   │   ├── chebi_attributes_query.txt            # SPARQL query for CHEBI
-    │   │   │   ├── clinical_trials_export.py             # SPARQL query for ClinicalTrials.gov
-    │   │   │   ├── iucn_export_conservation_status.py    # IUCN integration
-    │   │   │   ├── pubchem_export_references.py          # PubChem integration
-    │   │   │   ├── rxnorm_export_enriched_ingredients.py # RxNorm integration
-    │
+    │   │   │   ├── validate_wikidata_chebi.py
+    │   │   │   ├── validate_wikidata_pubchem.py
+    │   │   │   └── populate_external_ids_types.py
+    │   │   └── usecases
+    │   │       ├── __init__.py
+    │   │       ├── _attempts
+    │   │       │   ├── iucn_export_conservation_status_r.r
+    │   │       │   ├── pubchem_disease_mesh_query.txt
+    │   │       │   ├── pubchem_disease_query.txt
+    │   │       │   └── pubchem_mesh_ids_query.txt
+    │   │       ├── atc_attributes_query.txt
+    │   │       ├── atc_attributes_theraphealdb_query.txt
+    │   │       ├── chebi_attributes_query.txt
+    │   │       ├── clinical_trials_export.py
+    │   │       ├── iucn_export_conservation_status.py
+    │   │       ├── pubchem_export_references.py
+    │   │       └── rxnorm_export_enriched_ingredients.py
     │   ├── nlp_extraction
     │   │   ├── __init__.py
     │   │   ├── main_nlp_extraction.py
@@ -131,8 +132,7 @@ C:\project
     │   │   ├── extract_diseases_from_indications.py
     │   │   ├── link_medications_with_diseases.py
     │   │   ├── process_disease_data_json.py
-    │   │   ├── translate_leaflet_section.py
-    │
+    │   │   └── translate_leaflet_section.py
     │   ├── repositories
     │   │   ├── __init__.py
     │   │   ├── main_repository.py
@@ -142,26 +142,23 @@ C:\project
     │   │   ├── create_leaflets_repository.py
     │   │   ├── create_medications_repository.py
     │   │   ├── create_symptoms_repository.py
-    │   │   ├── drugbank_inserts.py
-    │
+    │   │   └── drugbank_inserts.py
     │   ├── translation
     │   │   ├── __init__.py
     │   │   ├── main_translation.py
-    │   │   ├── import_translated_active_ingredients_meta.py
     │   │   ├── import_translated_active_ingredients_meta.py
     │   │   ├── translate_active_ingredients.py
     │   │   ├── translate_active_ingredients_meta.ipynb
     │   │   ├── translate_disease_descriptions.py
     │   │   ├── translate_drug_interactions.py
     │   │   ├── translate_food_interactions.py
-    │   │   ├── validate_translation_and_link_active_ing.py
-    │
-    │   ├── webcrawler
-    │   │   ├── __init__.py
-    │   │   ├── main_webcrawler.py
-    │   │   ├── webcrawler_leaflet.py
+    │   │   └── validate_translation_and_link_active_ing.py
+    │   └── webcrawler
+    │       ├── __init__.py
+    │       ├── main_webcrawler.py
+    │       └── webcrawler_leaflet.py
     ├── tests
     ├── requirements.txt
     ├── config.py
     ├── db_utils.py
-    ├── main.py
+    └── main.py

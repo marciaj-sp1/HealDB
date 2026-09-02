@@ -11,12 +11,18 @@ E-mail: m905106@dac.unicamp.br
 # Retrieves scientific publications for PubChem CIDs associated with active ingredients
 # used in medications classified under the therapeutic class "antidepressant".
 #
-# This script uses the NCBI Entrez E-Utilities API (elink.fcgi) to retrieve PubMed publications
-# that are directly linked to chemical compounds via their PubChem CID.
-# PubChem itself does not store publication content, but only provide link to
-# PubMed. 
-# The elink.fcgi endpoint is the official and efficient way to navigate these cross-database
-# relationships maintained by NCBI (e.g., from PubChem Compound to PubMed).
+# This script uses the PubChemRDF REST interface to retrieve scientific references
+# associated with chemical compounds via their PubChem CID.
+#
+# The relationship vocab:discussesAsDerivedByTextMining is used to retrieve PubChem
+# references associated with each compound. The dcterms:identifier property is then
+# used to obtain the corresponding PubMed identifier (PMID).
+#
+# Publication metadata (title, journal, date) are retrieved from PubMed using the
+# NCBI Entrez E-Utilities API (esummary.fcgi).
+#
+# This approach enables access to PubChemRDF relationships without downloading and
+# locally storing the complete RDF datasets.
 #
 # Outputs a structured JSON file including:
 # - id_active_ingredient
@@ -32,28 +38,120 @@ import time
 from config import PATHS, APIS_USE_CASES
 
 
-# Load IUCN API configuration from the external configuration file
+# Load PUBCHEM API configuration from the external configuration file
 PUBCHEM_API = APIS_USE_CASES["pubchem"]
 
-# Retrieves PMIDs from PubChem using the elink API
-def get_pmids_from_pubchem_cid(pubchem_cid):  
-    url = PUBCHEM_API["elink_url"]
+# PubChemRDF REST query endpoint
+PUBCHEM_RDF_URL = PUBCHEM_API["rdf_query_url"]
+
+# Retrieves PubChem reference IDs associated with a PubChem CID
+def get_references_from_pubchem_cid(pubchem_cid):
     params = {
-        "dbfrom": "pccompound",
-        "id": pubchem_cid,
-        "db": "pubmed"
+        "graph": "reference",
+        "predicate": "vocab:discussesAsDerivedByTextMining",
+        "object": f"compound:CID{pubchem_cid}",
+        "format": "json"
     }
+
     try:
-        response = requests.get(url, params=params, timeout=10)
-        content = ET.fromstring(response.content)
-        pmids = []
-        for link in content.findall(".//LinkSetDb/Link"):
-            id_node = link.find("Id")
-            if id_node is not None and id_node.text:
-                pmids.append(id_node.text)
+        response = requests.get(
+            PUBCHEM_RDF_URL,
+            params=params,
+            timeout=30
+        )
+        response.raise_for_status()
+
+        content = response.json()
+        references = []
+
+        bindings = content.get("results", {}).get("bindings", [])
+
+        for binding in bindings:
+            subject = binding.get("subject", {}).get("value")
+
+            if subject:
+                reference_id = subject.rsplit("/", 1)[-1]
+                references.append(reference_id)
+
+        return references
+
     except Exception as e:
-        print(f"Error for Pubchem CID {pubchem_cid}: {e}")
+        print(
+            f"Error retrieving references for "
+            f"PubChem CID {pubchem_cid}: {e}"
+        )
+        return []
+
+
+# Retrieves the PMID associated with a PubChem reference
+def get_pmid_from_reference(reference_id):
+    params = {
+        "graph": "reference",
+        "predicate": "dcterms:identifier",
+        "subject": f"reference:{reference_id}",
+        "format": "json"
+    }
+
+    try:
+        response = requests.get(
+            PUBCHEM_RDF_URL,
+            params=params,
+            timeout=30
+        )
+        response.raise_for_status()
+
+        content = response.json()
+
+        bindings = content.get("results", {}).get("bindings", [])
+
+        for binding in bindings:
+            identifier = binding.get("object", {}).get("value")
+
+            if (
+                identifier
+                and "pubmed.ncbi.nlm.nih.gov/" in identifier
+            ):
+                pmid = (
+                    identifier
+                    .rstrip("/")
+                    .rsplit("/", 1)[-1]
+                )
+
+                return pmid
+
+    except Exception as e:
+        print(
+            f"Error retrieving PMID for "
+            f"PubChem reference {reference_id}: {e}"
+        )
+
+    return None
+
+
+# Retrieves PMIDs from PubChemRDF using PubChem CID
+def get_pmids_from_pubchem_cid(pubchem_cid):
+    references = get_references_from_pubchem_cid(pubchem_cid)
+
+    if not references:
+        return []
+
+    pmids = []
+
+    for reference_id in references:
+
+        pmid = get_pmid_from_reference(reference_id)
+
+        if pmid and pmid not in pmids:
+            pmids.append(pmid)
+
+        # Stop after retrieving three PubMed publications
+        if len(pmids) == 3:
+            break
+
+        time.sleep(0.2)
+
     return pmids
+
 
 # Retrieves publication details (title, journal, date) for a given PMID
 def get_article_details(pmid):
@@ -63,18 +161,27 @@ def get_article_details(pmid):
         "id": pmid,
         "retmode": "xml"
     }
+
     try:
-        response = requests.get(url, params=params, timeout=10)
+        response = requests.get(
+            url,
+            params=params,
+            timeout=10
+        )
+
         content = ET.fromstring(response.content)
+
         title = content.find(".//Item[@Name='Title']")
         source = content.find(".//Item[@Name='Source']")
         pub_date = content.find(".//Item[@Name='PubDate']")
+
         return {
             "pmid": pmid,
             "title": title.text if title is not None else "N/A",
             "journal": source.text if source is not None else "N/A",
             "date": pub_date.text if pub_date is not None else "N/A"
         }
+
     except Exception as e:
         return {
             "pmid": pmid,
@@ -82,8 +189,9 @@ def get_article_details(pmid):
             "journal": str(e),
             "date": "N/A"
         }
+
     return
-    
+
 
 # Main function that queries the database and exports the enriched JSON
 def pubchem_export_references(cnx, cursor):
@@ -100,8 +208,7 @@ def pubchem_export_references(cnx, cursor):
         "WHERE UPPER(t.ds_therapeutic_class) LIKE '%ANTIDEPRESSIVO%' "
         "  AND e.tp_ext_id = 'PUBCHEM_CID' "
     )
-    
-    
+
     cursor.execute(sql_command)
     rows = cursor.fetchall()
 
@@ -118,18 +225,21 @@ def pubchem_export_references(cnx, cursor):
         pubchem_cid = str(row[2])
 
         print(f"PUBCHEM CID {pubchem_cid} - {nm_active_ingredient}")
+
         pmids = get_pmids_from_pubchem_cid(pubchem_cid)
 
         if not pmids:
             continue
 
         publications = []
+
         pmids = pmids[:3]
+
         for pmid in pmids:
             details = get_article_details(pmid)
             publications.append(details)
-            time.sleep(0.4)            
-               
+            time.sleep(0.4)
+
         json_output.append({
             "id_active_ingredient": id_active_ingredient,
             "nm_active_ingredient": nm_active_ingredient,
@@ -137,9 +247,22 @@ def pubchem_export_references(cnx, cursor):
             "publications": publications
         })
 
-    output_pubchem_ref_file = f"{PATHS['output_pubchem']}/pubchem_reference_healdb.json"
-    with open(output_pubchem_ref_file, "w", encoding="utf-8") as f:
-        json.dump(json_output, f, indent=4, ensure_ascii=False)
+    output_pubchem_ref_file = (
+        f"{PATHS['output_pubchem']}/"
+        "pubchem_reference_healdb.json"
+    )
+
+    with open(
+        output_pubchem_ref_file,
+        "w",
+        encoding="utf-8"
+    ) as f:
+        json.dump(
+            json_output,
+            f,
+            indent=4,
+            ensure_ascii=False
+        )
 
     print(f"\nExport completed: {output_pubchem_ref_file}")
 

@@ -35,12 +35,13 @@ def insert_external_ids(cnx, cursor, tp_ext_id, allow_multiple):
                 "    JOIN hd_active_ingredient_ext_id a "  
                 "        ON a.cd_ext_id = w.cd_rxcui "
                 "        AND a.tp_ext_id = 'RXCUI' "
-                "    WHERE w.tp_ext_id = '{tp_ext_id}' "
+                "    WHERE w.tp_ext_id = %s "
+                "    AND (w.fl_preferred = 'Y' OR w.fl_preferred IS NULL) "
                 "    AND NOT EXISTS ( "
                 "        SELECT 1 "
                 "        FROM hd_active_ingredient_ext_id a1 "
                 "        WHERE a1.id_active_ingredient = a.id_active_ingredient "
-                "          AND a1.tp_ext_id = '{tp_ext_id}' "
+                "          AND a1.tp_ext_id = %s "
                 "    ) "
                 ") AS ranked "
                 "WHERE rn = 1; "
@@ -58,7 +59,7 @@ def insert_external_ids(cnx, cursor, tp_ext_id, allow_multiple):
                 "JOIN hd_active_ingredient_ext_id a "  
                 "    ON a.cd_ext_id = w.cd_rxcui "
                 "    AND a.tp_ext_id = 'RXCUI' "
-                "WHERE w.tp_ext_id = '{tp_ext_id}' "
+                "WHERE w.tp_ext_id = %s "
                 "AND NOT EXISTS ( "
                 "    SELECT 1 "
                 "    FROM hd_active_ingredient_ext_id a1 "
@@ -67,7 +68,10 @@ def insert_external_ids(cnx, cursor, tp_ext_id, allow_multiple):
                 "    AND a1.cd_ext_id = w.cd_ext_id "
                 "); "
             )
-        cursor.execute(sql_command)
+        if allow_multiple == False:
+            cursor.execute(sql_command, (tp_ext_id, tp_ext_id))
+        else:
+            cursor.execute(sql_command, (tp_ext_id,))
         cnx.commit()
 
     except Exception as e:
@@ -76,11 +80,33 @@ def insert_external_ids(cnx, cursor, tp_ext_id, allow_multiple):
 
 def fill_missing_external_ids(cnx, cursor):
     # Types that allow multiple entries (just avoid exact duplicates)
-    
+
+    try:
+        print("Removing Wikidata external identifiers...")
+        sql_command = (
+            "DELETE FROM healdb.hd_active_ingredient_ext_id "
+            "WHERE fl_origin_ext_id = 'WIKIDATA'"
+            "AND tp_ext_id IN ( "
+            "     'CAS', "
+            "     'UNII_CODE', "
+            "     'CHEBI', "
+            "     'SNOMEDCT', "
+            "     'PUBCHEM_CID' "
+            ")"
+        )
+
+        cursor.execute(sql_command)
+        cnx.commit()
+
+    except Exception as e:
+        print(f"Error clearing active ingredient external id table: {e}")
+        return
+
     insert_external_ids(cnx, cursor, 'CAS', allow_multiple=False)
     insert_external_ids(cnx, cursor, 'UNII_CODE', allow_multiple=False)
     insert_external_ids(cnx, cursor, 'CHEBI', allow_multiple=False)
     insert_external_ids(cnx, cursor, 'ATC', allow_multiple=True)
     insert_external_ids(cnx, cursor, 'SNOMEDCT', allow_multiple=True)
-    insert_external_ids(cnx, cursor, 'PUBCHEM_CID', allow_multiple=True)
+    insert_external_ids(cnx, cursor, 'PUBCHEM_CID', allow_multiple=False)
+
     return

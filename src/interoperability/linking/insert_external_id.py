@@ -30,6 +30,7 @@ def insert_external_id(cursor, cnx, id_active_ingredient, tp_ext_id, cd_ext_id, 
     try:
         register_ext_id = (id_active_ingredient, tp_ext_id, cd_ext_id, fl_origin_ext_id,
                            id_active_ingredient, tp_ext_id, cd_ext_id)
+        #print(register_ext_id)
         cursor.execute(sql_command, register_ext_id)
         cnx.commit()
 

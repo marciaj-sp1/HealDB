@@ -7,7 +7,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.append(str(PROJECT_ROOT))
 
 from db_utils import open_connection, close_connection
-from src.rdf_schema.create_healdb_rdf_schema import create_healdb_rdf_schema
+#from src.rdf_schema.create_healdb_rdf_schema import create_healdb_rdf_schema
 from src.rdf_schema.create_mini_healdb_rdf_schema import create_mini_healdb_rdf_schema
 
 def log_execution_time(func_name, start_time, end_time):
@@ -33,7 +33,7 @@ def main():
 
         # Create repositories and measure execution time
         for func, func_name in [
-            (create_healdb_rdf_schema, "create_healdb_rdf_schema"),
+            #(create_healdb_rdf_schema, "create_healdb_rdf_schema"),
             (create_mini_healdb_rdf_schema, "create_mini_healdb_rdf_schema")
         ]:
             start_time = datetime.now()

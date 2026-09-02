@@ -65,7 +65,11 @@ def extract_diseases_from_indications(cnx, cursor):
         cursor.execute(sql_command)
         rows = cursor.fetchall()
         cont = 0
+        cont_total = 0
+        total = len(rows)
+
         for row in rows:
+            cont_total += 1
             # Access tuple elements using indices
             id_medication = row[0]  # First column: id_medication
             ds_indication_eng = row[2] # Third column: ds_indication_eng
@@ -78,7 +82,7 @@ def extract_diseases_from_indications(cnx, cursor):
             )   
             # Limit for 10.000 caracters
             full_text = full_text[:10000]
-            print(f"Processing medication ID: {id_medication}")
+            print(f"[{cont_total}/{total}] Processing medication ID: {id_medication}")
             #print(f"Text for analysis: {full_text}")
             
             try:

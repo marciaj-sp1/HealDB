@@ -16,9 +16,7 @@ E-mail: m905106@dac.unicamp.br
 import requests
 import time
 from config import URLS_EXTERNAL_IDS
-from src.interoperability.external_ids_insert import (
-    insert_external_id
-)
+from src.interoperability.linking.insert_external_id import insert_external_id
 
 # RXNorm API Base URL
 RXNORM_API_URL = URLS_EXTERNAL_IDS["rxnorm_api_url"]

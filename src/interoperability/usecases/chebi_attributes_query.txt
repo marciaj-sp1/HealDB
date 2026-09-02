@@ -1,10 +1,22 @@
 PREFIX heal: <http://healdb.org/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX chebiprop: <http://purl.obolibrary.org/obo/chebi/>
+PREFIX chemrof: <https://w3id.org/chemrof/>
 
-SELECT ?ingredient ?ingredientLabel ?externalId ?chebiEntity ?formula ?mass ?monoisotopicMass ?smiles ?inchi ?inchikey
+SELECT DISTINCT
+       ?ingredient
+       ?ingredientLabel
+       ?externalId
+       ?chebiEntity
+       ?formula
+       ?mass
+       ?monoisotopicMass
+       ?smiles
+       ?inchi
+       ?inchikey
 WHERE {
+
   GRAPH <http://healdb.org/graph/healdb> {
+
     ?ingredient a heal:ActiveIngredient ;
                 heal:idActiveIngredient ?idActiveIngredient ;
                 heal:activeIngredientName ?ingredientLabel ;
@@ -12,14 +24,39 @@ WHERE {
 
     ?ext heal:externalIdValue ?externalId ;
          owl:sameAs ?chebiEntity .
+
+    FILTER(
+      STRSTARTS(
+        STR(?chebiEntity),
+        "http://purl.obolibrary.org/obo/CHEBI_"
+      )
+    )
   }
 
   GRAPH <http://healdb.org/graph/chebi> {
-    OPTIONAL { ?chebiEntity chebiprop:formula ?formula . }
-    OPTIONAL { ?chebiEntity chebiprop:mass ?mass . }
-    OPTIONAL { ?chebiEntity chebiprop:monoisotopicmass ?monoisotopicMass . }
-    OPTIONAL { ?chebiEntity chebiprop:smiles ?smiles . }
-    OPTIONAL { ?chebiEntity chebiprop:inchi ?inchi . }
-    OPTIONAL { ?chebiEntity chebiprop:inchikey ?inchikey . }
+
+    OPTIONAL {
+      ?chebiEntity chemrof:generalized_empirical_formula ?formula .
+    }
+
+    OPTIONAL {
+      ?chebiEntity chemrof:mass ?mass .
+    }
+
+    OPTIONAL {
+      ?chebiEntity chemrof:monoisotopic_mass ?monoisotopicMass .
+    }
+
+    OPTIONAL {
+      ?chebiEntity chemrof:smiles_string ?smiles .
+    }
+
+    OPTIONAL {
+      ?chebiEntity chemrof:inchi_string ?inchi .
+    }
+
+    OPTIONAL {
+      ?chebiEntity chemrof:inchi_key_string ?inchikey .
+    }
   }
 }
